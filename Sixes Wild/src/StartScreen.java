@@ -14,13 +14,15 @@ public class StartScreen extends JFrame{
 	private JTextField txtWildWhales;
 	public StartScreen() {
 	//None shall pass	
-		JButton btnNewButton_1 = new JButton("Play");
+		JButton btnNewButton_1 = new JButton("PLAY");
 		
 		txtWildWhales = new JTextField();
 		txtWildWhales.setFont(new Font("Gisha", Font.PLAIN, 30));
 		txtWildWhales.setHorizontalAlignment(SwingConstants.CENTER);
 		txtWildWhales.setText("Sixes Wild");
 		txtWildWhales.setColumns(10);
+		
+		JButton btnExit = new JButton("EXIT");
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -31,17 +33,21 @@ public class StartScreen extends JFrame{
 							.addComponent(txtWildWhales, GroupLayout.PREFERRED_SIZE, 327, GroupLayout.PREFERRED_SIZE))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(184)
-							.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE)))
+							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
+								.addComponent(btnExit, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(btnNewButton_1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE))))
 					.addContainerGap(87, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+			groupLayout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(28)
 					.addComponent(txtWildWhales, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED, 153, Short.MAX_VALUE)
 					.addComponent(btnNewButton_1)
-					.addGap(126))
+					.addGap(18)
+					.addComponent(btnExit)
+					.addGap(85))
 		);
 		getContentPane().setLayout(groupLayout);
 	}
