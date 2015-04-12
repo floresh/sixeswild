@@ -50,6 +50,12 @@ public class StartScreen extends JFrame{
 					.addGap(85))
 		);
 		getContentPane().setLayout(groupLayout);
+
+		
+		setSize(400, 400);
+		setLocationRelativeTo(null);
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	//Continue
 }
