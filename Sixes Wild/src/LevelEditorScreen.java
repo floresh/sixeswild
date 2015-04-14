@@ -26,7 +26,7 @@ public class LevelEditorScreen extends JFrame {
 	private JTextField textField_1;
 	public LevelEditorScreen() {
 		
-		//comments
+		//comment
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.GREEN);
