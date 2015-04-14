@@ -20,6 +20,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class PuzzleLevel1 extends JFrame{
+	private final JButton btnReset = new JButton("RESET");
 	public PuzzleLevel1() {
 		
 		JPanel panel = new JPanel();
@@ -36,30 +37,30 @@ public class PuzzleLevel1 extends JFrame{
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(29)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+						.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(btnPause, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(btnReset, GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE))
 					.addGap(18)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(btnPause)
-							.addContainerGap())
-						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-							.addComponent(btnNewButton)
-							.addPreferredGap(ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
-							.addComponent(panel, GroupLayout.PREFERRED_SIZE, 371, GroupLayout.PREFERRED_SIZE)
-							.addGap(60))))
+					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 371, GroupLayout.PREFERRED_SIZE)
+					.addGap(323))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(41)
+							.addGap(39)
 							.addComponent(btnPause)
-							.addGap(54)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(btnReset)
+							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(btnNewButton))
 						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(71)
+							.addGap(82)
 							.addComponent(panel, GroupLayout.PREFERRED_SIZE, 350, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(47, Short.MAX_VALUE))
+					.addContainerGap(36, Short.MAX_VALUE))
 		);
 		
 		JPanel panel_1 = new JPanel();
