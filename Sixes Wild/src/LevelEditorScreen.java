@@ -19,17 +19,16 @@ import javax.swing.JTextArea;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JScrollBar;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 public class LevelEditorScreen extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	public LevelEditorScreen() {
-		
-		//comment
-		
-		JPanel panel = new JPanel();
-		panel.setBackground(Color.GREEN);
+		setTitle("Sixes Wild Level Editor");
+		setResizable(false);
 		
 		textField = new JTextField();
 		textField.setText("0");
@@ -77,89 +76,108 @@ public class LevelEditorScreen extends JFrame {
 		
 		JScrollBar scrollBar_5 = new JScrollBar();
 		scrollBar_5.setOrientation(JScrollBar.HORIZONTAL);
+		
+		final JButton b00 = new JButton("");
+		b00.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {	
+				if(b00.getBackground() == Color.GREEN){
+					b00.setBackground(Color.RED);
+				}
+				else{
+					b00.setBackground(Color.GREEN);
+				}
+			}
+		});
+		
+		b00.setForeground(Color.GREEN);
+		
+		JButton button = new JButton("");
+		button.setForeground(Color.GREEN);
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.TRAILING)
+			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+							.addGroup(groupLayout.createSequentialGroup()
+								.addGap(54)
+								.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+									.addComponent(lblNumberOfMoves)
+									.addComponent(lblMaximumTime))
+								.addGap(18)
+								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+									.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+									.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+							.addGroup(groupLayout.createSequentialGroup()
+								.addGap(105)
+								.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+									.addComponent(label_1)
+									.addComponent(label)
+									.addComponent(label_5)
+									.addComponent(label_4)
+									.addComponent(label_3)
+									.addComponent(label_2))
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+									.addComponent(scrollBar, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(scrollBar_5, GroupLayout.PREFERRED_SIZE, 171, GroupLayout.PREFERRED_SIZE)
+									.addComponent(scrollBar_4, GroupLayout.PREFERRED_SIZE, 171, GroupLayout.PREFERRED_SIZE)
+									.addComponent(scrollBar_3, GroupLayout.PREFERRED_SIZE, 171, GroupLayout.PREFERRED_SIZE)
+									.addComponent(scrollBar_1, GroupLayout.PREFERRED_SIZE, 171, GroupLayout.PREFERRED_SIZE)
+									.addComponent(scrollBar_2, GroupLayout.PREFERRED_SIZE, 171, GroupLayout.PREFERRED_SIZE))))
 						.addGroup(groupLayout.createSequentialGroup()
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
-								.addGroup(groupLayout.createSequentialGroup()
-									.addGap(54)
-									.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-										.addComponent(lblNumberOfMoves)
-										.addComponent(lblMaximumTime))
-									.addGap(18)
-									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-										.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-										.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addGap(105)
-									.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-										.addComponent(label_1)
-										.addComponent(label)
-										.addComponent(label_5)
-										.addComponent(label_4)
-										.addComponent(label_3)
-										.addComponent(label_2))
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-										.addComponent(scrollBar, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(scrollBar_5, GroupLayout.PREFERRED_SIZE, 171, GroupLayout.PREFERRED_SIZE)
-										.addComponent(scrollBar_4, GroupLayout.PREFERRED_SIZE, 171, GroupLayout.PREFERRED_SIZE)
-										.addComponent(scrollBar_3, GroupLayout.PREFERRED_SIZE, 171, GroupLayout.PREFERRED_SIZE)
-										.addComponent(scrollBar_1, GroupLayout.PREFERRED_SIZE, 171, GroupLayout.PREFERRED_SIZE)
-										.addComponent(scrollBar_2, GroupLayout.PREFERRED_SIZE, 171, GroupLayout.PREFERRED_SIZE))))
-							.addPreferredGap(ComponentPlacement.RELATED, 77, Short.MAX_VALUE))
-						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-							.addContainerGap()
-							.addComponent(lblTileFrequency)
-							.addGap(112)))
-					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 435, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap())
+							.addGap(133)
+							.addComponent(lblTileFrequency))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(372)
+							.addComponent(b00, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(button, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap(1131, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap(40, Short.MAX_VALUE)
-					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 378, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap())
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(94)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNumberOfMoves))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblMaximumTime))
-					.addGap(24)
-					.addComponent(lblTileFrequency)
-					.addGap(18)
+					.addGap(54)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(label)
-						.addComponent(scrollBar, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-						.addComponent(scrollBar_1, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(label_1))
-					.addGap(18)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(scrollBar_2, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(label_2))
-					.addGap(18)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(scrollBar_3, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(label_3))
-					.addGap(18)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(scrollBar_4, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(label_4))
-					.addGap(18)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(scrollBar_5, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(label_5))
-					.addContainerGap(69, Short.MAX_VALUE))
+						.addComponent(button, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(b00, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
+							.addGap(18)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblNumberOfMoves))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblMaximumTime))
+							.addGap(24)
+							.addComponent(lblTileFrequency)
+							.addGap(18)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(label)
+								.addComponent(scrollBar, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+								.addComponent(scrollBar_1, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+								.addComponent(label_1))
+							.addGap(18)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(scrollBar_2, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+								.addComponent(label_2))
+							.addGap(18)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(scrollBar_3, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+								.addComponent(label_3))
+							.addGap(18)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(scrollBar_4, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+								.addComponent(label_4))
+							.addGap(18)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(scrollBar_5, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+								.addComponent(label_5))))
+					.addContainerGap(405, Short.MAX_VALUE))
 		);
 		getContentPane().setLayout(groupLayout);
 		
@@ -190,11 +208,16 @@ public class LevelEditorScreen extends JFrame {
 		JButton btnUndo = new JButton("Undo");
 		menuBar.add(btnUndo);
 		
-		JButton btnFillLevel = new JButton("Fill Level");
-		menuBar.add(btnFillLevel);
-		
 		JButton btnClearLevel = new JButton("Clear Level");
 		menuBar.add(btnClearLevel);
+		
+		JButton btnPreviewLevel = new JButton("Preview Level");
+		menuBar.add(btnPreviewLevel);
+		setSize(1600, 900);
+		setLocationRelativeTo(null);
+		setVisible(true);
+		setResizable(false);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	private static void addPopup(Component component, final JPopupMenu popup) {
 	}
