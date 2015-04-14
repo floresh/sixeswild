@@ -5,10 +5,14 @@ import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.table.DefaultTableModel;
+
 import java.awt.Font;
+
 import javax.swing.JProgressBar;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.SwingConstants;
 
 
@@ -16,6 +20,12 @@ public class PuzzleLevelSelection extends JFrame{
 	public PuzzleLevelSelection() {
 		//oooooooo
 		JButton btnNewButton = new JButton("BACK");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new GameModeScreen();
+				dispose();
+			}
+		});
 		
 		JButton btnNewButton_1 = new JButton("1");
 		btnNewButton_1.addActionListener(new ActionListener() {
