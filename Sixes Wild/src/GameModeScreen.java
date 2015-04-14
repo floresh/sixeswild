@@ -1,17 +1,24 @@
 import javax.swing.JFrame;
 import javax.swing.JButton;
-import java.awt.BorderLayout;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.LayoutStyle.ComponentPlacement;
 
 
 public class GameModeScreen extends JFrame{
+	private JButton backButton;
 	public GameModeScreen() {
+		super("Game Mode Select");
 		
-		JButton btnNewButton = new JButton("BACK");
+		backButton = new JButton("BACK");
+		backButton.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e){
+				new StartScreen();
+				dispose();
+			}
+		});
 		
 		JButton btnNewButton_1 = new JButton("PUZZLE");
 		
@@ -27,7 +34,7 @@ public class GameModeScreen extends JFrame{
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(56)
-					.addComponent(btnNewButton)
+					.addComponent(backButton)
 					.addContainerGap(570, Short.MAX_VALUE))
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(175)
@@ -48,7 +55,7 @@ public class GameModeScreen extends JFrame{
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(btnNewButton)
+					.addComponent(backButton)
 					.addGap(105)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btnNewButton_1)
@@ -62,6 +69,11 @@ public class GameModeScreen extends JFrame{
 					.addGap(100))
 		);
 		getContentPane().setLayout(groupLayout);
+
+		setSize(650, 420);
+		setLocationRelativeTo(null);
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 }
 
