@@ -19,6 +19,7 @@ import javax.swing.SwingConstants;
 public class PuzzleLevelSelection extends JFrame{
 	public PuzzleLevelSelection() {
 		//oooooooo
+		super("Puzzle Level Selection");
 		JButton btnNewButton = new JButton("BACK");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
