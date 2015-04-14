@@ -23,12 +23,16 @@ public class GameModeScreen extends JFrame{
 		JButton btnNewButton_1 = new JButton("PUZZLE");
 		
 		JButton btnNewButton_2 = new JButton("ELIMINATION");
+		btnNewButton_2.setEnabled(false);
 		
 		JButton btnNewButton_3 = new JButton("LIGHTNING");
+		btnNewButton_3.setEnabled(false);
 		
 		JButton btnNewButton_4 = new JButton("RELEASE");
+		btnNewButton_4.setEnabled(false);
 		
 		JButton btnNewButton_5 = new JButton("USER MADE");
+		btnNewButton_5.setEnabled(false);
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
