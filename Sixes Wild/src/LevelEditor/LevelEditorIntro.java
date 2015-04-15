@@ -12,7 +12,7 @@ import java.awt.Font;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+//ok
 public class LevelEditorIntro extends JFrame{
 	public LevelEditorIntro() {
 		setTitle("Sixes Wild Level Editor");
