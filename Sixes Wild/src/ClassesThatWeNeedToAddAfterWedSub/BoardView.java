@@ -1,4 +1,4 @@
-package MainGame;
+package ClassesThatWeNeedToAddAfterWedSub;
 
 import javax.swing.JPanel;
 import javax.swing.GroupLayout;
