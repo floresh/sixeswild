@@ -11,7 +11,6 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class EliminationLevelSelection extends JFrame {
 	public EliminationLevelSelection() {
-		// oooooooo
 		super("Elimination Level Selection");
 		JButton btnNewButton = new JButton("BACK");
 		btnNewButton.addActionListener(new ActionListener() {

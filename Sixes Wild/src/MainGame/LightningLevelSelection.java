@@ -21,7 +21,6 @@ import LevelEditor.LevelEditorScreen;
 
 public class LightningLevelSelection extends JFrame{
 	public LightningLevelSelection() {
-		//oooooooo
 		super("Lightning Level Selection");
 		JButton btnNewButton = new JButton("BACK");
 		btnNewButton.addActionListener(new ActionListener() {
