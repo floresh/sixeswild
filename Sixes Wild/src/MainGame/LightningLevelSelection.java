@@ -22,8 +22,7 @@ import LevelEditor.LevelEditorScreen;
 public class LightningLevelSelection extends JFrame{
 	public LightningLevelSelection() {
 		//oooooooo
-		super("Puzzle Level Selection");
-		setTitle("Lightning Level Selection");
+		super("Lightning Level Selection");
 		JButton btnNewButton = new JButton("BACK");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
