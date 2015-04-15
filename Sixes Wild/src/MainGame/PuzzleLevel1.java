@@ -101,7 +101,6 @@ public class PuzzleLevel1 extends JFrame{
 		progressBar.setBackground(Color.RED);
 		progressBar.setForeground(new Color(0, 0, 255));
 		progressBar.setToolTipText("krill");
-		progressBar.setValue(30);
 		progressBar.setBounds(51, 449, 521, 25);
 		getContentPane().add(progressBar);
 		
