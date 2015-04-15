@@ -889,6 +889,9 @@ public class LevelEditorScreen extends JFrame {
 			}
 		});
 		menuBar.add(btnCloseLevel);
+		
+		JButton btnGenerateLevel = new JButton("Generate Level");
+		menuBar.add(btnGenerateLevel);
 		setSize(1600, 900);
 		setLocationRelativeTo(null);
 		setVisible(true);
