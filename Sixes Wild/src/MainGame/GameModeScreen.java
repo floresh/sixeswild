@@ -25,7 +25,7 @@ public class GameModeScreen extends JFrame{
 		JButton btnNewButton_1 = new JButton("PUZZLE");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new ReleaseLevelSelection();
+				new PuzzleLevelSelection();
 				dispose();
 			}
 		});
