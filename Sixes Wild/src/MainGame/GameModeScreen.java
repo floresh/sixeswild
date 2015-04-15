@@ -31,16 +31,24 @@ public class GameModeScreen extends JFrame{
 		});
 		
 		JButton btnNewButton_2 = new JButton("ELIMINATION");
-		btnNewButton_2.setEnabled(false);
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new EliminationLevelSelection();
+				dispose();
+			}
+		});
 		
 		JButton btnNewButton_3 = new JButton("LIGHTNING");
-		btnNewButton_3.setEnabled(false);
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new LightningLevelSelection();
+				dispose();
+			}
+		});
 		
 		JButton btnNewButton_4 = new JButton("RELEASE");
-		btnNewButton_4.setEnabled(false);
 		
 		JButton btnNewButton_5 = new JButton("USER MADE");
-		btnNewButton_5.setEnabled(false);
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
