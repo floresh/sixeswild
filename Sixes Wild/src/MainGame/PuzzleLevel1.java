@@ -23,35 +23,56 @@ import javax.swing.JTextField;
 public class PuzzleLevel1 extends JFrame{
 	private JTextField txtScore;
 	private JTextField txtTime;
+	private JTextField txtSpecialMoves;
 	public PuzzleLevel1() {
 		
 		txtScore = new JTextField();
+		txtScore.setBounds(246, 13, 116, 22);
 		txtScore.setText("Score: 0");
 		txtScore.setColumns(10);
 		
 		txtTime = new JTextField();
+		txtTime.setBounds(246, 43, 116, 22);
 		txtTime.setText("Time: 99");
 		txtTime.setColumns(10);
-		GroupLayout groupLayout = new GroupLayout(getContentPane());
-		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(134)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(txtTime, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtScore, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(389, Short.MAX_VALUE))
-		);
-		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(txtScore, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(txtTime, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(404, Short.MAX_VALUE))
-		);
-		getContentPane().setLayout(groupLayout);
+		
+		JButton btnNewButton = new JButton("PAUSE");
+		btnNewButton.setBounds(12, 143, 97, 25);
+		
+		JButton btnNewButton_1 = new JButton("RESET");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnNewButton_1.setBounds(12, 181, 97, 25);
+		
+		JButton btnNewButton_2 = new JButton("QUIT");
+		btnNewButton_2.setBounds(12, 219, 97, 25);
+		
+		JButton btnNewButton_3 = new JButton("RESHUFFLE");
+		btnNewButton_3.setBounds(511, 143, 116, 25);
+		
+		JButton btnNewButton_4 = new JButton("REMOVE");
+		btnNewButton_4.setBounds(511, 181, 116, 25);
+		
+		JButton btnNewButton_5 = new JButton("SWAP");
+		btnNewButton_5.setBounds(511, 219, 116, 25);
+		getContentPane().setLayout(null);
+		getContentPane().add(txtScore);
+		getContentPane().add(txtTime);
+		getContentPane().add(btnNewButton);
+		getContentPane().add(btnNewButton_1);
+		getContentPane().add(btnNewButton_2);
+		getContentPane().add(btnNewButton_3);
+		getContentPane().add(btnNewButton_4);
+		getContentPane().add(btnNewButton_5);
+		
+		txtSpecialMoves = new JTextField();
+		txtSpecialMoves.setHorizontalAlignment(SwingConstants.CENTER);
+		txtSpecialMoves.setText("SPECIAL MOVES");
+		txtSpecialMoves.setBounds(511, 108, 116, 22);
+		getContentPane().add(txtSpecialMoves);
+		txtSpecialMoves.setColumns(10);
 		
 		
 }
