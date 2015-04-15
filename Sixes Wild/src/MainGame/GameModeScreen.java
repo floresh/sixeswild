@@ -25,7 +25,7 @@ public class GameModeScreen extends JFrame{
 		JButton btnNewButton_1 = new JButton("PUZZLE");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new PuzzleLevelSelection();
+				new ReleaseLevelSelection();
 				dispose();
 			}
 		});
@@ -47,6 +47,12 @@ public class GameModeScreen extends JFrame{
 		});
 		
 		JButton btnNewButton_4 = new JButton("RELEASE");
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new ReleaseLevelSelection();
+				dispose();
+			}
+		});
 		
 		JButton btnNewButton_5 = new JButton("USER MADE");
 		GroupLayout groupLayout = new GroupLayout(getContentPane());

@@ -19,10 +19,10 @@ import javax.swing.SwingConstants;
 import LevelEditor.LevelEditorScreen;
 
 
-public class ReleaseLevelSelect extends JFrame{
-	public ReleaseLevelSelect() {
+public class ReleaseLevelSelection extends JFrame{
+	public ReleaseLevelSelection() {
 		//oooooooo
-		super("Puzzle Level Selection");
+		super("Release Level Selection");
 		JButton btnNewButton = new JButton("BACK");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -32,6 +32,7 @@ public class ReleaseLevelSelect extends JFrame{
 		});
 		
 		JButton btnNewButton_1 = new JButton("1");
+		btnNewButton_1.setEnabled(false);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -53,10 +54,8 @@ public class ReleaseLevelSelect extends JFrame{
 		JButton btnNewButton_2 = new JButton("PLAY");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-						new PuzzleLevel1();
-						dispose();
-					}
-				});
+			}
+		});
 		
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
