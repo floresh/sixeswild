@@ -31,6 +31,12 @@ public class GameModeScreen extends JFrame{
 		});
 		
 		JButton btnNewButton_2 = new JButton("ELIMINATION");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new EliminationLevelSelection();
+				dispose();
+			}
+		});
 		
 		JButton btnNewButton_3 = new JButton("LIGHTNING");
 		btnNewButton_3.addActionListener(new ActionListener() {
