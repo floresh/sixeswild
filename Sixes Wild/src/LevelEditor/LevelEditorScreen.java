@@ -387,6 +387,10 @@ public class LevelEditorScreen extends JFrame {
 		
 		JButton button_16 = new JButton("");
 		button_16.setForeground(Color.GREEN);
+		
+		JButton btnEnabledisableCell = new JButton("Enable/Disable Cell");
+		
+		JButton btnRelease = new JButton("Release");
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -563,19 +567,22 @@ public class LevelEditorScreen extends JFrame {
 													.addGap(7)
 													.addComponent(button_51, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)))
 											.addGroup(groupLayout.createSequentialGroup()
-												.addComponent(button_71, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-												.addGap(7)
-												.addComponent(button_72, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-												.addGap(7)
-												.addComponent(button_73, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-												.addGap(7)
-												.addComponent(button_74, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-												.addGap(7)
-												.addComponent(button_75, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-												.addGap(7)
-												.addComponent(button_76, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-												.addGap(7)
-												.addComponent(button_77, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+												.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+													.addComponent(btnRelease)
+													.addGroup(groupLayout.createSequentialGroup()
+														.addComponent(button_71, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+														.addGap(7)
+														.addComponent(button_72, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+														.addGap(7)
+														.addComponent(button_73, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+														.addGap(7)
+														.addComponent(button_74, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+														.addGap(7)
+														.addComponent(button_75, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+														.addGap(7)
+														.addComponent(button_76, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+														.addGap(7)
+														.addComponent(button_77, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)))
 												.addGap(7)
 												.addComponent(button_78, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 												.addGap(7)
@@ -638,7 +645,9 @@ public class LevelEditorScreen extends JFrame {
 												.addComponent(lblNumberOfMoves))
 											.addPreferredGap(ComponentPlacement.UNRELATED)
 											.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-									.addGap(1041)))
+									.addGap(370)
+									.addComponent(btnEnabledisableCell)
+									.addGap(574)))
 							.addGroup(groupLayout.createSequentialGroup()
 								.addGap(101)
 								.addComponent(lblSpecialMoveReshuffle, GroupLayout.PREFERRED_SIZE, 160, GroupLayout.PREFERRED_SIZE)
@@ -811,7 +820,9 @@ public class LevelEditorScreen extends JFrame {
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 								.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblNumberOfMoves))
+								.addComponent(lblNumberOfMoves)
+								.addComponent(btnEnabledisableCell)
+								.addComponent(btnRelease))
 							.addPreferredGap(ComponentPlacement.RELATED)))
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
