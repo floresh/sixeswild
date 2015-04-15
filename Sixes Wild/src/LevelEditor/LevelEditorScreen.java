@@ -32,6 +32,8 @@ public class LevelEditorScreen extends JFrame {
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
+	PreviewPanelView p;
+
 	public LevelEditorScreen() {
 		setTitle("Sixes Wild Level Editor");
 		setResizable(false);
@@ -871,12 +873,19 @@ public class LevelEditorScreen extends JFrame {
 		menuBar.add(btnClearLevel);
 		
 		JButton btnPreviewLevel = new JButton("Preview Level");
+		btnPreviewLevel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				p = new PreviewPanelView ();
+				
+			}
+		});
 		menuBar.add(btnPreviewLevel);
 		
-		JButton btnCloseLevel = new JButton("Close Level");
+		JButton btnCloseLevel = new JButton("Close Preview");
 		btnCloseLevel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				dispose();
+				p.dispose();
 			}
 		});
 		menuBar.add(btnCloseLevel);
