@@ -50,7 +50,7 @@ public class EditorSplashScreen extends JFrame{
 		);
 		getContentPane().setLayout(groupLayout);
 		
-		lblNewLabel.setIcon(new ImageIcon("C:\\users\\Jake\\Desktop\\D&D\\whale.png"));
+		lblNewLabel.setIcon(new ImageIcon("whale.png"));
 		
 		try{
 			Thread.sleep(1000);
