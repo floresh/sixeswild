@@ -21,6 +21,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.ImageIcon;
 import java.awt.Window.Type;
+import javax.swing.JProgressBar;
 
 public class PuzzleLevel1 extends JFrame{
 	public PuzzleLevel1() {
@@ -95,6 +96,26 @@ public class PuzzleLevel1 extends JFrame{
 		lblNewLabel_6.setIcon(new ImageIcon(PuzzleLevel1.class.getResource("/images/board.png")));
 		lblNewLabel_6.setBounds(146, 72, 353, 362);
 		getContentPane().add(lblNewLabel_6);
+		
+		JProgressBar progressBar = new JProgressBar();
+		progressBar.setBackground(Color.RED);
+		progressBar.setForeground(new Color(0, 0, 255));
+		progressBar.setToolTipText("krill");
+		progressBar.setValue(30);
+		progressBar.setBounds(51, 449, 521, 25);
+		getContentPane().add(progressBar);
+		
+		JLabel lblStar = new JLabel("1 Star");
+		lblStar.setBounds(198, 432, 56, 16);
+		getContentPane().add(lblStar);
+		
+		JLabel lblStars = new JLabel("2 Stars");
+		lblStars.setBounds(350, 432, 56, 16);
+		getContentPane().add(lblStars);
+		
+		JLabel lblStars_1 = new JLabel("3 Stars");
+		lblStars_1.setBounds(528, 432, 56, 16);
+		getContentPane().add(lblStars_1);
 		
 		setSize(660, 540);
 		setLocationRelativeTo(null);
