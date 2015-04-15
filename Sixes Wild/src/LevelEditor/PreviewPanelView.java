@@ -114,6 +114,6 @@ public class PreviewPanelView extends JFrame{
 		setSize(660, 540);
 		setLocationRelativeTo(null);
 		setVisible(true);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);	
 }
 }
