@@ -52,6 +52,7 @@ public class ReleaseLevelSelection extends JFrame{
 		button_2.setEnabled(false);
 		
 		JButton btnNewButton_2 = new JButton("PLAY");
+		btnNewButton_2.setEnabled(false);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}

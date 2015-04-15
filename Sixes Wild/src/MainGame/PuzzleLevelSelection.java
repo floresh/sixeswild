@@ -21,9 +21,7 @@ import LevelEditor.LevelEditorScreen;
 
 public class PuzzleLevelSelection extends JFrame{
 	public PuzzleLevelSelection() {
-		//oooooooo
 		super("Puzzle Level Selection");
-		setTitle("Release Level Selection");
 		JButton btnNewButton = new JButton("BACK");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -52,7 +50,6 @@ public class PuzzleLevelSelection extends JFrame{
 		button_2.setEnabled(false);
 		
 		JButton btnNewButton_2 = new JButton("PLAY");
-		btnNewButton_2.setEnabled(false);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 						new PuzzleLevel1();
