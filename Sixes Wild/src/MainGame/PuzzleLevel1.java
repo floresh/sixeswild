@@ -37,6 +37,12 @@ public class PuzzleLevel1 extends JFrame{
 		btnNewButton_1.setBounds(12, 181, 97, 25);
 		
 		JButton btnNewButton_2 = new JButton("QUIT");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new GameModeScreen();
+				dispose();
+			}
+		});
 		btnNewButton_2.setBounds(12, 219, 97, 25);
 		
 		JButton btnNewButton_3 = new JButton("RESHUFFLE");
@@ -90,6 +96,9 @@ public class PuzzleLevel1 extends JFrame{
 		lblNewLabel_6.setBounds(146, 72, 353, 362);
 		getContentPane().add(lblNewLabel_6);
 		
-		
+		setSize(660, 540);
+		setLocationRelativeTo(null);
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
 }
 }

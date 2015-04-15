@@ -16,6 +16,8 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.SwingConstants;
 
+import LevelEditor.LevelEditorScreen;
+
 
 public class PuzzleLevelSelection extends JFrame{
 	public PuzzleLevelSelection() {
@@ -51,8 +53,11 @@ public class PuzzleLevelSelection extends JFrame{
 		JButton btnNewButton_2 = new JButton("PLAY");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			}
-		});
+						new PuzzleLevel1();
+						dispose();
+					}
+				});
+		
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
