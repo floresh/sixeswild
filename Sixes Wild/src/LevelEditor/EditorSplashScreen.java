@@ -17,40 +17,31 @@ public class EditorSplashScreen extends JFrame{
 	
 	public EditorSplashScreen() {
 		setTitle("Sixes Wild Level Editor");
-		setSize(500, 450);
+		setSize(480, 480);
 		setLocationRelativeTo(null);
 		setVisible(true);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		JLabel lblNewLabel = new JLabel("why god");
-		
-		JLabel lblIMeanYay = new JLabel("I mean yay Tarvos Group!");
+		JLabel lblNewLabel = new JLabel("");
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.TRAILING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(34)
-							.addComponent(lblNewLabel))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(90)
-							.addComponent(lblIMeanYay)))
-					.addContainerGap(140, Short.MAX_VALUE))
+				.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+					.addComponent(lblNewLabel)
+					.addContainerGap(450, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(28)
 					.addComponent(lblNewLabel)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(lblIMeanYay)
-					.addContainerGap(94, Short.MAX_VALUE))
+					.addContainerGap(408, Short.MAX_VALUE))
 		);
 		getContentPane().setLayout(groupLayout);
 		
-		lblNewLabel.setIcon(new ImageIcon("whale.png"));
+
+		lblNewLabel.setIcon(new ImageIcon("src\\images\\splash.jpg"));
+
 		
 		try{
 			Thread.sleep(1000);

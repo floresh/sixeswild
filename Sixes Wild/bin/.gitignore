@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+/images
+/LevelEditor
+=======
 /LevelEditorScreen$1.class
 /LevelEditorScreen$2.class
 /LevelEditor/
@@ -7,3 +11,4 @@
 /whale.png
 /MainGame/
 /ClassesThatWeNeedToAddAfterWedSub/
+>>>>>>> branch 'master' of https://github.com/floresh/sixeswild.git
