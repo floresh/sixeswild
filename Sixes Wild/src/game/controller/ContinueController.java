@@ -11,5 +11,8 @@ public class ContinueController {
 		this.model = m;
 		this.application = app;
 	}
-
+	
+	public boolean process() {
+		return false;
+	}
 }
