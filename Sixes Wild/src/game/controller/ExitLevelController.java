@@ -1,7 +1,7 @@
 package game.controller;
 
+import game.model.Model;
 import MainGame.Application;
-import MainGame.Model;
 
 public class ExitLevelController {
 	Model model;

@@ -1,13 +1,13 @@
 package game.controller;
 
+import game.model.Model;
 import MainGame.Application;
-import MainGame.Model;
 
-public class ReshuffleController {
+public class SpMoveReshuffleBoard {
 	Model model;
 	Application application;
 	
-	public ReshuffleController(Application app, Model m) {
+	public SpMoveReshuffleBoard(Application app, Model m) {
 		this.model = m;
 		this.application = app;
 	}

@@ -1,4 +1,4 @@
-package MainGame;
+package game.model;
 
 public class Model {
 
