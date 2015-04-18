@@ -1,4 +1,6 @@
 package MainGame;
+import game.boundary.LevelView;
+
 import javax.swing.JFrame;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -54,7 +56,7 @@ public class LightningLevelSelection extends JFrame{
 		btnNewButton_2.setEnabled(false);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-						new PuzzleLevel1();
+						new LevelView();
 						dispose();
 					}
 				});

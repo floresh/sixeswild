@@ -1,7 +1,7 @@
 package game.controller;
 
+import game.boundary.Application;
 import game.model.Model;
-import MainGame.Application;
 
 public class EliminationMove {
 	Model model;

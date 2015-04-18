@@ -1,4 +1,6 @@
 package MainGame;
+import game.boundary.LevelView;
+
 import javax.swing.JFrame;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -52,7 +54,7 @@ public class PuzzleLevelSelection extends JFrame{
 		JButton btnNewButton_2 = new JButton("PLAY");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-						new PuzzleLevel1();
+						new LevelView();
 						dispose();
 					}
 				});
