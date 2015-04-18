@@ -2,7 +2,7 @@ package editor.controller;
 
 import editor.boundary.LevelEditorApplication;
 import editor.model.LevelEditorModel;
-
+//
 public class ClearLevelController {
 	
 	LevelEditorModel model;

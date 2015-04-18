@@ -1,7 +1,7 @@
 package editor.boundary;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-//ok
+
 public class Main {
 	public static void main(String[] args){
 		try {

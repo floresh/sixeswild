@@ -25,7 +25,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JFormattedTextField;
 import javax.swing.JSlider;
 
-//okaaaay
+
 public class LevelEditorScreen extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;

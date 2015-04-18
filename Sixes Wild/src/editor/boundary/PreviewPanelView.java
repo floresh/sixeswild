@@ -22,7 +22,7 @@ import javax.swing.JTextField;
 import javax.swing.ImageIcon;
 import java.awt.Window.Type;
 import javax.swing.JProgressBar;
-
+//something
 public class PreviewPanelView extends JFrame{
 	public PreviewPanelView() {
 		setTitle("Puzzle Level 1");
