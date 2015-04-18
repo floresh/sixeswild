@@ -880,6 +880,9 @@ public class LevelEditorScreen extends JFrame {
 				
 			}
 		});
+		
+		JButton btnCommitValues = new JButton("Commit Values");
+		menuBar.add(btnCommitValues);
 		menuBar.add(btnPreviewLevel);
 		
 		JButton btnCloseLevel = new JButton("Close Preview");
@@ -889,9 +892,6 @@ public class LevelEditorScreen extends JFrame {
 			}
 		});
 		menuBar.add(btnCloseLevel);
-		
-		JButton btnGenerateLevel = new JButton("Generate Level");
-		menuBar.add(btnGenerateLevel);
 		setSize(1600, 900);
 		setLocationRelativeTo(null);
 		setVisible(true);
