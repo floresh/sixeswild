@@ -1,6 +1,6 @@
 package editor.model;
 
-import MainGame.Entities.Level;
+import game.entities.Level;
 
 public class LevelEditorModel {
 	Level level;
