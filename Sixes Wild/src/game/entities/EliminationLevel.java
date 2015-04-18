@@ -1,4 +1,4 @@
-package MainGame.Entities;
+package game.entities;
 
 public class EliminationLevel {
 
