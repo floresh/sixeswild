@@ -1,4 +1,4 @@
-package MainGame.Entities;
+package game.entities;
 import java.util.ArrayList;
 
 public class Level {
