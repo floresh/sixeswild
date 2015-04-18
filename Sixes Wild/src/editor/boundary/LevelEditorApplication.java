@@ -1,4 +1,4 @@
-package LevelEditor;
+package editor.boundary;
 
 public class LevelEditorApplication {
 

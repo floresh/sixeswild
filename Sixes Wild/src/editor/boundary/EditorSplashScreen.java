@@ -1,4 +1,4 @@
-package LevelEditor;
+package editor.boundary;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 

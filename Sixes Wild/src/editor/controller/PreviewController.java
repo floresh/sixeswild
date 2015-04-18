@@ -1,6 +1,6 @@
 package editor.controller;
 
-import LevelEditor.LevelEditorApplication;
+import editor.boundary.LevelEditorApplication;
 import editor.model.LevelEditorModel;
 
 

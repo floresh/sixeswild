@@ -1,4 +1,5 @@
 package MainGame;
+import editor.boundary.LevelEditorScreen;
 import game.boundary.LevelView;
 
 import javax.swing.JFrame;
@@ -17,8 +18,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 import javax.swing.SwingConstants;
-
-import LevelEditor.LevelEditorScreen;
 
 
 public class LightningLevelSelection extends JFrame{

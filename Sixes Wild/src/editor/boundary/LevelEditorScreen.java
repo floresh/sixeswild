@@ -1,4 +1,4 @@
-package LevelEditor;
+package editor.boundary;
 import javax.swing.JFrame;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
