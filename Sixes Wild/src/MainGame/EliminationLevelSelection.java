@@ -1,5 +1,7 @@
 package MainGame;
 
+import game.boundary.LevelView;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -44,7 +46,7 @@ public class EliminationLevelSelection extends JFrame {
 		btnNewButton_2.setEnabled(false);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new PuzzleLevel1();
+				new LevelView();
 				dispose();
 			}
 		});
