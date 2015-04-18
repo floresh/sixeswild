@@ -1,7 +1,7 @@
 package game.controller;
 
 import game.boundary.Application;
-import game.entities.Model;
+import game.entities.*;
 
 public class SpMoveReshuffleBoard {
 	Model model;
