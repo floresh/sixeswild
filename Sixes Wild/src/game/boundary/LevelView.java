@@ -10,8 +10,6 @@ import java.awt.Color;
 import java.awt.CardLayout;
 import java.awt.Dimension;
 
-import MainGame.GameModeScreen;
-
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;

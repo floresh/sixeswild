@@ -1,6 +1,4 @@
-package MainGame;
-
-import game.boundary.LevelView;
+package game.boundary;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

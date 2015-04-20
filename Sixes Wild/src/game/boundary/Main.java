@@ -1,4 +1,4 @@
-package MainGame;
+package game.boundary;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 

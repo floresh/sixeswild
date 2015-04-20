@@ -1,4 +1,4 @@
-package MainGame;
+package game.boundary;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
@@ -7,6 +7,7 @@ import java.awt.Image;
 import javax.swing.JLabel;
 
 import java.awt.BorderLayout;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;

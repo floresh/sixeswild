@@ -1,6 +1,5 @@
-package MainGame;
+package game.boundary;
 import editor.boundary.LevelEditorScreen;
-import game.boundary.LevelView;
 
 import javax.swing.JFrame;
 import javax.swing.GroupLayout;
@@ -20,9 +19,9 @@ import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 
 
-public class LightningLevelSelection extends JFrame{
-	public LightningLevelSelection() {
-		super("Lightning Level Selection");
+public class PuzzleLevelSelection extends JFrame{
+	public PuzzleLevelSelection() {
+		super("Puzzle Level Selection");
 		JButton btnNewButton = new JButton("BACK");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -32,7 +31,6 @@ public class LightningLevelSelection extends JFrame{
 		});
 		
 		JButton btnNewButton_1 = new JButton("1");
-		btnNewButton_1.setEnabled(false);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -52,7 +50,6 @@ public class LightningLevelSelection extends JFrame{
 		button_2.setEnabled(false);
 		
 		JButton btnNewButton_2 = new JButton("PLAY");
-		btnNewButton_2.setEnabled(false);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 						new LevelView();

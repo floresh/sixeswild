@@ -1,4 +1,4 @@
-package MainGame;
+package game.boundary;
 import javax.swing.JFrame;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;

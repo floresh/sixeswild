@@ -11,8 +11,6 @@ import javax.swing.JLabel;
 import javax.swing.JProgressBar;
 import javax.swing.SwingConstants;
 
-import MainGame.GameModeScreen;
-
 public class BoardView extends JFrame{
 	public BoardView() {
 	setTitle("Puzzle Level 1");
