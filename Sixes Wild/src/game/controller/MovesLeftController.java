@@ -13,6 +13,13 @@ public class MovesLeftController {
 	}
 	
 	public boolean process() {
-		return false;
+		int movesLeft = model.getLevel().getMovesLeft();
+		model.getLevel().setMovesLeft(movesLeft - 1);
+		
+		if(movesLeft == 1) {
+			//TODO: end game
+		}
+		
+		return true;
 	}
 }

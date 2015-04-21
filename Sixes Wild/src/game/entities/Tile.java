@@ -7,10 +7,12 @@ public class Tile {
 		this.value = value;
 		this.multiplier = multiplier;
 	}
-	int getValue(){
+	
+	public int getValue(){
 		return value;
 	}
-	int getMultipier(){
+	
+	public int getMultiplier() {
 		return multiplier;
 	}
 

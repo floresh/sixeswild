@@ -17,10 +17,11 @@ public class SpMoveReshuffleBoard {
 	}
 	
 	public boolean process() {
-		//long seed = System.nanoTime();
-		//ArrayList<ArrayList<Cell>> grid = model.getLevel().getBoard().getColumns();
+		model.getLevel().getBoard().randomize();
 		
-		//Collections.shuffle(grid, new Random(seed));
+		int movesLeft = model.getLevel().getScore();
+		model.getLevel().setMovesLeft(movesLeft - 1);
+		
 		return true;
 	}
 }
