@@ -14,30 +14,29 @@ public class Cell {
 	}
 	
 	public Tile requestTile(Cell above){
-		
 		return above.tile;
 	}
 	
-	Tile getTile(){
+	public Tile getTile(){
 		return tile;
 	}
-	boolean getIsMarked(){
+	public boolean getIsMarked(){
 		return isMarked;
 	}
-	boolean getIsEmpty(){
+	public boolean getIsEmpty(){
 		return isEmpty;
 	}
-	boolean getIsEnabled(){
+	public boolean getIsEnabled(){
 		return isEnabled;
 	}
 	
-	void setIsMarked(boolean isMarked){
+	public void setIsMarked(boolean isMarked){
 		this.isMarked = isMarked;
 	}
-	void setIsEmpty(boolean isEmpty){
+	public void setIsEmpty(boolean isEmpty){
 		this.isEmpty = isEmpty;
 	}
-	void setIsEnabled(boolean isEnabled){
+	public void setIsEnabled(boolean isEnabled){
 		this.isEnabled  = isEnabled;
 	}
 	 

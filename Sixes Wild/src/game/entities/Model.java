@@ -17,15 +17,11 @@ public class Model {
 	}
 	
 	
-	Level getLevel(){
-		return currentLevel;
-		
-	}
-	void setLevel(Level level){
-		currentLevel = level;
-	}
+	public Level getLevel() { return currentLevel; }
+	
+	public void setLevel(Level level){ currentLevel = level; }
 	 
-	}
+}
 
 	
 

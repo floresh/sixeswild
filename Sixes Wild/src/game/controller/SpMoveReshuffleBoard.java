@@ -1,5 +1,9 @@
 package game.controller;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
+
 import game.boundary.Application;
 import game.entities.*;
 
@@ -13,6 +17,10 @@ public class SpMoveReshuffleBoard {
 	}
 	
 	public boolean process() {
-		return false;
+		//long seed = System.nanoTime();
+		//ArrayList<ArrayList<Cell>> grid = model.getLevel().getBoard().getColumns();
+		
+		//Collections.shuffle(grid, new Random(seed));
+		return true;
 	}
 }

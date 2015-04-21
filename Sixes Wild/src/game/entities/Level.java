@@ -17,27 +17,20 @@ public class Level {
 	public Level(Board board, int score, int time, int movesLeft, ArrayList<Integer> tileFrequency , ArrayList<Integer> multiplierFrequency){
 		
 	}
-	Board getBoard(){
-		return board;
-	}
-	int getScore(){
-		return score;
-	}
-	int getTime(){
-		return time;
-	}
-	int getMovesLeft(){
-		return movesLeft;
-	}
-	void setScore(int score){
-		 this.score = score;
-	}
-	void setTime(int time){
-		this.time = time;
-	}
-	void setMovesLeft(int movesLeft){
-		this.movesLeft =  movesLeft;
-	}
+	
+	public Board getBoard() { return board; }
+	
+	public int getScore() { return score; }
+	
+	public int getTime() { return time; }
+	
+	public int getMovesLeft() { return movesLeft; }
+	
+	public void setScore(int score) { this.score = score; }
+	
+	public void setTime(int time) { this.time = time; }
+	
+	public void setMovesLeft(int movesLeft) { this.movesLeft =  movesLeft; }
 	}
 
 	 
