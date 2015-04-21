@@ -1,10 +1,2 @@
-/game/
-/MainGame/
-<<<<<<< HEAD
-/LevelEditor/
-=======
-/ClassesThatWeNeedToAddAfterWedSub/
-/LevelEditor/
-/images/
->>>>>>> branch 'master' of https://github.com/floresh/sixeswild.git
-/editor/
+/game
+/MainGame

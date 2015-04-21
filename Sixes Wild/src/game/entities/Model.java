@@ -15,6 +15,16 @@ public class Model {
 	public Model(){
 		
 	}
+	
+	
+	Level getLevel(){
+		return currentLevel;
+		
+	}
+	void setLevel(Level level){
+		currentLevel = level;
+	}
+	 
 	}
 
 	
