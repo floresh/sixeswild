@@ -1,12 +1,13 @@
 package game.controller;
 
+import game.boundary.Application;
 import game.entities.*;
 public class ReturnToPreviousMenuController {
 
 	Model model;
-	SixesWild application;
+	Application application;
 	
-	public ReturnToPreviousMenuController(Model m, SixesWild app) {
+	public ReturnToPreviousMenuController(Model m, Application app) {
 		this.model = m;
 		this.application = app;
 	}

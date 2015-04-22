@@ -1,13 +1,14 @@
 package game.controller;
 
+import game.boundary.Application;
 import game.entities.*;
 
 public class WinLevelController {
 	
 	Model model;
-	SixesWild application;
+	Application application;
 	
-	public WinLevelController (Model m, SixesWild app) {
+	public WinLevelController (Model m, Application app) {
 		this.model = m;
 		this.application = app;
 	}

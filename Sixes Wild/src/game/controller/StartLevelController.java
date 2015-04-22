@@ -1,13 +1,14 @@
 package game.controller;
 
+import game.boundary.Application;
 import game.entities.*;
 
 public class StartLevelController {
 
 	Model model;
-	SixesWild application;
+	Application application;
 	
-	public StartLevelController (Model m, SixesWild app) {
+	public StartLevelController (Model m, Application app) {
 		this.model = m;
 		this.application = app;
 	}

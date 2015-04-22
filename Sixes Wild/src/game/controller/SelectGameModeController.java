@@ -1,13 +1,14 @@
 package game.controller;
 
+import game.boundary.Application;
 import game.entities.*;
 
 public class SelectGameModeController {
 	
 	Model model;
-	SixesWild application;
+	Application application;
 
-	public SelectGameModeController (Model m, SixesWild app) {
+	public SelectGameModeController (Model m, Application app) {
 		
 		this.model = m;
 		this.application = app;
