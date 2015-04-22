@@ -17,7 +17,7 @@ public class SplashScreen extends JFrame{
 	Image splash;
 	
 	public SplashScreen() {
-		setTitle("Sixes Wild Level Editor");
+		setTitle("Sixes Wild");
 		setSize(480, 480);
 		setLocationRelativeTo(null);
 		setVisible(true);

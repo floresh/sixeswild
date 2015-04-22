@@ -4,26 +4,30 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import javax.swing.LayoutStyle.ComponentPlacement;
-import java.awt.Choice;
-import javax.swing.JRadioButton;
-import javax.swing.JPanel;
+
 import java.awt.Color;
+
 import javax.swing.JMenuBar;
-import javax.swing.JMenu;
 import javax.swing.JPopupMenu;
+
 import java.awt.Component;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import javax.swing.SwingConstants;
+
 import javax.swing.JTextField;
-import javax.swing.JTextArea;
 import javax.swing.JLabel;
+
 import java.awt.Font;
+
 import javax.swing.JScrollBar;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JFormattedTextField;
 import javax.swing.JSlider;
+
+import editor.model.LevelEditorModel;
+import game.entities.Board;
+import game.entities.Level;
 
 
 public class LevelEditorScreen extends JFrame {
