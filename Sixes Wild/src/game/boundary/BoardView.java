@@ -15,5 +15,5 @@ import javax.swing.SwingConstants;
 public class BoardView extends JPanel{
 	public BoardView() {
 
-}
 	}
+}

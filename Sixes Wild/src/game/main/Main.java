@@ -1,7 +1,9 @@
 package game.main;
 
 
+import game.boundary.Application;
 import game.boundary.SplashScreen;
+import game.entities.Model;
 
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -21,6 +23,7 @@ public class Main {
         		IllegalAccessException | 
         		UnsupportedLookAndFeelException ex) {
         }
-		new SplashScreen();
+		Model model = new Model();
+		Application applicaiton = new Application(model);
 	}
 }
