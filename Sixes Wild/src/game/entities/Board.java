@@ -5,10 +5,15 @@ import java.util.Arrays;
 
 
 public class Board {
+
+	
+	
+	public Cell[][] cells = new Cell[10][9];
+	protected Level level;
+
 	ArrayList<Cell> column = new ArrayList<Cell>();
 	ArrayList<Arrays> columns = new ArrayList<Arrays>();
-	Level level;
-	
+
 	public Board(){
 		
 	}

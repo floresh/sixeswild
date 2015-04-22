@@ -26,6 +26,13 @@ import javax.swing.JFormattedTextField;
 import javax.swing.JSlider;
 
 
+import editor.controller.ToggleCellController;
+import editor.model.LevelEditorModel;
+import game.entities.Board;
+import game.entities.Level;
+
+
+
 public class LevelEditorScreen extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
@@ -33,11 +40,12 @@ public class LevelEditorScreen extends JFrame {
 	private JTextField textField_3;
 	private JTextField textField_4;
 	PreviewPanelView p;
+	protected LevelEditorModel model;
 
-	public LevelEditorScreen() {
+	public LevelEditorScreen(LevelEditorModel m) {
 		setTitle("Sixes Wild Level Editor");
 		setResizable(false);
-		
+		this.model = m;
 		textField = new JTextField();
 		textField.setText("0");
 		textField.setColumns(10);
@@ -83,217 +91,258 @@ public class LevelEditorScreen extends JFrame {
 		scrollBar_5.setOrientation(JScrollBar.HORIZONTAL);
 		
 		final JButton b00 = new JButton("");
+		b00.setBackground(Color.GREEN);
+		
 		b00.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {	
 				if(b00.getBackground() == Color.GREEN){
 					b00.setBackground(Color.RED);
+					new ToggleCellController(new LevelEditorApplication(), model, 0,0,false);
 				}
 				else{
 					b00.setBackground(Color.GREEN);
+					new ToggleCellController(new LevelEditorApplication(), model, 0,0,true);
 				}
 			}
 		});
-		
-		b00.setForeground(Color.GREEN);
 		
 		JScrollBar scrollBar = new JScrollBar();
 		scrollBar.setOrientation(JScrollBar.HORIZONTAL);
 		
-		JButton b10 = new JButton("");
-		b10.setForeground(Color.GREEN);
+		final JButton b10 = new JButton("");
+		b10.setBackground(Color.GREEN);
 		
-		JButton b30 = new JButton("");
-		b30.setForeground(Color.GREEN);
+		b10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {	
+				if(b10.getBackground() == Color.GREEN){
+					b10.setBackground(Color.RED);
+					new ToggleCellController(new LevelEditorApplication(), model, 1,0,false);
+				}
+				else{
+					b10.setBackground(Color.GREEN);
+					new ToggleCellController(new LevelEditorApplication(), model, 1,0,true);
+				}
+			}
+		});
 		
-		JButton b20 = new JButton("");
-		b20.setForeground(Color.GREEN);
+		final JButton b30 = new JButton("");
+		b30.setBackground(Color.GREEN);
 		
-		JButton b21 = new JButton("");
-		b21.setForeground(Color.GREEN);
+		b30.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {	
+				if(b30.getBackground() == Color.GREEN){
+					b30.setBackground(Color.RED);
+					new ToggleCellController(new LevelEditorApplication(), model, 3,0,false);
+				}
+				else{
+					b30.setBackground(Color.GREEN);
+					new ToggleCellController(new LevelEditorApplication(), model, 3,0,true);
+				}
+			}
+		});
 		
-		JButton b31 = new JButton("");
-		b31.setForeground(Color.GREEN);
+		final JButton b20 = new JButton("");
+		b20.setBackground(Color.GREEN);
 		
-		JButton b32 = new JButton("");
-		b32.setForeground(Color.GREEN);
+		b20.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {	
+				if(b20.getBackground() == Color.GREEN){
+					b20.setBackground(Color.RED);
+					new ToggleCellController(new LevelEditorApplication(), model, 2,0,false);
+				}
+				else{
+					b20.setBackground(Color.GREEN);
+					new ToggleCellController(new LevelEditorApplication(), model, 2,0,true);
+				}
+			}
+		});
 		
-		JButton b22 = new JButton("");
-		b22.setForeground(Color.GREEN);
+		final JButton b21 = new JButton("");
+		b21.setBackground(Color.GREEN);
 		
-		JButton b23 = new JButton("");
-		b23.setForeground(Color.GREEN);
+		final JButton b31 = new JButton("");
+		b31.setBackground(Color.GREEN);
 		
-		JButton b33 = new JButton("");
-		b33.setForeground(Color.GREEN);
+		final JButton b32 = new JButton("");
+		b32.setBackground(Color.GREEN);
 		
-		JButton b34 = new JButton("");
-		b34.setForeground(Color.GREEN);
+		final JButton b22 = new JButton("");
+		b22.setBackground(Color.GREEN);
 		
-		JButton b24 = new JButton("");
-		b24.setForeground(Color.GREEN);
+		final JButton b23 = new JButton("");
+		b23.setBackground(Color.GREEN);
 		
-		JButton b25 = new JButton("");
-		b25.setForeground(Color.GREEN);
+		final JButton b33 = new JButton("");
+		b33.setBackground(Color.GREEN);
 		
-		JButton b35 = new JButton("");
-		b35.setForeground(Color.GREEN);
+		final JButton b34 = new JButton("");
+		b34.setBackground(Color.GREEN);
 		
-		JButton b36 = new JButton("");
-		b36.setForeground(Color.GREEN);
+		final JButton b24 = new JButton("");
+		b24.setBackground(Color.GREEN);
 		
-		JButton b26 = new JButton("");
-		b26.setForeground(Color.GREEN);
+		final JButton b25 = new JButton("");
+		b25.setBackground(Color.GREEN);
 		
-		JButton b27 = new JButton("");
+		final JButton b35 = new JButton("");
+		b35.setBackground(Color.GREEN);
+		
+		final JButton b36 = new JButton("");
+		b36.setBackground(Color.GREEN);
+		
+		final JButton b26 = new JButton("");
+		b26.setBackground(Color.GREEN);
+		
+		final JButton b27 = new JButton("");
 		b27.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		b27.setForeground(Color.GREEN);
+		b27.setBackground(Color.GREEN);
 		
-		JButton b37 = new JButton("");
-		b37.setForeground(Color.GREEN);
+		final JButton b37 = new JButton("");
+		b37.setBackground(Color.GREEN);
 		
-		JButton b38 = new JButton("");
-		b38.setForeground(Color.GREEN);
+		final JButton b38 = new JButton("");
+		b38.setBackground(Color.GREEN);
 		
-		JButton b28 = new JButton("");
-		b28.setForeground(Color.GREEN);
+		final JButton b28 = new JButton("");
+		b28.setBackground(Color.GREEN);
 		
-		JButton b50 = new JButton("");
-		b50.setForeground(Color.GREEN);
+		final JButton b50 = new JButton("");
+		b50.setBackground(Color.GREEN);
 		
-		JButton b40 = new JButton("");
-		b40.setForeground(Color.GREEN);
+		final JButton b40 = new JButton("");
+		b40.setBackground(Color.GREEN);
 		
-		JButton b41 = new JButton("");
-		b41.setForeground(Color.GREEN);
+		final JButton b41 = new JButton("");
+		b41.setBackground(Color.GREEN);
 		
-		JButton b51 = new JButton("");
-		b51.setForeground(Color.GREEN);
+		final JButton b51 = new JButton("");
+		b51.setBackground(Color.GREEN);
 		
-		JButton b52 = new JButton("");
-		b52.setForeground(Color.GREEN);
+		final JButton b52 = new JButton("");
+		b52.setBackground(Color.GREEN);
 		
-		JButton b42 = new JButton("");
-		b42.setForeground(Color.GREEN);
+		final JButton b42 = new JButton("");
+		b42.setBackground(Color.GREEN);
 		
-		JButton b43 = new JButton("");
-		b43.setForeground(Color.GREEN);
+		final JButton b43 = new JButton("");
+		b43.setBackground(Color.GREEN);
 		
-		JButton b53 = new JButton("");
-		b53.setForeground(Color.GREEN);
+		final JButton b53 = new JButton("");
+		b53.setBackground(Color.GREEN);
 		
-		JButton b54 = new JButton("");
-		b54.setForeground(Color.GREEN);
+		final JButton b54 = new JButton("");
+		b54.setBackground(Color.GREEN);
 		
-		JButton b44 = new JButton("");
-		b44.setForeground(Color.GREEN);
+		final JButton b44 = new JButton("");
+		b44.setBackground(Color.GREEN);
 		
-		JButton b45 = new JButton("");
-		b45.setForeground(Color.GREEN);
+		final JButton b45 = new JButton("");
+		b45.setBackground(Color.GREEN);
 		
-		JButton b55 = new JButton("");
-		b55.setForeground(Color.GREEN);
+		final JButton b55 = new JButton("");
+		b55.setBackground(Color.GREEN);
 		
-		JButton b56 = new JButton("");
-		b56.setForeground(Color.GREEN);
+		final JButton b56 = new JButton("");
+		b56.setBackground(Color.GREEN);
 		
-		JButton b46 = new JButton("");
-		b46.setForeground(Color.GREEN);
+		final JButton b46 = new JButton("");
+		b46.setBackground(Color.GREEN);
 		
-		JButton b47 = new JButton("");
-		b47.setForeground(Color.GREEN);
+		final JButton b47 = new JButton("");
+		b47.setBackground(Color.GREEN);
 		
-		JButton b57 = new JButton("");
-		b57.setForeground(Color.GREEN);
+		final JButton b57 = new JButton("");
+		b57.setBackground(Color.GREEN);
 		
-		JButton b58 = new JButton("");
-		b58.setForeground(Color.GREEN);
+		final JButton b58 = new JButton("");
+		b58.setBackground(Color.GREEN);
 		
-		JButton b48 = new JButton("");
-		b48.setForeground(Color.GREEN);
+		final JButton b48 = new JButton("");
+		b48.setBackground(Color.GREEN);
 		
-		JButton b70 = new JButton("");
-		b70.setForeground(Color.GREEN);
+		final JButton b70 = new JButton("");
+		b70.setBackground(Color.GREEN);
 		
-		JButton b60 = new JButton("");
-		b60.setForeground(Color.GREEN);
+		final JButton b60 = new JButton("");
+		b60.setBackground(Color.GREEN);
 		
-		JButton b61 = new JButton("");
-		b61.setForeground(Color.GREEN);
+		final JButton b61 = new JButton("");
+		b61.setBackground(Color.GREEN);
 		
-		JButton b71 = new JButton("");
-		b71.setForeground(Color.GREEN);
+		final JButton b71 = new JButton("");
+		b71.setBackground(Color.GREEN);
 		
-		JButton b72 = new JButton("");
-		b72.setForeground(Color.GREEN);
+		final JButton b72 = new JButton("");
+		b72.setBackground(Color.GREEN);
 		
-		JButton b62 = new JButton("");
-		b62.setForeground(Color.GREEN);
+		final JButton b62 = new JButton("");
+		b62.setBackground(Color.GREEN);
 		
-		JButton b63 = new JButton("");
-		b63.setForeground(Color.GREEN);
+		final JButton b63 = new JButton("");
+		b63.setBackground(Color.GREEN);
 		
-		JButton b73 = new JButton("");
-		b73.setForeground(Color.GREEN);
+		final JButton b73 = new JButton("");
+		b73.setBackground(Color.GREEN);
 		
-		JButton b74 = new JButton("");
-		b74.setForeground(Color.GREEN);
+		final JButton b74 = new JButton("");
+		b74.setBackground(Color.GREEN);
 		
-		JButton b64 = new JButton("");
-		b64.setForeground(Color.GREEN);
+		final JButton b64 = new JButton("");
+		b64.setBackground(Color.GREEN);
 		
-		JButton b65 = new JButton("");
-		b65.setForeground(Color.GREEN);
+		final JButton b65 = new JButton("");
+		b65.setBackground(Color.GREEN);
 		
-		JButton b75 = new JButton("");
-		b75.setForeground(Color.GREEN);
+		final JButton b75 = new JButton("");
+		b75.setBackground(Color.GREEN);
 		
-		JButton b76 = new JButton("");
-		b76.setForeground(Color.GREEN);
+		final JButton b76 = new JButton("");
+		b76.setBackground(Color.GREEN);
 		
-		JButton b66 = new JButton("");
-		b66.setForeground(Color.GREEN);
+		final JButton b66 = new JButton("");
+		b66.setBackground(Color.GREEN);
 		
-		JButton b67 = new JButton("");
-		b67.setForeground(Color.GREEN);
+		final JButton b67 = new JButton("");
+		b67.setBackground(Color.GREEN);
 		
-		JButton b77 = new JButton("");
-		b77.setForeground(Color.GREEN);
+		final JButton b77 = new JButton("");
+		b77.setBackground(Color.GREEN);
 		
-		JButton b78 = new JButton("");
-		b78.setForeground(Color.GREEN);
+		final JButton b78 = new JButton("");
+		b78.setBackground(Color.GREEN);
 		
-		JButton b68 = new JButton("");
-		b68.setForeground(Color.GREEN);
+		final JButton b68 = new JButton("");
+		b68.setBackground(Color.GREEN);
 		
-		JButton b80 = new JButton("");
-		b80.setForeground(Color.GREEN);
+		final JButton b80 = new JButton("");
+		b80.setBackground(Color.GREEN);
 		
-		JButton b81 = new JButton("");
-		b81.setForeground(Color.GREEN);
+		final JButton b81 = new JButton("");
+		b81.setBackground(Color.GREEN);
 		
-		JButton b82 = new JButton("");
-		b82.setForeground(Color.GREEN);
+		final JButton b82 = new JButton("");
+		b82.setBackground(Color.GREEN);
 		
-		JButton b83 = new JButton("");
-		b83.setForeground(Color.GREEN);
+		final JButton b83 = new JButton("");
+		b83.setBackground(Color.GREEN);
 		
-		JButton b84 = new JButton("");
-		b84.setForeground(Color.GREEN);
+		final JButton b84 = new JButton("");
+		b84.setBackground(Color.GREEN);
 		
-		JButton b85 = new JButton("");
-		b85.setForeground(Color.GREEN);
+		final JButton b85 = new JButton("");
+		b85.setBackground(Color.GREEN);
 		
-		JButton b86 = new JButton("");
-		b86.setForeground(Color.GREEN);
+		final JButton b86 = new JButton("");
+		b86.setBackground(Color.GREEN);
 		
-		JButton b87 = new JButton("");
-		b87.setForeground(Color.GREEN);
+		final JButton b87 = new JButton("");
+		b87.setBackground(Color.GREEN);
 		
-		JButton b88 = new JButton("");
-		b88.setForeground(Color.GREEN);
+		final JButton b88 = new JButton("");
+		b88.setBackground(Color.GREEN);
 		
 		JLabel lblScoreThresholds = new JLabel("Score Thresholds");
 		lblScoreThresholds.setFont(new Font("Old English Text MT", Font.PLAIN, 21));
@@ -346,53 +395,53 @@ public class LevelEditorScreen extends JFrame {
 		textField_4.setText("0");
 		textField_4.setColumns(10);
 		
-		JButton b11 = new JButton("");
-		b11.setForeground(Color.GREEN);
+		final JButton b11 = new JButton("");
+		b11.setBackground(Color.GREEN);
 		
-		JButton b12 = new JButton("");
-		b12.setForeground(Color.GREEN);
+		final JButton b12 = new JButton("");
+		b12.setBackground(Color.GREEN);
 		
-		JButton b13 = new JButton("");
-		b13.setForeground(Color.GREEN);
+		final JButton b13 = new JButton("");
+		b13.setBackground(Color.GREEN);
 		
-		JButton b14 = new JButton("");
-		b14.setForeground(Color.GREEN);
+		final JButton b14 = new JButton("");
+		b14.setBackground(Color.GREEN);
 		
-		JButton b15 = new JButton("");
-		b15.setForeground(Color.GREEN);
+		final JButton b15 = new JButton("");
+		b15.setBackground(Color.GREEN);
 		
-		JButton b16 = new JButton("");
-		b16.setForeground(Color.GREEN);
+		final JButton b16 = new JButton("");
+		b16.setBackground(Color.GREEN);
 		
-		JButton b17 = new JButton("");
-		b17.setForeground(Color.GREEN);
+		final JButton b17 = new JButton("");
+		b17.setBackground(Color.GREEN);
 		
-		JButton b18 = new JButton("");
-		b18.setForeground(Color.GREEN);
+		final JButton b18 = new JButton("");
+		b18.setBackground(Color.GREEN);
 		
-		JButton b01 = new JButton("");
-		b01.setForeground(Color.GREEN);
+		final JButton b01 = new JButton("");
+		b01.setBackground(Color.GREEN);
 		
-		JButton b02 = new JButton("");
-		b02.setForeground(Color.GREEN);
+		final JButton b02 = new JButton("");
+		b02.setBackground(Color.GREEN);
 		
-		JButton b03 = new JButton("");
-		b03.setForeground(Color.GREEN);
+		final JButton b03 = new JButton("");
+		b03.setBackground(Color.GREEN);
 		
-		JButton b04 = new JButton("");
-		b04.setForeground(Color.GREEN);
+		final JButton b04 = new JButton("");
+		b04.setBackground(Color.GREEN);
 		
-		JButton b05 = new JButton("");
-		b05.setForeground(Color.GREEN);
+		final JButton b05 = new JButton("");
+		b05.setBackground(Color.GREEN);
 		
-		JButton b06 = new JButton("");
-		b06.setForeground(Color.GREEN);
+		final JButton b06 = new JButton("");
+		b06.setBackground(Color.GREEN);
 		
-		JButton b07 = new JButton("");
-		b07.setForeground(Color.GREEN);
+		final JButton b07 = new JButton("");
+		b07.setBackground(Color.GREEN);
 		
-		JButton b08 = new JButton("");
-		b08.setForeground(Color.GREEN);
+		final JButton b08 = new JButton("");
+		b08.setBackground(Color.GREEN);
 		
 		JButton btnEnabledisableCell = new JButton("Enable/Disable Cell");
 		
