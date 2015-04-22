@@ -24,8 +24,10 @@ public class Board {
 		}
 		
 	}
-	public void setBoard(Cell[][] c){
-		cells = c;
+	public void setBoardTiles(Tile[][] t){
+		
+		//TODO 
+		
 	}
 	
 	
@@ -81,9 +83,17 @@ public void initialize(ArrayList<Integer> tileFrequency, ArrayList<Integer> mult
 	
 	public void gravity()
 	{
+		ArrayList<Cell> arrayHelp = new ArrayList<Cell>();
 		
+		for(int i = 0 ; i < 9; i++){
+			for(int j = 0; j < 10 ; j++){
+				arrayHelp.add(cells[j][i]);
+			}
+			cells[10][i].gravity(arrayHelp);
+		}
 		
 	}
+	
 	public static int randInt(int min, int max) {
 		  
 	    Random rand = new Random();

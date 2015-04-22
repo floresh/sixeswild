@@ -17,6 +17,8 @@ public class Level {
 	 
 	public Level(Board board, int score, int time, int movesLeft, ArrayList<Integer> tileFrequency , ArrayList<Integer> multiplierFrequency){
 		
+		
+		
 	}
 	
 	
