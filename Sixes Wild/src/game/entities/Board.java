@@ -1,36 +1,24 @@
 package game.entities;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 
 public class Board {
-	
-	
-	protected Cell[][] cells = new Cell[10][9];
-	protected Level level;
+	ArrayList<Cell> column = new ArrayList<Cell>();
+	ArrayList<Arrays> columns = new ArrayList<Arrays>();
+	Level level;
 	
 	public Board(){
-		Tile tile = new Tile(1,1);
-		
-		
 		
 	}
 	
-	public Board(Level level){
-		this.level = level;
-		
-		for(int i = 0 ; i < 10; i++){
-			for(int j = 0; i < 9; j++){
-				cells[i][j] =new Cell(new Tile(1,1),true, false, false);
-			}
-		}
+	public Board(Level level, ArrayList<Cell> column ,ArrayList<Arrays> columns, ArrayList<Integer> tileFrequency ,ArrayList<Integer> multiplierFrequency){
 		
 	}
 	
 	
-  
+ 
 	
 	public void gravity()
 	{
@@ -41,8 +29,9 @@ public class Board {
 		
 	}
 	
-	
+	ArrayList<Arrays> getColumns(){
+		return columns;
 		
 	}
 
-
+}

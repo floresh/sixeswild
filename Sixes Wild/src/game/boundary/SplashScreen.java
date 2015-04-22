@@ -18,7 +18,7 @@ public class SplashScreen extends JFrame{
 	
 	public SplashScreen() {
 		setTitle("Sixes Wild");
-		setSize(480, 480);
+		setSize(800,800);
 		setLocationRelativeTo(null);
 		setVisible(true);
 		setResizable(false);

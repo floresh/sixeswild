@@ -129,7 +129,7 @@ public class EliminationLevelSelection extends JFrame {
 										.addComponent(btnNewButton_2)
 										.addGap(83)));
 		getContentPane().setLayout(groupLayout);
-		setSize(650, 420);
+		setSize(800,800);
 		setLocationRelativeTo(null);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

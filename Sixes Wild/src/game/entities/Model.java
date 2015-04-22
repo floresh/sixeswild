@@ -15,7 +15,7 @@ public class Model {
 	public Model(){
 		
 	}
-	 
+	
 	
 	public Level getLevel() { return currentLevel; }
 	

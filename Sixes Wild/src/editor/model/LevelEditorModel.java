@@ -1,15 +1,12 @@
 package editor.model;
 
-import game.entities.Board;
 import game.entities.Level;
 
 public class LevelEditorModel {
 	Level level;
-	Board board;
 	
-	public LevelEditorModel(Level l, Board b){
+	public LevelEditorModel(Level l){
 		this.level = l;
-		this.board = b;
 	}
 	
 	Level getLevel(){
@@ -18,14 +15,6 @@ public class LevelEditorModel {
 	
 	void setLevel(Level l){
 		this.level = l;
-	}
-	
-	Board getBoard(){
-		return this.board;
-	}
-	
-	void setBoard(Board b){
-		this.board = b;
 	}
 	
 }

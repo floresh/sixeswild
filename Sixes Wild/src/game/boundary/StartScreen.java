@@ -50,7 +50,7 @@ public class StartScreen extends JFrame {
 		
 		add(panel);
 
-		setSize(500, 450);
+		setSize(800,800);
 		setLocationRelativeTo(null);
 		setVisible(true);
 		setResizable(false);
