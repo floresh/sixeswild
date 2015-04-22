@@ -45,6 +45,6 @@ public class Move {
 		model.getLevel().getBoard().gravity();
 		
 		
-		return false;
+		return true;
 	}
 }

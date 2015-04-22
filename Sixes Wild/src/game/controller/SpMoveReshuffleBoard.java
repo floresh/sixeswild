@@ -1,6 +1,9 @@
 package game.controller;
 
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 import game.boundary.Application;
 import game.entities.*;
 
@@ -16,7 +19,9 @@ public class SpMoveReshuffleBoard {
 	}
 	
 	public boolean process() {
-		model.getLevel().getBoard().randomize();
+		ArrayList<Tile> tiles = model.getLevel().getBoard().getTiles();
+		Collections.shuffle(tiles);
+		model.getLevel().getBoard().setTiles(tiles);
 		
 		movesLeft.process();
 		
