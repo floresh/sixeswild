@@ -6,14 +6,17 @@ import javax.swing.GroupLayout.Alignment;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 
 public class GameModeScreen extends JFrame{
 	private JButton backButton;
 	public GameModeScreen() {
 		super("Game Mode Select");
+		setResizable(false);
 		
 		backButton = new JButton("BACK");
+		backButton.setBounds(94, 75, 63, 25);
 		backButton.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
@@ -23,6 +26,7 @@ public class GameModeScreen extends JFrame{
 		});
 		
 		JButton btnNewButton_1 = new JButton("PUZZLE");
+		btnNewButton_1.setBounds(216, 268, 97, 25);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new PuzzleLevelSelection();
@@ -31,6 +35,7 @@ public class GameModeScreen extends JFrame{
 		});
 		
 		JButton btnNewButton_2 = new JButton("ELIMINATION");
+		btnNewButton_2.setBounds(434, 268, 118, 25);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new EliminationLevelSelection();
@@ -39,6 +44,7 @@ public class GameModeScreen extends JFrame{
 		});
 		
 		JButton btnNewButton_3 = new JButton("LIGHTNING");
+		btnNewButton_3.setBounds(214, 413, 99, 25);
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new LightningLevelSelection();
@@ -47,6 +53,7 @@ public class GameModeScreen extends JFrame{
 		});
 		
 		JButton btnNewButton_4 = new JButton("RELEASE");
+		btnNewButton_4.setBounds(434, 413, 117, 25);
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new ReleaseLevelSelection();
@@ -55,46 +62,14 @@ public class GameModeScreen extends JFrame{
 		});
 		
 		JButton btnNewButton_5 = new JButton("USER MADE");
-		GroupLayout groupLayout = new GroupLayout(getContentPane());
-		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(56)
-					.addComponent(backButton)
-					.addContainerGap(570, Short.MAX_VALUE))
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(175)
-					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
-						.addComponent(btnNewButton_1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(btnNewButton_3, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE))
-					.addGap(95)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(btnNewButton_4, GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
-						.addComponent(btnNewButton_2, GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE))
-					.addGap(215))
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(275)
-					.addComponent(btnNewButton_5)
-					.addContainerGap(321, Short.MAX_VALUE))
-		);
-		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(backButton)
-					.addGap(105)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btnNewButton_1)
-						.addComponent(btnNewButton_2))
-					.addGap(53)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btnNewButton_3)
-						.addComponent(btnNewButton_4))
-					.addGap(40)
-					.addComponent(btnNewButton_5)
-					.addGap(100))
-		);
-		getContentPane().setLayout(groupLayout);
+		btnNewButton_5.setBounds(322, 607, 101, 25);
+		getContentPane().setLayout(null);
+		getContentPane().add(backButton);
+		getContentPane().add(btnNewButton_3);
+		getContentPane().add(btnNewButton_1);
+		getContentPane().add(btnNewButton_2);
+		getContentPane().add(btnNewButton_4);
+		getContentPane().add(btnNewButton_5);
 
 		setSize(800,800);
 		setLocationRelativeTo(null);
