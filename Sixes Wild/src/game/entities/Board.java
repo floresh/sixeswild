@@ -24,9 +24,27 @@ public class Board {
 		}
 		
 	}
-	public void setBoardTiles(Tile[][] t){
+	
+	
+	public ArrayList<Tile> getTiles(){
+		ArrayList<Tile> tiles = new ArrayList<Tile>();
 		
-		//TODO 
+		for(int i = 1 ; i < 10; i++){
+			for(int j = 0; i < 9; j++){
+				tiles.add(cells[i][j].getTile());
+			}
+		}
+		return tiles;
+	}
+	public void setTiles(ArrayList<Tile> tile){
+		int count = 0;
+		
+		for(int i = 1 ; i < 10; i++){
+			for(int j = 0; i < 9; j++){
+				cells[i][j].setTile(tile.get(count));
+				count++;
+			}
+		}
 		
 	}
 	
