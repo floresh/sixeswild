@@ -1,8 +1,5 @@
 package game.controller;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
 
 import game.boundary.Application;
 import game.entities.*;
@@ -10,6 +7,8 @@ import game.entities.*;
 public class SpMoveReshuffleBoard {
 	Model model;
 	Application application;
+	
+	MovesLeftController movesLeft = new MovesLeftController(application, model);
 	
 	public SpMoveReshuffleBoard(Application app, Model m) {
 		this.model = m;
@@ -19,8 +18,7 @@ public class SpMoveReshuffleBoard {
 	public boolean process() {
 		model.getLevel().getBoard().randomize();
 		
-		int movesLeft = model.getLevel().getScore();
-		model.getLevel().setMovesLeft(movesLeft - 1);
+		movesLeft.process();
 		
 		return true;
 	}

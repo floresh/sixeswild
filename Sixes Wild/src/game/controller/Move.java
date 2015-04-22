@@ -10,6 +10,9 @@ public class Move {
 	Application application;
 	ArrayList<Cell> cells;
 	
+	ScoreController updateScore = new ScoreController(application, model);
+	MovesLeftController movesLeft = new MovesLeftController(application, model);
+	
 	public Move(Application app, Model m, ArrayList<Cell> cells) {
 		this.model = m;
 		this.application = app;
@@ -36,13 +39,10 @@ public class Move {
 		
 		if(subtotal != 6) { return false; }
 		
-		int score = model.getLevel().getScore();
-		int movesLeft = model.getLevel().getMovesLeft();;
+		movesLeft.process();
+		updateScore.process(total);
 		
-		model.getLevel().setScore(score + total);
-		model.getLevel().setMovesLeft(movesLeft - 1);
-		
-		//TODO: get tiles to fall down
+		model.getLevel().getBoard().gravity();
 		
 		
 		return false;

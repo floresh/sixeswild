@@ -36,12 +36,5 @@ import java.awt.Window.Type;
 import javax.swing.JProgressBar;
 
 public class LevelView extends JFrame{
-	public LevelView() {
-	BoardView bv = new BoardView();
-	bv.setResizable(false);
-	bv.setPreferredSize(new Dimension(660, 540));
-	this.setSize(350, 351);
-	this.getContentPane().add(bv);
-	this.pack();
-}
+
 }

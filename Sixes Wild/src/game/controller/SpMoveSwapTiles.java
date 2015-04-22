@@ -8,6 +8,8 @@ public class SpMoveSwapTiles {
 	Model model;
 	Application application;
 	
+	MovesLeftController movesLeft = new MovesLeftController(application, model);
+	
 	Tile tile1, tile2;
 	
 	public SpMoveSwapTiles(Application app, Model m, Tile tile1, Tile tile2) {
@@ -22,8 +24,7 @@ public class SpMoveSwapTiles {
 		tile1 = tile2;
 		tile2 = temp;
 		
-		int movesLeft = model.getLevel().getMovesLeft();
-		model.getLevel().setMovesLeft(movesLeft - 1);
+		movesLeft.process();
 		
 		return true;
 	}
