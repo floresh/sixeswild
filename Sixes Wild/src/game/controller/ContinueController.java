@@ -1,13 +1,12 @@
 package game.controller;
 
-import game.boundary.Application;
 import game.entities.*;
 
 public class ContinueController {
 	Model model;
-	Application application;
+	SixesWild application;
 	
-	public ContinueController(Application app, Model m) {
+	public ContinueController(SixesWild app, Model m) {
 		this.model = m;
 		this.application = app;
 	}

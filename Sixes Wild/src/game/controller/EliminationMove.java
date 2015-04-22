@@ -1,13 +1,12 @@
 package game.controller;
 
-import game.boundary.Application;
 import game.entities.*;
 
 public class EliminationMove {
 	Model model;
-	Application application;
+	SixesWild application;
 	
-	public EliminationMove(Application app, Model m) {
+	public EliminationMove(SixesWild app, Model m) {
 		this.model = m;
 		this.application = app;
 	}
