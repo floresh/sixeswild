@@ -1,17 +1,25 @@
 package game.controller;
 
+import game.boundary.Application;
 import game.entities.*;
 
 public class MovesLeftController {
 	Model model;
-	SixesWild application;
+	Application application;
 	
-	public MovesLeftController(SixesWild app, Model m) {
+	public MovesLeftController(Application app, Model m) {
 		this.model = m;
 		this.application = app;
 	}
 	
 	public boolean process() {
-		return false;
+		int movesLeft = model.getLevel().getMovesLeft();
+		model.getLevel().setMovesLeft(movesLeft - 1);
+		
+		if(movesLeft == 1) {
+			//TODO: end game
+		}
+		
+		return true;
 	}
 }

@@ -1,17 +1,27 @@
 package game.controller;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
+
+import game.boundary.Application;
 import game.entities.*;
 
 public class SpMoveReshuffleBoard {
 	Model model;
-	SixesWild application;
+	Application application;
 	
-	public SpMoveReshuffleBoard(SixesWild app, Model m) {
+	public SpMoveReshuffleBoard(Application app, Model m) {
 		this.model = m;
 		this.application = app;
 	}
 	
 	public boolean process() {
-		return false;
+		model.getLevel().getBoard().randomize();
+		
+		int movesLeft = model.getLevel().getScore();
+		model.getLevel().setMovesLeft(movesLeft - 1);
+		
+		return true;
 	}
 }

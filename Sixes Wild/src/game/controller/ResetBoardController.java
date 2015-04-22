@@ -1,12 +1,13 @@
 package game.controller;
 
+import game.boundary.Application;
 import game.entities.*;
 
 public class ResetBoardController {
 	Model model;
-	SixesWild application;
+	Application application;
 	
-	public ResetBoardController(SixesWild app, Model m) {
+	public ResetBoardController(Application app, Model m) {
 		this.model = m;
 		this.application = app;
 	}

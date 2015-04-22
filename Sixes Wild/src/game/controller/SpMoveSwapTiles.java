@@ -1,17 +1,30 @@
 package game.controller;
 
-import game.entities.*;
+import game.boundary.Application;
+import game.entities.Model;
+import game.entities.Tile;
 
 public class SpMoveSwapTiles {
 	Model model;
-	SixesWild application;
+	Application application;
 	
-	public SpMoveSwapTiles(SixesWild app, Model m) {
+	Tile tile1, tile2;
+	
+	public SpMoveSwapTiles(Application app, Model m, Tile tile1, Tile tile2) {
 		this.model = m;
 		this.application = app;
+		this.tile1 = tile1;
+		this.tile2 = tile2;
 	}
 	
 	public boolean process() {
-		return false;
+		Tile temp = tile1;
+		tile1 = tile2;
+		tile2 = temp;
+		
+		int movesLeft = model.getLevel().getMovesLeft();
+		model.getLevel().setMovesLeft(movesLeft - 1);
+		
+		return true;
 	}
 }

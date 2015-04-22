@@ -1,12 +1,13 @@
 package game.controller;
 
+import game.boundary.Application;
 import game.entities.*;
 
 public class TimeController {
 	Model model;
-	SixesWild application;
+	Application application;
 	
-	public TimeController(SixesWild app, Model m) {
+	public TimeController(Application app, Model m) {
 		this.model = m;
 		this.application = app;
 	}

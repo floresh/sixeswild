@@ -1,12 +1,13 @@
 package game.controller;
 
+import game.boundary.Application;
 import game.entities.*;
 
 public class ExitLevelController {
 	Model model;
-	SixesWild application;
+	Application application;
 	
-	public ExitLevelController(SixesWild app, Model m) {
+	public ExitLevelController(Application app, Model m) {
 		this.model = m;
 		this.application = app;
 	}

@@ -1,12 +1,13 @@
 package game.controller;
 
+import game.boundary.Application;
 import game.entities.*;
 
 public class PauseController {
 	Model model;
-	SixesWild application;
+	Application application;
 	
-	public PauseController(SixesWild app, Model m) {
+	public PauseController(Application app, Model m) {
 		this.model = m;
 		this.application = app;
 	}
