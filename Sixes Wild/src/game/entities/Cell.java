@@ -6,16 +6,19 @@ public class Cell {
 	boolean isMarked;
 	boolean isEmpty;
 	boolean isEnabled;
-	Cell above;
 	
 	
-	public Cell(boolean isEnabled){
+	
+	public Cell(Tile tile, boolean isEnabled, boolean isMarked, boolean isEmpty){
 		
+		 this.tile = tile;
+		 this.isEnabled = isEnabled;
+		 this.isMarked = isMarked;
+		 this.isEmpty = isEmpty;
+		 
 	}
 	
-	public Tile requestTile(Cell above){
-		return above.tile;
-	}
+
 	
 	public Tile getTile(){
 		return tile;
@@ -28,6 +31,9 @@ public class Cell {
 	}
 	public boolean getIsEnabled(){
 		return isEnabled;
+	}
+	public void setTile(Tile t){
+		tile = t;
 	}
 	
 	public void setIsMarked(boolean isMarked){

@@ -1,5 +1,6 @@
 package game.entities;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Level {
 	
@@ -13,10 +14,14 @@ public class Level {
 	public Level(){
 		
 	}
-	
+	 
 	public Level(Board board, int score, int time, int movesLeft, ArrayList<Integer> tileFrequency , ArrayList<Integer> multiplierFrequency){
 		
 	}
+	
+	
+	
+	
 	
 	public Board getBoard() { return board; }
 	
@@ -31,7 +36,18 @@ public class Level {
 	public void setTime(int time) { this.time = time; }
 	
 	public void setMovesLeft(int movesLeft) { this.movesLeft =  movesLeft; }
-	}
+	
+	public void setTileFrequency(ArrayList<Integer> f){this.tileFrequency = f;}
+	
+	public void setMultiplierFrequency(ArrayList<Integer> f){this.multiplierFrequency = f;}
+	
+	
+	
+	
+
+
+
+}
 
 	 
 	
