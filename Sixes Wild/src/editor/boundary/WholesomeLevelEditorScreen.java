@@ -16,17 +16,10 @@ import javax.swing.JTextField;
 import javax.swing.JSlider;
 
 import editor.model.LevelEditorModel;
+import javax.swing.JSpinner;
 
 public class WholesomeLevelEditorScreen extends JFrame{
 	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
 	LevelEditorModel m;
 	public WholesomeLevelEditorScreen(LevelEditorModel m) {
 		setTitle("Sixes Wild Level Editor");
@@ -147,27 +140,12 @@ public class WholesomeLevelEditorScreen extends JFrame{
 		getContentPane().add(lblStar);
 		
 		JLabel lblStar_1 = new JLabel("2 Stars:");
-		lblStar_1.setBounds(36, 507, 56, 16);
+		lblStar_1.setBounds(36, 518, 56, 16);
 		getContentPane().add(lblStar_1);
 		
 		JLabel lblStars = new JLabel("3 Stars:");
-		lblStars.setBounds(36, 556, 56, 16);
+		lblStars.setBounds(36, 572, 56, 16);
 		getContentPane().add(lblStars);
-		
-		textField_1 = new JTextField();
-		textField_1.setBounds(109, 461, 116, 22);
-		getContentPane().add(textField_1);
-		textField_1.setColumns(10);
-		
-		textField_2 = new JTextField();
-		textField_2.setBounds(109, 504, 116, 22);
-		getContentPane().add(textField_2);
-		textField_2.setColumns(10);
-		
-		textField_3 = new JTextField();
-		textField_3.setBounds(109, 553, 116, 22);
-		getContentPane().add(textField_3);
-		textField_3.setColumns(10);
 		
 		JLabel label_6 = new JLabel("1:  0                                                             100");
 		label_6.setBounds(415, 164, 254, 16);
@@ -197,46 +175,53 @@ public class WholesomeLevelEditorScreen extends JFrame{
 		lblNumberOfMoves.setBounds(393, 461, 116, 16);
 		getContentPane().add(lblNumberOfMoves);
 		
-		textField_4 = new JTextField();
-		textField_4.setBounds(512, 458, 116, 22);
-		getContentPane().add(textField_4);
-		textField_4.setColumns(10);
-		
 		JLabel lblMaximumTime = new JLabel("Maximum Time:");
-		lblMaximumTime.setBounds(403, 492, 110, 16);
+		lblMaximumTime.setBounds(403, 515, 110, 16);
 		getContentPane().add(lblMaximumTime);
 		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(513, 489, 116, 22);
-		getContentPane().add(textField_5);
-		
 		JLabel lblSpecialMoveRemove = new JLabel("Special Move: Remove Tile:");
-		lblSpecialMoveRemove.setBounds(338, 521, 186, 16);
+		lblSpecialMoveRemove.setBounds(338, 572, 186, 16);
 		getContentPane().add(lblSpecialMoveRemove);
 		
 		JLabel lblSpecialMoveReshuffle = new JLabel("Special Move: Reshuffle:");
-		lblSpecialMoveReshuffle.setBounds(354, 553, 155, 16);
+		lblSpecialMoveReshuffle.setBounds(354, 625, 155, 16);
 		getContentPane().add(lblSpecialMoveReshuffle);
 		
 		JLabel lblSpecialMoveSwap = new JLabel("Special Move: Swap:");
-		lblSpecialMoveSwap.setBounds(375, 582, 134, 16);
+		lblSpecialMoveSwap.setBounds(375, 675, 134, 16);
 		getContentPane().add(lblSpecialMoveSwap);
 		
-		textField_6 = new JTextField();
-		textField_6.setColumns(10);
-		textField_6.setBounds(512, 521, 116, 22);
-		getContentPane().add(textField_6);
+		JSpinner spinner = new JSpinner();
+		spinner.setBounds(91, 452, 134, 35);
+		getContentPane().add(spinner);
 		
-		textField_7 = new JTextField();
-		textField_7.setColumns(10);
-		textField_7.setBounds(512, 550, 116, 22);
-		getContentPane().add(textField_7);
+		JSpinner spinner_1 = new JSpinner();
+		spinner_1.setBounds(91, 509, 134, 35);
+		getContentPane().add(spinner_1);
 		
-		textField_8 = new JTextField();
-		textField_8.setColumns(10);
-		textField_8.setBounds(512, 579, 116, 22);
-		getContentPane().add(textField_8);
+		JSpinner spinner_2 = new JSpinner();
+		spinner_2.setBounds(91, 563, 134, 35);
+		getContentPane().add(spinner_2);
+		
+		JSpinner spinner_3 = new JSpinner();
+		spinner_3.setBounds(505, 454, 134, 35);
+		getContentPane().add(spinner_3);
+		
+		JSpinner spinner_4 = new JSpinner();
+		spinner_4.setBounds(505, 509, 134, 35);
+		getContentPane().add(spinner_4);
+		
+		JSpinner spinner_5 = new JSpinner();
+		spinner_5.setBounds(505, 563, 134, 35);
+		getContentPane().add(spinner_5);
+		
+		JSpinner spinner_6 = new JSpinner();
+		spinner_6.setBounds(505, 616, 134, 35);
+		getContentPane().add(spinner_6);
+		
+		JSpinner spinner_7 = new JSpinner();
+		spinner_7.setBounds(505, 669, 134, 35);
+		getContentPane().add(spinner_7);
 		
 		final JButton[][] buttArray = new JButton[9][9];
 		//JButton b00 = new JButton("");
