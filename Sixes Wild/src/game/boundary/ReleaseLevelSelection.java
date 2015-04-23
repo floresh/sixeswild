@@ -17,16 +17,24 @@ import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 
 import editor.boundary.LevelEditorScreen;
+import game.controller.SelectPlayController;
+import game.entities.Model;
 
 
 public class ReleaseLevelSelection extends JFrame{
-	public ReleaseLevelSelection() {
-		//oooooooo
+	Model model;
+	Application application;
+	
+	public ReleaseLevelSelection(Application app, Model m) {
 		super("Release Level Selection");
+		
+		this.model = m;
+		this.application = app;
+		
 		JButton btnNewButton = new JButton("BACK");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new GameModeScreen();
+				new SelectPlayController(application, model);
 				dispose();
 			}
 		});
