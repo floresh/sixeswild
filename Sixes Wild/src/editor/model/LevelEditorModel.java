@@ -1,8 +1,10 @@
 package editor.model;
 
+import java.io.Serializable;
+
 import game.entities.Level;
 
-public class LevelEditorModel {
+public class LevelEditorModel implements Serializable {
 	Level level;
 	
 	public LevelEditorModel(Level l){

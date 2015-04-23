@@ -52,7 +52,7 @@ public class WholesomeLevelEditorScreen extends JFrame{
 	JMenu levelActions;
 	JMenu editActions;
 
-	JMenuItem saveLevel;
+	JButton saveLevel;
 	JMenuItem clearLevel;
 	JMenuItem previewLevel;
 
@@ -102,7 +102,7 @@ public class WholesomeLevelEditorScreen extends JFrame{
 		menuBar.add(levelActions);
 		menuBar.add(editActions);
 
-		saveLevel = new JMenuItem("Save Level");
+		saveLevel = new JButton("Save Level");
 		saveLevel.addActionListener(new SaveLevelController(this));
 
 		clearLevel = new JMenuItem("Clear Level");
@@ -177,12 +177,7 @@ public class WholesomeLevelEditorScreen extends JFrame{
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
-		JButton btnNewButton = new JButton("Save Level");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		menuBar.add(btnNewButton);
+		menuBar.add(saveLevel);
 		
 		JButton btnNewButton_1 = new JButton("Undo");
 		menuBar.add(btnNewButton_1);

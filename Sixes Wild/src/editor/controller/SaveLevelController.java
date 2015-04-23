@@ -9,8 +9,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 import editor.boundary.WholesomeLevelEditorScreen;
 import editor.model.LevelEditorModel;
+import game.entities.Level;
 
 public class SaveLevelController implements ActionListener {
 	WholesomeLevelEditorScreen screen;
@@ -23,7 +26,13 @@ public class SaveLevelController implements ActionListener {
 	
 	public boolean process(){
 		if(getTileFrequencies() && getMultiplierFrequencies() && getRules() && getStars()){
-			save(openFile());
+			model = new LevelEditorModel(new Level(tileFrequencies, multiplierFrequencies, stars, rules));
+			
+			if(save(openFile())){
+				JOptionPane.showMessageDialog(null, "Saved!");
+			}else{
+				JOptionPane.showMessageDialog(null, "Not Saved!");
+			}
 		}
 		return false;
 	}
