@@ -53,14 +53,10 @@ public class WholesomeLevelEditorScreen extends JFrame{
 	JMenu editActions;
 
 	JButton saveLevel;
-	JMenuItem clearLevel;
-	JMenuItem previewLevel;
-
-	JMenuItem undo;
-	JMenuItem redo;
-	
-	JButton enableButton;
-	JButton releaseButton;
+	JButton clearLevel;
+	JButton previewLevel;
+	JButton undo;
+	JButton redo;
 	
 	public void init() {
 		frequency1 = new JSlider();
@@ -99,35 +95,13 @@ public class WholesomeLevelEditorScreen extends JFrame{
 		levelActions = new JMenu("Level Actions");
 		editActions = new JMenu("Edit Actions");
 
-		menuBar.add(levelActions);
-		menuBar.add(editActions);
-
+		 undo = new JButton("Undo");
+		 redo = new JButton("Redo");
+		 clearLevel = new JButton("Clear Level");
+		 previewLevel = new JButton("Preview Level");
+		
 		saveLevel = new JButton("Save Level");
 		saveLevel.addActionListener(new SaveLevelController(this));
-
-		clearLevel = new JMenuItem("Clear Level");
-
-		previewLevel = new JMenuItem("Preview Level");
-		// TODO: change to use controller
-		previewLevel.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				new PreviewPanelView();
-			}
-		});
-
-		levelActions.add(saveLevel);
-		levelActions.add(clearLevel);
-		levelActions.add(previewLevel);
-
-		undo = new JMenuItem("Undo");
-		redo = new JMenuItem("Redo");
-
-		editActions.add(undo);
-		editActions.add(redo);
-		
-
-		 enableButton = new JButton("Enable/Disable Cell");
-		 releaseButton = new JButton("Release");
 	}
 
 	public ArrayList<Integer> getTileFrequencies() {
@@ -178,23 +152,11 @@ public class WholesomeLevelEditorScreen extends JFrame{
 		setJMenuBar(menuBar);
 		
 		menuBar.add(saveLevel);
+		menuBar.add(undo);
+		menuBar.add(redo);
+		menuBar.add(clearLevel);
+		menuBar.add(previewLevel);
 		
-		JButton btnNewButton_1 = new JButton("Undo");
-		menuBar.add(btnNewButton_1);
-		
-		JButton btnNewButton_2 = new JButton("Redo");
-		menuBar.add(btnNewButton_2);
-		
-		JButton btnNewButton_3 = new JButton("Clear Level");
-		menuBar.add(btnNewButton_3);
-		
-		JButton btnPreviewLevel = new JButton("Preview Level");
-		btnPreviewLevel.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				new PreviewPanelView();
-			}
-		});
-		menuBar.add(btnPreviewLevel);
 		setSize(1600, 900);
 		setLocationRelativeTo(null);
 		setVisible(true);
