@@ -8,15 +8,21 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+
 import java.awt.Font;
+
 import javax.swing.LayoutStyle.ComponentPlacement;
+
+import editor.model.LevelEditorModel;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class LevelEditorIntro extends JFrame{
-	public LevelEditorIntro() {
+	LevelEditorModel model;
+	public LevelEditorIntro(LevelEditorModel m) {
 		setTitle("Sixes Wild Level Editor");
-			
+		this.model = m;
 		JPanel panel = new JPanel();
 		
 		JPanel panel_1 = new JPanel();

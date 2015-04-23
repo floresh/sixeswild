@@ -1,6 +1,8 @@
 package game.entities;
 
-public class Tile {
+import java.io.Serializable;
+
+public class Tile implements Serializable {
 	int value;
 	int multiplier;
 	public Tile(int value, int multiplier){

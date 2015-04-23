@@ -1,8 +1,9 @@
 package game.entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Cell {
+public class Cell implements Serializable {
 	
 	Tile tile;
 	boolean isMarked;
