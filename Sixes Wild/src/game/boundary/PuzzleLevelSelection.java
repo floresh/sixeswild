@@ -1,5 +1,7 @@
 package game.boundary;
 import editor.boundary.LevelEditorScreen;
+import game.controller.SelectPlayController;
+import game.entities.Model;
 
 import javax.swing.JFrame;
 import javax.swing.GroupLayout;
@@ -20,12 +22,19 @@ import javax.swing.SwingConstants;
 
 
 public class PuzzleLevelSelection extends JFrame{
-	public PuzzleLevelSelection() {
+	Model model;
+	Application application;
+	
+	public PuzzleLevelSelection(Application app, Model m) {
 		super("Puzzle Level Selection");
+		
+		this.model = m;
+		this.application = app;
+		
 		JButton btnNewButton = new JButton("BACK");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new GameModeScreen();
+				new SelectPlayController(application, model);
 				dispose();
 			}
 		});

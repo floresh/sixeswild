@@ -1,4 +1,7 @@
 package game.boundary;
+import game.controller.SelectGameModeController;
+import game.entities.Model;
+
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.GroupLayout;
@@ -6,13 +9,20 @@ import javax.swing.GroupLayout.Alignment;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 
 public class GameModeScreen extends JFrame{
+	Model model;
+	Application application;
+	
 	private JButton backButton;
-	public GameModeScreen() {
+	public GameModeScreen(Application app, Model m) {
 		super("Game Mode Select");
+		this.model = m;
+		this.application = app;
+		
 		setResizable(false);
 		
 		backButton = new JButton("BACK");
@@ -20,7 +30,7 @@ public class GameModeScreen extends JFrame{
 		backButton.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
-				new StartScreen();
+				new StartScreen(application, model);
 				dispose();
 			}
 		});
@@ -29,7 +39,7 @@ public class GameModeScreen extends JFrame{
 		btnNewButton_1.setBounds(216, 268, 97, 25);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new PuzzleLevelSelection();
+				new SelectGameModeController(application, model, "Puzzle");
 				dispose();
 			}
 		});
@@ -38,7 +48,7 @@ public class GameModeScreen extends JFrame{
 		btnNewButton_2.setBounds(434, 268, 118, 25);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new EliminationLevelSelection();
+				new SelectGameModeController(application, model, "Elimination");
 				dispose();
 			}
 		});
@@ -47,7 +57,7 @@ public class GameModeScreen extends JFrame{
 		btnNewButton_3.setBounds(214, 413, 99, 25);
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new LightningLevelSelection();
+				new SelectGameModeController(application, model, "Lightning");
 				dispose();
 			}
 		});
@@ -56,7 +66,7 @@ public class GameModeScreen extends JFrame{
 		btnNewButton_4.setBounds(434, 413, 117, 25);
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new ReleaseLevelSelection();
+				new SelectGameModeController(application, model, "Release");
 				dispose();
 			}
 		});

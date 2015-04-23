@@ -1,4 +1,7 @@
 package game.boundary;
+import game.controller.SelectPlayController;
+import game.entities.Model;
+
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -12,19 +15,25 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class StartScreen extends JFrame {
+	Model model;
+	Application application;
+	
 	private JLabel titleLabel;
 	private JPanel panel;
 	private JButton exitButton;
 	private JButton playButton;
 
-	public StartScreen() {
+	public StartScreen(Application app, Model m) {
 		super("Start Screen");
+		this.model = m;
+		this.application = app;
+		
 		playButton = new JButton("PLAY");
 		playButton.setBounds(288, 341, 159, 25);
 		playButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new GameModeScreen();
+				new SelectPlayController(application, model);
 				dispose();
 			}
 		});

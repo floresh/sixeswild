@@ -1,5 +1,8 @@
 package game.boundary;
 
+import game.controller.SelectPlayController;
+import game.entities.Model;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -10,13 +13,20 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class EliminationLevelSelection extends JFrame {
-	public EliminationLevelSelection() {
+	Model model;
+	Application application;
+	
+	public EliminationLevelSelection(Application app, Model m) {
 		super("Elimination Level Selection");
+		
+		this.model = m;
+		this.application = app;
+		
 		setResizable(false);
 		JButton btnNewButton = new JButton("BACK");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new GameModeScreen();
+				new SelectPlayController(application, model);
 				dispose();
 			}
 		});

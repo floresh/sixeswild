@@ -1,4 +1,9 @@
 package game.boundary;
+
+
+import game.controller.SelectPlayController;
+import game.entities.Model;
+
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
@@ -12,11 +17,15 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
-//ok
 public class SplashScreen extends JFrame{
 	Image splash;
+	Model model;
+	Application application;
 	
-	public SplashScreen() {
+	public SplashScreen(Application app, Model m) {
+		this.model = m;
+		this.application = app;
+		
 		setTitle("Sixes Wild");
 		setSize(800,800);
 		setLocationRelativeTo(null);
@@ -51,6 +60,6 @@ public class SplashScreen extends JFrame{
 			
 		}
 		dispose();
-		new StartScreen();
+		new StartScreen(application, model);
 	}
 }
