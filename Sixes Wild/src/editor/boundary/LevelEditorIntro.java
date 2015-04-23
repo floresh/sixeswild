@@ -67,7 +67,7 @@ public class LevelEditorIntro extends JFrame{
 		JButton btnPuzzle = new JButton("Puzzle");
 		btnPuzzle.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new LevelEditorScreen();
+				new WholesomeLevelEditorScreen();
 				dispose();
 			}
 		});
@@ -76,7 +76,7 @@ public class LevelEditorIntro extends JFrame{
 		JButton btnElimination = new JButton("Elimination");
 		btnElimination.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new LevelEditorScreen();
+				new WholesomeLevelEditorScreen();
 				dispose();
 			}
 		});
@@ -85,7 +85,7 @@ public class LevelEditorIntro extends JFrame{
 		JButton btnLightning = new JButton("Lightning");
 		btnLightning.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new LevelEditorScreen();
+				new WholesomeLevelEditorScreen();
 				dispose();
 			}
 		});
@@ -94,7 +94,7 @@ public class LevelEditorIntro extends JFrame{
 		JButton btnRelease = new JButton("Release");
 		btnRelease.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new LevelEditorScreen();
+				new WholesomeLevelEditorScreen();
 				dispose();
 			}
 		});
