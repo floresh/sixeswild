@@ -20,9 +20,9 @@ import java.awt.event.ActionEvent;
 
 public class LevelEditorIntro extends JFrame{
 	LevelEditorModel model;
-	public LevelEditorIntro(LevelEditorModel m) {
+	
+	public LevelEditorIntro() {
 		setTitle("Sixes Wild Level Editor");
-		this.model = m;
 		JPanel panel = new JPanel();
 		
 		JPanel panel_1 = new JPanel();

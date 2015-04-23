@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 
 import editor.boundary.WholesomeLevelEditorScreen;
 import editor.model.LevelEditorModel;
-import game.entities.Level;
+import game.entities.PuzzleLevel;
 
 public class SaveLevelController implements ActionListener {
 	WholesomeLevelEditorScreen screen;
@@ -26,7 +26,7 @@ public class SaveLevelController implements ActionListener {
 	
 	public boolean process(){
 		if(getTileFrequencies() && getMultiplierFrequencies() && getRules() && getStars()){
-			model = new LevelEditorModel(new Level(tileFrequencies, multiplierFrequencies, stars, rules));
+			model = new LevelEditorModel(new PuzzleLevel(tileFrequencies, multiplierFrequencies, stars, rules));
 			
 			if(save(openFile())){
 				JOptionPane.showMessageDialog(null, "Saved!");

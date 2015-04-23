@@ -3,7 +3,7 @@ package game.entities;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Level implements Serializable, ILevel {
+public abstract class Level implements Serializable, ILevel {
 
 	int score;
 	int time;
@@ -66,10 +66,4 @@ public class Level implements Serializable, ILevel {
 	public void setMultiplierFrequency(ArrayList<Integer> f) {
 		this.tileFrequencies = f;
 	}
-
-	@Override
-	public String getGameMode() {
-		return "level";
-	}
-
 }
