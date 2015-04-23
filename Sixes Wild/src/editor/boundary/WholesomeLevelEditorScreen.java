@@ -25,8 +25,7 @@ import editor.model.LevelEditorModel;
 import javax.swing.JSpinner;
 
 public class WholesomeLevelEditorScreen extends JFrame{
-	private JTextField textField;
-	LevelEditorModel m;
+	JTextField nameTextField;
 	
 	JSpinner numMoves;
 	JSpinner maxTime;
@@ -59,6 +58,8 @@ public class WholesomeLevelEditorScreen extends JFrame{
 	JButton redo;
 	
 	public void init() {
+		nameTextField = new JTextField();
+		
 		frequency1 = new JSlider();
 		frequency2 = new JSlider();
 		frequency3 = new JSlider();
@@ -102,6 +103,10 @@ public class WholesomeLevelEditorScreen extends JFrame{
 		
 		saveLevel = new JButton("Save Level");
 		saveLevel.addActionListener(new SaveLevelController(this));
+	}
+	
+	public String getLevelName(){
+		return nameTextField.getText();
 	}
 
 	public ArrayList<Integer> getTileFrequencies() {
@@ -165,14 +170,13 @@ public class WholesomeLevelEditorScreen extends JFrame{
 		getContentPane().setLayout(null);
 		
 		JLabel lblLevelName = new JLabel("Level Name:");
-		lblLevelName.setFont(new Font("Old English Text MT", Font.PLAIN, 21));
+		lblLevelName.setFont(new Font("Dialog", Font.PLAIN, 18));
 		lblLevelName.setBounds(12, 13, 121, 49);
 		getContentPane().add(lblLevelName);
 		
-		textField = new JTextField();
-		textField.setBounds(130, 29, 116, 22);
-		getContentPane().add(textField);
-		textField.setColumns(10);
+		nameTextField.setBounds(130, 29, 116, 22);
+		getContentPane().add(nameTextField);
+		nameTextField.setColumns(10);
 		
 		JLabel lblTileFrequency = new JLabel("Tile Frequency");
 		lblTileFrequency.setFont(new Font("Old English Text MT", Font.PLAIN, 21));

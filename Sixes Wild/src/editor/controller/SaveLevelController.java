@@ -13,10 +13,12 @@ import javax.swing.JOptionPane;
 
 import editor.boundary.WholesomeLevelEditorScreen;
 import editor.model.LevelEditorModel;
+import game.entities.Level;
 import game.entities.PuzzleLevel;
 
 public class SaveLevelController implements ActionListener {
 	WholesomeLevelEditorScreen screen;
+	Level level;
 	LevelEditorModel model;
 	ArrayList<Integer> tileFrequencies, multiplierFrequencies, rules, stars;
 	
@@ -25,16 +27,21 @@ public class SaveLevelController implements ActionListener {
 	}
 	
 	public boolean process(){
-		if(getTileFrequencies() && getMultiplierFrequencies() && getRules() && getStars()){
-			model = new LevelEditorModel(new PuzzleLevel(tileFrequencies, multiplierFrequencies, stars, rules));
-			
-			if(save(openFile())){
-				JOptionPane.showMessageDialog(null, "Saved!");
-			}else{
-				JOptionPane.showMessageDialog(null, "Not Saved!");
+		if(screen.getLevelName().equals("")){
+			JOptionPane.showMessageDialog(null, "Enter a level name");
+			return false;
+		}else{
+			if(getTileFrequencies() && getMultiplierFrequencies() && getRules() && getStars()){
+				level = new PuzzleLevel(tileFrequencies, multiplierFrequencies, stars, rules);
+				model = new LevelEditorModel(level);
+				if(save(openFile())){
+					JOptionPane.showMessageDialog(null, "Saved!");
+				}else{
+					JOptionPane.showMessageDialog(null, "Not Saved!");
+				}
 			}
+			return true;
 		}
-		return false;
 	}
 	
 	public boolean getTileFrequencies(){
@@ -63,7 +70,7 @@ public class SaveLevelController implements ActionListener {
 	}
 	
 	public Path openFile(){
-		Path path = Paths.get(("levels.dat"));
+		Path path = Paths.get((level.getGameMode() + ".dat"));
 		return path;
 	}
 	
