@@ -13,12 +13,6 @@ public class Application {
 		this.currentFrame = new SplashScreen(this, model);
 	}
 	
-//	public JFrame getCurrentFrame() { return currentFrame; }
-//	public boolean setCurrentFrame(JFrame frame) { 
-//		currentFrame = frame;
-//		return true;
-//	}
-	
 	public JFrame getCurrentFrame() { return currentFrame; }
 	public boolean setCurrentFrame(JFrame frame) {
 		currentFrame = frame;

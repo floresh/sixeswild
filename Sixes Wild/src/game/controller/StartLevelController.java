@@ -1,6 +1,7 @@
 package game.controller;
 
 import game.boundary.Application;
+import game.boundary.LevelView;
 import game.entities.Model;
 
 public class StartLevelController {
@@ -16,10 +17,13 @@ public class StartLevelController {
 	
 	/*
 	 * TODO
-	 * -initialize board
 	 * -set new frame
 	 * -setup timer
 	 * -start timer
 	 */
+	private void startPuzzleLevel() {
+		application.setCurrentFrame(new LevelView());
+		
+	}
 
 }
