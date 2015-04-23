@@ -20,6 +20,7 @@ public class StartScreen extends JFrame {
 	public StartScreen() {
 		super("Start Screen");
 		playButton = new JButton("PLAY");
+		playButton.setBounds(288, 341, 159, 25);
 		playButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -29,6 +30,7 @@ public class StartScreen extends JFrame {
 		});
 		
 		exitButton = new JButton("EXIT");
+		exitButton.setBounds(288, 428, 159, 25);
 		exitButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -37,18 +39,18 @@ public class StartScreen extends JFrame {
 		});
 
 		titleLabel = new JLabel("Sixes Wild");
+		titleLabel.setBounds(300, 153, 137, 36);
 		titleLabel.setFont(new Font("Gisha", Font.PLAIN, 30));
 		titleLabel.setHorizontalAlignment(SwingConstants.CENTER);
 
 		panel = new JPanel();
-		panel.setLayout(new MigLayout("", "35%[center]35%",
-				"20%[]20%[]10%[]20%"));
+		panel.setLayout(null);
 
-		panel.add(titleLabel, "span, wrap");
-		panel.add(playButton, "width 20%, wrap");
-		panel.add(exitButton, "width 20%");
+		panel.add(titleLabel);
+		panel.add(playButton);
+		panel.add(exitButton);
 		
-		add(panel);
+		getContentPane().add(panel);
 
 		setSize(800,800);
 		setLocationRelativeTo(null);

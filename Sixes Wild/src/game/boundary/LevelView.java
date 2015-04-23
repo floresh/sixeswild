@@ -36,5 +36,8 @@ import java.awt.Window.Type;
 import javax.swing.JProgressBar;
 
 public class LevelView extends JFrame{
-
+	public LevelView() {
+		getContentPane().setLayout(null);
+		add(new BoardView());
+	}
 }
