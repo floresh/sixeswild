@@ -7,16 +7,21 @@ import java.awt.Image;
 import javax.swing.JLabel;
 
 import java.awt.BorderLayout;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
+import editor.model.LevelEditorModel;
+
 public class EditorSplashScreen extends JFrame{
 	Image splash;
+	LevelEditorModel m;
 	
-	public EditorSplashScreen() {
+	public EditorSplashScreen(LevelEditorModel m) {
 		setTitle("Sixes Wild Level Editor");
-		setSize(480, 480);
+		this.m = m;
+		setSize(800, 800);
 		setLocationRelativeTo(null);
 		setVisible(true);
 		setResizable(false);
@@ -49,6 +54,6 @@ public class EditorSplashScreen extends JFrame{
 			
 		}
 		dispose();
-		new LevelEditorIntro();
+		new LevelEditorIntro(m);
 	}
 }

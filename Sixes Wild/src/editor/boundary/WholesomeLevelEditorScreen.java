@@ -15,6 +15,8 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JSlider;
 
+import editor.model.LevelEditorModel;
+
 public class WholesomeLevelEditorScreen extends JFrame{
 	private JTextField textField;
 	private JTextField textField_1;
@@ -25,9 +27,10 @@ public class WholesomeLevelEditorScreen extends JFrame{
 	private JTextField textField_6;
 	private JTextField textField_7;
 	private JTextField textField_8;
-	public WholesomeLevelEditorScreen() {
+	LevelEditorModel m;
+	public WholesomeLevelEditorScreen(LevelEditorModel m) {
 		setTitle("Sixes Wild Level Editor");
-		
+		this.m = m;
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		

@@ -1,4 +1,7 @@
 package editor.boundary;
+import editor.model.LevelEditorModel;
+import game.entities.Level;
+
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -17,6 +20,8 @@ public class Main {
         		IllegalAccessException | 
         		UnsupportedLookAndFeelException ex) {
         }
-		new EditorSplashScreen();
+		Level l = new Level();
+		LevelEditorModel m = new LevelEditorModel(l);
+		new EditorSplashScreen(m);
 	}
 }
