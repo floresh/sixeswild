@@ -243,7 +243,7 @@ public class WholesomeLevelEditorScreen extends JFrame{
 		for(int i = 0; i<=8;i++){
 			for(int j =0; j<=8;j++){
 				buttArray[i][j] = new JButton("");
-				buttArray[i][j].setBounds(900,900,50,50);
+				buttArray[i][j].setBounds(900,900,40,40);
 				buttArray[i][j].setBounds(878+(10*i)+(i*buttArray[i][j].getWidth()),99+(10*j)+(j*buttArray[i][j].getWidth()), 50,50);
 				getContentPane().add(buttArray[i][j]);
 				
