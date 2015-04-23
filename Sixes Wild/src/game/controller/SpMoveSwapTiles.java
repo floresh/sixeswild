@@ -26,6 +26,8 @@ public class SpMoveSwapTiles {
 		
 		movesLeft.process();
 		
+		//TODO refresh boundary
+		
 		return true;
 	}
 }

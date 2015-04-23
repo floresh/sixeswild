@@ -25,6 +25,8 @@ public class SpMoveReshuffleBoard {
 		
 		movesLeft.process();
 		
+		//TODO refresh boundary
+		
 		return true;
 	}
 }

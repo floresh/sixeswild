@@ -44,6 +44,8 @@ public class Move {
 		
 		model.getLevel().getBoard().gravity();
 		
+		//TODO refresh boundary
+		
 		
 		return true;
 	}

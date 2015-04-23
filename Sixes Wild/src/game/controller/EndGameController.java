@@ -11,5 +11,12 @@ public class EndGameController {
 		this.model = m;
 		this.application = app;
 	}
-
+	
+	/*
+	 * TODO
+	 * -stop timer
+	 * -display stats
+	 * -display exit level button
+	 */
+	
 }
