@@ -39,5 +39,10 @@ public class LevelView extends JFrame{
 	public LevelView() {
 		getContentPane().setLayout(null);
 		add(new BoardView());
+		
+		setSize(800,800);
+		setLocationRelativeTo(null);
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 }
