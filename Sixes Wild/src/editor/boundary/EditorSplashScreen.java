@@ -16,8 +16,12 @@ import editor.model.LevelEditorModel;
 
 public class EditorSplashScreen extends JFrame{
 	Image splash;
+	LevelEditorApplication app;
+	LevelEditorModel model;
 	
-	public EditorSplashScreen() {
+	public EditorSplashScreen(LevelEditorApplication app, LevelEditorModel model) {
+		this.app = app;
+		this.model = model;
 		
 		setTitle("Sixes Wild Level Editor");
 		setSize(800, 800);
@@ -53,6 +57,6 @@ public class EditorSplashScreen extends JFrame{
 			
 		}
 		dispose();
-		new LevelEditorIntro();
+		new LevelEditorIntro(app, model);
 	}
 }
