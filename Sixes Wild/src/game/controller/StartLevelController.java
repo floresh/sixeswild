@@ -14,16 +14,5 @@ public class StartLevelController {
 		this.application = app;
 		this.gameMode = gameModeString;
 	}
-	
-	/*
-	 * TODO
-	 * -set new frame
-	 * -setup timer
-	 * -start timer
-	 */
-	private void startPuzzleLevel() {
-		application.setCurrentFrame(new LevelView());
-		
-	}
 
 }

@@ -13,8 +13,8 @@ public class ScoreController {
 	}
 	
 	public boolean process(int score) {
-		int currentScore = model.getLevel().getScore();
-		model.getLevel().setScore(currentScore + score);
+		int currentScore = model.getCurrentLevel().getScore();
+		model.getCurrentLevel().setScore(currentScore + score);
 		return true;
 	}
 

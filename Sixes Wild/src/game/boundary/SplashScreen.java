@@ -19,12 +19,8 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class SplashScreen extends JFrame{
 	Image splash;
-	Model model;
-	Application application;
 	
-	public SplashScreen(Application app, Model m) {
-		this.model = m;
-		this.application = app;
+	public SplashScreen() {
 		
 		setTitle("Sixes Wild");
 		setSize(800,800);
@@ -60,6 +56,6 @@ public class SplashScreen extends JFrame{
 			
 		}
 		dispose();
-		new StartScreen(application, model);
+		new StartScreen();
 	}
 }

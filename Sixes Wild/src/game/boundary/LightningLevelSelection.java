@@ -1,24 +1,14 @@
 package game.boundary;
-import editor.boundary.LevelEditorScreen;
-import game.controller.SelectPlayController;
+import game.controller.ReturnToPreviousMenuController;
 import game.entities.Model;
 
 import javax.swing.JFrame;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
-import javax.swing.JTable;
 import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.table.DefaultTableModel;
-
-import java.awt.Font;
-
-import javax.swing.JProgressBar;
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
-import javax.swing.SwingConstants;
 
 
 public class LightningLevelSelection extends JFrame{
@@ -31,12 +21,7 @@ public class LightningLevelSelection extends JFrame{
 		this.application = app;
 		
 		JButton btnNewButton = new JButton("BACK");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				new SelectPlayController(application, model);
-				dispose();
-			}
-		});
+		btnNewButton.addActionListener(new ReturnToPreviousMenuController(this));
 		
 		JButton btnNewButton_1 = new JButton("1");
 		btnNewButton_1.setEnabled(false);

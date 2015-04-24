@@ -1,43 +1,37 @@
 package game.controller;
 
-import game.boundary.Application;
-import game.boundary.EliminationLevelSelection;
-import game.boundary.LightningLevelSelection;
-import game.boundary.PuzzleLevelSelection;
-import game.boundary.ReleaseLevelSelection;
-import game.entities.Model;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class SelectGameModeController {
-	Model model;
-	Application application;
-	
-	public SelectGameModeController(Application app, Model m, String level) {
-		this.model = m;
-		this.application = app;
-		
-		process(level);
+import game.boundary.GameModeScreen;
+import game.entities.PuzzleLevel;
+import game.main.Main;
+
+;
+
+public class SelectGameModeController implements ActionListener {
+	GameModeScreen screen;
+	String level;
+
+	public SelectGameModeController(GameModeScreen screen) {
+		this.screen = screen;
 	}
-	
-	private boolean process(String level) {
-		switch(level) {
-		case "Puzzle":
-			application.setCurrentFrame(new PuzzleLevelSelection(application, model));
-			return true;
-		case "Lightning":
-			application.setCurrentFrame(new LightningLevelSelection(application, model));
-			return true;
-		case "Release":
-			application.setCurrentFrame(new ReleaseLevelSelection(application, model));
-			return true;
-		case "Elimination":
-			application.setCurrentFrame(new EliminationLevelSelection(application, model));
+
+	public boolean process() {
+
+		switch (level) {
+		case "PUZZLE": Main.model.setCurrentLevel(new PuzzleLevel()); break;
+		}
+		if (Main.model.getCurrentLevel().openLevelScreen()) {
+			screen.dispose();
 			return true;
 		}
 		return false;
 	}
-	
-	/* TODO
-	 * -if available, load first level
-	 * 		and preview first level
-	 */
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		level = e.getActionCommand();
+		process();
+	}
 }

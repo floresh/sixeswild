@@ -19,9 +19,9 @@ public class SpMoveReshuffleBoard {
 	}
 	
 	public boolean process() {
-		ArrayList<Tile> tiles = model.getLevel().getBoard().getTiles();
+		ArrayList<Tile> tiles = model.getCurrentLevel().getBoard().getTiles();
 		Collections.shuffle(tiles);
-		model.getLevel().getBoard().setTiles(tiles);
+		model.getCurrentLevel().getBoard().setTiles(tiles);
 		
 		movesLeft.process();
 		

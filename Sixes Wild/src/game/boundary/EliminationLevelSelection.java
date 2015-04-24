@@ -16,20 +16,12 @@ public class EliminationLevelSelection extends JFrame {
 	Model model;
 	Application application;
 	
-	public EliminationLevelSelection(Application app, Model m) {
+	public EliminationLevelSelection() {
 		super("Elimination Level Selection");
-		
-		this.model = m;
-		this.application = app;
 		
 		setResizable(false);
 		JButton btnNewButton = new JButton("BACK");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				new SelectPlayController(application, model);
-				dispose();
-			}
-		});
+		btnNewButton.addActionListener(new SelectPlayController(this));
 
 		JButton btnNewButton_1 = new JButton("1");
 		btnNewButton_1.setEnabled(false);

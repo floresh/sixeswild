@@ -16,8 +16,8 @@ public class LightningTimer extends TimerTask {
 
 	@Override
 	public void run() {
-		int time = model.getLevel().getTime() - 1;
-		model.getLevel().setTime(time);
+		int time = model.getCurrentLevel().getTime() - 1;
+		model.getCurrentLevel().setTime(time);
 		
 		if(time == 0) {
 			// TODO handle end of game

@@ -42,7 +42,7 @@ public class Move {
 		movesLeft.process();
 		updateScore.process(total);
 		
-		model.getLevel().getBoard().gravity();
+		model.getCurrentLevel().getBoard().gravity();
 		
 		//TODO refresh boundary
 		

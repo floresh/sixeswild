@@ -23,20 +23,12 @@ public class StartScreen extends JFrame {
 	private JButton exitButton;
 	private JButton playButton;
 
-	public StartScreen(Application app, Model m) {
+	public StartScreen() {
 		super("Start Screen");
-		this.model = m;
-		this.application = app;
 		
 		playButton = new JButton("PLAY");
 		playButton.setBounds(288, 341, 159, 25);
-		playButton.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				new SelectPlayController(application, model);
-				dispose();
-			}
-		});
+		playButton.addActionListener(new SelectPlayController(this));
 		
 		exitButton = new JButton("EXIT");
 		exitButton.setBounds(288, 428, 159, 25);

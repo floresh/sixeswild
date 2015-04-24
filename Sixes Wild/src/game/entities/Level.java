@@ -1,5 +1,7 @@
 package game.entities;
 
+import game.boundary.GameModeScreen;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 

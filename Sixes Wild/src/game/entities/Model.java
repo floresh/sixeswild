@@ -6,17 +6,16 @@ public class Model {
 	int numSPSwap;
 	int numSPReshuffle;
 
-	public Model(){
-		
+	public Model() {
+		currentLevel = new NoLevel();
 	}
-	 
-	
-	public Level getLevel() { return currentLevel; }
-	
-	public void setLevel(Level level){ currentLevel = level; }
-	 
+
+	public Level getCurrentLevel() {
+		return currentLevel;
+	}
+
+	public void setCurrentLevel(Level level) {
+		currentLevel = level;
+	}
+
 }
-
-	
-
-
