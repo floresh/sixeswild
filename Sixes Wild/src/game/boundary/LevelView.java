@@ -3,9 +3,17 @@ package game.boundary;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JButton;
+import javax.swing.UIManager;
+
 import java.awt.BorderLayout;
+import java.awt.Color;
+
 import javax.swing.JLabel;
+
 import java.awt.Font;
+
+import javax.swing.JProgressBar;
+import javax.swing.SwingConstants;
 
 /**
  * 
@@ -63,6 +71,12 @@ public class LevelView extends JFrame{
 		JLabel lblNewLabel_2 = new JLabel("Potential Title");
 		lblNewLabel_2.setBounds(553, 41, 56, 16);
 		panel.add(lblNewLabel_2);
+		
+		JProgressBar progressBar = new JProgressBar();
+		progressBar.setValue(0);
+		progressBar.setOrientation(SwingConstants.VERTICAL);
+		progressBar.setBounds(57, 357, 56, 357);
+		panel.add(progressBar);
 		
 		setSize(800,800);
 		setLocationRelativeTo(null);
