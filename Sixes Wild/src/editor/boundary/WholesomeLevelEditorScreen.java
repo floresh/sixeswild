@@ -4,7 +4,6 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JButton;
-import javax.swing.JMenuItem;
 import javax.swing.SpinnerNumberModel;
 
 import java.awt.event.ActionListener;
@@ -20,10 +19,12 @@ import javax.swing.JTextField;
 import javax.swing.JSlider;
 
 import editor.controller.SaveLevelController;
-import editor.model.LevelEditorModel;
 
 import javax.swing.JSpinner;
-
+/**
+ * @author Jake
+ *
+ */
 public class WholesomeLevelEditorScreen extends JFrame{
 	JTextField nameTextField;
 	
@@ -162,7 +163,7 @@ public class WholesomeLevelEditorScreen extends JFrame{
 		menuBar.add(clearLevel);
 		menuBar.add(previewLevel);
 		
-		setSize(1600, 900);
+		setSize(1300, 800);
 		setLocationRelativeTo(null);
 		setVisible(true);
 		setResizable(false);
@@ -237,7 +238,7 @@ public class WholesomeLevelEditorScreen extends JFrame{
 		
 		JLabel lblRules = new JLabel("Rules");
 		lblRules.setFont(new Font("Old English Text MT", Font.PLAIN, 21));
-		lblRules.setBounds(513, 399, 148, 49);
+		lblRules.setBounds(513, 293, 148, 49);
 		getContentPane().add(lblRules);
 		
 		JLabel lblStar = new JLabel("1 Star:");
@@ -274,23 +275,23 @@ public class WholesomeLevelEditorScreen extends JFrame{
 		getContentPane().add(xFrequency3);
 		
 		JLabel lblNumberOfMoves = new JLabel("Number of Moves:");
-		lblNumberOfMoves.setBounds(393, 461, 116, 16);
+		lblNumberOfMoves.setBounds(393, 355, 116, 16);
 		getContentPane().add(lblNumberOfMoves);
 		
 		JLabel lblMaximumTime = new JLabel("Maximum Time:");
-		lblMaximumTime.setBounds(403, 515, 110, 16);
+		lblMaximumTime.setBounds(403, 409, 110, 16);
 		getContentPane().add(lblMaximumTime);
 		
 		JLabel lblSpecialMoveRemove = new JLabel("Special Move: Remove Tile:");
-		lblSpecialMoveRemove.setBounds(338, 572, 186, 16);
+		lblSpecialMoveRemove.setBounds(338, 466, 186, 16);
 		getContentPane().add(lblSpecialMoveRemove);
 		
 		JLabel lblSpecialMoveReshuffle = new JLabel("Special Move: Reshuffle:");
-		lblSpecialMoveReshuffle.setBounds(354, 625, 155, 16);
+		lblSpecialMoveReshuffle.setBounds(354, 519, 155, 16);
 		getContentPane().add(lblSpecialMoveReshuffle);
 		
 		JLabel lblSpecialMoveSwap = new JLabel("Special Move: Swap:");
-		lblSpecialMoveSwap.setBounds(375, 675, 134, 16);
+		lblSpecialMoveSwap.setBounds(375, 569, 134, 16);
 		getContentPane().add(lblSpecialMoveSwap);
 		
 		starThreshold1.setBounds(91, 452, 134, 35);
@@ -302,19 +303,19 @@ public class WholesomeLevelEditorScreen extends JFrame{
 		starThreshold3.setBounds(91, 563, 134, 35);
 		getContentPane().add(starThreshold3);
 		
-		numMoves.setBounds(505, 454, 134, 35);
+		numMoves.setBounds(505, 348, 134, 35);
 		getContentPane().add(numMoves);
 		
-		maxTime.setBounds(505, 509, 134, 35);
+		maxTime.setBounds(505, 403, 134, 35);
 		getContentPane().add(maxTime);
 		
-		removeTile.setBounds(505, 563, 134, 35);
+		removeTile.setBounds(505, 457, 134, 35);
 		getContentPane().add(removeTile);
 		
-		reshuffle.setBounds(505, 616, 134, 35);
+		reshuffle.setBounds(505, 510, 134, 35);
 		getContentPane().add(reshuffle);
 		
-		swap.setBounds(505, 669, 134, 35);
+		swap.setBounds(505, 563, 134, 35);
 		getContentPane().add(swap);
 		
 		final JButton[][] buttArray = new JButton[9][9];
@@ -326,7 +327,7 @@ public class WholesomeLevelEditorScreen extends JFrame{
 			for(int j =0; j<=8;j++){
 				buttArray[i][j] = new JButton("");
 				buttArray[i][j].setBounds(900,900,40,40);
-				buttArray[i][j].setBounds(878+(10*i)+(i*buttArray[i][j].getWidth()),99+(10*j)+(j*buttArray[i][j].getWidth()), 50,50);
+				buttArray[i][j].setBounds(750+(10*i)+(i*buttArray[i][j].getWidth()),100+(10*j)+(j*buttArray[i][j].getWidth()), 50,50);
 				getContentPane().add(buttArray[i][j]);
 				
 				final JButton ahoy = buttArray[i][j];
