@@ -1,6 +1,5 @@
 package game.main;
 
-import game.boundary.Application;
 import game.entities.Model;
 
 import javax.swing.UIManager;
@@ -22,7 +21,5 @@ public class Main {
         		IllegalAccessException | 
         		UnsupportedLookAndFeelException ex) {
         }
-		
-		new Application(model);
 	}
 }
