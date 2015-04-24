@@ -20,9 +20,12 @@ import java.awt.event.ActionEvent;
 
 public class LevelEditorIntro extends JFrame{
 	LevelEditorModel model;
+	LevelEditorApplication app;
 	
-	public LevelEditorIntro() {
+	public LevelEditorIntro(final LevelEditorApplication app, final LevelEditorModel model) {
 		setTitle("Sixes Wild Level Editor");
+		this.app = app;
+		this.model = model;
 		JPanel panel = new JPanel();
 		
 		JPanel panel_1 = new JPanel();
@@ -73,7 +76,7 @@ public class LevelEditorIntro extends JFrame{
 		JButton btnPuzzle = new JButton("Puzzle");
 		btnPuzzle.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new WholesomeLevelEditorScreen();
+				new WholesomeLevelEditorScreen(app, model);
 				dispose();
 			}
 		});
@@ -82,7 +85,7 @@ public class LevelEditorIntro extends JFrame{
 		JButton btnElimination = new JButton("Elimination");
 		btnElimination.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new WholesomeLevelEditorScreen();
+				new WholesomeLevelEditorScreen(app, model);
 				dispose();
 			}
 		});
@@ -91,7 +94,7 @@ public class LevelEditorIntro extends JFrame{
 		JButton btnLightning = new JButton("Lightning");
 		btnLightning.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new WholesomeLevelEditorScreen();
+				new WholesomeLevelEditorScreen(app, model);
 				dispose();
 			}
 		});
@@ -100,7 +103,7 @@ public class LevelEditorIntro extends JFrame{
 		JButton btnRelease = new JButton("Release");
 		btnRelease.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new WholesomeLevelEditorScreen();
+				new WholesomeLevelEditorScreen(app, model);
 				dispose();
 			}
 		});

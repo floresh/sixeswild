@@ -19,6 +19,8 @@ import javax.swing.JTextField;
 import javax.swing.JSlider;
 
 import editor.controller.SaveLevelController;
+import editor.controller.ToggleCellController;
+import editor.model.LevelEditorModel;
 
 import javax.swing.JSpinner;
 /**
@@ -57,6 +59,9 @@ public class WholesomeLevelEditorScreen extends JFrame{
 	JButton previewLevel;
 	JButton undo;
 	JButton redo;
+	
+	LevelEditorApplication app;
+	LevelEditorModel model;
 	
 	public void init() {
 		nameTextField = new JTextField();
@@ -151,8 +156,11 @@ public class WholesomeLevelEditorScreen extends JFrame{
 		return stars;
 	}
 	
-	public WholesomeLevelEditorScreen() {
+	public WholesomeLevelEditorScreen(final LevelEditorApplication app, final LevelEditorModel model) {
 		super("Sixes Wild Level Editor");
+		this.app = app;
+		this.model = model;
+		
 		init();
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -332,13 +340,17 @@ public class WholesomeLevelEditorScreen extends JFrame{
 				
 				final JButton ahoy = buttArray[i][j];
 				ahoy.setBackground(Color.GREEN);
+				final int row = i;
+				final int col = j;
 				ahoy.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {	
 						if(ahoy.getBackground() == Color.GREEN){
 							ahoy.setBackground(Color.RED);
+							new ToggleCellController(app, model, row, col,false);
 						}
 						else{
 							ahoy.setBackground(Color.GREEN);
+							new ToggleCellController(app, model, row, col,true);
 						}
 					}
 				});

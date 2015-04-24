@@ -21,6 +21,7 @@ public class Main {
         		IllegalAccessException | 
         		UnsupportedLookAndFeelException ex) {
         }
-		new EditorSplashScreen();
+		LevelEditorApplication app = new LevelEditorApplication();
+		new EditorSplashScreen(app, model);
 	}
 }

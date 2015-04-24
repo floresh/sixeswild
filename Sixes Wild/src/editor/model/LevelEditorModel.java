@@ -11,7 +11,7 @@ public class LevelEditorModel implements Serializable {
 		this.level = l;
 	}
 	
-	Level getLevel(){
+	public Level getLevel(){
 		return this.level;
 	}
 	

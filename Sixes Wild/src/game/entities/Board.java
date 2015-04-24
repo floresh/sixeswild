@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Board implements Serializable{
-	protected Cell[][] cells = new Cell[10][9];
+	public Cell[][] cells = new Cell[10][9];
 
 	public Board() {
 		for (int i = 0; i < 10; i++) {
