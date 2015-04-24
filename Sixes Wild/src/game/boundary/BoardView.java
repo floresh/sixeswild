@@ -32,9 +32,10 @@ public class BoardView extends JPanel{
 		// add(label);
 		for(int i = 0; i<=8;i++){
 			for(int j =0; j<=8;j++){
-				labelArr[i][j] = new JLabel("");
+				labelArr[i][j] = new JLabel("mnmn");
 				labelArr[i][j].setBounds(600,600,50,50);
 				labelArr[i][j].setBounds(30+(10*i)+(i*labelArr[i][j].getWidth()),30+(10*j)+(j*labelArr[i][j].getWidth()), 50,50);
+				
 				add(labelArr[i][j]);
 			}
 	}
