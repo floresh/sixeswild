@@ -7,8 +7,14 @@ import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import java.awt.Font;
 
+/**
+ * 
+ * @author Li Li
+ *
+ */
 public class LevelView extends JFrame{
 	public LevelView() {
+		setResizable(false);
 		JPanel panel = new BoardView();
 		panel.setBounds(224, 66, 384, 369);
 		getContentPane().add(panel);

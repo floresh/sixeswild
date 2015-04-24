@@ -4,6 +4,11 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/**
+ * 
+ * @author Li Li
+ *
+ */
 public class BoardView extends JPanel{
 	public BoardView() {
 		setLayout(null);
