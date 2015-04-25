@@ -1,7 +1,5 @@
 package game.entities;
 
-import game.boundary.GameModeScreen;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -67,6 +65,6 @@ public abstract class Level implements Serializable, ILevel {
 	}
 
 	public void setMultiplierFrequency(ArrayList<Integer> f) {
-		this.tileFrequencies = f;
+		this.multiplierFrequencies = f;
 	}
 }

@@ -1,5 +1,7 @@
 package game.entities;
 
+import java.util.ArrayList;
+
 import game.boundary.GameModeScreen;
 
 public interface ILevel {
@@ -9,5 +11,7 @@ public interface ILevel {
 	public boolean openLevelScreen();
 	
 	public GameModeScreen getPreviousScreen();
+	
+	public ArrayList<Integer> getTileFrequencies();
 
 }

@@ -6,6 +6,10 @@ import game.entities.Level;
 import game.entities.NoLevel;
 
 public class LevelEditorModel implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1215689831997227538L;
 	Level level;
 	
 	public LevelEditorModel(){

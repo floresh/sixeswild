@@ -4,11 +4,7 @@ import java.util.ArrayList;
 
 import game.boundary.GameModeScreen;
 
-public class NoLevel extends Level implements ILevel{
-	
-	public NoLevel(){
-		super();
-	}
+public class EliminationLevel extends Level implements ILevel {
 
 	@Override
 	public String getGameMode() {
@@ -18,13 +14,14 @@ public class NoLevel extends Level implements ILevel{
 
 	@Override
 	public boolean openLevelScreen() {
-		new GameModeScreen();
-		return true;
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 	@Override
 	public GameModeScreen getPreviousScreen() {
-		throw new UnsupportedOperationException("Game closes from here");
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
