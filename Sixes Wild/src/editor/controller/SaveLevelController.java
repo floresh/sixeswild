@@ -27,29 +27,32 @@ public class SaveLevelController implements ActionListener {
 	Level level;
 	LevelEditorModel model;
 	ArrayList<Integer> tileFrequencies, multiplierFrequencies, rules, stars;
+	String levelName = "";
+	ObjectOutputStream output;
 
 	public SaveLevelController(WholesomeLevelEditorScreen app) {
 		screen = app;
 	}
 
 	public boolean process() {
-		if (screen.getLevelName().equals("")) {
-			JOptionPane.showMessageDialog(null, "Enter a level name");
-			return false;
-		} else {
-			if (getTileFrequencies() && getMultiplierFrequencies()
-					&& getRules() && getStars() && getCells()) {
-				level = new PuzzleLevel(board, tileFrequencies,
-						multiplierFrequencies, stars, rules);
-				model = new LevelEditorModel(level);
-				if (save(openFile())) {
-					JOptionPane.showMessageDialog(null, "Saved!");
-				} else {
-					JOptionPane.showMessageDialog(null, "Not Saved!");
-				}
+		if (!screen.getLevelName().equals("")) {
+			levelName = screen.getLevelName();
+		}
+		if (getTileFrequencies() && getMultiplierFrequencies() && getRules()
+				&& getStars() && getCells()) {
+			level = new PuzzleLevel(board, tileFrequencies,
+					multiplierFrequencies, stars, rules);
+			model = new LevelEditorModel(level);
+			if (save(openFile())) {
+				JOptionPane.showMessageDialog(null, "Saved!");
+			} else {
+				JOptionPane.showMessageDialog(null, "Not Saved!");
 			}
+			closeFile();
 			return true;
 		}
+		closeFile();
+		return false;
 	}
 
 	public boolean getTileFrequencies() {
@@ -76,13 +79,15 @@ public class SaveLevelController implements ActionListener {
 		JButton[][] buttArray = screen.getButtArray();
 		Cell[][] cells = new Cell[10][9];
 
-		for (int i = 0; i < 10; i++) {
+		for (int i = 1; i < 9; i++) {
 			for (int j = 0; j < 9; j++) {
-				if (i == 0) {
-					cells[i][j] = new Cell();
-				}
-				cells[i][j] = new Cell(buttArray[i][j].getBackground().equals("GREEN"), false);
+				cells[i][j] = new Cell(buttArray[i][j].getBackground().equals(
+						"GREEN"), false);
 			}
+		}
+
+		for (int i = 0; i < 9; i++) {
+			cells[0][i] = new Cell();
 		}
 
 		board = new Board(cells);
@@ -95,20 +100,34 @@ public class SaveLevelController implements ActionListener {
 	}
 
 	public Path openFile() {
-		Path path = Paths.get((level.getGameMode() + ".dat"));
+		Path path;
+		if (levelName.equals("")) {
+			path = Paths.get((level.getGameMode() + ".dat"));
+		} else {
+			path = Paths.get(levelName + ".dat");
+		}
 		return path;
 	}
 
 	public boolean save(Path path) {
 		try {
-			ObjectOutputStream output = new ObjectOutputStream(
-					Files.newOutputStream(path, StandardOpenOption.CREATE,
-							StandardOpenOption.APPEND));
+			output = new ObjectOutputStream(Files.newOutputStream(path,
+					StandardOpenOption.CREATE, StandardOpenOption.APPEND));
 			output.writeObject(model);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return true;
+	}
+
+	public void closeFile() {
+		try {
+			if (output != null)
+				output.close();
+		} catch (IOException ioException) {
+			System.err.println("Error closing file. Terminating.");
+			System.exit(1);
+		}
 	}
 }

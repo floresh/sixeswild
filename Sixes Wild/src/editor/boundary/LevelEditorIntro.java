@@ -13,11 +13,8 @@ import java.awt.Font;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
 
+import editor.controller.LoadLevelController;
 import editor.controller.SelectBuilderModeController;
-import editor.model.LevelEditorModel;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class LevelEditorIntro extends JFrame{
 	
@@ -27,7 +24,8 @@ public class LevelEditorIntro extends JFrame{
 		
 		JPanel panel_1 = new JPanel();
 		
-		JButton btnLoadLevel = new JButton("Load Level");
+		JButton loadLevelButton = new JButton("Load Level");
+		loadLevelButton.addActionListener(new LoadLevelController(this));
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -41,7 +39,7 @@ public class LevelEditorIntro extends JFrame{
 							.addComponent(panel, GroupLayout.PREFERRED_SIZE, 268, GroupLayout.PREFERRED_SIZE))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(196)
-							.addComponent(btnLoadLevel, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)))
+							.addComponent(loadLevelButton, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)))
 					.addContainerGap(118, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
@@ -52,7 +50,7 @@ public class LevelEditorIntro extends JFrame{
 					.addPreferredGap(ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
 					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(btnLoadLevel)
+					.addComponent(loadLevelButton)
 					.addGap(175))
 		);
 		
