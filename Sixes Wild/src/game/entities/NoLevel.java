@@ -3,6 +3,10 @@ package game.entities;
 import game.boundary.GameModeScreen;
 
 public class NoLevel extends Level implements ILevel{
+	
+	public NoLevel(){
+		super();
+	}
 
 	@Override
 	public String getGameMode() {

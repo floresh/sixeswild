@@ -20,7 +20,7 @@ public class SelectPlayController implements ActionListener{
 	
 	public boolean process(){
 		screen.dispose();
-		Main.model.getCurrentLevel().openLevelScreen();
+		Main.getModel().getCurrentLevel().openLevelScreen();
 		return false;
 	}
 

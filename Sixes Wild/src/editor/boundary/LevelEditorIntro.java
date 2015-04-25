@@ -13,13 +13,13 @@ import java.awt.Font;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
 
+import editor.controller.SelectBuilderModeController;
 import editor.model.LevelEditorModel;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class LevelEditorIntro extends JFrame{
-	LevelEditorModel model;
 	
 	public LevelEditorIntro() {
 		setTitle("Sixes Wild Level Editor");
@@ -71,39 +71,19 @@ public class LevelEditorIntro extends JFrame{
 		menuBar.add(mnCreateNewLevel);
 		
 		JButton btnPuzzle = new JButton("Puzzle");
-		btnPuzzle.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				new WholesomeLevelEditorScreen();
-				dispose();
-			}
-		});
+		btnPuzzle.addActionListener(new SelectBuilderModeController(this));
 		mnCreateNewLevel.add(btnPuzzle);
 		
 		JButton btnElimination = new JButton("Elimination");
-		btnElimination.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				new WholesomeLevelEditorScreen();
-				dispose();
-			}
-		});
+		btnElimination.addActionListener(new SelectBuilderModeController(this));
 		mnCreateNewLevel.add(btnElimination);
 		
 		JButton btnLightning = new JButton("Lightning");
-		btnLightning.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				new WholesomeLevelEditorScreen();
-				dispose();
-			}
-		});
+		btnLightning.addActionListener(new SelectBuilderModeController(this));
 		mnCreateNewLevel.add(btnLightning);
 		
 		JButton btnRelease = new JButton("Release");
-		btnRelease.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				new WholesomeLevelEditorScreen();
-				dispose();
-			}
-		});
+		btnRelease.addActionListener(new SelectBuilderModeController(this));
 		mnCreateNewLevel.add(btnRelease);
 		getContentPane().setLayout(groupLayout);
 		

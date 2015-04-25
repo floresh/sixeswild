@@ -3,19 +3,23 @@ package editor.model;
 import java.io.Serializable;
 
 import game.entities.Level;
+import game.entities.NoLevel;
 
 public class LevelEditorModel implements Serializable {
 	Level level;
 	
+	public LevelEditorModel(){
+		level = new NoLevel();
+	}
 	public LevelEditorModel(Level l){
 		this.level = l;
 	}
 	
-	Level getLevel(){
+	public Level getLevel(){
 		return this.level;
 	}
 	
-	void setLevel(Level l){
+	public void setLevel(Level l){
 		this.level = l;
 	}
 	

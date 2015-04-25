@@ -16,6 +16,7 @@ public abstract class Level implements Serializable, ILevel {
 	public Level() {
 		tileFrequencies = new ArrayList<Integer>();
 		multiplierFrequencies = new ArrayList<Integer>();
+		board = new Board();
 	}
 
 	public Level(Board board, int score, int time, int movesLeft,
