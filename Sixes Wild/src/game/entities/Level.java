@@ -23,9 +23,9 @@ public abstract class Level implements Serializable, ILevel {
 
 	}
 
-	public Level(ArrayList<Integer> tileFrequencies,
+	public Level(Board board, ArrayList<Integer> tileFrequencies,
 			ArrayList<Integer> multiplierFrequencies, ArrayList<Integer> stars, ArrayList<Integer> rules) {
-		board = new Board();
+		this.board = board;
 		this.tileFrequencies = tileFrequencies;
 		this.multiplierFrequencies = multiplierFrequencies;
 		this.stars = stars;

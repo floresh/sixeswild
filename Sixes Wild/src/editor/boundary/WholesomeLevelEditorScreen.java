@@ -23,13 +23,14 @@ import editor.controller.ToggleCellController;
 import editor.model.LevelEditorModel;
 
 import javax.swing.JSpinner;
+
 /**
  * @author Jake
  *
  */
-public class WholesomeLevelEditorScreen extends JFrame{
+public class WholesomeLevelEditorScreen extends JFrame {
 	JTextField nameTextField;
-	
+
 	JSpinner numMoves;
 	JSpinner maxTime;
 	JSpinner removeTile;
@@ -49,20 +50,17 @@ public class WholesomeLevelEditorScreen extends JFrame{
 	JSlider xFrequency1;
 	JSlider xFrequency2;
 	JSlider xFrequency3;
-
-	JMenuBar menuBar;
-	JMenu levelActions;
-	JMenu editActions;
-
+	
 	JButton saveLevel;
 	JButton clearLevel;
 	JButton previewLevel;
 	JButton undo;
 	JButton redo;
-	
+	JButton[][] buttArray;
+
 	public void init() {
 		nameTextField = new JTextField();
-		
+
 		frequency1 = new JSlider();
 		frequency2 = new JSlider();
 		frequency3 = new JSlider();
@@ -89,26 +87,23 @@ public class WholesomeLevelEditorScreen extends JFrame{
 		starThreshold1 = new JSpinner();
 		starThreshold2 = new JSpinner();
 		starThreshold3 = new JSpinner();
-		
+
 		starThreshold1.setModel(new SpinnerNumberModel());
 		starThreshold2.setModel(new SpinnerNumberModel());
 		starThreshold3.setModel(new SpinnerNumberModel());
 
-		menuBar = new JMenuBar();
+		undo = new JButton("Undo");
+		redo = new JButton("Redo");
+		clearLevel = new JButton("Clear Level");
+		previewLevel = new JButton("Preview Level");
 
-		levelActions = new JMenu("Level Actions");
-		editActions = new JMenu("Edit Actions");
-
-		 undo = new JButton("Undo");
-		 redo = new JButton("Redo");
-		 clearLevel = new JButton("Clear Level");
-		 previewLevel = new JButton("Preview Level");
-		
 		saveLevel = new JButton("Save Level");
 		saveLevel.addActionListener(new SaveLevelController(this));
+		
+		buttArray = new JButton[9][9];
 	}
-	
-	public String getLevelName(){
+
+	public String getLevelName() {
 		return nameTextField.getText();
 	}
 
@@ -144,7 +139,7 @@ public class WholesomeLevelEditorScreen extends JFrame{
 		return rules;
 	}
 
-	public ArrayList<Integer> getStarThresholds(){
+	public ArrayList<Integer> getStarThresholds() {
 		ArrayList<Integer> stars = new ArrayList<Integer>();
 		stars.add((Integer) starThreshold1.getValue());
 		stars.add((Integer) starThreshold2.getValue());
@@ -153,186 +148,204 @@ public class WholesomeLevelEditorScreen extends JFrame{
 		return stars;
 	}
 	
+	public JButton[][] getButtArray(){
+		return buttArray;
+	}
+
 	public WholesomeLevelEditorScreen() {
 		super("Sixes Wild Level Editor");
-		
+
 		init();
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
-		
+
 		menuBar.add(saveLevel);
 		menuBar.add(undo);
 		menuBar.add(redo);
 		menuBar.add(clearLevel);
 		menuBar.add(previewLevel);
-		
+
 		setSize(1300, 800);
 		setLocationRelativeTo(null);
 		setVisible(true);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
-		
+
 		JLabel lblLevelName = new JLabel("Level Name:");
 		lblLevelName.setFont(new Font("Dialog", Font.PLAIN, 18));
 		lblLevelName.setBounds(12, 13, 121, 49);
 		getContentPane().add(lblLevelName);
-		
+
 		nameTextField.setBounds(130, 29, 116, 22);
 		getContentPane().add(nameTextField);
 		nameTextField.setColumns(10);
-		
+
 		JLabel lblTileFrequency = new JLabel("Tile Frequency");
-		lblTileFrequency.setFont(new Font("Old English Text MT", Font.PLAIN, 21));
+		lblTileFrequency
+				.setFont(new Font("Old English Text MT", Font.PLAIN, 21));
 		lblTileFrequency.setBounds(77, 111, 148, 49);
 		getContentPane().add(lblTileFrequency);
-		
-		JLabel label = new JLabel("1:  0                                                             100");
+
+		JLabel label = new JLabel(
+				"1:  0                                                             100");
 		label.setBounds(36, 164, 254, 16);
 		getContentPane().add(label);
-		
+
 		frequency1.setBounds(60, 164, 200, 23);
 		getContentPane().add(frequency1);
-		
-		JLabel label_1 = new JLabel("2:  0                                                             100");
+
+		JLabel label_1 = new JLabel(
+				"2:  0                                                             100");
 		label_1.setBounds(36, 193, 254, 16);
 		getContentPane().add(label_1);
-		
+
 		frequency2.setBounds(60, 193, 200, 23);
 		getContentPane().add(frequency2);
-		
-		JLabel label_2 = new JLabel("3:  0                                                             100");
+
+		JLabel label_2 = new JLabel(
+				"3:  0                                                             100");
 		label_2.setBounds(36, 220, 254, 16);
 		getContentPane().add(label_2);
-		
+
 		frequency3.setBounds(60, 220, 200, 23);
 		getContentPane().add(frequency3);
-		
-		JLabel label_3 = new JLabel("4:  0                                                             100");
+
+		JLabel label_3 = new JLabel(
+				"4:  0                                                             100");
 		label_3.setBounds(36, 249, 254, 16);
 		getContentPane().add(label_3);
-		
+
 		frequency4.setBounds(60, 249, 200, 23);
 		getContentPane().add(frequency4);
-		
-		JLabel label_4 = new JLabel("5:  0                                                             100");
+
+		JLabel label_4 = new JLabel(
+				"5:  0                                                             100");
 		label_4.setBounds(36, 278, 254, 16);
 		getContentPane().add(label_4);
-		
+
 		frequency5.setBounds(60, 278, 200, 23);
 		getContentPane().add(frequency5);
-		
-		JLabel label_5 = new JLabel("6:  0                                                             100");
+
+		JLabel label_5 = new JLabel(
+				"6:  0                                                             100");
 		label_5.setBounds(36, 307, 254, 16);
 		getContentPane().add(label_5);
-		
+
 		frequency6.setBounds(60, 303, 200, 23);
 		getContentPane().add(frequency6);
-		
+
 		JLabel lblScoreThresholds = new JLabel("Score Thresholds");
-		lblScoreThresholds.setFont(new Font("Old English Text MT", Font.PLAIN, 21));
+		lblScoreThresholds.setFont(new Font("Old English Text MT", Font.PLAIN,
+				21));
 		lblScoreThresholds.setBounds(77, 399, 148, 49);
 		getContentPane().add(lblScoreThresholds);
-		
+
 		JLabel lblMultiplierFrequency = new JLabel("Multiplier Frequency");
-		lblMultiplierFrequency.setFont(new Font("Old English Text MT", Font.PLAIN, 21));
+		lblMultiplierFrequency.setFont(new Font("Old English Text MT",
+				Font.PLAIN, 21));
 		lblMultiplierFrequency.setBounds(461, 111, 200, 49);
 		getContentPane().add(lblMultiplierFrequency);
-		
+
 		JLabel lblRules = new JLabel("Rules");
 		lblRules.setFont(new Font("Old English Text MT", Font.PLAIN, 21));
 		lblRules.setBounds(513, 293, 148, 49);
 		getContentPane().add(lblRules);
-		
+
 		JLabel lblStar = new JLabel("1 Star:");
 		lblStar.setBounds(36, 461, 56, 16);
 		getContentPane().add(lblStar);
-		
+
 		JLabel lblStar_1 = new JLabel("2 Stars:");
 		lblStar_1.setBounds(36, 518, 56, 16);
 		getContentPane().add(lblStar_1);
-		
+
 		JLabel lblStars = new JLabel("3 Stars:");
 		lblStars.setBounds(36, 572, 56, 16);
 		getContentPane().add(lblStars);
-		
-		JLabel label_6 = new JLabel("1:  0                                                             100");
+
+		JLabel label_6 = new JLabel(
+				"1:  0                                                             100");
 		label_6.setBounds(415, 164, 254, 16);
 		getContentPane().add(label_6);
-		
-		JLabel label_7 = new JLabel("2:  0                                                             100");
+
+		JLabel label_7 = new JLabel(
+				"2:  0                                                             100");
 		label_7.setBounds(415, 193, 254, 16);
 		getContentPane().add(label_7);
-		
-		JLabel label_8 = new JLabel("3:  0                                                             100");
+
+		JLabel label_8 = new JLabel(
+				"3:  0                                                             100");
 		label_8.setBounds(415, 220, 254, 16);
 		getContentPane().add(label_8);
-		
+
 		xFrequency1.setBounds(439, 164, 200, 23);
 		getContentPane().add(xFrequency1);
-		
+
 		xFrequency2.setBounds(439, 193, 200, 23);
 		getContentPane().add(xFrequency2);
-		
+
 		xFrequency3.setBounds(439, 220, 200, 23);
 		getContentPane().add(xFrequency3);
-		
+
 		JLabel lblNumberOfMoves = new JLabel("Number of Moves:");
 		lblNumberOfMoves.setBounds(393, 355, 116, 16);
 		getContentPane().add(lblNumberOfMoves);
-		
+
 		JLabel lblMaximumTime = new JLabel("Maximum Time:");
 		lblMaximumTime.setBounds(403, 409, 110, 16);
 		getContentPane().add(lblMaximumTime);
-		
+
 		JLabel lblSpecialMoveRemove = new JLabel("Special Move: Remove Tile:");
 		lblSpecialMoveRemove.setBounds(338, 466, 186, 16);
 		getContentPane().add(lblSpecialMoveRemove);
-		
+
 		JLabel lblSpecialMoveReshuffle = new JLabel("Special Move: Reshuffle:");
 		lblSpecialMoveReshuffle.setBounds(354, 519, 155, 16);
 		getContentPane().add(lblSpecialMoveReshuffle);
-		
+
 		JLabel lblSpecialMoveSwap = new JLabel("Special Move: Swap:");
 		lblSpecialMoveSwap.setBounds(375, 569, 134, 16);
 		getContentPane().add(lblSpecialMoveSwap);
-		
+
 		starThreshold1.setBounds(91, 452, 134, 35);
 		getContentPane().add(starThreshold1);
-		
+
 		starThreshold2.setBounds(91, 509, 134, 35);
 		getContentPane().add(starThreshold2);
-		
+
 		starThreshold3.setBounds(91, 563, 134, 35);
 		getContentPane().add(starThreshold3);
-		
+
 		numMoves.setBounds(505, 348, 134, 35);
 		getContentPane().add(numMoves);
-		
+
 		maxTime.setBounds(505, 403, 134, 35);
 		getContentPane().add(maxTime);
-		
+
 		removeTile.setBounds(505, 457, 134, 35);
 		getContentPane().add(removeTile);
-		
+
 		reshuffle.setBounds(505, 510, 134, 35);
 		getContentPane().add(reshuffle);
-		
+
 		swap.setBounds(505, 563, 134, 35);
 		getContentPane().add(swap);
 		
-		final JButton[][] buttArray = new JButton[9][9];
-		//JButton b00 = new JButton("");
-		//b00.setBounds(878, 99, 50, 50);
-		//getContentPane().add(b00);
-		
-		for(int i = 0; i<=8;i++){
-			for(int j =0; j<=8;j++){
+		// JButton b00 = new JButton("");
+		// b00.setBounds(878, 99, 50, 50);
+		// getContentPane().add(b00);
+
+		for (int i = 0; i <= 8; i++) {
+			for (int j = 0; j <= 8; j++) {
 				buttArray[i][j] = new JButton("");
-				buttArray[i][j].setBounds(900,900,40,40);
-				buttArray[i][j].setBounds(750+(10*i)+(i*buttArray[i][j].getWidth()),100+(10*j)+(j*buttArray[i][j].getWidth()), 50,50);
+				buttArray[i][j].setBounds(900, 900, 40, 40);
+				buttArray[i][j].setBounds(
+						750 + (10 * i) + (i * buttArray[i][j].getWidth()), 100
+								+ (10 * j) + (j * buttArray[i][j].getWidth()),
+						50, 50);
 				getContentPane().add(buttArray[i][j]);
-				
+
 				final JButton ahoy = buttArray[i][j];
 				ahoy.setBackground(Color.GREEN);
 				final int row = i;

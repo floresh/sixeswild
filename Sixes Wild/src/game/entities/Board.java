@@ -13,7 +13,10 @@ public class Board implements Serializable{
 				cells[i][j] = new Cell(new Tile(1, 1), true, false, false);
 			}
 		}
-
+	}
+	
+	public Board(Cell[][] cells){
+		this.cells = cells;
 	}
 
 	public ArrayList<Tile> getTiles() {

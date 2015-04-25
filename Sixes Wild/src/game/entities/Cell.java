@@ -11,15 +11,25 @@ public class Cell implements Serializable {
 	boolean isEnabled;
 	
 	
-	public Cell(){}
+	public Cell(){
+		tile = new Tile();
+		isMarked = false;
+		isEmpty = true;
+		isEnabled = false;
+	}
+	
+	public Cell(boolean isEnabled, boolean isMarked){
+		 tile = new Tile();
+		 this.isEnabled = isEnabled;
+		 this.isMarked = isMarked;
+		 this.isEmpty = tile != null;
+	}
 	
 	public Cell(Tile tile, boolean isEnabled, boolean isMarked, boolean isEmpty){
-		
 		 this.tile = tile;
 		 this.isEnabled = isEnabled;
 		 this.isMarked = isMarked;
 		 this.isEmpty = isEmpty;
-		 
 	}
 	
 	protected void gravity(ArrayList<Cell> column){
