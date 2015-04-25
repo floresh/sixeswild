@@ -1,5 +1,6 @@
 package game.boundary;
 
+import game.controller.ReturnToPreviousMenuController;
 import game.controller.SelectPlayController;
 
 import javax.swing.JFrame;
@@ -7,6 +8,7 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import javax.swing.LayoutStyle.ComponentPlacement;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -16,7 +18,8 @@ public class PuzzleLevelSelection extends JFrame {
 		super("Puzzle Level Selection");
 
 		JButton btnNewButton = new JButton("BACK");
-		btnNewButton.addActionListener(new SelectPlayController(this));
+		btnNewButton
+				.addActionListener(new ReturnToPreviousMenuController(this));
 
 		JButton btnNewButton_1 = new JButton("1");
 

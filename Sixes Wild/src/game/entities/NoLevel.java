@@ -22,8 +22,7 @@ public class NoLevel extends Level implements ILevel{
 
 	@Override
 	public GameModeScreen getPreviousScreen() {
-		// TODO Auto-generated method stub
-		return null;
+		throw new UnsupportedOperationException("Game closes from here");
 	}
 
 }

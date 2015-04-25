@@ -5,11 +5,12 @@ import game.boundary.PuzzleLevelSelection;
 
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 public class PuzzleLevel extends Level {
 	ArrayList<PuzzleLevel> unlockedLevels, highScores;
 
 	public PuzzleLevel() {
-
 	}
 
 	public PuzzleLevel(ArrayList<Integer> tileFrequencies,
