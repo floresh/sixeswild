@@ -1,6 +1,12 @@
 package game.boundary;
 
+import game.controller.Move;
+import game.entities.Board;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -11,7 +17,9 @@ import javax.swing.JPanel;
  * @author Li Li
  *
  */
-public class BoardView extends JPanel{
+public class BoardView extends JPanel implements MouseListener, ActionListener{
+	Board board;
+	
 	public BoardView() {
 		setLayout(null);
 		final JLabel[][] labelArr = new JLabel[9][9];
@@ -28,8 +36,37 @@ public class BoardView extends JPanel{
 	}
 	}
 	
+	public void makeMove() {
+		board.gravity();
+	}
+	
 	public void mousePressed (MouseEvent me) {
 		System.out.println("mousepresed");
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mouseClicked(MouseEvent arg0) {
+		
+	}
+
+	public void mouseEntered(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mouseExited(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mouseReleased(MouseEvent arg0) {
+		// TODO Auto-generated method stub
 		
 	}
 }

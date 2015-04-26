@@ -7,7 +7,7 @@ import javax.swing.event.MouseInputAdapter;
 import game.boundary.Application;
 import game.entities.*;
 
-public class Move extends MouseInputAdapter{
+public class Move{
 	Model model;
 	Application application;
 	ArrayList<Cell> cells;
