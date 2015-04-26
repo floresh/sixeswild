@@ -17,7 +17,7 @@ import javax.swing.SwingConstants;
 
 /**
  * 
- * @author Li Li
+ * @author Li Li, Jake
  *
  */
 public class LevelView extends JFrame{
@@ -68,8 +68,10 @@ public class LevelView extends JFrame{
 		lblNewLabel_1.setBounds(201, 41, 56, 16);
 		panel.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("Potential Title");
-		lblNewLabel_2.setBounds(553, 41, 56, 16);
+		JLabel lblNewLabel_2 = new JLabel("Sixes Wild");
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblNewLabel_2.setBounds(396, 37, 161, 71);
 		panel.add(lblNewLabel_2);
 		
 		JProgressBar progressBar = new JProgressBar();

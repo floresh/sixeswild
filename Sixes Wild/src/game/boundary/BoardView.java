@@ -1,5 +1,7 @@
 package game.boundary;
 
+import java.awt.event.MouseEvent;
+
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -25,4 +27,10 @@ public class BoardView extends JPanel{
 			}
 	}
 	}
+	
+	public void mousePressed (MouseEvent me) {
+		System.out.println("mousepresed");
+		
+	}
 }
+

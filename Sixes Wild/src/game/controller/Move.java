@@ -2,10 +2,12 @@ package game.controller;
 
 import java.util.ArrayList;
 
+import javax.swing.event.MouseInputAdapter;
+
 import game.boundary.Application;
 import game.entities.*;
 
-public class Move {
+public class Move extends MouseInputAdapter{
 	Model model;
 	Application application;
 	ArrayList<Cell> cells;
