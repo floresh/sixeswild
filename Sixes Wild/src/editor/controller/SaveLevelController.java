@@ -2,6 +2,7 @@ package editor.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.nio.file.Files;
@@ -9,10 +10,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.Formatter;
 
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
+import editor.boundary.Main;
 import editor.boundary.WholesomeLevelEditorScreen;
 import editor.model.LevelEditorModel;
 import game.entities.Board;
@@ -28,10 +31,16 @@ public class SaveLevelController implements ActionListener {
 	LevelEditorModel model;
 	ArrayList<Integer> tileFrequencies, multiplierFrequencies, rules, stars;
 	String levelName = "";
-	ObjectOutputStream output;
+	Formatter output;
 
 	public SaveLevelController(WholesomeLevelEditorScreen app) {
 		screen = app;
+		try {
+			output = new Formatter("Puzzle.daat");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public boolean process() {
@@ -111,9 +120,9 @@ public class SaveLevelController implements ActionListener {
 
 	public boolean save(Path path) {
 		try {
-			output = new ObjectOutputStream(Files.newOutputStream(path,
+			Main.output = new ObjectOutputStream(Files.newOutputStream(path,
 					StandardOpenOption.CREATE, StandardOpenOption.APPEND));
-			output.writeObject(model);
+			Main.output.writeObject(model);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -123,8 +132,8 @@ public class SaveLevelController implements ActionListener {
 
 	public void closeFile() {
 		try {
-			if (output != null)
-				output.close();
+			if (Main.output != null)
+				Main.output.close();
 		} catch (IOException ioException) {
 			System.err.println("Error closing file. Terminating.");
 			System.exit(1);

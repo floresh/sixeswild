@@ -1,4 +1,7 @@
 package editor.boundary;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
 import editor.model.LevelEditorModel;
 import game.entities.NoLevel;
 
@@ -7,6 +10,8 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 public class Main {
 	public static LevelEditorModel model;
+	public static ObjectInputStream input;
+	public static ObjectOutputStream output;
 	
 	public static void main(String[] args){
 		try {
