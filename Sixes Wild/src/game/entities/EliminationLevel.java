@@ -5,11 +5,13 @@ import java.util.ArrayList;
 import game.boundary.GameModeScreen;
 
 public class EliminationLevel extends Level implements ILevel {
+	public EliminationLevel(){
+		super();
+	}
 
 	@Override
 	public String getGameMode() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Elimination";
 	}
 
 	@Override

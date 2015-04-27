@@ -1,15 +1,14 @@
 package editor.boundary;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 
 import editor.model.LevelEditorModel;
-import game.entities.NoLevel;
-
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 public class Main {
 	public static LevelEditorModel model;
+	static ArrayList<LevelEditorModel> loadedModels; 
+	
 	public static void main(String[] args){
 		try {
             for (UIManager.LookAndFeelInfo info : UIManager
@@ -24,7 +23,12 @@ public class Main {
         		IllegalAccessException | 
         		UnsupportedLookAndFeelException ex) {
         }
+		loadedModels = new ArrayList<LevelEditorModel>();
 		model = new LevelEditorModel();
 		new EditorSplashScreen();
+	}
+	
+	public static ArrayList<LevelEditorModel> getLoadedModels(){
+		return loadedModels;
 	}
 }

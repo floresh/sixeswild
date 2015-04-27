@@ -2,16 +2,16 @@ package editor.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.EOFException;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.nio.file.FileAlreadyExistsException;
+import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
-import java.util.Formatter;
 
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -23,7 +23,6 @@ import game.entities.Board;
 import game.entities.Cell;
 import game.entities.Level;
 import game.entities.PuzzleLevel;
-import game.entities.Tile;
 
 public class SaveLevelController implements ActionListener {
 	WholesomeLevelEditorScreen screen;
@@ -33,7 +32,8 @@ public class SaveLevelController implements ActionListener {
 	LevelEditorModel model;
 	ArrayList<Integer> tileFrequencies, multiplierFrequencies, rules, stars;
 	String levelName = "";
-	
+
+	ObjectInputStream input;
 	ObjectOutputStream output;
 
 	public SaveLevelController(WholesomeLevelEditorScreen app) {
@@ -41,7 +41,7 @@ public class SaveLevelController implements ActionListener {
 	}
 
 	public boolean process() {
-		if (!screen.getLevelName().equals("")) {
+		if (!screen.getLevelName().isEmpty()) {
 			levelName = screen.getLevelName();
 		}
 		if (getTileFrequencies() && getMultiplierFrequencies() && getRules()
@@ -49,6 +49,8 @@ public class SaveLevelController implements ActionListener {
 			level = new PuzzleLevel(board, tileFrequencies,
 					multiplierFrequencies, stars, rules);
 			model = new LevelEditorModel(level);
+			Main.getLoadedModels().add(model);
+			System.out.println("model size: " + Main.getLoadedModels().size());
 			if (save(openFile())) {
 				JOptionPane.showMessageDialog(null, "Saved!");
 			} else {
@@ -106,19 +108,26 @@ public class SaveLevelController implements ActionListener {
 	}
 
 	public Path openFile() {
-		Path path;
-		path = Paths.get(levelName + ".dat");
-
+		Path path = FileSystems.getDefault().getPath("Levels",
+				model.getLevel().getGameMode() + ".dat");
+		try {
+			Files.createDirectories(path.getParent());
+			Files.createFile(path);
+		}catch (FileAlreadyExistsException e) {
+			System.err.println("File already exists");
+		}  catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return path;
 	}
 
 	public boolean save(Path path) {
 		try {
-			if (level.equals("")) {
-
+			for(LevelEditorModel m : Main.getLoadedModels()){
+				output = new ObjectOutputStream(Files.newOutputStream(path));
+				output.writeObject(m);
 			}
-			output = new ObjectOutputStream(Files.newOutputStream(path));
-			output.writeObject(model);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
