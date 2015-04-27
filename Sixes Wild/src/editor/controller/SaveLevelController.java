@@ -117,8 +117,7 @@ public class SaveLevelController implements ActionListener {
 			if (level.equals("")) {
 
 			}
-			output = new ObjectOutputStream(Files.newOutputStream(path,
-					StandardOpenOption.CREATE, StandardOpenOption.APPEND));
+			output = new ObjectOutputStream(Files.newOutputStream(path));
 			output.writeObject(model);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
