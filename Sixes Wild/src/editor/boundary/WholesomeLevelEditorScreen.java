@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import javax.swing.JTextField;
 import javax.swing.JSlider;
 
+import editor.controller.PreviewController;
 import editor.controller.SaveLevelController;
 import editor.controller.ToggleCellController;
 import editor.model.LevelEditorModel;
@@ -96,6 +97,7 @@ public class WholesomeLevelEditorScreen extends JFrame {
 		redo = new JButton("Redo");
 		clearLevel = new JButton("Clear Level");
 		previewLevel = new JButton("Preview Level");
+		previewLevel.addActionListener(new PreviewController(this));
 
 		saveLevel = new JButton("Save Level");
 		saveLevel.addActionListener(new SaveLevelController(this));

@@ -1,20 +1,26 @@
 package editor.controller;
 
-import editor.boundary.LevelEditorApplication;
-import editor.model.LevelEditorModel;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import editor.boundary.Main;
+import editor.boundary.WholesomeLevelEditorScreen;
+import game.boundary.LevelView;
+import game.entities.PuzzleLevel;
+
 //
-public class PreviewController {
+public class PreviewController implements ActionListener{
 	
-	LevelEditorModel model;
-	LevelEditorApplication application;
+	WholesomeLevelEditorScreen editorScreen;
 	
-	public PreviewController(LevelEditorApplication app, LevelEditorModel m) {
-		this.model = m;
-		this.application = app;
+	public PreviewController(WholesomeLevelEditorScreen es) {
+		this.editorScreen = es;
 	}
 	
-	public boolean process(){
-		return false;
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		LevelView lv = new LevelView();
 	}
 	
 }

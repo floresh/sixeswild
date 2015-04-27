@@ -33,7 +33,7 @@ public class BoardView extends JPanel implements MouseListener, ActionListener{
 				
 				add(labelArr[i][j]);
 			}
-	}
+		}
 	}
 	
 	public void makeMove() {
