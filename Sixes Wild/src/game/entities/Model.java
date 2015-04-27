@@ -1,13 +1,16 @@
 package game.entities;
 
-public class Model{
+import java.io.Serializable;
+
+public class Model implements Serializable{
 	Level currentLevel;
-	int numSPSRemove;
+	int numSPRemove;
 	int numSPSwap;
 	int numSPReshuffle;
 
 	public Model() {
 		currentLevel = new NoLevel();
+		numSPRemove = numSPSwap = numSPReshuffle = 0;
 	}
 	
 	public Model (Level currentLevel){
