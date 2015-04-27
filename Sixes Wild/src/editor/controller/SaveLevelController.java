@@ -105,7 +105,7 @@ public class SaveLevelController implements ActionListener {
 
 	public Path openFile() {
 		Path path = FileSystems.getDefault().getPath("Levels",
-				model.getCurrentLevel().getGameMode() + ".dat");
+				screen.getLevelName() + ".dat");
 		try {
 			Files.createDirectories(path.getParent());
 			Files.createFile(path);
