@@ -13,6 +13,10 @@ public class TopCell extends Cell{
 	ArrayList<Integer> tileFrequency = new ArrayList<Integer>();
 	ArrayList<Integer> multiplierFrequency = new ArrayList<Integer>();
 	
+	public TopCell(){
+		
+	}
+	
 	protected void gravity(ArrayList<Cell> column){
 		
 	}

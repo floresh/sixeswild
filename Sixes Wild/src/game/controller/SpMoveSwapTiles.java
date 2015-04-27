@@ -20,6 +20,8 @@ public class SpMoveSwapTiles {
 	}
 	
 	public boolean process() {
+		
+		// these are local variables, this method does nothing.
 		Tile temp = tile1;
 		tile1 = tile2;
 		tile2 = temp;
