@@ -2,8 +2,11 @@ package game.entities;
 
 public class Location {
 
-	public Location(int column, int row) {
-		// TODO Auto-generated constructor stub
-	}
-
+	int row;
+	int col;
+	
+	public Location(int row, int col){
+		this.row = row;
+		this.col = col;
+}
 }

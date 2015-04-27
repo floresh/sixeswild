@@ -9,19 +9,12 @@ public class Cell implements Serializable {
 	boolean isMarked;
 	boolean isEmpty;
 	boolean isEnabled;
-	Location location;
 	
 	public Cell(){
-		
-	}
-	
-	public Cell(int column, int row){
 		tile = new Tile();
 		isMarked = false;
 		isEmpty = true;
 		isEnabled = false;
-		location = new Location(column ,row);
-		
 	}
 	
 	public Cell(boolean isEnabled, boolean isMarked){
@@ -60,6 +53,8 @@ public class Cell implements Serializable {
 		
 		isEmpty = true;
 		return tile;
+		
+		
 	}
 	
 
