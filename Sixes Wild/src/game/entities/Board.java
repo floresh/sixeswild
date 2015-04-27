@@ -10,6 +10,11 @@ public class Board implements Serializable{
 	public Cell[][] cells = new Cell[10][9];
 
 	public Board() {
+		
+			for (int k = 0; k < 9; k++) {
+				cells[0][k] = new TopCell();
+			}
+		
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 9; j++) {
 				cells[i][j] = new Cell(new Tile(1, 1), true, false, false);
