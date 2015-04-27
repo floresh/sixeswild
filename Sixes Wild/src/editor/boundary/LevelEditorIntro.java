@@ -19,7 +19,7 @@ import editor.controller.SelectBuilderModeController;
 public class LevelEditorIntro extends JFrame{
 	
 	public LevelEditorIntro() {
-		setTitle("Sixes Wild Level Editor");
+		super("Sixes Wild Level Editor");
 		JPanel panel = new JPanel();
 		
 		JPanel panel_1 = new JPanel();

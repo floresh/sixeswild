@@ -1,13 +1,9 @@
 package editor.boundary;
 
 import javax.swing.JFrame;
-import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JButton;
 import javax.swing.SpinnerNumberModel;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 import javax.swing.JLabel;
 
@@ -21,8 +17,6 @@ import javax.swing.JSlider;
 import editor.controller.PreviewController;
 import editor.controller.SaveLevelController;
 import editor.controller.ToggleCellController;
-import editor.model.LevelEditorModel;
-
 import javax.swing.JSpinner;
 
 /**
