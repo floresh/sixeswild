@@ -1,5 +1,7 @@
 package game.entities;
 
+import game.controller.Move;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
@@ -108,5 +110,9 @@ public class Board implements Serializable{
 
 		return randomNum;
 	}
-
+	//Checks for legal moves
+	public Move[] legalSelection(){
+		return null;
+		
+	}
 }

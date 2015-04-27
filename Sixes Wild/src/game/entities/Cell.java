@@ -10,7 +10,6 @@ public class Cell implements Serializable {
 	boolean isEmpty;
 	boolean isEnabled;
 	
-	
 	public Cell(){
 		tile = new Tile();
 		isMarked = false;

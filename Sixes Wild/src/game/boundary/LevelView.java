@@ -1,5 +1,8 @@
 package game.boundary;
 
+import game.controller.Move;
+import game.entities.Board;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JButton;
@@ -11,6 +14,11 @@ import java.awt.Color;
 import javax.swing.JLabel;
 
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.ArrayList;
 
 import javax.swing.JProgressBar;
 import javax.swing.SwingConstants;
@@ -20,7 +28,13 @@ import javax.swing.SwingConstants;
  * @author Li Li, Jake
  *
  */
-public class LevelView extends JFrame{
+public class LevelView extends JFrame implements MouseListener, ActionListener{
+	
+	Board board;
+	int rowSelect;
+	int colSelect;
+	Move[] selectionCheck; //An array of legal selections
+	
 	public LevelView() {
 		setResizable(false);
 		JPanel panel = new BoardView();
@@ -85,4 +99,59 @@ public class LevelView extends JFrame{
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
-}
+
+	//Potential method for pressing the special moves/other buttons on level view screen
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+	//Sets the location of the tile that is clicked on by the player. *Incomplete*
+	public void startTile(int row, int col) {
+		for(int i = 0; i <= selectionCheck.length; i++){
+			if(selectionCheck[i].srcRow == rowSelect && selectionCheck[i].srcCol == colSelect){
+				row = rowSelect;
+				col = colSelect;
+			}
+		}
+		if(rowSelect < 0 || colSelect < 0){
+			System.out.println("Need to select a move.");
+		}
+		update();
+		}
+	//Makes the actual move
+	public void makeMove(){
+		
+	}
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public void update(){
+	}
+	}
