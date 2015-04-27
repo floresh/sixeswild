@@ -110,9 +110,7 @@ public class Board implements Serializable{
 
 		return randomNum;
 	}
-	//Checks for legal moves
-	public Move[] legalSelection(){
-		return null;
+
 		
 	}
-}
+

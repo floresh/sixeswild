@@ -58,7 +58,7 @@ public class Move{
 	}
 	// A possible way to check if the move is legal is to check if the second tile we select has the same x or y as the 
 	// first one and the third tile has to have the same x or y as the other two and etc till we reach 6 tiles.  Having
-	// separate row and column parameters would help greatly in writing this function.
+	// separate row and column parameters would help greatly in writing this function.  Or we could check for adjacen
 	public boolean legalSelection(int x, int y) {
 		return false;
 		
