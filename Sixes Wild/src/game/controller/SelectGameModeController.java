@@ -20,6 +20,7 @@ public class SelectGameModeController implements ActionListener {
 	
 	GameModeScreen screen;
 	String level;
+	ObjectInputStream input;
 
 	public SelectGameModeController(GameModeScreen screen) {
 		this.screen = screen;
@@ -43,12 +44,12 @@ public class SelectGameModeController implements ActionListener {
 	public boolean loadLevels() {
 		Path path = openFile();
 		try {
-			editor.boundary.Main.input = new ObjectInputStream(
+			input = new ObjectInputStream(
 					Files.newInputStream(path));
 			int count = 0;
 			while (true) {
 				JOptionPane.showMessageDialog(null, ++count);
-				PuzzleLevel level = (PuzzleLevel) ( (LevelEditorModel) editor.boundary.Main.input.readObject()).getLevel();
+				PuzzleLevel level = (PuzzleLevel) ( (LevelEditorModel) input.readObject()).getLevel();
 			}
 		} catch (EOFException e) {
 			System.err.println("No more records to load");

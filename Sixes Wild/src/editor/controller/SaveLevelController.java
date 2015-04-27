@@ -2,6 +2,7 @@ package editor.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -26,21 +27,17 @@ import game.entities.Tile;
 
 public class SaveLevelController implements ActionListener {
 	WholesomeLevelEditorScreen screen;
+	Cell[][] cells;
 	Board board;
 	Level level;
 	LevelEditorModel model;
 	ArrayList<Integer> tileFrequencies, multiplierFrequencies, rules, stars;
 	String levelName = "";
-	Formatter output;
+	
+	ObjectOutputStream output;
 
 	public SaveLevelController(WholesomeLevelEditorScreen app) {
 		screen = app;
-		try {
-			output = new Formatter("Puzzle.daat");
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 
 	public boolean process() {
@@ -86,7 +83,7 @@ public class SaveLevelController implements ActionListener {
 
 	public boolean getCells() {
 		JButton[][] buttArray = screen.getButtArray();
-		Cell[][] cells = new Cell[10][9];
+		cells = new Cell[10][9];
 
 		for (int i = 1; i < 9; i++) {
 			for (int j = 0; j < 9; j++) {
@@ -110,19 +107,19 @@ public class SaveLevelController implements ActionListener {
 
 	public Path openFile() {
 		Path path;
-		if (levelName.equals("")) {
-			path = Paths.get((level.getGameMode() + ".dat"));
-		} else {
-			path = Paths.get(levelName + ".dat");
-		}
+		path = Paths.get(levelName + ".dat");
+
 		return path;
 	}
 
 	public boolean save(Path path) {
 		try {
-			Main.output = new ObjectOutputStream(Files.newOutputStream(path,
+			if (level.equals("")) {
+
+			}
+			output = new ObjectOutputStream(Files.newOutputStream(path,
 					StandardOpenOption.CREATE, StandardOpenOption.APPEND));
-			Main.output.writeObject(model);
+			output.writeObject(model);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -132,8 +129,8 @@ public class SaveLevelController implements ActionListener {
 
 	public void closeFile() {
 		try {
-			if (Main.output != null)
-				Main.output.close();
+			if (output != null)
+				output.close();
 		} catch (IOException ioException) {
 			System.err.println("Error closing file. Terminating.");
 			System.exit(1);
