@@ -91,7 +91,7 @@ public class Move implements MouseListener, MouseMotionListener{
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
+
 		
 	}
 
