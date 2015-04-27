@@ -60,8 +60,6 @@ public class Cell implements Serializable {
 		
 		isEmpty = true;
 		return tile;
-		
-		
 	}
 	
 
