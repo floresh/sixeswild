@@ -23,7 +23,7 @@ public class ToggleCellController implements ActionListener {
 	}
 	
 	public boolean setEnabled(boolean onOff){
-		Main.model.getLevel().getBoard().cells[row][column].setIsEnabled(onOff);
+		Main.model.getCurrentLevel().getBoard().cells[row][column].setIsEnabled(onOff);
 		return true;
 	}
 

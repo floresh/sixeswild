@@ -1,6 +1,6 @@
 package game.entities;
 
-public class Model {
+public class Model{
 	Level currentLevel;
 	int numSPSRemove;
 	int numSPSwap;
@@ -8,6 +8,10 @@ public class Model {
 
 	public Model() {
 		currentLevel = new NoLevel();
+	}
+	
+	public Model (Level currentLevel){
+		this.currentLevel = currentLevel;
 	}
 
 	public Level getCurrentLevel() {

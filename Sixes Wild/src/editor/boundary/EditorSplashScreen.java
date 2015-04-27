@@ -6,13 +6,9 @@ import java.awt.Image;
 
 import javax.swing.JLabel;
 
-import java.awt.BorderLayout;
-
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
-import javax.swing.LayoutStyle.ComponentPlacement;
 
-import editor.model.LevelEditorModel;
 
 public class EditorSplashScreen extends JFrame{
 	Image splash;

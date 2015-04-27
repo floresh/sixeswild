@@ -1,14 +1,14 @@
 package editor.controller;
 
 import editor.boundary.LevelEditorApplication;
-import editor.model.LevelEditorModel;
-//
+import game.entities.Model;
+
 public class UndoController {
-	LevelEditorModel model;
+	Model model;
 	LevelEditorApplication application;
 	
-	public UndoController(LevelEditorApplication app, LevelEditorModel m) {
-		this.model = m;
+	public UndoController(LevelEditorApplication app, Model m) {
+		model = m;
 		this.application = app;
 	}
 	

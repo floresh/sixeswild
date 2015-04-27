@@ -1,14 +1,13 @@
 package editor.controller;
 
 import editor.boundary.LevelEditorApplication;
-import editor.model.LevelEditorModel;
-//
+import game.entities.Model;
 public class ClearLevelController {
 	
-	LevelEditorModel model;
+	Model model;
 	LevelEditorApplication application;
 	
-	public ClearLevelController(LevelEditorApplication app, LevelEditorModel m) {
+	public ClearLevelController(LevelEditorApplication app, Model m) {
 		this.model = m;
 		this.application = app;
 	}

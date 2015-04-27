@@ -1,15 +1,15 @@
 package editor.controller;
 
 import editor.boundary.LevelEditorApplication;
-import editor.model.LevelEditorModel;
-//
+import game.entities.Model;
+
 public class RedoController {
 	
-	LevelEditorModel model;
+	Model model;
 	LevelEditorApplication application;
 	
-	public RedoController(LevelEditorApplication app, LevelEditorModel m) {
-		this.model = m;
+	public RedoController(LevelEditorApplication app, Model m) {
+		model = m;
 		this.application = app;
 	}
 	
