@@ -3,6 +3,7 @@ package game.boundary;
 import game.controller.PauseController;
 import game.controller.SelectGameModeController;
 import game.entities.Board;
+import game.main.Main;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -28,9 +29,15 @@ public class LevelView extends JFrame{
 	
 	public LevelView() {
 		setResizable(false);
+
 		
 		
 		JPanel panel = new JPanel();
+
+		board = Main.model.getCurrentLevel().getBoard();
+		
+		JPanel boardView = new BoardView();
+
 		panel.setBounds(224, 66, 384, 369);
 		getContentPane().add(panel);
 		panel.setLayout(null);

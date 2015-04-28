@@ -1,7 +1,7 @@
 package game.boundary;
 
 import game.controller.ReturnToPreviousMenuController;
-import game.controller.SelectPlayController;
+import game.main.Main;
 
 import javax.swing.JFrame;
 import javax.swing.GroupLayout;
@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class PuzzleLevelSelection extends JFrame {
+	int index = 0;
 
 	public PuzzleLevelSelection() {
 		super("Puzzle Level Selection");
@@ -21,20 +22,45 @@ public class PuzzleLevelSelection extends JFrame {
 		btnNewButton
 				.addActionListener(new ReturnToPreviousMenuController(this));
 
-		JButton btnNewButton_1 = new JButton("1");
-
-		JButton button = new JButton("2");
-		button.setEnabled(false);
-
-		JButton button_1 = new JButton("3");
-		button_1.setEnabled(false);
-
-		JButton button_2 = new JButton("4");
-		button_2.setEnabled(false);
-
-		JButton btnNewButton_2 = new JButton("PLAY");
-		btnNewButton_2.addActionListener(new ActionListener() {
+		JButton button1 = new JButton("1");
+		button1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				index = 0;
+			}
+		});
+
+		JButton button2 = new JButton("2");
+		button2.setEnabled(false);
+		button2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				index = 1;
+			}
+		});
+
+		JButton button3 = new JButton("3");
+		button3.setEnabled(false);
+		button3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				index = 2;
+			}
+		});
+
+		JButton button4 = new JButton("4");
+		button4.setEnabled(false);
+		button4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				index = 3;
+			}
+		});
+
+		JButton playButton = new JButton("PLAY");
+		playButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try{
+					Main.model = Main.getLoadedModels().get(index);
+				}catch(ArrayIndexOutOfBoundsException ex){
+					System.err.println("Index out of bounds");
+				}
 				new LevelView();
 				dispose();
 			}
@@ -50,19 +76,19 @@ public class PuzzleLevelSelection extends JFrame {
 										.addGap(30)
 										.addComponent(btnNewButton)
 										.addGap(101)
-										.addComponent(btnNewButton_1,
+										.addComponent(button1,
 												GroupLayout.PREFERRED_SIZE, 48,
 												GroupLayout.PREFERRED_SIZE)
 										.addGap(35)
-										.addComponent(button,
+										.addComponent(button2,
 												GroupLayout.PREFERRED_SIZE, 48,
 												GroupLayout.PREFERRED_SIZE)
 										.addGap(36)
-										.addComponent(button_1,
+										.addComponent(button3,
 												GroupLayout.PREFERRED_SIZE, 48,
 												GroupLayout.PREFERRED_SIZE)
 										.addGap(34)
-										.addComponent(button_2,
+										.addComponent(button4,
 												GroupLayout.PREFERRED_SIZE, 48,
 												GroupLayout.PREFERRED_SIZE)
 										.addContainerGap(
@@ -73,7 +99,7 @@ public class PuzzleLevelSelection extends JFrame {
 								groupLayout
 										.createSequentialGroup()
 										.addContainerGap(379, Short.MAX_VALUE)
-										.addComponent(btnNewButton_2,
+										.addComponent(playButton,
 												GroupLayout.PREFERRED_SIZE, 79,
 												GroupLayout.PREFERRED_SIZE)
 										.addGap(73)));
@@ -91,7 +117,7 @@ public class PuzzleLevelSelection extends JFrame {
 														.addComponent(
 																btnNewButton)
 														.addComponent(
-																btnNewButton_1,
+																button1,
 																GroupLayout.PREFERRED_SIZE,
 																46,
 																GroupLayout.PREFERRED_SIZE)
@@ -100,24 +126,24 @@ public class PuzzleLevelSelection extends JFrame {
 																		.createParallelGroup(
 																				Alignment.BASELINE)
 																		.addComponent(
-																				button,
+																				button2,
 																				GroupLayout.PREFERRED_SIZE,
 																				46,
 																				GroupLayout.PREFERRED_SIZE)
 																		.addComponent(
-																				button_1,
+																				button3,
 																				GroupLayout.PREFERRED_SIZE,
 																				46,
 																				GroupLayout.PREFERRED_SIZE))
 														.addComponent(
-																button_2,
+																button4,
 																GroupLayout.PREFERRED_SIZE,
 																46,
 																GroupLayout.PREFERRED_SIZE))
 										.addPreferredGap(
 												ComponentPlacement.RELATED,
 												262, Short.MAX_VALUE)
-										.addComponent(btnNewButton_2)
+										.addComponent(playButton)
 										.addGap(83)));
 		getContentPane().setLayout(groupLayout);
 		setSize(800, 800);
