@@ -15,7 +15,7 @@ import game.controller.ScoreController;
 import game.entities.*;
 
 public class MoveController extends Move implements MouseListener, MouseMotionListener{
-	//have individual rows and columns instead?  otherwise we have two instances of arrays of cells one in here and one in the board.
+	//Now called move controller from move
 	Model model;
 	Application application;
 	ArrayList<Cell> cells;

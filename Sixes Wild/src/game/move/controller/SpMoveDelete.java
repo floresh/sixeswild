@@ -1,10 +1,11 @@
 package game.move.controller;
 
+import game.controller.Move;
 import game.controller.MovesLeftController;
 import game.entities.Board;
 import game.entities.Location;
 
-public class SpMoveDelete {
+public class SpMoveDelete extends Move{
 	
 	MovesLeftController movesLeft;
 	Board board;
@@ -31,6 +32,12 @@ public class SpMoveDelete {
 	return movesLeft.process();
 	
 	
+	}
+
+	@Override
+	public boolean doMove() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 	
