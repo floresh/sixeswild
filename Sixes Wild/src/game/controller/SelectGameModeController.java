@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+
 import game.boundary.GameModeScreen;
 import game.entities.Model;
 import game.entities.PuzzleLevel;
@@ -27,6 +28,7 @@ public class SelectGameModeController implements ActionListener {
 		case "PUZZLE":
 			Main.getModel().setCurrentLevel(new PuzzleLevel());
 			loadLevels();
+
 			break;
 		}
 		if (Main.getModel().getCurrentLevel().openLevelScreen()) {

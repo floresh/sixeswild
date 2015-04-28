@@ -105,7 +105,7 @@ public class SaveLevelController implements ActionListener {
 
 	public Path openFile() {
 		Path path = FileSystems.getDefault().getPath("Levels",
-				screen.getLevelName() + ".dat");
+				model.getCurrentLevel().getGameMode() + ".dat");
 		try {
 			Files.createDirectories(path.getParent());
 			Files.createFile(path);
@@ -121,6 +121,7 @@ public class SaveLevelController implements ActionListener {
 	public boolean save(Path path) {
 		try {
 			for (Model m : Main.getLoadedModels()) {
+				System.out.println("saving");
 				output = new ObjectOutputStream(Files.newOutputStream(path));
 				output.writeObject(m);
 			}
