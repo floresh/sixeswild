@@ -9,6 +9,7 @@ import javax.swing.event.MouseInputAdapter;
 
 import game.boundary.Application;
 import game.boundary.CellView;
+import game.controller.Move;
 import game.controller.MovesLeftController;
 import game.controller.ScoreController;
 import game.entities.*;
