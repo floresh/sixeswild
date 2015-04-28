@@ -5,10 +5,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import game.boundary.Application;
+import game.controller.Move;
 import game.controller.MovesLeftController;
 import game.entities.*;
 
-public class SpMoveReshuffleBoard {
+public class SpMoveReshuffleBoard extends Move{
 	Model model;
 	Application application;
 	
@@ -29,5 +30,11 @@ public class SpMoveReshuffleBoard {
 		//TODO refresh boundary
 		
 		return true;
+	}
+
+	@Override
+	public boolean doMove() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

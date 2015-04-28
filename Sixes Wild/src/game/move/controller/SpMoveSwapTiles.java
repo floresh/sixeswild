@@ -1,11 +1,12 @@
 package game.move.controller;
 
 import game.boundary.Application;
+import game.controller.Move;
 import game.controller.MovesLeftController;
 import game.entities.Model;
 import game.entities.Tile;
 
-public class SpMoveSwapTiles {
+public class SpMoveSwapTiles extends Move{
 	Model model;
 	Application application;
 	
@@ -32,5 +33,11 @@ public class SpMoveSwapTiles {
 		//TODO refresh boundary
 		
 		return true;
+	}
+
+	@Override
+	public boolean doMove() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }
