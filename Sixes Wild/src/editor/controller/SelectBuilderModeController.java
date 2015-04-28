@@ -35,7 +35,7 @@ public class SelectBuilderModeController implements ActionListener {
 		}
 
 		Main.model.setCurrentLevel(level);
-		Filing.loadBuilderLevels(Main.model);
+		Filing.loadBuilderLevels(Main.model.getCurrentLevel());
 		screen.dispose();
 		new WholesomeLevelEditorScreen();
 	}

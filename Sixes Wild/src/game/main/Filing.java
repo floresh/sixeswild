@@ -3,6 +3,8 @@ package game.main;
 import editor.boundary.Main;
 import game.entities.Level;
 import game.entities.Model;
+import game.entities.PuzzleLevel;
+
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -21,9 +23,11 @@ public class Filing {
 		Path path = FileSystems.getDefault().getPath("Levels",
 				level.getGameMode() + ".dat");
 		try {
+			if (!Files.exists(path)) {
+				Files.createDirectories(path.getParent());
+				Files.createFile(path);
+			}
 			output = new ObjectOutputStream(Files.newOutputStream(path));
-			Files.createDirectories(path.getParent());
-			Files.createFile(path);
 		} catch (FileAlreadyExistsException e) {
 			System.err.println("File already exists");
 		} catch (IOException e) {
@@ -37,8 +41,10 @@ public class Filing {
 		Path path = FileSystems.getDefault().getPath("Levels",
 				level.getGameMode() + ".dat");
 		try {
-			Files.createDirectories(path.getParent());
-			Files.createFile(path);
+			if (!Files.exists(path)) {
+				Files.createDirectories(path.getParent());
+				Files.createFile(path);
+			}
 			input = new ObjectInputStream(Files.newInputStream(path));
 		} catch (FileAlreadyExistsException e) {
 			System.err.println("File already exists");
@@ -73,13 +79,15 @@ public class Filing {
 		}
 	}
 
-	public static boolean loadGameLevels(Model model) {
-		Path path = openInputFile(model.getCurrentLevel());
+	public static boolean loadGameLevels(Level level) {
+		Path path = openInputFile(level);
 		try {
 			input = new ObjectInputStream(Files.newInputStream(path));
-			System.out.println(path);
 			while (true) {
-				Level level = (Level) input.readObject();
+				switch (level.getGameMode()) {
+				case "Puzzle":
+					level = (PuzzleLevel) input.readObject();
+				}
 				game.main.Main.getLoadedLevels().add(level);
 			}
 		} catch (EOFException e) {
@@ -92,12 +100,16 @@ public class Filing {
 		return true;
 	}
 
-	public static boolean loadBuilderLevels(Model model) {
-		Path path = openInputFile(model.getCurrentLevel());
+	public static boolean loadBuilderLevels(Level level) {
+		Path path = openInputFile(level);
 		try {
 			input = new ObjectInputStream(Files.newInputStream(path));
 			while (true) {
-				Level level = (Level) input.readObject();
+				switch (level.getGameMode()) {
+				case "Puzzle":
+					level = (PuzzleLevel) input.readObject();
+					System.out.println("loading puzzles");
+				}
 				Main.getLoadedLevels().add(level);
 			}
 		} catch (EOFException e) {
