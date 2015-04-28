@@ -1,5 +1,6 @@
 package game.boundary;
 
+
 import game.entities.Board;
 import game.entities.Cell;
 
@@ -12,7 +13,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class CellView extends JLabel implements MouseListener, MouseMotionListener {
+	Cell cell;
 	public CellView(Cell cell) {
+		this.cell = cell;
 		setLayout(null);
 		int row = cell.getLocation().getRow();
 		int column= cell.getLocation().getColumn()-1;	
@@ -44,6 +47,11 @@ public class CellView extends JLabel implements MouseListener, MouseMotionListen
 		
 		}
 	
+	}
+	
+	
+	public Cell getCell(){
+		return cell;
 	}
 	
 	
@@ -91,5 +99,4 @@ public class CellView extends JLabel implements MouseListener, MouseMotionListen
 		// TODO Auto-generated method stub
 		
 	}
-
 }

@@ -1,21 +1,22 @@
 package game.controller;
 
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
 import javax.swing.event.MouseInputAdapter;
 
 import game.boundary.Application;
+import game.boundary.CellView;
 import game.entities.*;
 
-public class Move{
+public class Move implements MouseListener, MouseMotionListener{
 	//have individual rows and columns instead?  otherwise we have two instances of arrays of cells one in here and one in the board.
 	Model model;
 	Application application;
 	ArrayList<Cell> cells;
-	public int srcRow;
-	public int srcCol;
-	public int destRow;
-	public int destCol;
+	ArrayList<CellView> selectedCells;
 	
 	ScoreController updateScore = new ScoreController(application, model);
 	MovesLeftController movesLeft = new MovesLeftController(application, model);
@@ -24,6 +25,8 @@ public class Move{
 		this.model = m;
 		this.application = app;
 		this.cells = cells;
+		selectedCells = new ArrayList<CellView>();
+
 	}
 	
 	public boolean process() {
@@ -56,11 +59,57 @@ public class Move{
 		
 		return true;
 	}
-	// A possible way to check if the move is legal is to check if the second tile we select has the same x or y as the 
-	// first one and the third tile has to have the same x or y as the other two and etc till we reach 6 tiles.  Having
-	// separate row and column parameters would help greatly in writing this function.  Or we could check for adjacen
-	public boolean legalSelection(int x, int y) {
+	
+	public void selectTile(CellView cellView){
+		selectedCells.add(cellView);
+		cellView.getCell().getTile().setSelected();
+	}
+	
+	//Checks if the move is valid.
+	public boolean legalSelection() {
 		return false;
+		
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		System.out.println("Mouse pressed");
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseDragged(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseMoved(MouseEvent e) {
+		// TODO Auto-generated method stub
 		
 	}
 }

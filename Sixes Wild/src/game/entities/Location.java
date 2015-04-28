@@ -1,6 +1,7 @@
 package game.entities;
 
 public class Location {
+
 	
 	int column;
 	int row;
@@ -17,7 +18,6 @@ public class Location {
 	public int getColumn(){
 		return column;
 	}
-	
+}
 	
 
-}

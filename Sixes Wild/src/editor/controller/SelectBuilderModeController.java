@@ -10,20 +10,18 @@ import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import javax.swing.JOptionPane;
-
 import editor.boundary.LevelEditorIntro;
 import editor.boundary.Main;
 import editor.boundary.WholesomeLevelEditorScreen;
-import editor.model.LevelEditorModel;
 import game.entities.EliminationLevel;
 import game.entities.Level;
+import game.entities.Model;
 import game.entities.PuzzleLevel;
 
 public class SelectBuilderModeController implements ActionListener {
 	LevelEditorIntro screen;
 	ObjectInputStream input;
-	LevelEditorModel model;
+	Model model;
 	Level level;
 	String levelName;
 
@@ -36,7 +34,7 @@ public class SelectBuilderModeController implements ActionListener {
 		try {
 			input = new ObjectInputStream(Files.newInputStream(path));
 			while (true) {
-				model = (LevelEditorModel) input.readObject();
+				model = (Model) input.readObject();
 				Main.getLoadedModels().add(model);
 			}
 		} catch (EOFException e) {
@@ -77,7 +75,7 @@ public class SelectBuilderModeController implements ActionListener {
 		// case "Lightning" : level = new LightningLevel();break;
 		}
 
-		Main.model.setLevel(level);
+		Main.model.setCurrentLevel(level);
 		loadLevels();
 		screen.dispose();
 		new WholesomeLevelEditorScreen();

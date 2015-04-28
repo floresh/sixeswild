@@ -4,7 +4,6 @@ import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JButton;
 import javax.swing.SpinnerNumberModel;
-
 import javax.swing.JLabel;
 
 import java.awt.Color;
@@ -14,9 +13,12 @@ import java.util.ArrayList;
 import javax.swing.JTextField;
 import javax.swing.JSlider;
 
+import editor.controller.ClearLevelController;
+import editor.controller.InvertLevelController;
 import editor.controller.PreviewController;
 import editor.controller.SaveLevelController;
 import editor.controller.ToggleCellController;
+
 import javax.swing.JSpinner;
 
 /**
@@ -48,10 +50,11 @@ public class WholesomeLevelEditorScreen extends JFrame {
 	
 	JButton saveLevel;
 	JButton clearLevel;
+	JButton invertLevel;
 	JButton previewLevel;
 	JButton undo;
 	JButton redo;
-	JButton[][] buttArray;
+	public JButton[][] buttArray;
 
 	public void init() {
 		nameTextField = new JTextField();
@@ -90,6 +93,9 @@ public class WholesomeLevelEditorScreen extends JFrame {
 		undo = new JButton("Undo");
 		redo = new JButton("Redo");
 		clearLevel = new JButton("Clear Level");
+		clearLevel.addActionListener(new ClearLevelController(this));
+		invertLevel = new JButton("Invert Level");
+		invertLevel.addActionListener(new InvertLevelController(this));
 		previewLevel = new JButton("Preview Level");
 		previewLevel.addActionListener(new PreviewController(this));
 
@@ -159,6 +165,9 @@ public class WholesomeLevelEditorScreen extends JFrame {
 		menuBar.add(undo);
 		menuBar.add(redo);
 		menuBar.add(clearLevel);
+		
+		
+		menuBar.add(invertLevel);
 		menuBar.add(previewLevel);
 
 		setSize(1300, 800);

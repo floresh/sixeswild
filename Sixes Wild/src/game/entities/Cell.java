@@ -12,16 +12,10 @@ public class Cell implements Serializable {
 	Location location;
 	
 	public Cell(){
-		
-	}
-	
-	public Cell(int column, int row){
 		tile = new Tile();
 		isMarked = false;
 		isEmpty = true;
 		isEnabled = false;
-		location = new Location(column ,row);
-		
 	}
 	
 	public Cell(int column, int row, boolean isEnabled, boolean isMarked){

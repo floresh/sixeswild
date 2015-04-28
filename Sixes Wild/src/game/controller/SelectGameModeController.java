@@ -7,18 +7,17 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
 
-import editor.model.LevelEditorModel;
 import game.boundary.GameModeScreen;
+import game.entities.Model;
 import game.entities.PuzzleLevel;
 import game.main.Main;
 
 public class SelectGameModeController implements ActionListener {
-	
 	GameModeScreen screen;
 	String level;
 	ObjectInputStream input;
@@ -36,6 +35,7 @@ public class SelectGameModeController implements ActionListener {
 		case "PUZZLE":
 			Main.getModel().setCurrentLevel(new PuzzleLevel());
 			loadLevels();
+
 			break;
 		}
 		if (Main.getModel().getCurrentLevel().openLevelScreen()) {
@@ -46,14 +46,14 @@ public class SelectGameModeController implements ActionListener {
 	}
 
 	public boolean loadLevels() {
-		Path path = openFile();
+		Main.resetLevels();
+		Path path = Main.openFile();
 		try {
 			input = new ObjectInputStream(
 					Files.newInputStream(path));
-			int count = 0;
 			while (true) {
-				JOptionPane.showMessageDialog(null, ++count);
-				PuzzleLevel level = (PuzzleLevel) ( (LevelEditorModel) input.readObject()).getLevel();
+				Model level = (Model) input.readObject();
+				Main.getLoadedModels().add(level);
 			}
 		} catch (EOFException e) {
 			System.err.println("No more records to load");
@@ -63,11 +63,6 @@ public class SelectGameModeController implements ActionListener {
 			e.printStackTrace();
 		}
 		return true;
-	}
-
-	public Path openFile() {
-		return Paths
-				.get((Main.getModel().getCurrentLevel().getGameMode() + ".dat"));
 	}
 
 	@Override

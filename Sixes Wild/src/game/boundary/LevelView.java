@@ -1,5 +1,7 @@
 package game.boundary;
 
+import game.controller.PauseController;
+import game.controller.SelectGameModeController;
 import game.entities.Board;
 
 import javax.swing.JFrame;
@@ -9,8 +11,11 @@ import javax.swing.JLabel;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JProgressBar;
 import javax.swing.SwingConstants;
+
+import java.awt.event.ActionListener;
 
 /**
  * 
@@ -31,6 +36,8 @@ public class LevelView extends JFrame{
 		panel.setLayout(null);
 		
 		JButton btnNewButton = new JButton("PAUSE");
+		btnNewButton.addActionListener(new PauseController(this));
+	
 		btnNewButton.setBounds(35, 37, 97, 25);
 		panel.add(btnNewButton);
 		

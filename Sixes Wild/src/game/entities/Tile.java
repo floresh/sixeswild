@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class Tile implements Serializable {
 	int value;
 	int multiplier;
+	boolean setSelected;
 	
 	public Tile(){
 		value = 1;
@@ -22,6 +23,10 @@ public class Tile implements Serializable {
 	
 	public int getMultiplier() {
 		return multiplier;
+	}
+	
+	public boolean setSelected(){
+		return setSelected;
 	}
 
 }

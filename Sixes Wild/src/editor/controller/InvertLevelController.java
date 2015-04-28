@@ -10,11 +10,11 @@ import editor.boundary.LevelEditorApplication;
 import editor.boundary.Main;
 import editor.boundary.WholesomeLevelEditorScreen;
 import game.entities.Model;
-public class ClearLevelController implements ActionListener {
+public class InvertLevelController implements ActionListener {
 	
 	WholesomeLevelEditorScreen wles;
 	
-	public ClearLevelController(WholesomeLevelEditorScreen wles) {
+	public InvertLevelController(WholesomeLevelEditorScreen wles) {
 		this.wles = wles;
 	}
 	
@@ -32,6 +32,10 @@ public class ClearLevelController implements ActionListener {
 				if(wles.buttArray[i][j].getBackground() == Color.RED){
 					wles.buttArray[i][j].setBackground(Color.GREEN);
 					setEnabled(true,i,j);
+				}
+				else{
+					wles.buttArray[i][j].setBackground(Color.RED);
+					setEnabled(false,i,j);
 				}			
 			}
 		}
@@ -39,3 +43,4 @@ public class ClearLevelController implements ActionListener {
 	}
 	
 }
+
