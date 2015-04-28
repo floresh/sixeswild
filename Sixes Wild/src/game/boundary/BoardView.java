@@ -1,7 +1,7 @@
 package game.boundary;
 
 import editor.boundary.Main;
-import game.controller.Move;
+import game.controller.MoveController;
 import game.entities.Board;
 
 import java.awt.event.MouseEvent;
@@ -26,7 +26,7 @@ public class BoardView extends JPanel implements MouseListener, MouseMotionListe
 	int xDrag = 0;
 	int yDrag = 0;
 	boolean dragable;
-	Move[] selectionCheck = new Move[5]; //An array of legal selections
+	MoveController[] selectionCheck = new MoveController[5]; //An array of legal selections
 	int tileSize = 50;
 	
 	public BoardView(Board board) {	

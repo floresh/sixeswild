@@ -11,7 +11,7 @@ import game.boundary.Application;
 import game.boundary.CellView;
 import game.entities.*;
 
-public class Move implements MouseListener, MouseMotionListener{
+public class MoveController implements MouseListener, MouseMotionListener{
 	//have individual rows and columns instead?  otherwise we have two instances of arrays of cells one in here and one in the board.
 	Model model;
 	Application application;
@@ -21,7 +21,7 @@ public class Move implements MouseListener, MouseMotionListener{
 	ScoreController updateScore = new ScoreController(application, model);
 	MovesLeftController movesLeft = new MovesLeftController(application, model);
 	
-	public Move(Application app, Model m, ArrayList<Cell> cells) {
+	public MoveController(Application app, Model m, ArrayList<Cell> cells) {
 		this.model = m;
 		this.application = app;
 		this.cells = cells;
