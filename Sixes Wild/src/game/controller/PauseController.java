@@ -1,18 +1,25 @@
 package game.controller;
 
-import game.boundary.Application;
-import game.entities.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class PauseController {
-	Model model;
-	Application application;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+import game.main.Main;
+
+public class PauseController implements ActionListener{
+	JFrame frame;
 	
-	public PauseController(Application app, Model m) {
-		this.model = m;
-		this.application = app;
+	public PauseController(JFrame frame) {
+		this.frame = frame;
 	}
 	
-	public boolean process() {
-		return false;
+	public void actionPerformed(ActionEvent e) {
+		Object[] options = {"Continue"};
+		JOptionPane.showMessageDialog(frame,"Paused.");
+		
+		Main.getModel().getCurrentLevel();
 	}
-}
+	}
+

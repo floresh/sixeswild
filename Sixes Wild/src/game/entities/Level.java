@@ -1,10 +1,13 @@
 package game.entities;
 
+import game.controller.TimeController;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public abstract class Level implements Serializable, ILevel {
-
+//
+	TimeController timeD;
 	int score;
 	int time;
 	int movesLeft;
