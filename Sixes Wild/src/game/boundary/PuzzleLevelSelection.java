@@ -1,7 +1,7 @@
 package game.boundary;
 
 import game.controller.ReturnToPreviousMenuController;
-import game.controller.SelectPlayController;
+import game.main.Main;
 
 import javax.swing.JFrame;
 import javax.swing.GroupLayout;
@@ -35,6 +35,7 @@ public class PuzzleLevelSelection extends JFrame {
 		JButton btnNewButton_2 = new JButton("PLAY");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Main.model = Main.getLoadedModels().get(0);
 				new LevelView();
 				dispose();
 			}

@@ -28,7 +28,6 @@ public class SelectGameModeController implements ActionListener {
 		case "PUZZLE":
 			Main.getModel().setCurrentLevel(new PuzzleLevel());
 			loadLevels();
-
 			break;
 		}
 		if (Main.getModel().getCurrentLevel().openLevelScreen()) {
