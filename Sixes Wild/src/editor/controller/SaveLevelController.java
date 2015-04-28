@@ -21,18 +21,15 @@ import game.entities.Cell;
 import game.entities.Level;
 import game.entities.Model;
 import game.entities.PuzzleLevel;
+import game.main.Filing;
 
 public class SaveLevelController implements ActionListener {
 	WholesomeLevelEditorScreen screen;
 	Cell[][] cells;
 	Board board;
 	Level level;
-	Model model;
 	ArrayList<Integer> tileFrequencies, multiplierFrequencies, rules, stars;
 	String levelName = "";
-
-	ObjectInputStream input;
-	ObjectOutputStream output;
 
 	public SaveLevelController(WholesomeLevelEditorScreen app) {
 		screen = app;
@@ -46,10 +43,9 @@ public class SaveLevelController implements ActionListener {
 					&& getRules() && getStars() && getCells()) {
 				level = new PuzzleLevel(board, tileFrequencies,
 						multiplierFrequencies, stars, rules);
-				model = new Model(level);
-				Main.getLoadedModels().add(model);
-				openFile();
-				if (save()) {
+				Main.getLoadedLevels().add(level);
+				Filing.openFile(level);
+				if (Filing.save()) {
 					JOptionPane.showMessageDialog(null, "Saved!");
 				} else {
 					JOptionPane.showMessageDialog(null, "Not Saved!");
@@ -57,7 +53,6 @@ public class SaveLevelController implements ActionListener {
 				return true;
 			}
 		}
-		closeFile();
 		return false;
 	}
 
@@ -102,42 +97,5 @@ public class SaveLevelController implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		process();
-	}
-
-	public Path openFile() {
-		Path path = FileSystems.getDefault().getPath("Levels",
-				model.getCurrentLevel().getGameMode() + ".dat");
-		try {
-			output = new ObjectOutputStream(Files.newOutputStream(path));
-			Files.createDirectories(path.getParent());
-			Files.createFile(path);
-		} catch (FileAlreadyExistsException e) {
-			System.err.println("File already exists");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return path;
-	}
-
-	public boolean save() {
-		try {
-			for (Model m : Main.getLoadedModels()) {
-				output.writeObject(m);
-			}
-		} catch (IOException e) {
-			System.err.println(e.getMessage());
-		}
-		return true;
-	}
-
-	public void closeFile() {
-		try {
-			if (output != null)
-				output.close();
-		} catch (IOException ioException) {
-			System.err.println("Error closing file. Terminating.");
-			System.exit(1);
-		}
 	}
 }
