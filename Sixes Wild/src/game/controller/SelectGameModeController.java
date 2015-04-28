@@ -8,6 +8,7 @@ import java.io.ObjectInputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
@@ -27,7 +28,10 @@ public class SelectGameModeController implements ActionListener {
 	}
 
 	public boolean process() {
-
+		
+		
+		
+		
 		switch (level) {
 		case "PUZZLE":
 			Main.getModel().setCurrentLevel(new PuzzleLevel());

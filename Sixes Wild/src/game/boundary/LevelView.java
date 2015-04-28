@@ -23,7 +23,9 @@ public class LevelView extends JFrame{
 	
 	public LevelView() {
 		setResizable(false);
-		JPanel panel = new BoardView();
+		
+		
+		JPanel panel = new JPanel();
 		panel.setBounds(224, 66, 384, 369);
 		getContentPane().add(panel);
 		panel.setLayout(null);
@@ -41,23 +43,23 @@ public class LevelView extends JFrame{
 		panel.add(btnNewButton_2);
 		
 		JLabel lblSpecialMoves = new JLabel("SPECIAL MOVES");
-		lblSpecialMoves.setFont(new Font("Serif", Font.PLAIN, 13));
 		lblSpecialMoves.setBounds(36, 173, 96, 25);
+		lblSpecialMoves.setFont(new Font("Serif", Font.PLAIN, 13));
 		panel.add(lblSpecialMoves);
 		
 		JButton btnNewButton_3 = new JButton("RESHUFFLE");
-		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		btnNewButton_3.setBounds(35, 211, 97, 25);
+		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		panel.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("SWAP");
-		btnNewButton_4.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		btnNewButton_4.setBounds(35, 259, 97, 25);
+		btnNewButton_4.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		panel.add(btnNewButton_4);
 		
 		JButton btnNewButton_5 = new JButton("DELETE");
-		btnNewButton_5.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		btnNewButton_5.setBounds(35, 305, 97, 25);
+		btnNewButton_5.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		panel.add(btnNewButton_5);
 		
 		JLabel lblNewLabel = new JLabel("SCORE: ");
@@ -69,16 +71,20 @@ public class LevelView extends JFrame{
 		panel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Sixes Wild");
+		lblNewLabel_2.setBounds(396, 37, 161, 71);
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblNewLabel_2.setBounds(396, 37, 161, 71);
 		panel.add(lblNewLabel_2);
 		
 		JProgressBar progressBar = new JProgressBar();
+		progressBar.setBounds(57, 357, 56, 357);
 		progressBar.setValue(0);
 		progressBar.setOrientation(SwingConstants.VERTICAL);
-		progressBar.setBounds(57, 357, 56, 357);
 		panel.add(progressBar);
+		
+		BoardView panel_1 = new BoardView();
+		panel_1.setBounds(255, 229, 450, 450);
+		panel.add(panel_1);
 		
 		setSize(800,800);
 		setLocationRelativeTo(null);

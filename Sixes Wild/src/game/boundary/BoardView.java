@@ -1,6 +1,7 @@
 package game.boundary;
 
 import game.controller.Move;
+import game.entities.Board;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -17,7 +18,8 @@ import javax.swing.JPanel;
  */
 public class BoardView extends JPanel implements MouseListener, MouseMotionListener{
 	
-	final JLabel[][] labelArr = new JLabel[9][9];
+	Board board;
+	final CellView[][] labelArr = new CellView[9][9];
 	int srcX = 200;
 	int srcY = 175;
 	int xDrag = 0;
@@ -27,6 +29,9 @@ public class BoardView extends JPanel implements MouseListener, MouseMotionListe
 	int tileSize = 50;
 	
 	public BoardView() {	
+		
+		this.board = new Board();
+		
 		setLayout(null);
 		this.addMouseListener(this);
 		this.addMouseMotionListener(this);
@@ -34,14 +39,19 @@ public class BoardView extends JPanel implements MouseListener, MouseMotionListe
 			}
 	//To Do
 	public void draw(){
-		for(int row = 0; row <= 8; row++){
-			for(int col = 0; col <= 8; col++){
-				labelArr[row][col] = new JLabel("mnmn");
-				labelArr[row][col].setIcon(new ImageIcon(BoardView.class.getResource("/images/1.png")));
-				labelArr[row][col].setBounds(600,600,50,50);
-				labelArr[row][col].setBounds(200+(10*row)+(row*labelArr[row][col].getWidth()),175+(10*col)+(col*labelArr[row][col].getWidth()), 50,50);
+		
+		
+		for(int row = 0; row < 9; row++){
+			for(int col = 0; col <9; col++){
 				
+				labelArr[row][col] = new CellView(board.cells[row+1][col]);
+//				labelArr[row][col].setIcon(new ImageIcon(BoardView.class.getResource("/images/1.png")));
+//				labelArr[row][col].setBounds(600,600,50,50);
+//				labelArr[row][col].setBounds(200+(10*row)+(row*labelArr[row][col].getWidth()),175+(10*col)+(col*labelArr[row][col].getWidth()), 50,50);
+//				
 				add(labelArr[row][col]);
+				
+				
 			}
 		}
 	}

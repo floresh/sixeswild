@@ -15,9 +15,9 @@ public class Board implements Serializable{
 				cells[0][k] = new TopCell();
 			}
 		
-		for (int i = 0; i < 10; i++) {
+		for (int i = 1; i < 10; i++) {
 			for (int j = 0; j < 9; j++) {
-				cells[i][j] = new Cell(new Tile(1, 1), true, false, false);
+				cells[i][j] = new Cell( i,j, true, false);
 			}
 		}
 	}

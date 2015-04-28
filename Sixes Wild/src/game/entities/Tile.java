@@ -7,7 +7,7 @@ public class Tile implements Serializable {
 	int multiplier;
 	
 	public Tile(){
-		value = 0;
+		value = 1;
 		multiplier = 0;
 	}
 	

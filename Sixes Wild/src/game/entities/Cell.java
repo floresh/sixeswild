@@ -24,7 +24,8 @@ public class Cell implements Serializable {
 		
 	}
 	
-	public Cell(boolean isEnabled, boolean isMarked){
+	public Cell(int column, int row, boolean isEnabled, boolean isMarked){
+		location = new Location(column ,row);
 		 tile = new Tile();
 		 this.isEnabled = isEnabled;
 		 this.isMarked = isMarked;
@@ -77,6 +78,10 @@ public class Cell implements Serializable {
 	}
 	public boolean getIsEnabled(){
 		return isEnabled;
+	}
+	public Location getLocation(){
+		return location;
+		
 	}
 	public void setTile(Tile t){
 		tile = t;

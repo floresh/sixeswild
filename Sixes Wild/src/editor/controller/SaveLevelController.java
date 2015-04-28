@@ -89,7 +89,7 @@ public class SaveLevelController implements ActionListener {
 
 		for (int i = 1; i < 9; i++) {
 			for (int j = 0; j < 9; j++) {
-				cells[i][j] = new Cell(buttArray[i][j].getBackground().equals(
+				cells[i][j] = new Cell(i,j,buttArray[i][j].getBackground().equals(
 						"GREEN"), false);
 			}
 		}
