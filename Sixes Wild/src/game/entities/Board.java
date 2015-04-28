@@ -19,7 +19,13 @@ public class Board implements Serializable {
 			}
 		}
 	}
+	public Board(Level level,Cell[][] cells) {
+		topCell = new TopCell(level.getTF(),level.getMF());
+		cells  = new Cell[9][9];
+		
 
+		this.cells = cells;
+	}
 	public Board(Cell[][] cells) {
 		this.cells = cells;
 	}
