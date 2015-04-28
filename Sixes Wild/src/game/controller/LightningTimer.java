@@ -8,10 +8,12 @@ import java.util.TimerTask;
 public class LightningTimer extends TimerTask {
 	Model model;
 	Application application;
+	boolean lose;
 	
 	public LightningTimer(Application app, Model m) {
 		this.model = m;
 		this.application = app;
+		lose = false;
 	}
 
 	@Override
@@ -20,8 +22,12 @@ public class LightningTimer extends TimerTask {
 		model.getCurrentLevel().setTime(time);
 		
 		if(time == 0) {
-			// TODO handle end of game
+			lose = true;
 		}
+	}
+	
+	public boolean getLose(){
+		return lose;
 	}
 
 }
