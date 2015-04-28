@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public abstract class Level implements Serializable, ILevel {
-//
+
 	TimeController timeD;
 	int score;
 	int time;
@@ -17,26 +17,30 @@ public abstract class Level implements Serializable, ILevel {
 	public Level() {
 		tileFrequencies = new ArrayList<Integer>();
 		multiplierFrequencies = new ArrayList<Integer>();
-		
-		//test code
-		tileFrequencies  = new ArrayList<Integer>(){{
-					add(1);
-					add(1);
-					add(1);
-					add(1);
-					add(1);
-					add(1);
-					
-				}};
-				multiplierFrequencies = new ArrayList<Integer>(){{
-					add(1);
-					add(1);
-					add(1);
-					add(1);
-					add(1);
-					add(1);
-					
-				}};
+
+		// test code
+		tileFrequencies = new ArrayList<Integer>() {
+			{
+				add(1);
+				add(1);
+				add(1);
+				add(1);
+				add(1);
+				add(1);
+
+			}
+		};
+		multiplierFrequencies = new ArrayList<Integer>() {
+			{
+				add(1);
+				add(1);
+				add(1);
+				add(1);
+				add(1);
+				add(1);
+
+			}
+		};
 		board = new Board();
 	}
 
@@ -47,18 +51,19 @@ public abstract class Level implements Serializable, ILevel {
 	}
 
 	public Level(Board board, ArrayList<Integer> tileFrequencies,
-			ArrayList<Integer> multiplierFrequencies, ArrayList<Integer> stars, ArrayList<Integer> rules) {
+			ArrayList<Integer> multiplierFrequencies, ArrayList<Integer> stars,
+			ArrayList<Integer> rules) {
 		this.board = board;
 		this.tileFrequencies = tileFrequencies;
 		this.multiplierFrequencies = multiplierFrequencies;
 		this.stars = stars;
 		this.rules = rules;
-		
+
 		initilizeBoard();
 	}
-	
-	public void initilizeBoard(){
-		
+
+	public void initilizeBoard() {
+
 		board.initialize(tileFrequencies, multiplierFrequencies);
 	}
 
