@@ -3,6 +3,7 @@ package game.boundary;
 
 
 
+
 import game.entities.Board;
 import game.entities.Cell;
 
@@ -101,5 +102,6 @@ public class CellView extends JLabel implements MouseListener, MouseMotionListen
 		// TODO Auto-generated method stub
 		
 	}
+
 
 }

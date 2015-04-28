@@ -3,6 +3,7 @@ package game.entities;
 public class Location {
 
 
+ 
 
 	
 	int column;
@@ -21,3 +22,4 @@ public class Location {
 		return column;
 	}
 }
+
