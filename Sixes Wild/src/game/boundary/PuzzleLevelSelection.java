@@ -57,8 +57,7 @@ public class PuzzleLevelSelection extends JFrame {
 		playButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					Main.model.setCurrentLevel(Main.getLoadedLevels()
-							.get(index));
+					Main.model.setCurrentLevel(Main.getLoadedLevels().get(index));
 				} catch (ArrayIndexOutOfBoundsException ex) {
 					System.err.println("Index out of bounds");
 				}

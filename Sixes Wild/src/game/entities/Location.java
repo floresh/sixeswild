@@ -9,7 +9,7 @@ public class Location {
 	int column;
 	int row;
 	
-	public Location(int c, int r){
+	public Location(int r, int c){
 		column = c;
 		row = r;
 				

@@ -41,7 +41,7 @@ public abstract class Level implements Serializable, ILevel {
 
 			}
 		};
-		board = new Board();
+		board = new Board(this);
 	}
 
 	public Level(Board board, int score, int time, int movesLeft,
@@ -64,6 +64,13 @@ public abstract class Level implements Serializable, ILevel {
 
 	public void initilizeBoard() {
 		board.initialize(tileFrequencies, multiplierFrequencies);
+	}
+	
+	public ArrayList<Integer> getTF(){
+		return tileFrequencies;
+	}
+	public ArrayList<Integer> getMF(){
+		return multiplierFrequencies;
 	}
 
 	public Board getBoard() {
