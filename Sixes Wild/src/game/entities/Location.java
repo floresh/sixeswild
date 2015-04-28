@@ -1,11 +1,9 @@
 package game.entities;
 
-public class Location {
+import java.io.Serializable;
 
+public class Location implements Serializable{
 
- 
-
-	
 	int column;
 	int row;
 	

@@ -19,14 +19,14 @@ public class CellView extends JLabel implements MouseListener, MouseMotionListen
 	Cell cell;
 	public CellView(Cell cell) {
 		this.cell = cell;
-		setLayout(null);
+		
 		int row = cell.getLocation().getRow();
 		int column= cell.getLocation().getColumn()-1;	
 		
 		setBounds(column*50,row*50,50,50);
 		int value = cell.getTile().getValue();
 		//setText(Integer.toString(value));
-		
+		setLayout(null);
 		switch (value){
 		 case 1:  value = 1;
 		 setIcon(new ImageIcon(BoardView.class.getResource("/images/1.png")));

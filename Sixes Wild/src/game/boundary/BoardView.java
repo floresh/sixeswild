@@ -45,7 +45,7 @@ public class BoardView extends JPanel implements MouseListener, MouseMotionListe
 		for(int row = 0; row < 9; row++){
 			for(int col = 0; col <9; col++){
 				
-				labelArr[row][col] = new CellView(board.cells[row+1][col]);
+				labelArr[row][col] = new CellView(board.cells[row][col]);
 //				labelArr[row][col].setIcon(new ImageIcon(BoardView.class.getResource("/images/1.png")));
 //				labelArr[row][col].setBounds(600,600,50,50);
 //				labelArr[row][col].setBounds(200+(10*row)+(row*labelArr[row][col].getWidth()),175+(10*col)+(col*labelArr[row][col].getWidth()), 50,50);
