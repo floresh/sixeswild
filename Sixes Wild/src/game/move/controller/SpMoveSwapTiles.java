@@ -1,6 +1,7 @@
-package game.controller;
+package game.move.controller;
 
 import game.boundary.Application;
+import game.controller.MovesLeftController;
 import game.entities.Model;
 import game.entities.Tile;
 

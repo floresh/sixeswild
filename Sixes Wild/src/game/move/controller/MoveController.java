@@ -1,4 +1,4 @@
-package game.controller;
+package game.move.controller;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -9,9 +9,11 @@ import javax.swing.event.MouseInputAdapter;
 
 import game.boundary.Application;
 import game.boundary.CellView;
+import game.controller.MovesLeftController;
+import game.controller.ScoreController;
 import game.entities.*;
 
-public class MoveController implements MouseListener, MouseMotionListener{
+public class MoveController extends Move implements MouseListener, MouseMotionListener{
 	//have individual rows and columns instead?  otherwise we have two instances of arrays of cells one in here and one in the board.
 	Model model;
 	Application application;
@@ -111,5 +113,11 @@ public class MoveController implements MouseListener, MouseMotionListener{
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public boolean doMove() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

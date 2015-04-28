@@ -1,5 +1,6 @@
-package game.controller;
+package game.move.controller;
 
+import game.controller.MovesLeftController;
 import game.entities.Board;
 import game.entities.Location;
 

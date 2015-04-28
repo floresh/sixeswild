@@ -1,10 +1,11 @@
-package game.controller;
+package game.move.controller;
 
 
 import java.util.ArrayList;
 import java.util.Collections;
 
 import game.boundary.Application;
+import game.controller.MovesLeftController;
 import game.entities.*;
 
 public class SpMoveReshuffleBoard {

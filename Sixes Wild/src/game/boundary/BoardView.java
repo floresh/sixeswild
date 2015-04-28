@@ -1,8 +1,8 @@
 package game.boundary;
 
 import editor.boundary.Main;
-import game.controller.MoveController;
 import game.entities.Board;
+import game.move.controller.MoveController;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
