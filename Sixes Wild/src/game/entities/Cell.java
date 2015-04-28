@@ -18,16 +18,17 @@ public class Cell implements Serializable {
 		isEnabled = false;
 	}
 	
-	public Cell(int column, int row, boolean isEnabled, boolean isMarked){
-		location = new Location(column ,row);
-		 tile = new Tile();
-		 this.isEnabled = isEnabled;
-		 this.isMarked = isMarked;
-		 this.isEmpty = tile != null;
-	}
-	
-	public Cell(Tile tile, boolean isEnabled, boolean isMarked, boolean isEmpty){
-		 this.tile = tile;
+//	public Cell(int column, int row, boolean isEnabled, boolean isMarked){
+//		location = new Location(column ,row);
+//		 tile = new Tile();
+//		 this.isEnabled = isEnabled;
+//		 this.isMarked = isMarked;
+//		 this.isEmpty = tile != null;
+//	}
+//	
+	public Cell(int r , int c , boolean isEnabled, boolean isMarked, boolean isEmpty){
+		
+		location = new Location(r,c);
 		 this.isEnabled = isEnabled;
 		 this.isMarked = isMarked;
 		 this.isEmpty = isEmpty;

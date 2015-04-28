@@ -6,16 +6,16 @@ import java.util.Random;
 
 public class Board implements Serializable {
 	public Cell[][] cells;
+	TopCell topCell;
 
-	public Board() {
-		cells  = new Cell[10][9];
-		for (int k = 0; k < 9; k++) {
-			cells[0][k] = new TopCell();
-		}
+	public Board(Level level) {
+		topCell = new TopCell(level.getTF(),level.getMF());
+		cells  = new Cell[9][9];
+		
 
-		for (int i = 1; i < 10; i++) {
+		for (int i = 1; i < 9; i++) {
 			for (int j = 0; j < 9; j++) {
-				cells[i][j] = new Cell(i, j, true, false);
+				cells[i][j] = new Cell(i, j, true, false,true);
 			}
 		}
 	}
@@ -27,7 +27,7 @@ public class Board implements Serializable {
 	public ArrayList<Tile> getTiles() {
 		ArrayList<Tile> tiles = new ArrayList<Tile>();
 
-		for (int i = 1; i < 10; i++) {
+		for (int i = 1; i < 9; i++) {
 			for (int j = 0; i < 9; j++) {
 				tiles.add(cells[i][j].getTile());
 			}
@@ -38,7 +38,7 @@ public class Board implements Serializable {
 	public void setTiles(ArrayList<Tile> tile) {
 		int count = 0;
 
-		for (int i = 1; i < 10; i++) {
+		for (int i = 1; i < 9; i++) {
 			for (int j = 0; i < 9; j++) {
 				cells[i][j].setTile(tile.get(count));
 				count++;
@@ -84,9 +84,9 @@ public class Board implements Serializable {
 			}
 		}
 
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 9; i++) {
 			for (int j = 0; j < 9; j++) {
-				cells[i][j] = new Cell();
+				cells[i][j] = new Cell(i,j,true, false , false);
 				cells[i][j].setTile(new Tile(value, multiplier));
 			}
 		}
@@ -94,8 +94,9 @@ public class Board implements Serializable {
 
 	public void gravity() {
 		ArrayList<Cell> arrayHelp = new ArrayList<Cell>();
+		arrayHelp.add(topCell);
 		for (int i = 0; i < 9; i++) {
-			for (int j = 0; j < 10; j++) {
+			for (int j = 0; j < 9; j++) {
 				arrayHelp.add(cells[j][i]);
 			}
 			cells[10][i].gravity(arrayHelp);

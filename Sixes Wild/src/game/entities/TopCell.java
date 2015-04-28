@@ -13,9 +13,12 @@ public class TopCell extends Cell{
 	ArrayList<Integer> tileFrequency = new ArrayList<Integer>();
 	ArrayList<Integer> multiplierFrequency = new ArrayList<Integer>();
 	
-	public TopCell(){
+	public TopCell(ArrayList<Integer> tileFrequency , ArrayList<Integer> multiplierFrequency){
+		this.tileFrequency = tileFrequency;
+		this.multiplierFrequency = multiplierFrequency;
 		
 	}
+	
 	
 	protected void gravity(ArrayList<Cell> column){
 		
