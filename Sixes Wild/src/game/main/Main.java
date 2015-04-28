@@ -8,6 +8,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 
 import game.boundary.SplashScreen;
+import game.entities.Level;
 import game.entities.Model;
 
 import javax.swing.UIManager;
@@ -15,7 +16,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 public class Main {
 	public static Model model;
-	static ArrayList<Model> loadedModels;
+	static ArrayList<Level> loadedLevels;
 
 	public static void main(String[] args) {
 		try {
@@ -30,11 +31,8 @@ public class Main {
 				| IllegalAccessException | UnsupportedLookAndFeelException ex) {
 		}
 		model = new Model();
+		resetLevels();
 		new SplashScreen();
-	}
-
-	public static Model getModel() {
-		return model;
 	}
 
 	public static Path openFile() {
@@ -53,10 +51,10 @@ public class Main {
 	}
 
 	public static void resetLevels(){
-		loadedModels = new ArrayList<Model>();
+		loadedLevels = new ArrayList<Level>();
 	}
 
-	public static ArrayList<Model> getLoadedModels() {
-		return loadedModels;
+	public static ArrayList<Level> getLoadedLevels() {
+		return loadedLevels;
 	}
 }

@@ -17,7 +17,7 @@ public class ReturnToPreviousMenuController implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		frame.dispose();
-		Main.getModel().getCurrentLevel().getPreviousScreen();
+		Main.model.getCurrentLevel().getPreviousScreen();
 	}
 
 }

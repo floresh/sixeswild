@@ -63,7 +63,6 @@ public abstract class Level implements Serializable, ILevel {
 	}
 
 	public void initilizeBoard() {
-
 		board.initialize(tileFrequencies, multiplierFrequencies);
 	}
 

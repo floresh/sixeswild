@@ -19,7 +19,7 @@ public class PauseController implements ActionListener{
 		Object[] options = {"Continue"};
 		JOptionPane.showMessageDialog(frame,"Paused.");
 		
-		Main.getModel().getCurrentLevel();
+		Main.model.getCurrentLevel();
 	}
 	}
 

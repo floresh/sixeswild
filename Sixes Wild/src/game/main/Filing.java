@@ -3,6 +3,7 @@ package game.main;
 import editor.boundary.Main;
 import game.entities.Level;
 import game.entities.Model;
+import game.entities.PuzzleLevel;
 
 import java.io.EOFException;
 import java.io.IOException;
@@ -18,7 +19,7 @@ public class Filing {
 	static ObjectInputStream input;
 	static ObjectOutputStream output;
 	
-	public static Path openFile(Level level) {
+	public static Path openOutputFile(Level level) {
 		Path path = FileSystems.getDefault().getPath("Levels",
 				level.getGameMode() + ".dat");
 		try {
@@ -34,6 +35,22 @@ public class Filing {
 		return path;
 	}
 
+	public static Path openInputFile(Level level) {
+		Path path = FileSystems.getDefault().getPath("Levels",
+				level.getGameMode() + ".dat");
+		try {
+			input = new ObjectInputStream(Files.newInputStream(path));
+			Files.createDirectories(path.getParent());
+			Files.createFile(path);
+		} catch (FileAlreadyExistsException e) {
+			System.err.println("File already exists");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return path;
+	}
+	
 	public static boolean save() {
 		try {
 			for (Level l : Main.getLoadedLevels()) {
@@ -55,12 +72,12 @@ public class Filing {
 		}
 	}
 	
-	public static boolean loadLevels() {
-		Path path = openFile(Main.model.getCurrentLevel());
+	public static boolean loadLevels(Model model) {
+		Path path = openInputFile(model.getCurrentLevel());
 		try {
 			input = new ObjectInputStream(Files.newInputStream(path));
 			while (true) {
-				Level level = (Level) input.readObject();
+				Level level = (PuzzleLevel) input.readObject();
 				Main.getLoadedLevels().add(level);
 			}
 		} catch (EOFException e) {

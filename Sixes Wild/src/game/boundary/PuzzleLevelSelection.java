@@ -56,9 +56,10 @@ public class PuzzleLevelSelection extends JFrame {
 		JButton playButton = new JButton("PLAY");
 		playButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				try{
-					Main.model = Main.getLoadedModels().get(index);
-				}catch(ArrayIndexOutOfBoundsException ex){
+				try {
+					Main.model.setCurrentLevel(Main.getLoadedLevels()
+							.get(index));
+				} catch (ArrayIndexOutOfBoundsException ex) {
 					System.err.println("Index out of bounds");
 				}
 				new LevelView();
@@ -143,8 +144,7 @@ public class PuzzleLevelSelection extends JFrame {
 										.addPreferredGap(
 												ComponentPlacement.RELATED,
 												262, Short.MAX_VALUE)
-										.addComponent(playButton)
-										.addGap(83)));
+										.addComponent(playButton).addGap(83)));
 		getContentPane().setLayout(groupLayout);
 		setSize(800, 800);
 		setLocationRelativeTo(null);

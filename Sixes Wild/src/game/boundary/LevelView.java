@@ -30,9 +30,6 @@ public class LevelView extends JFrame{
 	public LevelView() {
 		setResizable(false);
 
-
-		
-		
 		JPanel panel = new JPanel();
 
 		board = Main.model.getCurrentLevel().getBoard();

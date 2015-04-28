@@ -5,20 +5,17 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Board implements Serializable {
-	public Cell[][] cells = new Cell[10][9];
+	public Cell[][] cells;
 
 	public Board() {
+		cells  = new Cell[10][9];
 		for (int k = 0; k < 9; k++) {
 			cells[0][k] = new TopCell();
 		}
-		
-
 
 		for (int i = 1; i < 10; i++) {
-
-
 			for (int j = 0; j < 9; j++) {
-				cells[i][j] = new Cell( i,j, true, false);
+				cells[i][j] = new Cell(i, j, true, false);
 			}
 		}
 	}
@@ -65,7 +62,6 @@ public class Board implements Serializable {
 		int multiMax = 0;
 		for (int i = 0; i < multiplierFrequency.size(); i++) {
 			multiMax = multiMax + multiplierFrequency.get(i);
-
 		}
 
 		int rand1 = randInt(0, tileMax);
@@ -89,16 +85,15 @@ public class Board implements Serializable {
 		}
 
 		for (int i = 0; i < 10; i++) {
-			for (int j = 0; i < 9; j++) {
+			for (int j = 0; j < 9; j++) {
+				cells[i][j] = new Cell();
 				cells[i][j].setTile(new Tile(value, multiplier));
 			}
 		}
-
 	}
 
 	public void gravity() {
 		ArrayList<Cell> arrayHelp = new ArrayList<Cell>();
-
 		for (int i = 0; i < 9; i++) {
 			for (int j = 0; j < 10; j++) {
 				arrayHelp.add(cells[j][i]);

@@ -44,7 +44,7 @@ public class SaveLevelController implements ActionListener {
 				level = new PuzzleLevel(board, tileFrequencies,
 						multiplierFrequencies, stars, rules);
 				Main.getLoadedLevels().add(level);
-				Filing.openFile(level);
+				Filing.openOutputFile(level);
 				if (Filing.save()) {
 					JOptionPane.showMessageDialog(null, "Saved!");
 				} else {
