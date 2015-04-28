@@ -6,14 +6,17 @@ import game.entities.Model;
 public class SelectLevelController {
 	Model model;
 	String gameMode;
-	Application application;
+	
 	
 	public SelectLevelController(Application app, Model m) {
 		this.model = m;
-		this.application = app;
+	
 	}
 	
 	private void process() {
+		
+		model.getCurrentLevel().initilizeBoard();
+		
 		/*
 		 * TODO
 		 * -load level

@@ -13,5 +13,7 @@ public interface ILevel {
 	public GameModeScreen getPreviousScreen();
 	
 	public ArrayList<Integer> getTileFrequencies();
+	
+	public ArrayList<Integer> getModifierFrequencies();
 
 }

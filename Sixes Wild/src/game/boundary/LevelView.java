@@ -34,7 +34,7 @@ public class LevelView extends JFrame{
 
 		board = Main.model.getCurrentLevel().getBoard();
 		
-		JPanel boardView = new BoardView();
+		//JPanel boardView = new BoardView(board);
 
 
 
@@ -96,7 +96,7 @@ public class LevelView extends JFrame{
 		progressBar.setOrientation(SwingConstants.VERTICAL);
 		panel.add(progressBar);
 		
-		BoardView panel_1 = new BoardView();
+		BoardView panel_1 = new BoardView(board);
 		panel_1.setBounds(255, 229, 450, 450);
 		panel.add(panel_1);
 		

@@ -30,4 +30,10 @@ public class LightningLevel extends Level{
 		return null;
 	}
 
+	@Override
+	public ArrayList<Integer> getModifierFrequencies() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

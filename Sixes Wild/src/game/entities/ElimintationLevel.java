@@ -9,31 +9,37 @@ import java.util.ArrayList;
 public class ElimintationLevel extends Level{
 
 
-public ElimintationLevel (EliminationBoard board, int score, int time, int movesLeft, ArrayList<Integer> tileFrequency , ArrayList<Integer> multiplierFrequency){
-		
+	public ElimintationLevel (EliminationBoard board, int score, int time, int movesLeft, ArrayList<Integer> tileFrequency , ArrayList<Integer> multiplierFrequency){
+
 	}
 
-@Override
-public String getGameMode() {
-	// TODO Auto-generated method stub
-	return null;
-}
+	@Override
+	public String getGameMode() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-@Override
-public boolean openLevelScreen() {
-	// TODO Auto-generated method stub
-	return false;
-}
+	@Override
+	public boolean openLevelScreen() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
-@Override
-public GameModeScreen getPreviousScreen() {
-	// TODO Auto-generated method stub
-	return null;
-}
+	@Override
+	public GameModeScreen getPreviousScreen() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-@Override
-public ArrayList<Integer> getTileFrequencies() {
-	// TODO Auto-generated method stub
-	return null;
-}
+	@Override
+	public ArrayList<Integer> getTileFrequencies() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<Integer> getModifierFrequencies() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

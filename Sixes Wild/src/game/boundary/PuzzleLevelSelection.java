@@ -62,6 +62,8 @@ public class PuzzleLevelSelection extends JFrame {
 				} catch (ArrayIndexOutOfBoundsException ex) {
 					System.err.println("Index out of bounds");
 				}
+				Main.model.getCurrentLevel().getBoard().initialize(Main.model.getCurrentLevel().getTileFrequencies(), Main.model.getCurrentLevel().getModifierFrequencies());
+				System.out.println(Main.model.getCurrentLevel().getBoard().cells[1][1].getTile().getValue());
 				new LevelView();
 				dispose();
 			}

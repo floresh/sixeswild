@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import game.boundary.GameModeScreen;
 
 public class NoLevel extends Level implements ILevel{
-	
+
 	public NoLevel(){
 		super();
 	}
@@ -33,4 +33,9 @@ public class NoLevel extends Level implements ILevel{
 		return null;
 	}
 
+	@Override
+	public ArrayList<Integer> getModifierFrequencies() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

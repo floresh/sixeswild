@@ -29,7 +29,10 @@ public class ReleaseLevel extends Level {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	
 
+	@Override
+	public ArrayList<Integer> getModifierFrequencies() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -32,4 +32,10 @@ public class EliminationLevel extends Level implements ILevel {
 		return null;
 	}
 
+	@Override
+	public ArrayList<Integer> getModifierFrequencies() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

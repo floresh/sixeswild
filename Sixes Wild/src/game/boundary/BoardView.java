@@ -1,5 +1,6 @@
 package game.boundary;
 
+import editor.boundary.Main;
 import game.controller.Move;
 import game.entities.Board;
 
@@ -28,9 +29,9 @@ public class BoardView extends JPanel implements MouseListener, MouseMotionListe
 	Move[] selectionCheck = new Move[5]; //An array of legal selections
 	int tileSize = 50;
 	
-	public BoardView() {	
+	public BoardView(Board board) {	
 		
-		this.board = new Board();
+		this.board = board;
 		
 		setLayout(null);
 		this.addMouseListener(this);
