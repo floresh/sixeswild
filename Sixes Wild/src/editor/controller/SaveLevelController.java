@@ -48,7 +48,8 @@ public class SaveLevelController implements ActionListener {
 						multiplierFrequencies, stars, rules);
 				model = new Model(level);
 				Main.getLoadedModels().add(model);
-				if (save(openFile())) {
+				openFile();
+				if (save()) {
 					JOptionPane.showMessageDialog(null, "Saved!");
 				} else {
 					JOptionPane.showMessageDialog(null, "Not Saved!");
@@ -107,6 +108,7 @@ public class SaveLevelController implements ActionListener {
 		Path path = FileSystems.getDefault().getPath("Levels",
 				model.getCurrentLevel().getGameMode() + ".dat");
 		try {
+			output = new ObjectOutputStream(Files.newOutputStream(path));
 			Files.createDirectories(path.getParent());
 			Files.createFile(path);
 		} catch (FileAlreadyExistsException e) {
@@ -118,11 +120,9 @@ public class SaveLevelController implements ActionListener {
 		return path;
 	}
 
-	public boolean save(Path path) {
+	public boolean save() {
 		try {
 			for (Model m : Main.getLoadedModels()) {
-				System.out.println("saving");
-				output = new ObjectOutputStream(Files.newOutputStream(path));
 				output.writeObject(m);
 			}
 		} catch (IOException e) {
