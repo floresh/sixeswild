@@ -35,7 +35,12 @@ public class ToggleCellController implements ActionListener {
 	}
 	
 	public boolean setSix(boolean onOff){
-		Main.model.getToggleType().getCellArray()[this.row][this.column] = 6;
+		if(onOff){
+			Main.model.getToggleType().getCellArray()[this.row][this.column] = 6;
+		}
+		else{
+			Main.model.getToggleType().getCellArray()[this.row][this.column] = 0;
+		}
 		return true;
 	}
 

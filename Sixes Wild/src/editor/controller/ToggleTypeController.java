@@ -21,8 +21,7 @@ public class ToggleTypeController implements ActionListener{
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		Main.model.getToggleType().setValue(type);
-		System.out.println(type);	
+		Main.model.getToggleType().setValue(type);	
 	}
 	
 }
