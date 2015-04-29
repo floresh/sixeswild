@@ -1,91 +1,97 @@
 package game.boundary;
-
-import editor.boundary.Main;
-import game.entities.Board;
-import game.move.controller.MoveController;
-
-import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import game.controller.SelectionController;
+import game.entities.Board;
+import game.entities.Model;
+
 
 /**
  * 
  * @author Li Li
  *
  */
-public class BoardView extends JPanel implements MouseListener, MouseMotionListener{
-	
+public class BoardView extends JPanel{
+
 	Board board;
 	final CellView[][] labelArr = new CellView[9][9];
-	int srcX = 200;
-	int srcY = 175;
-	int xDrag = 0;
-	int yDrag = 0;
-	boolean dragable;
-	MoveController[] selectionCheck = new MoveController[5]; //An array of legal selections
-	int tileSize = 50;
+	MouseListener activeListener;
+	MouseMotionListener activeMotionListener;
+	Model model;
+	
+	
+	/** Properly register new listener (and unregister old one if present). */
+	public void setActiveListener(MouseListener ml) {
+		this.removeMouseListener(activeListener);
+		activeListener = ml;
+		if (ml != null) { 
+			this.addMouseListener(ml);
+		}
+	}
+	/** Properly register new motion listener (and unregister old one if present). */
+	public void setActiveMotionListener(MouseMotionListener mml) {
+		this.removeMouseMotionListener(activeMotionListener);
+		activeMotionListener = mml;
+		if (mml != null) {
+			this.addMouseMotionListener(mml);
+		}
+	}
 	
 	public BoardView(Board board) {	
-		
 		this.board = board;
-		
 		setLayout(null);
-		this.addMouseListener(this);
-		this.addMouseMotionListener(this);
+		initialize();
 		draw();
-			}
-	//To Do
-	public void draw(){
-		
-		
-		for(int row = 0; row < 9; row++){
-			for(int col = 0; col <9; col++){
-				
-				labelArr[row][col] = new CellView(board.cells[row][col]);
-//				labelArr[row][col].setIcon(new ImageIcon(BoardView.class.getResource("/images/1.png")));
-//				labelArr[row][col].setBounds(600,600,50,50);
-//				labelArr[row][col].setBounds(200+(10*row)+(row*labelArr[row][col].getWidth()),175+(10*col)+(col*labelArr[row][col].getWidth()), 50,50);
-//				
-				add(labelArr[row][col]);
-				
-				
-			}
-		}
 	}
-	public void refresh(){
+
+	void initialize () {
+		SelectionController ma = new SelectionController(model, this);
 		for(int row = 0; row < 9; row++){
 			for(int col = 0; col <9; col++){
-				
-				labelArr[row][col].refresh();
+				labelArr[row][col] = new CellView(board.cells[row][col]);
+				labelArr[row][col].addMouseListener(ma);
+				add(labelArr[row][col]);
 			}
 		}
 	}
 	
+	public void draw(){
+		for(int row = 0; row < 9; row++){
+			for(int col = 0; col <9; col++){
+				labelArr[row][col].setText("" + board.cells[row]
+
+[col].getTile().getValue());
+		
+			}
+		}
+	}
+	/**	
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 	@Override
 	public void mouseExited(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
-	}
-	@Override
+
+	}*/
+	/**	@Override
 	public void mousePressed(MouseEvent me) {
 		int x = me.getX();
 		int y = me.getY();
-		
-		if((x >= srcX && x <= srcX + tileSize) && (y >= srcY && y <= srcY + tileSize) ){
+
+		if((x >= srcX && x <= srcX + tileSize) && (y >= srcY && y <= srcY + 
+
+tileSize) ){
 			dragable = true;
 			xDrag = x - srcX;
 			yDrag = y - srcY;
@@ -99,23 +105,12 @@ public class BoardView extends JPanel implements MouseListener, MouseMotionListe
 		System.out.println(yDrag);
 		System.out.println(dragable);;
 	}
-	@Override
-	public void mouseReleased(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
+	 */
+	
+	public BoardView getBoardView(){
+		return this;
 	}
-	@Override
-	public void mouseDragged(MouseEvent me) {
-		if(dragable){
 
-		}
-		
-	}
-	@Override
-	public void mouseMoved(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-	}
+}
 	
 

@@ -10,6 +10,7 @@ public class Cell implements Serializable {
 	boolean isEmpty;
 	boolean isEnabled;
 	Location location;
+	boolean isSelected = false;
 	
 	public Cell(){
 		tile = new Tile();
@@ -91,6 +92,12 @@ public class Cell implements Serializable {
 	public void setIsEnabled(boolean isEnabled){
 		this.isEnabled  = isEnabled;
 	}
-	 
 
+	public boolean isSelected() {
+		return isSelected;
+	}
+
+	public void setSelected() {
+		isSelected = true;	
+	}
 }
