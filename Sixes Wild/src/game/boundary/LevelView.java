@@ -3,10 +3,17 @@ package game.boundary;
 import game.controller.PauseController;
 import game.controller.ResetBoardController;
 import game.controller.ReturnToPreviousMenuController;
+
 import game.controller.SelectGameModeController;
 import game.entities.Board;
+
+import game.controller.TimeController;
+
 import game.entities.Level;
 import game.main.Main;
+import game.move.controller.SpMoveDelete;
+import game.move.controller.SpMoveReshuffleBoard;
+import game.move.controller.SpMoveSwapTiles;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -18,7 +25,6 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JProgressBar;
 import javax.swing.SwingConstants;
-
 import java.awt.event.ActionListener;
 
 /**
@@ -32,7 +38,7 @@ public class LevelView extends JFrame{
 	BoardView boardView;
 	
 	
-	public LevelView(Level level) {
+	public LevelView(final Level level) {
 		setResizable(false);
 
 		JPanel panel = new JPanel();
@@ -73,6 +79,9 @@ public class LevelView extends JFrame{
 		JButton btnNewButton_3 = new JButton("RESHUFFLE");
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+
+				new SpMoveReshuffleBoard(level.getBoard()).doMove();
+
 			}
 		});
 		btnNewButton_3.setBounds(35, 211, 97, 25);
@@ -80,11 +89,22 @@ public class LevelView extends JFrame{
 		panel.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("SWAP");
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new SpMoveSwapTiles(level.getBoard()).doMove();
+			}
+		});
 		btnNewButton_4.setBounds(35, 259, 97, 25);
 		btnNewButton_4.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		panel.add(btnNewButton_4);
 		
 		JButton btnNewButton_5 = new JButton("DELETE");
+		btnNewButton_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new SpMoveDelete(level.getBoard()).doMove();
+			}
+		});
+
 		btnNewButton_5.setBounds(35, 305, 97, 25);
 		btnNewButton_5.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		panel.add(btnNewButton_5);
