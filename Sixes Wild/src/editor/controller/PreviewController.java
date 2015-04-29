@@ -61,17 +61,13 @@ public class PreviewController implements ActionListener{
 					}
 			 };	
 			 
-		Board b = Main.model.getCurrentLevel().getBoard();
-		b.initialize();
-		
-		
-		Level levski = new PuzzleLevel(b, tileFreq ,multiFreq, stars, rules);
-		levski.setTileFrequency(tileFreq);
-		b.initialize();
-		levski.setBoard(b);
-		
-		LevelView lv = new LevelView(levski);
-		
+			 Level level =  Main.model.getCurrentLevel();
+			 Board b = Main.model.getCurrentLevel().getBoard();
+			 b.setTopCell(tileFreq, multiFreq);
+			 b.initialize();
+			 level.setBoard(b);
+			 Main.model.setCurrentLevel(level);
+			 new LevelView(level);
 	}
 	
 }

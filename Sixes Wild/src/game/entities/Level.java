@@ -127,8 +127,11 @@ public abstract class Level implements Serializable, ILevel {
 		this.multiplierFrequencies = f;
 	}
 
+
+
 	public void setBoard(Board b) {
 		this.board = b;
+		// TODO Auto-generated method stub
 		
 	}
 }
