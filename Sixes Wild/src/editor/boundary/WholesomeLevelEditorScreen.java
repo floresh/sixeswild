@@ -37,12 +37,12 @@ public class WholesomeLevelEditorScreen extends JFrame {
 	JSpinner starThreshold2;
 	JSpinner starThreshold3;
 
-	JSlider frequency1;
-	JSlider frequency2;
-	JSlider frequency3;
-	JSlider frequency4;
-	JSlider frequency5;
-	JSlider frequency6;
+	public JSlider frequency1;
+	public JSlider frequency2;
+	public JSlider frequency3;
+	public JSlider frequency4;
+	public JSlider frequency5;
+	public JSlider frequency6;
 
 	JSlider xFrequency1;
 	JSlider xFrequency2;
