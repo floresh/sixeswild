@@ -66,6 +66,9 @@ public class PreviewController implements ActionListener{
 		
 		
 		Level levski = new PuzzleLevel(b, tileFreq ,multiFreq, stars, rules);
+		levski.setTileFrequency(tileFreq);
+		b.initialize();
+		levski.setBoard(b);
 		
 		LevelView lv = new LevelView(levski);
 		

@@ -117,4 +117,9 @@ public abstract class Level implements Serializable, ILevel {
 	public void setMultiplierFrequency(ArrayList<Integer> f) {
 		this.multiplierFrequencies = f;
 	}
+
+	public void setBoard(Board b) {
+		this.board = b;
+		
+	}
 }
