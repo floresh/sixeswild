@@ -1,6 +1,8 @@
 package game.boundary;
 
 import game.controller.ReturnToPreviousMenuController;
+import game.entities.Level;
+import game.entities.PuzzleLevel;
 import game.main.Main;
 
 import javax.swing.JFrame;
@@ -56,15 +58,25 @@ public class PuzzleLevelSelection extends JFrame {
 		JButton playButton = new JButton("PLAY");
 		playButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				try {
-					Main.model.setCurrentLevel(Main.getLoadedLevels().get(index));
-				} catch (ArrayIndexOutOfBoundsException ex) {
-					System.err.println("Index out of bounds");
-				}
-				Main.model.getCurrentLevel().getBoard().initialize(Main.model.getCurrentLevel().getTileFrequencies(), Main.model.getCurrentLevel().getModifierFrequencies());
-				System.out.println(Main.model.getCurrentLevel().getBoard().cells[1][1].getTile().getValue());
-				new LevelView();
+				
+			//TODO hack to work around loading
+				Level level = new PuzzleLevel();
+				Main.model.setCurrentLevel(level);
+				new LevelView(level);
 				dispose();
+				
+				
+				
+//				try {
+//					Main.model.setCurrentLevel(Main.getLoadedLevels().get(index));
+//				} catch (ArrayIndexOutOfBoundsException ex) {
+//					System.err.println("Index out of bounds");
+//				}
+//				Main.model.getCurrentLevel().getBoard().initialize(Main.model.getCurrentLevel().getTileFrequencies(), Main.model.getCurrentLevel().getModifierFrequencies());
+//				System.out.println(Main.model.getCurrentLevel().getBoard().cells[1][1].getTile().getValue());
+				
+				
+			
 			}
 		});
 

@@ -54,7 +54,9 @@ public class LightningLevelSelection extends JFrame{
 		btnNewButton_2.setEnabled(false);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-						new LevelView();
+				
+				//TODO
+						//new LevelView();
 						dispose();
 					}
 				});

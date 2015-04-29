@@ -20,7 +20,9 @@ public class PreviewController implements ActionListener{
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		LevelView lv = new LevelView();
+		
+		//TODO
+		LevelView lv = new LevelView(new PuzzleLevel());
 	}
 	
 }

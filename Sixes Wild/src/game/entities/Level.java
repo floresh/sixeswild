@@ -42,6 +42,11 @@ public abstract class Level implements Serializable, ILevel {
 			}
 		};
 		board = new Board(this);
+		board.gravity();
+		score = 0;
+		time = 500;
+		movesLeft = 50;
+		
 	}
 
 	public Level(Board board, int score, int time, int movesLeft,

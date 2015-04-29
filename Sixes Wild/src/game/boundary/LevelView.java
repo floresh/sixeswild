@@ -3,6 +3,7 @@ package game.boundary;
 import game.controller.PauseController;
 import game.controller.SelectGameModeController;
 import game.entities.Board;
+import game.entities.Level;
 import game.main.Main;
 
 import javax.swing.JFrame;
@@ -25,14 +26,15 @@ import java.awt.event.ActionListener;
  */
 public class LevelView extends JFrame{
 	
-	Board board;
+	Level level;
 	
-	public LevelView() {
+	
+	public LevelView(Level level) {
 		setResizable(false);
 
 		JPanel panel = new JPanel();
 
-		board = Main.model.getCurrentLevel().getBoard();
+	
 		
 		//JPanel boardView = new BoardView(board);
 
@@ -96,7 +98,7 @@ public class LevelView extends JFrame{
 		progressBar.setOrientation(SwingConstants.VERTICAL);
 		panel.add(progressBar);
 		
-		BoardView panel_1 = new BoardView(board);
+		BoardView panel_1 = new BoardView(level.getBoard());
 		panel_1.setBounds(255, 229, 450, 450);
 		panel.add(panel_1);
 		

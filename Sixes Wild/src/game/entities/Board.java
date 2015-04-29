@@ -13,7 +13,7 @@ public class Board implements Serializable {
 		cells  = new Cell[9][9];
 		
 
-		for (int i = 1; i < 9; i++) {
+		for (int i = 0; i < 9; i++) {
 			for (int j = 0; j < 9; j++) {
 				cells[i][j] = new Cell(i, j, true, false,true);
 			}
@@ -33,7 +33,7 @@ public class Board implements Serializable {
 	public ArrayList<Tile> getTiles() {
 		ArrayList<Tile> tiles = new ArrayList<Tile>();
 
-		for (int i = 1; i < 9; i++) {
+		for (int i = 0; i < 9; i++) {
 			for (int j = 0; i < 9; j++) {
 				tiles.add(cells[i][j].getTile());
 			}
@@ -44,7 +44,7 @@ public class Board implements Serializable {
 	public void setTiles(ArrayList<Tile> tile) {
 		int count = 0;
 
-		for (int i = 1; i < 9; i++) {
+		for (int i = 0; i < 9; i++) {
 			for (int j = 0; i < 9; j++) {
 				cells[i][j].setTile(tile.get(count));
 				count++;
@@ -105,7 +105,7 @@ public class Board implements Serializable {
 			for (int j = 0; j < 9; j++) {
 				arrayHelp.add(cells[j][i]);
 			}
-			cells[10][i].gravity(arrayHelp);
+			cells[8][i].gravity(arrayHelp);
 		}
 
 	}
