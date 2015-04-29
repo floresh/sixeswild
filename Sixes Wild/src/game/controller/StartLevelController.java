@@ -17,7 +17,6 @@ public class StartLevelController {
 	
 	/*
 	 * TODO
-	 * -open levle view
-	 * -start timer
+	 * -open level view
 	 */
 }

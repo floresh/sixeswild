@@ -28,7 +28,6 @@ public abstract class Level implements Serializable, ILevel {
 				add(1);
 				add(1);
 				add(1);
-
 			}
 		};
 		multiplierFrequencies = new ArrayList<Integer>() {
@@ -39,7 +38,13 @@ public abstract class Level implements Serializable, ILevel {
 				add(1);
 				add(1);
 				add(1);
-
+			}
+		};
+		stars = new ArrayList<Integer>() {
+			{
+				add(25);
+				add(50);
+				add(100);
 			}
 		};
 		board = new Board(this);

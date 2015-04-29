@@ -3,12 +3,7 @@ package game.boundary;
 import game.controller.PauseController;
 import game.controller.ResetBoardController;
 import game.controller.ReturnToPreviousMenuController;
-
-import game.controller.SelectGameModeController;
-import game.entities.Board;
-
 import game.controller.TimeController;
-
 import game.entities.Level;
 import game.main.Main;
 import game.move.controller.SpMoveDelete;
@@ -25,6 +20,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JProgressBar;
 import javax.swing.SwingConstants;
+
 import java.awt.event.ActionListener;
 
 /**
@@ -40,10 +36,6 @@ public class LevelView extends JFrame{
 	JLabel scoreLabel;
 	
 	TimeController timeController;
-	
-	
-	
-	
 	
 	public LevelView(final Level level) {
 		setResizable(false);
@@ -136,23 +128,13 @@ public class LevelView extends JFrame{
 		progressBar.setOrientation(SwingConstants.VERTICAL);
 		panel.add(progressBar);
 		
-		JLabel timeLabel = new JLabel("time");
-		timeLabel.setBounds(255, 42, 46, 14);
-		panel.add(timeLabel);
-		
 		this.timeLabel = new JLabel(((Integer)level.getTime()).toString());
 		this.timeLabel.setBounds(255, 42, 46, 14);
 		panel.add(this.timeLabel);
 
-		
-
 		this.scoreLabel = new JLabel(((Integer)level.getScore()).toString());
 		this.scoreLabel.setBounds(255, 80, 46, 14);
 		panel.add(this.scoreLabel);
-
-		JLabel scoreLabel = new JLabel("score");
-		scoreLabel.setBounds(255, 80, 46, 14);
-		panel.add(scoreLabel);
 
 		timeController = new TimeController(level.getGameMode(), this);
 		timeController.play();
@@ -184,15 +166,15 @@ public class LevelView extends JFrame{
 	}
 	
 	public TimeController getTimeController() {
-		return this.timeController;
+		return timeController;
 	}
 	
 	public void refreshTimer() {
-		timeLabel.setText(((Integer)level.getTime()).toString());
+		timeLabel.setText(((Integer)Main.model.getCurrentLevel().getTime()).toString());
 	}
 	
 	public void refreshScore() {
-		scoreLabel.setText(((Integer)level.getScore()).toString());
+		scoreLabel.setText(((Integer)Main.model.getCurrentLevel().getScore()).toString());
 	}
 	
 	//Potential method for pressing the special moves/other buttons on level view screen
