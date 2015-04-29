@@ -28,6 +28,7 @@ public class Board implements Serializable {
 
 		this.cells = cells;
 	}
+	
 	public Board(Cell[][] cells) {
 		this.cells = cells;
 	}
@@ -55,49 +56,15 @@ public class Board implements Serializable {
 
 	}
 
-	public void initialize(ArrayList<Integer> tileFrequency,
-			ArrayList<Integer> multiplierFrequency) {
-
-		int value = 0;
-		int multiplier = 0;
-
-		int tileMax = 0;
-		for (int i = 0; i < tileFrequency.size(); i++) {
-			tileMax = tileMax + tileFrequency.get(i);
-
-		}
-
-		int multiMax = 0;
-		for (int i = 0; i < multiplierFrequency.size(); i++) {
-			multiMax = multiMax + multiplierFrequency.get(i);
-		}
-
-		int rand1 = randInt(0, tileMax);
-		int rand2 = randInt(0, multiMax);
-
-		int valueCount = 0;
-		for (int i = 0; i < tileFrequency.size(); i++) {
-			valueCount = valueCount + tileFrequency.get(i);
-			if (rand1 <= valueCount) {
-				value = i;
-				break;
-			}
-		}
-		int multiCount = 0;
-		for (int j = 0; j < multiplierFrequency.size(); j++) {
-			multiCount = multiCount + multiplierFrequency.get(j);
-			if (rand2 <= multiCount) {
-				multiplier = j;
-				break;
-			}
-		}
-
+	public void initialize() {
 		for (int i = 0; i < 9; i++) {
 			for (int j = 0; j < 9; j++) {
-				cells[i][j] = new Cell(i,j,true, false , false);
-				cells[i][j].setTile(new Tile(value, multiplier));
+		
+				cells[i][j].setIsEmpty(true);
+				
 			}
 		}
+		gravity();
 	}
 	
 	
@@ -111,6 +78,11 @@ public class Board implements Serializable {
 			cells[8][i].gravity(arrayHelp);
 		}
 
+	}
+	
+	public void setTopCell(ArrayList<Integer> tileFrequency, ArrayList<Integer> multiplierFrequency){
+		topCell = new TopCell(tileFrequency,multiplierFrequency);
+		
 	}
 
 	public static int randInt(int min, int max) {

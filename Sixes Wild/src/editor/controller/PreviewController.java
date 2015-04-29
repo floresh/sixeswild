@@ -62,8 +62,8 @@ public class PreviewController implements ActionListener{
 			 };	
 			 
 		Board b = Main.model.getCurrentLevel().getBoard();
-		b.initialize(tileFreq, multiFreq);
-		b.gravity();
+		b.initialize();
+		
 		
 		Level levski = new PuzzleLevel(b, tileFreq ,multiFreq, stars, rules);
 		
