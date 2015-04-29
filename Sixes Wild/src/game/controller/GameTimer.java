@@ -23,6 +23,8 @@ public class GameTimer extends TimerTask {
 	public void run() {
 		int time = model.getCurrentLevel().getTime() + 1;
 		model.getCurrentLevel().setTime(time);
+		
+		// TODO refresh time view
 	}
 
 }

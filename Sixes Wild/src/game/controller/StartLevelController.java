@@ -14,5 +14,10 @@ public class StartLevelController {
 		this.application = app;
 		this.gameMode = gameModeString;
 	}
-
+	
+	/*
+	 * TODO
+	 * -open levle view
+	 * -start timer
+	 */
 }

@@ -27,5 +27,6 @@ public class LightningTimer extends TimerTask {
 		if(time == 0) {
 			// end game
 		}
+		// TODO refresh time view
 	}
 }
