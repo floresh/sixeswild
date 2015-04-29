@@ -12,15 +12,15 @@ import game.entities.*;
 public class SpMoveReshuffleBoard extends Move{
 	Model model;
 	Application application;
+	Board board;
 	
 	MovesLeftController movesLeft = new MovesLeftController(application, model);
 	
-	public SpMoveReshuffleBoard(Application app, Model m) {
-		this.model = m;
-		this.application = app;
+	public SpMoveReshuffleBoard(Board board) {
+		this.board = board;
 	}
-	
-	public boolean process() {
+
+	public boolean doMove() {
 		ArrayList<Tile> tiles = model.getCurrentLevel().getBoard().getTiles();
 		Collections.shuffle(tiles);
 		model.getCurrentLevel().getBoard().setTiles(tiles);
@@ -30,11 +30,5 @@ public class SpMoveReshuffleBoard extends Move{
 		//TODO refresh boundary
 		
 		return true;
-	}
-
-	@Override
-	public boolean doMove() {
-		// TODO Auto-generated method stub
-		return false;
 	}
 }

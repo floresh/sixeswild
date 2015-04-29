@@ -1,9 +1,13 @@
 package game.move.controller;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import game.controller.Move;
 import game.controller.MovesLeftController;
 import game.entities.Board;
 import game.entities.Location;
+import game.entities.Model;
 
 public class SpMoveDelete extends Move{
 	
@@ -12,17 +16,13 @@ public class SpMoveDelete extends Move{
 	Location location;
 	
 	
-	public SpMoveDelete(MovesLeftController movesLeft , Board board  ){
-		
+	public SpMoveDelete(Board board){
 		this.board = board;
-		this.movesLeft = movesLeft;
-		
 			
 	}
 	
-	public boolean process(Location location){
-		 
-	this.location= location;
+	public boolean doMove(){
+
 	int row = location.getRow();
 	int column = location.getColumn();
 	board.cells[row][column].setIsEmpty(true);
@@ -33,13 +33,4 @@ public class SpMoveDelete extends Move{
 	
 	
 	}
-
-	@Override
-	public boolean doMove() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	
-	
-
 }

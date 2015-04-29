@@ -5,8 +5,6 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
-import javax.swing.event.MouseInputAdapter;
-
 import game.boundary.Application;
 import game.boundary.CellView;
 import game.controller.Move;

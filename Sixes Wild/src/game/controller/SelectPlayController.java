@@ -21,7 +21,7 @@ public class SelectPlayController implements ActionListener{
 	public boolean process(){
 		screen.dispose();
 		Main.model.getCurrentLevel().openLevelScreen();
-		return false;
+		return true;
 	}
 
 	@Override
