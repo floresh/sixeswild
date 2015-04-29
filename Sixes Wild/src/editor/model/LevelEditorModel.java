@@ -4,7 +4,7 @@ import game.entities.Level;
 import game.entities.Model;
 
 public class LevelEditorModel extends Model{
-	Level CurrentLevel;
+	Level currentLevel;
 	int numSPRemove;
 	int numSPSwap;
 	int numSPReshuffle;
@@ -15,6 +15,9 @@ public class LevelEditorModel extends Model{
 		toggleType = new ToggleType();
 	}
 	
+	public void setCurrentLevel(Level l){
+		this.currentLevel = l;
+	}
 	public ToggleType getToggleType(){
 		return this.toggleType;
 	}
