@@ -1,6 +1,7 @@
 package game.boundary;
 
 import game.controller.PauseController;
+import game.controller.ReturnToPreviousMenuController;
 import game.controller.SelectGameModeController;
 import game.entities.Board;
 import game.entities.Level;
@@ -55,6 +56,7 @@ public class LevelView extends JFrame{
 		panel.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("QUIT");
+		btnNewButton_2.addActionListener(new ReturnToPreviousMenuController(this));
 		btnNewButton_2.setBounds(35, 113, 97, 25);
 		panel.add(btnNewButton_2);
 		
