@@ -22,7 +22,7 @@ import java.awt.event.ActionListener;
 
 /**
  * 
- * @author Li Li, Jake
+ * @author Li Li, Jake, hfloreshuerta
  *
  */
 public class LevelView extends JFrame{
@@ -103,6 +103,14 @@ public class LevelView extends JFrame{
 		BoardView panel_1 = new BoardView(level.getBoard());
 		panel_1.setBounds(255, 229, 450, 450);
 		panel.add(panel_1);
+		
+		JLabel timeLabel = new JLabel("time");
+		timeLabel.setBounds(255, 42, 46, 14);
+		panel.add(timeLabel);
+		
+		JLabel scoreLabel = new JLabel("score");
+		scoreLabel.setBounds(255, 80, 46, 14);
+		panel.add(scoreLabel);
 		
 		setSize(800,800);
 		setLocationRelativeTo(null);
