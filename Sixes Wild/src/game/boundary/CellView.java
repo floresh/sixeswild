@@ -32,19 +32,19 @@ public class CellView extends JLabel implements MouseListener, MouseMotionListen
 		 setIcon(new ImageIcon(BoardView.class.getResource("/images/1.png")));
          break;
 		 case 2:  value= 2;
-		 setIcon(new ImageIcon(BoardView.class.getResource("/images/2.png")));
+		 setIcon(new ImageIcon(BoardView.class.getResource("/images/2resized (2).png")));
          break;
 		 case 3:  value = 3;
-		 setIcon(new ImageIcon(BoardView.class.getResource("/images/3.png")));
+		 setIcon(new ImageIcon(BoardView.class.getResource("/images/3resized (1).png")));
          break;
 		 case 4:  value = 4;
-		 setIcon(new ImageIcon(BoardView.class.getResource("/images/4.png")));
+		 setIcon(new ImageIcon(BoardView.class.getResource("/images/4resized.png")));
          break;
 		 case 5:  value= 5;
-		 setIcon(new ImageIcon(BoardView.class.getResource("/images/5.png")));
+		 setIcon(new ImageIcon(BoardView.class.getResource("/images/5resized.png")));
          break;
 		 case 6:  value = 6;
-		 setIcon(new ImageIcon(BoardView.class.getResource("/images/6.png")));
+		 setIcon(new ImageIcon(BoardView.class.getResource("/images/6resized.png")));
          break;
 		
 		
