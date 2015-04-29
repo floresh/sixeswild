@@ -7,11 +7,12 @@ import java.util.ArrayList;
 
 public abstract class Level implements Serializable, ILevel {
 
-	TimeController timeD;
 	int score;
 	int time;
 	int movesLeft;
+	
 	Board board;
+	TimeController timer;
 	ArrayList<Integer> tileFrequencies, multiplierFrequencies, stars, rules;
 
 	public Level() {
@@ -96,6 +97,14 @@ public abstract class Level implements Serializable, ILevel {
 
 	public int getMovesLeft() {
 		return movesLeft;
+	}
+	
+	public TimeController getTimer() {
+		return this.timer;
+	}
+	
+	public void setTimer(TimeController timeController) {
+		this.timer = timeController;
 	}
 
 	public void setScore(int score) {

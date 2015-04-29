@@ -5,15 +5,18 @@ import game.entities.Model;
 
 import java.util.TimerTask;
 
+/**
+ * 
+ * @author hfloreshuerta
+ *
+ */
 public class LightningTimer extends TimerTask {
 	Model model;
 	Application application;
-	boolean lose;
 	
 	public LightningTimer(Application app, Model m) {
 		this.model = m;
 		this.application = app;
-		lose = false;
 	}
 
 	@Override
@@ -22,12 +25,7 @@ public class LightningTimer extends TimerTask {
 		model.getCurrentLevel().setTime(time);
 		
 		if(time == 0) {
-			lose = true;
+			// end game
 		}
 	}
-	
-	public boolean getLose(){
-		return lose;
-	}
-
 }

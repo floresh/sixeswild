@@ -16,7 +16,7 @@ public class ExitLevelController {
 		
 		/*
 		 * TODO
-		 * -set persistent data
+		 * -save persistent data
 		 * 		-high-score
 		 * 		-unlocked levels
 		 * -go back to level selection screen

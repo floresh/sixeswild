@@ -5,6 +5,11 @@ import game.entities.Model;
 
 import java.util.TimerTask;
 
+/**
+ * 
+ * @author hfloreshuerta
+ *
+ */
 public class GameTimer extends TimerTask {
 	Model model;
 	Application application;

@@ -6,6 +6,11 @@ import java.util.TimerTask;
 import game.boundary.Application;
 import game.entities.*;
 
+/**
+ * 
+ * @author hfloreshuerta
+ *
+ */
 public class TimeController {
 	Model model;
 	Application application;

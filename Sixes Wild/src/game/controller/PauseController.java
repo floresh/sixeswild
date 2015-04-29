@@ -8,6 +8,11 @@ import javax.swing.JOptionPane;
 
 import game.main.Main;
 
+/**
+ * 
+ * @author hfloreshuerta
+ * @author Li
+ */
 public class PauseController implements ActionListener{
 	JFrame frame;
 	
@@ -21,5 +26,5 @@ public class PauseController implements ActionListener{
 		
 		Main.model.getCurrentLevel();
 	}
-	}
+}
 
