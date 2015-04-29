@@ -8,6 +8,7 @@ import javax.swing.JButton;
 
 import editor.boundary.Main;
 import editor.boundary.WholesomeLevelEditorScreen;
+import game.entities.Tile;
 
 public class ToggleCellController implements ActionListener {
 	WholesomeLevelEditorScreen screen;
@@ -34,8 +35,7 @@ public class ToggleCellController implements ActionListener {
 	}
 	
 	public boolean setSix(boolean onOff){
-		//set this cell to be a six cell
-		//Main.model.getCurrentLevel().getBoard().cells[row][column];
+		Main.model.getToggleType().getCellArray()[this.row][this.column] = 6;
 		return true;
 	}
 

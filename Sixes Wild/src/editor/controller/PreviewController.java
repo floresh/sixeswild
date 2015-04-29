@@ -11,6 +11,7 @@ import game.boundary.LevelView;
 import game.entities.Board;
 import game.entities.Level;
 import game.entities.PuzzleLevel;
+import game.entities.Tile;
 
 //
 public class PreviewController implements ActionListener{
@@ -65,6 +66,13 @@ public class PreviewController implements ActionListener{
 			 Board b = Main.model.getCurrentLevel().getBoard();
 			 b.setTopCell(tileFreq, multiFreq);
 			 b.initialize();
+			 for(int i =0;i<9;i++){
+					for(int j =0;j<9;j++){
+						if(Main.model.getToggleType().cellArray[i][j] == 6){
+							b.cells[i][j].setTile(new Tile(6, 0));
+						}
+					}
+				}
 			 level.setBoard(b);
 			 Main.model.setCurrentLevel(level);
 			 new LevelView(level);
