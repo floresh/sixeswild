@@ -9,9 +9,7 @@ import game.entities.Tile;
 
 public class SpMoveSwapTiles extends Move{
 	Board board;
-	
-	MovesLeftController movesLeft = new MovesLeftController();
-	
+	MovesLeft movesLeft;
 	Tile tile1, tile2;
 	
 	public SpMoveSwapTiles(Board board) {

@@ -19,11 +19,6 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JProgressBar;
 import javax.swing.SwingConstants;
-
-
-
-
-
 import java.awt.event.ActionListener;
 
 /**
