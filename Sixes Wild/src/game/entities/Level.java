@@ -21,7 +21,7 @@ public abstract class Level implements Serializable, ILevel {
 		// test code
 		tileFrequencies = new ArrayList<Integer>() {
 			{
-				add(1);
+				add(30);
 				add(1);
 				add(1);
 				add(1);

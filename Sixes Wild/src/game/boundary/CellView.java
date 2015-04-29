@@ -25,7 +25,7 @@ public class CellView extends JLabel implements MouseListener, MouseMotionListen
 		
 		setBounds(column*50,row*50,50,50);
 		int value = cell.getTile().getValue();
-		//setText(Integer.toString(value));
+		setText(Integer.toString(value));
 		setLayout(null);
 		switch (value){
 		 case 1:  value = 1;

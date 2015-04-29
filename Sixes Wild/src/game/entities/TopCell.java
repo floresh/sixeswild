@@ -48,7 +48,7 @@ public class TopCell extends Cell{
 		for(int i = 0;  i < tileFrequency.size(); i++){
 			valueCount = valueCount +tileFrequency.get(i);
 			if(rand1 <= valueCount ){
-				value = i;
+				value = i+1;
 				break;
 			}
 		}
@@ -56,7 +56,7 @@ public class TopCell extends Cell{
 		for(int j = 0;  j < multiplierFrequency.size(); j++){
 			multiCount = multiCount + multiplierFrequency.get(j);
 			if(rand2 <= multiCount){
-				multiplier = j;
+				multiplier = j+1;
 				break;
 				}	
 		}
