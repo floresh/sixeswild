@@ -56,6 +56,14 @@ public class BoardView extends JPanel implements MouseListener, MouseMotionListe
 			}
 		}
 	}
+	public void refresh(){
+		for(int row = 0; row < 9; row++){
+			for(int col = 0; col <9; col++){
+				
+				labelArr[row][col].refresh();
+			}
+		}
+	}
 	
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
