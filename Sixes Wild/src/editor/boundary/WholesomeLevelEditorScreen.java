@@ -18,8 +18,12 @@ import editor.controller.InvertLevelController;
 import editor.controller.PreviewController;
 import editor.controller.SaveLevelController;
 import editor.controller.ToggleCellController;
+import editor.controller.ToggleTypeController;
 
 import javax.swing.JSpinner;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 /**
  * @author Jake
@@ -336,6 +340,21 @@ public class WholesomeLevelEditorScreen extends JFrame {
 
 		swap.setBounds(505, 563, 134, 35);
 		getContentPane().add(swap);
+		
+		JButton btnToggleOnOff = new JButton("Toggle Cells On/Off");
+		btnToggleOnOff.addActionListener(new ToggleTypeController(Main.model, 0));
+		btnToggleOnOff.setBounds(790, 572, 168, 49);
+		getContentPane().add(btnToggleOnOff);
+		
+		JButton btnToggleRelease = new JButton("Toggle Release Cells");
+		btnToggleRelease.addActionListener(new ToggleTypeController(Main.model, 1));
+		btnToggleRelease.setBounds(996, 572, 168, 49);
+		getContentPane().add(btnToggleRelease);
+		
+		JButton btnToggleSix = new JButton("Toggle Six Cells");
+		btnToggleSix.addActionListener(new ToggleTypeController(Main.model, 2));
+		btnToggleSix.setBounds(896, 634, 168, 49);
+		getContentPane().add(btnToggleSix);
 		
 		// JButton b00 = new JButton("");
 		// b00.setBounds(878, 99, 50, 50);
