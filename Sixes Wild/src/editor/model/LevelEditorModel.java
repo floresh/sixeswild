@@ -18,6 +18,7 @@ public class LevelEditorModel extends Model{
 	public void setCurrentLevel(Level l){
 		this.currentLevel = l;
 	}
+	
 	public ToggleType getToggleType(){
 		return this.toggleType;
 	}
