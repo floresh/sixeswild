@@ -1,9 +1,13 @@
 package game.controller;
 
+import game.boundary.Application;
 import game.boundary.LevelView;
+import game.entities.Model;
 import game.main.Main;
 
 import java.util.TimerTask;
+
+import javax.swing.JFrame;
 
 /**
  * 

@@ -61,13 +61,13 @@ public class BoardView extends JPanel{
 	public void draw(){
 		for(int row = 0; row < 9; row++){
 			for(int col = 0; col <9; col++){
-				labelArr[row][col].setText("" + board.cells[row]
-
-[col].getTile().getValue());
+				labelArr[row][col].refresh();
 		
 			}
 		}
 	}
+	
+	
 	/**	
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
@@ -107,8 +107,8 @@ tileSize) ){
 	}
 	 */
 	
-	public BoardView getBoardView(){
-		return this;
+	public Board getBoard(){
+		return board;
 	}
 
 }

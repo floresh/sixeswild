@@ -1,8 +1,14 @@
 package game.boundary;
 
 import game.controller.PauseController;
+import game.controller.ResetBoardController;
 import game.controller.ReturnToPreviousMenuController;
+
+import game.controller.SelectGameModeController;
+import game.entities.Board;
+
 import game.controller.TimeController;
+
 import game.entities.Level;
 import game.main.Main;
 import game.move.controller.SpMoveDelete;
@@ -29,9 +35,14 @@ import java.awt.event.ActionListener;
 public class LevelView extends JFrame{
 	
 	Level level;
+	BoardView boardView;
 	JLabel timeLabel;
 	JLabel scoreLabel;
+	
 	TimeController timeController;
+	
+	
+	
 	
 	
 	public LevelView(final Level level) {
@@ -43,7 +54,9 @@ public class LevelView extends JFrame{
 		
 		//JPanel boardView = new BoardView(board);
 
-
+		BoardView boardView = new BoardView(level.getBoard());
+		boardView.setBounds(255, 229, 450, 450);
+		panel.add(boardView);
 
 		panel.setBounds(224, 66, 384, 369);
 		getContentPane().add(panel);
@@ -56,6 +69,7 @@ public class LevelView extends JFrame{
 		panel.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("RESET");
+		btnNewButton_1.addActionListener(new ResetBoardController(level, boardView));
 		btnNewButton_1.setBounds(35, 75, 97, 25);
 		panel.add(btnNewButton_1);
 		
@@ -72,7 +86,9 @@ public class LevelView extends JFrame{
 		JButton btnNewButton_3 = new JButton("RESHUFFLE");
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+
 				new SpMoveReshuffleBoard(level.getBoard()).doMove();
+
 			}
 		});
 		btnNewButton_3.setBounds(35, 211, 97, 25);
@@ -120,21 +136,27 @@ public class LevelView extends JFrame{
 		progressBar.setOrientation(SwingConstants.VERTICAL);
 		panel.add(progressBar);
 		
-		BoardView panel_1 = new BoardView(level.getBoard());
-		panel_1.setBounds(255, 229, 450, 450);
-		panel.add(panel_1);
-		
+		JLabel timeLabel = new JLabel("time");
+		timeLabel.setBounds(255, 42, 46, 14);
+		panel.add(timeLabel);
 		
 		this.timeLabel = new JLabel(((Integer)level.getTime()).toString());
 		this.timeLabel.setBounds(255, 42, 46, 14);
 		panel.add(this.timeLabel);
+
 		
+
 		this.scoreLabel = new JLabel(((Integer)level.getScore()).toString());
 		this.scoreLabel.setBounds(255, 80, 46, 14);
 		panel.add(this.scoreLabel);
-		
+
+		JLabel scoreLabel = new JLabel("score");
+		scoreLabel.setBounds(255, 80, 46, 14);
+		panel.add(scoreLabel);
+
 		timeController = new TimeController(level.getGameMode(), this);
 		timeController.play();
+
 		
 		JLabel lbl3Star = new JLabel("3 STARS");
 		lbl3Star.setBounds(123, 357, 56, 16);
@@ -154,16 +176,23 @@ public class LevelView extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
-	public void refreshTimer() {
-		this.timeLabel.setText(((Integer)Main.model.getCurrentLevel().getTime()).toString());
+	public Level getLevel(){
+		return level;
 	}
-	
-	public void refreshScore() {
-		this.scoreLabel.setText(((Integer)Main.model.getCurrentLevel().getTime()).toString());
+	public BoardView getBoardView(){
+		return boardView;
 	}
 	
 	public TimeController getTimeController() {
 		return this.timeController;
+	}
+	
+	public void refreshTimer() {
+		timeLabel.setText(((Integer)level.getTime()).toString());
+	}
+	
+	public void refreshScore() {
+		scoreLabel.setText(((Integer)level.getScore()).toString());
 	}
 	
 	//Potential method for pressing the special moves/other buttons on level view screen

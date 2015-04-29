@@ -27,6 +27,7 @@ public class SelectBuilderModeController implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		levelName = e.getActionCommand();
+		System.out.println(levelName);
 		switch (levelName) {
 		case "Puzzle":
 			level = new PuzzleLevel();
@@ -40,9 +41,9 @@ public class SelectBuilderModeController implements ActionListener {
 		case "Release" :
 			level = new ReleaseLevel();
 			break;
-		default:
-			level = new PuzzleLevel();
-			break;
+//		default:
+//			level = new PuzzleLevel();
+//			break;
 		}
 
 		Main.model.setCurrentLevel(level);

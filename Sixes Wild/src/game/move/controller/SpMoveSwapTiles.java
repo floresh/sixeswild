@@ -9,7 +9,9 @@ import game.entities.Tile;
 
 public class SpMoveSwapTiles extends Move{
 	Board board;
-	MovesLeftController movesLeft;
+
+
+
 	Tile tile1, tile2;
 	
 	public SpMoveSwapTiles(Board board) {
@@ -23,7 +25,7 @@ public class SpMoveSwapTiles extends Move{
 		tile1 = tile2;
 		tile2 = temp;
 		
-		movesLeft.process();
+
 		
 		//TODO refresh boundary
 		
