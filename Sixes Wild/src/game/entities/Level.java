@@ -99,8 +99,16 @@ public abstract class Level implements Serializable, ILevel {
 		return movesLeft;
 	}
 	
+	public ArrayList<Integer> getStars() {
+		return this.stars;
+	}
+	
 	public TimeController getTimer() {
 		return this.timer;
+	}
+	
+	public void setStars(ArrayList<Integer> newStars) {
+		this.stars = newStars;
 	}
 	
 	public void setTimer(TimeController timeController) {
@@ -133,13 +141,5 @@ public abstract class Level implements Serializable, ILevel {
 		this.board = b;
 		// TODO Auto-generated method stub
 		
-	}
-
-	public ArrayList<Integer> getStars() {
-		return this.stars;
-	}
-
-	public void setStars(ArrayList<Integer> stars2) {
-		this.stars = stars2;
 	}
 }

@@ -23,11 +23,13 @@ public class PauseController implements ActionListener{
 	
 	public void actionPerformed(ActionEvent e) {
 		frame.getTimeController().stop();
-		Object[] options = {"Continue"};
-		JOptionPane.showMessageDialog(frame,"Paused.");
+		Object[] options = new Object[] {"Continue"};
+		
+		JOptionPane.showOptionDialog(new JFrame(), "Game Paused", 
+		        "Paused", JOptionPane.OK_OPTION, JOptionPane.INFORMATION_MESSAGE, 
+		        null, options, JOptionPane.OK_OPTION);
 		
 		frame.getTimeController().play();
-//		Main.model.getCurrentLevel();
+		Main.model.getCurrentLevel();
 	}
 }
-
