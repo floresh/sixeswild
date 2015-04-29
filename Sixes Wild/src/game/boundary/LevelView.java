@@ -154,7 +154,7 @@ public class LevelView extends JFrame{
 		scoreLabel.setBounds(255, 80, 46, 14);
 		panel.add(scoreLabel);
 
-	//	timeController = new TimeController(level.getGameMode(), this);
+		timeController = new TimeController(level.getGameMode(), this);
 		timeController.play();
 
 		
