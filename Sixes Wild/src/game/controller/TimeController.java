@@ -3,7 +3,8 @@ package game.controller;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import game.boundary.LevelView;
+import game.boundary.Application;
+import game.entities.*;
 
 /**
  * 
@@ -11,15 +12,20 @@ import game.boundary.LevelView;
  *
  */
 public class TimeController {
-	LevelView frame;
-	String gameMode;
+	Model model;
+	Application application;
 	
 	Timer timer = new Timer();
 	TimerTask timerTask;
 	
-	public TimeController(String gameModeString, LevelView levelView) {
-		this.frame = levelView;
-		this.gameMode = gameModeString;
+	public TimeController(Application app, Model m, String gameMode) {
+		this.model = m;
+		this.application = app;
+		
+		if(gameMode == "Lightning")
+			timerTask = new LightningTimer(application, model);
+		else
+			timerTask = new GameTimer(application, model);
 	}
 	
 	public boolean stop() {
@@ -28,12 +34,7 @@ public class TimeController {
 	}
 	
 	public boolean play() {
-		if(this.gameMode == "Lightning")
-			timerTask = new LightningTimer(frame);
-		else
-			timerTask = new GameTimer(frame);
-		
-		timer.schedule(timerTask, 0, 1000);
+		timer.schedule(timerTask, 1000);
 		return false;
 	}
 }
