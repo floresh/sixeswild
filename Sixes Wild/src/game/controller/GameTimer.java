@@ -1,7 +1,7 @@
 package game.controller;
 
-import game.boundary.Application;
-import game.entities.Model;
+import game.boundary.LevelView;
+import game.main.Main;
 
 import java.util.TimerTask;
 
@@ -11,20 +11,18 @@ import java.util.TimerTask;
  *
  */
 public class GameTimer extends TimerTask {
-	Model model;
-	Application application;
+	LevelView frame;
 	
-	public GameTimer(Application app, Model m) {
-		this.model = m;
-		this.application = app;
+	public GameTimer(LevelView levelView) {
+		this.frame = levelView;
 	}
 
 	@Override
 	public void run() {
-		int time = model.getCurrentLevel().getTime() + 1;
-		model.getCurrentLevel().setTime(time);
+		int time = Main.model.getCurrentLevel().getTime() + 1;
+		Main.model.getCurrentLevel().setTime(time);
 		
-		// TODO refresh time view
+		frame.refreshTimer();
 	}
 
 }

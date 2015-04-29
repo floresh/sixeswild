@@ -3,6 +3,7 @@ package game.boundary;
 import game.controller.PauseController;
 import game.controller.ReturnToPreviousMenuController;
 import game.controller.SelectGameModeController;
+import game.controller.TimeController;
 import game.entities.Board;
 import game.entities.Level;
 import game.main.Main;
@@ -28,6 +29,9 @@ import java.awt.event.ActionListener;
 public class LevelView extends JFrame{
 	
 	Level level;
+	JLabel timeLabel;
+	JLabel scoreLabel;
+	TimeController timeController;
 	
 	
 	public LevelView(Level level) {
@@ -104,20 +108,35 @@ public class LevelView extends JFrame{
 		panel_1.setBounds(255, 229, 450, 450);
 		panel.add(panel_1);
 		
-		JLabel timeLabel = new JLabel("time");
-		timeLabel.setBounds(255, 42, 46, 14);
-		panel.add(timeLabel);
+		this.timeLabel = new JLabel(((Integer)Main.model.getCurrentLevel().getTime()).toString());
+		this.timeLabel.setBounds(255, 42, 46, 14);
+		panel.add(this.timeLabel);
 		
-		JLabel scoreLabel = new JLabel("score");
-		scoreLabel.setBounds(255, 80, 46, 14);
-		panel.add(scoreLabel);
+		this.scoreLabel = new JLabel(((Integer)Main.model.getCurrentLevel().getTime()).toString());
+		this.scoreLabel.setBounds(255, 80, 46, 14);
+		panel.add(this.scoreLabel);
+		
+		timeController = new TimeController(Main.model.getCurrentLevel().getGameMode(), this);
+		timeController.play();
 		
 		setSize(800,800);
 		setLocationRelativeTo(null);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
-
+	
+	public void refreshTimer() {
+		this.timeLabel.setText(((Integer)Main.model.getCurrentLevel().getTime()).toString());
+	}
+	
+	public void refreshScore() {
+		this.scoreLabel.setText(((Integer)Main.model.getCurrentLevel().getTime()).toString());
+	}
+	
+	public TimeController getTimeController() {
+		return this.timeController;
+	}
+	
 	//Potential method for pressing the special moves/other buttons on level view screen
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub

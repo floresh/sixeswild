@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import game.boundary.LevelView;
 import game.main.Main;
 
 /**
@@ -14,17 +15,19 @@ import game.main.Main;
  * @author Li
  */
 public class PauseController implements ActionListener{
-	JFrame frame;
+	LevelView frame;
 	
-	public PauseController(JFrame frame) {
-		this.frame = frame;
+	public PauseController(LevelView levelView) {
+		this.frame = levelView;
 	}
 	
 	public void actionPerformed(ActionEvent e) {
+		frame.getTimeController().stop();
 		Object[] options = {"Continue"};
 		JOptionPane.showMessageDialog(frame,"Paused.");
 		
-		Main.model.getCurrentLevel();
+		frame.getTimeController().play();
+//		Main.model.getCurrentLevel();
 	}
 }
 
