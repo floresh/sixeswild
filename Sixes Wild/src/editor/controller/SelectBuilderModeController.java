@@ -40,6 +40,9 @@ public class SelectBuilderModeController implements ActionListener {
 		case "Release" :
 			level = new ReleaseLevel();
 			break;
+		default:
+			level = new PuzzleLevel();
+			break;
 		}
 
 		Main.model.setCurrentLevel(level);
