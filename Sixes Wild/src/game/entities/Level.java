@@ -134,4 +134,12 @@ public abstract class Level implements Serializable, ILevel {
 		// TODO Auto-generated method stub
 		
 	}
+
+	public ArrayList<Integer> getStars() {
+		return this.stars;
+	}
+
+	public void setStars(ArrayList<Integer> stars2) {
+		this.stars = stars2;
+	}
 }

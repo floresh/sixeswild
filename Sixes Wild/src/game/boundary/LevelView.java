@@ -36,6 +36,13 @@ public class LevelView extends JFrame{
 	
 	Level level;
 	BoardView boardView;
+	JLabel timeLabel;
+	JLabel scoreLabel;
+	
+	TimeController timeController;
+	
+	
+	
 	
 	
 	public LevelView(final Level level) {
@@ -129,15 +136,39 @@ public class LevelView extends JFrame{
 		progressBar.setOrientation(SwingConstants.VERTICAL);
 		panel.add(progressBar);
 		
-		
-		
 		JLabel timeLabel = new JLabel("time");
 		timeLabel.setBounds(255, 42, 46, 14);
 		panel.add(timeLabel);
 		
+		this.timeLabel = new JLabel(((Integer)level.getTime()).toString());
+		this.timeLabel.setBounds(255, 42, 46, 14);
+		panel.add(this.timeLabel);
+
+		
+
+		this.scoreLabel = new JLabel(((Integer)level.getScore()).toString());
+		this.scoreLabel.setBounds(255, 80, 46, 14);
+		panel.add(this.scoreLabel);
+
 		JLabel scoreLabel = new JLabel("score");
 		scoreLabel.setBounds(255, 80, 46, 14);
 		panel.add(scoreLabel);
+
+	//	timeController = new TimeController(level.getGameMode(), this);
+		timeController.play();
+
+		
+		JLabel lbl3Star = new JLabel("3 STARS");
+		lbl3Star.setBounds(123, 357, 56, 16);
+		panel.add(lbl3Star);
+		
+		JLabel lbl2Stars = new JLabel("2 STARS");
+		lbl2Stars.setBounds(123,714-(int)(357*level.getStars().get(1)/level.getStars().get(2)), 56, 16);
+		panel.add(lbl2Stars);
+		
+		JLabel lbl1Stars = new JLabel("1 STAR");
+		lbl1Stars.setBounds(123, 714-(int)(357*level.getStars().get(0)/level.getStars().get(2)), 56, 16);
+		panel.add(lbl1Stars);
 		
 		setSize(800,800);
 		setLocationRelativeTo(null);

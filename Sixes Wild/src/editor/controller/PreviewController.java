@@ -35,34 +35,14 @@ public class PreviewController implements ActionListener{
 
 			}
 		};
-		ArrayList<Integer> multiFreq = new ArrayList<Integer>()
-		 {
-				{
-					add(1);
-					add(1);
-					add(1);
-				}
-		};
-		ArrayList<Integer> stars = new ArrayList<Integer>()
-			 {
-					{
-						add(25);
-						add(50);
-						add(100);
-					}
-			};
-		ArrayList<Integer> rules = new ArrayList<Integer>()
-			 {
-					{
-						add(50);
-						add(900);
-						add(5);
-						add(5);
-						add(5);
-					}
-			 };	
+		ArrayList<Integer> multiFreq = editorScreen.getMultiplierFrequencies();
+		ArrayList<Integer> stars = editorScreen.getStarThresholds();
+		ArrayList<Integer> rules = editorScreen.getRules();
 			 
 			 Level level =  Main.model.getCurrentLevel();
+			 level.setTime(rules.get(1));
+			 System.out.println(rules.get(1));
+			 level.setStars(stars);
 			 Board b = Main.model.getCurrentLevel().getBoard();
 			 b.setTopCell(tileFreq, multiFreq);
 			 b.initialize();
@@ -75,6 +55,7 @@ public class PreviewController implements ActionListener{
 				}
 			 level.setBoard(b);
 			 Main.model.setCurrentLevel(level);
+			 System.out.println(((Integer)Main.model.getCurrentLevel().getTime()).toString());
 			 new LevelView(level);
 	}
 	
