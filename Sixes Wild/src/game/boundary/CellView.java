@@ -27,6 +27,7 @@ public class CellView extends JLabel implements MouseListener, MouseMotionListen
 		int value = cell.getTile().getValue();
 		setText(Integer.toString(value));
 		setLayout(null);
+		if(cell.getIsEnabled()){
 		switch (value){
 		 case 1:  value = 1;
 		 setIcon(new ImageIcon(BoardView.class.getResource("/images/1.png")));
@@ -46,7 +47,7 @@ public class CellView extends JLabel implements MouseListener, MouseMotionListen
 		 case 6:  value = 6;
 		 setIcon(new ImageIcon(BoardView.class.getResource("/images/6resized.png")));
          break;
-		
+		}
 		
 		}
 	

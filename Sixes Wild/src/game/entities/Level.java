@@ -48,7 +48,7 @@ public abstract class Level implements Serializable, ILevel {
 		movesLeft = 50;
 		
 	}
-
+	
 	public Level(Board board, int score, int time, int movesLeft,
 			ArrayList<Integer> tileFrequency,
 			ArrayList<Integer> multiplierFrequency) {

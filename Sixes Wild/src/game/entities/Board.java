@@ -7,6 +7,8 @@ import java.util.Random;
 public class Board implements Serializable {
 	public Cell[][] cells;
 	TopCell topCell;
+	
+	
 
 	public Board(Level level) {
 		topCell = new TopCell(level.getTF(),level.getMF());
@@ -97,7 +99,8 @@ public class Board implements Serializable {
 			}
 		}
 	}
-
+	
+	
 	public void gravity() {
 		ArrayList<Cell> arrayHelp = new ArrayList<Cell>();
 		arrayHelp.add(topCell);
