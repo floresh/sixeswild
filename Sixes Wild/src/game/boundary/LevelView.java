@@ -177,6 +177,10 @@ public class LevelView extends JFrame{
 		scoreLabel.setText(((Integer)Main.model.getCurrentLevel().getScore()).toString());
 	}
 	
+	public void disposeTimer() {
+		timeController.stop();
+	}
+	
 	//Potential method for pressing the special moves/other buttons on level view screen
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
