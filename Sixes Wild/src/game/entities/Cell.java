@@ -3,13 +3,31 @@ package game.entities;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * 
+ * @author Andrew
+ * 
+ * 
+ */
 public class Cell implements Serializable {
-	
+	/** tile that each non empty/disabled cell holds */
 	Tile tile;
+	
+	/** marks a cell for elimination game mode */
 	boolean isMarked;
+	
+	/** marks a cell as empty so that it may be refilled */
 	boolean isEmpty;
+	
+	/** marks a cell as enable/disabled so that tiles fall through it */
 	boolean isEnabled;
+	
+	/** Location(row, column) of this cell */
 	Location location;
+	
+	/**
+	 * TODO what is the difference between this isSelected and the isSelected in tile?
+	 *  Marks cell as selected in the middle of a move */
 	boolean isSelected = false;
 	
 	public Cell(){
@@ -35,7 +53,11 @@ public class Cell implements Serializable {
 		 this.isEmpty = isEmpty;
 	}
 	
-	protected void gravity(ArrayList<Cell> column){
+	/**
+	 * recursive method to have tiles fall down in columns
+	 * @param column
+	 */
+	protected void gravity(ArrayList<Cell> column) {
 		int index = column.indexOf(this);
 		
 		if(isEmpty){
@@ -47,6 +69,11 @@ public class Cell implements Serializable {
 	
 	}
 	
+	/**
+	 * TODO explain method
+	 * @param column
+	 * @return Tile
+	 */
 	protected Tile requestTile(ArrayList<Cell> column){
 		int index = column.indexOf(this);
 		
