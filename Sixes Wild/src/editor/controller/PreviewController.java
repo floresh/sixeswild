@@ -13,7 +13,11 @@ import game.entities.Level;
 import game.entities.PuzzleLevel;
 import game.entities.Tile;
 
-//
+/**
+ * 
+ * @author Jake
+ *
+ */
 public class PreviewController implements ActionListener{
 	
 	WholesomeLevelEditorScreen editorScreen;

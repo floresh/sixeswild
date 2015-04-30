@@ -1,6 +1,8 @@
 package editor.controller;
 
 import java.awt.Color;
+
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -10,6 +12,12 @@ import editor.boundary.LevelEditorApplication;
 import editor.boundary.Main;
 import editor.boundary.WholesomeLevelEditorScreen;
 import game.entities.Model;
+
+/**
+ * 
+ * @author Jake
+ *
+ */
 public class ClearLevelController implements ActionListener {
 	
 	WholesomeLevelEditorScreen wles;

@@ -9,7 +9,11 @@ import javax.swing.JButton;
 import editor.boundary.Main;
 import editor.boundary.WholesomeLevelEditorScreen;
 import game.entities.Tile;
-
+/**
+ * 
+ * @author Jake
+ *
+ */
 public class ToggleCellController implements ActionListener {
 	WholesomeLevelEditorScreen screen;
 	JButton cell;

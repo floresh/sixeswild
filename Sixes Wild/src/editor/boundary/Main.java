@@ -7,7 +7,11 @@ import game.entities.Model;
 
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-
+/**
+ * 
+ * @author Jake, Kwame
+ *
+ */
 public class Main {
 	public static LevelEditorModel model;
 	static ArrayList<Level> loadedLevels; 

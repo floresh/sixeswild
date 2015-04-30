@@ -15,7 +15,11 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 
 import editor.controller.LoadLevelController;
 import editor.controller.SelectBuilderModeController;
-
+/**
+ * 
+ * @author Jake
+ *
+ */
 public class LevelEditorIntro extends JFrame{
 	
 	public LevelEditorIntro() {

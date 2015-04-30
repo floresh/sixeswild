@@ -7,7 +7,11 @@ import editor.boundary.LevelEditorApplication;
 import editor.boundary.Main;
 import editor.model.ToggleType;
 import game.entities.Model;
-//
+/**
+ * 
+ * @author Jake
+ *
+ */
 public class ToggleTypeController implements ActionListener{
 	
 	Model model;

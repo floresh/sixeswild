@@ -10,6 +10,11 @@ import editor.boundary.LevelEditorApplication;
 import editor.boundary.Main;
 import editor.boundary.WholesomeLevelEditorScreen;
 import game.entities.Model;
+/**
+ * 
+ * @author Jake
+ *
+ */
 public class InvertLevelController implements ActionListener {
 	
 	WholesomeLevelEditorScreen wles;

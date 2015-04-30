@@ -16,7 +16,6 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.SwingConstants;
 
-import editor.boundary.LevelEditorScreen;
 import game.controller.SelectPlayController;
 import game.entities.Model;
 
