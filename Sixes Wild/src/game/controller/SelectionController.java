@@ -17,8 +17,8 @@ public class SelectionController extends MouseAdapter{
 	Model model;
 	BoardView bv;
 	ArrayList<Cell> cells = new ArrayList<Cell>();
-	int size;
-
+	
+	
 	public SelectionController(Model model/*, BoardView bv*/){
 		this.model = model;
 	//	this.bv = bv;
@@ -48,7 +48,9 @@ public class SelectionController extends MouseAdapter{
 	}
 	
 	public int getSize(){
-		return ;
+
+		return cells.size();
+
 	}
 }
 

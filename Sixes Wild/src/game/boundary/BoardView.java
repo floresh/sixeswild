@@ -8,6 +8,7 @@ import game.controller.SelectionController;
 import game.entities.Board;
 import game.entities.Cell;
 import game.entities.Model;
+import game.move.controller.MoveController;
 
 
 /**
@@ -50,10 +51,13 @@ public class BoardView extends JPanel{
 
 	void initialize () {
 		SelectionController ma = new SelectionController(model/*, this*/);
+		MoveController mc = new MoveController(model);
+		
 		for(int row = 0; row < 9; row++){
 			for(int col = 0; col <9; col++){
 				labelArr[row][col] = new CellView(board.cells[row][col]);
 				labelArr[row][col].addMouseListener(ma);
+				labelArr[row][col].addMouseListener(mc);
 				add(labelArr[row][col]);
 			}
 		}

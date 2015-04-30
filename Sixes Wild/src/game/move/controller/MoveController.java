@@ -20,29 +20,26 @@ public class MoveController extends SelectionController{
 	Model model;
 	BoardView bv;
 	ArrayList<Cell> cells;
-	ArrayList<Boolean> validCheck;
 	
 	SelectionController selection = new SelectionController(model);
 	ScoreController updateScore = new ScoreController(model);
 	MovesLeftController movesLeft = new MovesLeftController(model);
 	
-	public MoveController(Model m, ArrayList<Cell> cells) {
+	public MoveController(Model m/*, ArrayList<Cell> cells*/) {
 		super(m);
 		this.model = m;
-		this.cells = cells;
-
 	}
 	
 	public boolean doMove() {
 		Cell next;
 		int total = 0;
 		int subtotal = 0;
-		int size = cells.size();
+		int size = selection.getSize();
 		
 		if(!isLegal(size)) { return false; }
 		
 		for(int i = 0; i < size; i++) {
-			next = cells.get(i);
+			next = selection.selectedCellsList().get(i);
 			
 			subtotal += next.getTile().getValue();
 			
@@ -51,6 +48,11 @@ public class MoveController extends SelectionController{
 		}
 		
 		if(subtotal != 6) { return false; }
+		for(int i = 0; i < size; i++){
+			int col = selection.selectedCellsList().get(i).getLocation().getColumn();
+			int row = selection.selectedCellsList().get(i).getLocation().getRow();
+			bv.getBoard().cells[row][col].setIsEmpty(true);
+		}
 		
 		movesLeft.process();
 		updateScore.process(total);
@@ -59,10 +61,9 @@ public class MoveController extends SelectionController{
 		bv.draw();
 		return true;
 	}
-//Board.cell.setIsEmpty(True)
 
 	public boolean isLegal(int size) {
-		if(selection.size() > 6) { return false; }
+		if(size > 6) { return false; }
 
 		int total = 0;
 		ArrayList<Location> locations = new ArrayList<Location>();
