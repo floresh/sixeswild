@@ -1,15 +1,14 @@
 package game.controller;
 
 import game.boundary.Application;
+import game.boundary.LevelView;
 import game.entities.Model;
 
 public class EndGameController {
-	Model model;
-	Application application;
+	LevelView frame;
 	
-	public EndGameController(Application app, Model m) {
-		this.model = m;
-		this.application = app;
+	public EndGameController(LevelView levelView) {
+		this.frame = levelView;
 	}
 	
 	/*
@@ -18,5 +17,6 @@ public class EndGameController {
 	 * -display stats
 	 * -display exit level button
 	 */
+	
 	
 }

@@ -46,7 +46,7 @@ public class LevelView extends JFrame{
 		
 		//JPanel boardView = new BoardView(board);
 
-		BoardView boardView = new BoardView(level.getBoard());
+		this.boardView = new BoardView(level.getBoard());
 		boardView.setBounds(255, 229, 450, 450);
 		panel.add(boardView);
 
