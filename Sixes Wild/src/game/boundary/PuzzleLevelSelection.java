@@ -20,11 +20,14 @@ import javax.swing.JLabel;
 import java.awt.Font;
 /**
  * 
- * @author Jake
- *
+ * @author Jake, hfloreshuerta
+ * 
+ * Frame for level selection in puzzle game mode
  */
 public class PuzzleLevelSelection extends JFrame {
+	/** TODO what is index used for */
 	int index = 0;
+	/** Displays level number selected by user */
 	public JLabel lblLevelSelected;
 
 	public PuzzleLevelSelection() {

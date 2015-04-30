@@ -64,7 +64,9 @@ public class SelectionController extends MouseAdapter{
 	}
 
 	public int getSize(){
+
 		return cells.size();
+
 	}
 
 	public void deleteCells(){

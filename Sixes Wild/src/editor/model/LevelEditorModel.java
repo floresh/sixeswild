@@ -2,6 +2,7 @@ package editor.model;
 
 import game.entities.Level;
 import game.entities.Model;
+import game.entities.PuzzleLevel;
 /**
  * 
  * @author Jake
@@ -19,8 +20,12 @@ public class LevelEditorModel extends Model{
 		toggleType = new ToggleType();
 	}
 	
-	public void setCurrentLevel(Level l){
-		this.currentLevel = l;
+	public Level getCurrentLevel(){
+		return this.currentLevel;
+	}
+	
+	public void setCurrentLevel(Level level){
+		this.currentLevel = level;
 	}
 	
 	public ToggleType getToggleType(){

@@ -8,10 +8,12 @@ import java.util.ArrayList;
 
 public class ReleaseLevel extends Level {
 
+	public ReleaseLevel(){
+		super();
+	}
 	@Override
 	public String getGameMode() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Release";
 	}
 
 	@Override

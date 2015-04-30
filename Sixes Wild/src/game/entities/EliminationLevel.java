@@ -6,7 +6,7 @@ import game.boundary.EliminationLevelSelection;
 import game.boundary.GameModeScreen;
 import game.boundary.ReleaseLevelSelection;
 
-public class EliminationLevel extends Level implements ILevel {
+public class EliminationLevel extends Level {
 	public EliminationLevel(){
 		super();
 	}

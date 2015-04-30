@@ -1,10 +1,18 @@
 package game.boundary;
+
+
 import game.controller.SelectGameModeController;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * 
+ * @author hfloreshuerta
+ * 
+ *	Frame to display user selection of a game mode
+ */
 public class GameModeScreen extends JFrame{
 	private JButton backButton;
 	

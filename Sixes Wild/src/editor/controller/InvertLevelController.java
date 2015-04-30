@@ -25,7 +25,7 @@ public class InvertLevelController implements ActionListener {
 	
 	
 	public boolean setEnabled(boolean onOff, int row, int col){
-		Main.model.getCurrentLevel().getBoard().cells[row][col].setIsEnabled(onOff);
+		Main.application.getModel().getCurrentLevel().getBoard().cells[row][col].setIsEnabled(onOff);
 		return true;
 	}
 	
