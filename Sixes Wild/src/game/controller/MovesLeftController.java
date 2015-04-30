@@ -4,16 +4,16 @@ import game.boundary.Application;
 import game.entities.*;
 
 public class MovesLeftController {
-	Model model;
+	Level level;
 	
-	public MovesLeftController(Model m) {
-		this.model = m;
+	public MovesLeftController(Level level) {
+		this.level = level;
 
 	}
 	
 	public boolean process() {
-		int movesLeft = model.getCurrentLevel().getMovesLeft();
-		model.getCurrentLevel().setMovesLeft(movesLeft - 1);
+		int movesLeft = level.getMovesLeft();
+		level.setMovesLeft(movesLeft - 1);
 		
 		if(movesLeft == 1) {
 			//TODO: end game

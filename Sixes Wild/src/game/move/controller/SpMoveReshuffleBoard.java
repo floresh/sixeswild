@@ -13,8 +13,9 @@ public class SpMoveReshuffleBoard extends Move{
 	Model model;
 	Application application;
 	Board board;
+    Level level;
 	
-	MovesLeftController movesLeft = new MovesLeftController(model);
+	MovesLeftController movesLeft = new MovesLeftController(level);
 	
 	public SpMoveReshuffleBoard(Board board) {
 		this.board = board;

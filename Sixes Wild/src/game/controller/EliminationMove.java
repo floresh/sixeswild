@@ -9,9 +9,10 @@ public class EliminationMove {
 	Model model;
 	Application application;
 	ArrayList<Cell> cells;
+	private Level level;
 
-	ScoreController updateScore = new ScoreController(model);
-	MovesLeftController movesLeft = new MovesLeftController(model);
+	ScoreController updateScore = new ScoreController(level);
+	MovesLeftController movesLeft = new MovesLeftController(level);
 
 	public EliminationMove(Application app, Model m, ArrayList<Cell> cells) {
 		this.model = m;

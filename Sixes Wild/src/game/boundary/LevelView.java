@@ -1,8 +1,10 @@
 package game.boundary;
 
 import game.controller.PauseController;
+
 import game.controller.ResetBoardController;
 import game.controller.ReturnToPreviousMenuController;
+import game.controller.SelectionController;
 import game.controller.TimeController;
 import game.entities.Level;
 import game.main.Main;
@@ -17,6 +19,8 @@ import javax.swing.JLabel;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
 import javax.swing.JProgressBar;
 import javax.swing.SwingConstants;
@@ -34,15 +38,32 @@ public class LevelView extends JFrame{
 	BoardView boardView;
 	JLabel timeLabel;
 	JLabel scoreLabel;
+	MouseListener activeMouseListener;
+	MouseMotionListener activeMouseMotionListener;
 	
 	TimeController timeController;
 	
-	public LevelView(final Level level) {
+	public void setActiveListener(MouseListener ml) {
+		this.removeMouseListener(activeMouseListener);
+		activeMouseListener = ml;
+		if (ml != null) { 
+			this.addMouseListener(ml);
+		}
+	}
+	/** Properly register new motion listener (and unregister old one if present). */
+	public void setActiveMotionListener(MouseMotionListener mml) {
+		this.removeMouseMotionListener(activeMouseMotionListener);
+		activeMouseMotionListener = mml;
+		if (mml != null) {
+			this.addMouseMotionListener(mml);
+		}
+	}
+	
+	public LevelView(Level level) {
 		setResizable(false);
 
 		JPanel panel = new JPanel();
-
-	
+		//MoveController mc = new MoveController(this);
 		
 		//JPanel boardView = new BoardView(board);
 
@@ -79,7 +100,7 @@ public class LevelView extends JFrame{
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				new SpMoveReshuffleBoard(level.getBoard()).doMove();
+			//	new SpMoveReshuffleBoard(level.getBoard()).doMove();
 
 			}
 		});
@@ -90,7 +111,7 @@ public class LevelView extends JFrame{
 		JButton btnNewButton_4 = new JButton("SWAP");
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new SpMoveSwapTiles(level.getBoard()).doMove();
+			//	new SpMoveSwapTiles(level.getBoard()).doMove();
 			}
 		});
 		btnNewButton_4.setBounds(35, 259, 97, 25);
@@ -100,7 +121,7 @@ public class LevelView extends JFrame{
 		JButton btnNewButton_5 = new JButton("DELETE");
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new SpMoveDelete(level.getBoard()).doMove();
+			//	new SpMoveDelete(level.getBoard()).doMove();
 			}
 		});
 
@@ -187,10 +208,6 @@ public class LevelView extends JFrame{
 	public void disposeTimer() {
 		timeController.stop();
 	}
-	
-	//Potential method for pressing the special moves/other buttons on level view screen
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
 		
 	}
-}
+

@@ -1,18 +1,19 @@
 package game.controller;
 
 import game.boundary.Application;
+import game.entities.Level;
 import game.entities.Model;
 
 public class ScoreController {
-	Model model;
+	Level level;
 	
-	public ScoreController(Model m) {
-		this.model = m;
+	public ScoreController(Level l) {
+		this.level = l;
 	}
 	
 	public boolean process(int score) {
-		int currentScore = model.getCurrentLevel().getScore();
-		model.getCurrentLevel().setScore(currentScore + score);
+		int currentScore = level.getScore();
+		level.setScore(currentScore + score);
 		return true;
 	}
 
