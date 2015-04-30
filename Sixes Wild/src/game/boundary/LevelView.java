@@ -4,14 +4,9 @@ import game.controller.PauseController;
 
 import game.controller.ResetBoardController;
 import game.controller.ReturnToPreviousMenuController;
-import game.controller.SelectionController;
 import game.controller.TimeController;
 import game.entities.Level;
 import game.main.Main;
-import game.move.controller.SpMoveDelete;
-import game.move.controller.SpMoveReshuffleBoard;
-import game.move.controller.SpMoveSwapTiles;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JButton;

@@ -7,7 +7,6 @@ import javax.swing.JPanel;
 
 import game.controller.SelectionController;
 import game.entities.Board;
-import game.entities.Cell;
 import game.entities.Model;
 
 

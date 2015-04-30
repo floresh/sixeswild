@@ -12,7 +12,7 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 import javax.swing.SwingUtilities;
-
+//
 public class SelectionController extends MouseAdapter{
 	/** Needed for controller behavior **/
 	BoardView bv;
