@@ -1,5 +1,20 @@
 package editor.boundary;
-//will become main
-public class LevelEditorApplication {
 
+import editor.model.LevelEditorModel;
+import game.entities.ReleaseLevel;
+/**
+ * 
+ * @author Jake
+ *
+ */
+public class LevelEditorApplication {
+	LevelEditorModel model;
+	
+	public LevelEditorApplication(){
+		this.model = new LevelEditorModel();
+	}
+	
+	public LevelEditorModel getModel(){
+		return this.model;
+	}
 }

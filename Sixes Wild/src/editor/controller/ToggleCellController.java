@@ -28,7 +28,7 @@ public class ToggleCellController implements ActionListener {
 	}
 	
 	public boolean setEnabled(boolean onOff){
-		Main.model.getCurrentLevel().getBoard().cells[row][column].setIsEnabled(onOff);
+		Main.application.getModel().getCurrentLevel().getBoard().cells[row][column].setIsEnabled(onOff);
 		return true;
 	}
 	
@@ -40,10 +40,10 @@ public class ToggleCellController implements ActionListener {
 	
 	public boolean setSix(boolean onOff){
 		if(onOff){
-			Main.model.getToggleType().getCellArray()[this.row][this.column] = 6;
+			Main.application.getModel().getToggleType().getCellArray()[this.row][this.column] = 6;
 		}
 		else{
-			Main.model.getToggleType().getCellArray()[this.row][this.column] = 0;
+			Main.application.getModel().getToggleType().getCellArray()[this.row][this.column] = 0;
 		}
 		return true;
 	}
@@ -51,7 +51,7 @@ public class ToggleCellController implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		cell = (JButton) e.getSource();
-		if(Main.model.getToggleType().getValue() == 0 ){
+		if(Main.application.getModel().getToggleType().getValue() == 0 ){
 			if(cell.getBackground() == Color.GREEN){
 				cell.setBackground(Color.RED);
 				setEnabled(false);
@@ -61,7 +61,7 @@ public class ToggleCellController implements ActionListener {
 				setEnabled (true);
 			}
 		}
-		else if(Main.model.getToggleType().getValue() == 1){
+		else if(Main.application.getModel().getToggleType().getValue() == 1){
 			if(cell.getText()==""){
 				cell.setText("R");
 				setRelease(true);
@@ -71,7 +71,7 @@ public class ToggleCellController implements ActionListener {
 				setRelease(false);
 			}
 		}
-		else if(Main.model.getToggleType().getValue() == 2){
+		else if(Main.application.getModel().getToggleType().getValue() == 2){
 			if(cell.getText()==""){
 				cell.setText("6");
 				setSix(true);

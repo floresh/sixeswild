@@ -24,14 +24,15 @@ public class SelectBuilderModeController implements ActionListener {
 	Level level;
 	String levelName;
 
-	public SelectBuilderModeController(LevelEditorIntro screen) {
+	public SelectBuilderModeController(LevelEditorIntro screen, String ln) {
 		this.screen = screen;
+		this.levelName = ln;
+	
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		levelName = e.getActionCommand();
-		System.out.println(levelName);
+		
 		switch (levelName) {
 		case "Puzzle":
 			level = new PuzzleLevel();
@@ -50,8 +51,9 @@ public class SelectBuilderModeController implements ActionListener {
 //			break;
 		}
 
-		Main.model.setCurrentLevel(level);
-		Filing.loadBuilderLevels(Main.model.getCurrentLevel());
+		Main.application.getModel().setCurrentLevel(level);
+		
+		Filing.loadBuilderLevels(Main.application.getModel().getCurrentLevel());
 		screen.dispose();
 		new WholesomeLevelEditorScreen();
 	}

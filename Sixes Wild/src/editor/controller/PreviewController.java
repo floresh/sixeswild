@@ -43,23 +43,23 @@ public class PreviewController implements ActionListener{
 		ArrayList<Integer> stars = editorScreen.getStarThresholds();
 		ArrayList<Integer> rules = editorScreen.getRules();
 			 
-			 Level level =  Main.model.getCurrentLevel();
+			 Level level =  Main.application.getModel().getCurrentLevel();
 			 level.setTime(rules.get(1));
 			 System.out.println(rules.get(1));
 			 level.setStars(stars);
-			 Board b = Main.model.getCurrentLevel().getBoard();
+			 Board b = Main.application.getModel().getCurrentLevel().getBoard();
 			 b.setTopCell(tileFreq, multiFreq);
 			 b.initialize();
 			 for(int i =0;i<9;i++){
 					for(int j =0;j<9;j++){
-						if(Main.model.getToggleType().cellArray[i][j] == 6){
+						if(Main.application.getModel().getToggleType().cellArray[i][j] == 6){
 							b.cells[i][j].setTile(new Tile(6, 0));
 						}
 					}
 				}
 			 level.setBoard(b);
-			 Main.model.setCurrentLevel(level);
-			 System.out.println(((Integer)Main.model.getCurrentLevel().getTime()).toString());
+			 Main.application.getModel().setCurrentLevel(level);
+			 System.out.println(((Integer)Main.application.getModel().getCurrentLevel().getTime()).toString());
 			 new LevelView(level);
 	}
 	

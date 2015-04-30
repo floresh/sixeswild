@@ -10,8 +10,7 @@ public class LightningLevel extends Level{
 
 	@Override
 	public String getGameMode() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Lightning";
 	}
 
 	@Override
