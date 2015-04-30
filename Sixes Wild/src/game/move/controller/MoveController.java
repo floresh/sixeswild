@@ -22,6 +22,7 @@ public class MoveController extends SelectionController{
 	ArrayList<Cell> cells;
 	ArrayList<Boolean> validCheck;
 	
+	SelectionController selection = new SelectionController(model);
 	ScoreController updateScore = new ScoreController(model);
 	MovesLeftController movesLeft = new MovesLeftController(model);
 	
@@ -36,9 +37,9 @@ public class MoveController extends SelectionController{
 		Cell next;
 		int total = 0;
 		int subtotal = 0;
+		int size = cells.size();
 		
-		
-		if(!isValid()) { return false; }
+		if(!isLegal(size)) { return false; }
 		
 		for(int i = 0; i < size; i++) {
 			next = cells.get(i);
@@ -60,21 +61,33 @@ public class MoveController extends SelectionController{
 	}
 //Board.cell.setIsEmpty(True)
 
-	public boolean isValid(){
-		int size = cells.size();
+	public boolean isLegal(int size) {
+		if(selection.size() > 6) { return false; }
 
-		if((size <= 6)){
-			for(int cells.)
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
+		int total = 0;
+		ArrayList<Location> locations = new ArrayList<Location>();
 
-	public boolean isAdjacent(Cell otherCell) {
-		
-		return 
-		
+		for(int i = 0; i < size; i++) {
+			locations.add(cells.get(i).getLocation());
+			total += cells.get(i).getTile().getValue();
+		}
+		if(total != 6) { return false; }
+
+		Location l1, l2;
+		int r1,r2,c1,c2;
+
+		for(int i = 1; i < size; i++) {
+			l1 = locations.get(i);
+			l2 = locations.get(i-1);
+			r1=l1.getRow(); r2=l2.getRow();
+			c1=l1.getColumn(); c2=l2.getColumn();
+
+			if(l1 == l2 || ((r1+1 == r2 || r1-1 == r2) && (c1 == c2)) ||
+					((c1+1 == c2 || c1-1 == c2) && (r1 == r2))) {
+				return true;
+			}
+		}
+		return false;
+
 	}
 }
