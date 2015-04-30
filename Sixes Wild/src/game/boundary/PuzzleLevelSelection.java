@@ -1,6 +1,7 @@
 package game.boundary;
 
 import game.controller.ReturnToPreviousMenuController;
+import game.controller.SelectLevelController;
 import game.entities.Level;
 import game.entities.PuzzleLevel;
 import game.main.Main;
@@ -14,8 +15,17 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+import javax.swing.JLabel;
+
+import java.awt.Font;
+/**
+ * 
+ * @author Jake
+ *
+ */
 public class PuzzleLevelSelection extends JFrame {
 	int index = 0;
+	public JLabel lblLevelSelected;
 
 	public PuzzleLevelSelection() {
 		super("Puzzle Level Selection");
@@ -23,6 +33,9 @@ public class PuzzleLevelSelection extends JFrame {
 		JButton btnNewButton = new JButton("BACK");
 		btnNewButton
 				.addActionListener(new ReturnToPreviousMenuController(this));
+		
+		lblLevelSelected = new JLabel("None");
+		lblLevelSelected.setFont(new Font("Old English Text MT", Font.PLAIN, 72));
 
 		JButton button1 = new JButton("1");
 		button1.setEnabled(Main.model.unlockedLevels[0][0]);
@@ -31,6 +44,7 @@ public class PuzzleLevelSelection extends JFrame {
 				index = 0;
 			}
 		});
+		button1.addActionListener(new SelectLevelController(this, "Level 1"));
 
 		JButton button2 = new JButton("2");
 		button2.setEnabled(Main.model.unlockedLevels[0][1]);
@@ -39,6 +53,7 @@ public class PuzzleLevelSelection extends JFrame {
 				index = 1;
 			}
 		});
+		button2.addActionListener(new SelectLevelController(this, "Level 2"));
 
 		JButton button3 = new JButton("3");
 		button3.setEnabled(Main.model.unlockedLevels[0][2]);
@@ -47,6 +62,7 @@ public class PuzzleLevelSelection extends JFrame {
 				index = 2;
 			}
 		});
+		button3.addActionListener(new SelectLevelController(this, "Level 3"));
 
 		JButton button4 = new JButton("4");
 		button4.setEnabled(Main.model.unlockedLevels[0][3]);
@@ -55,6 +71,7 @@ public class PuzzleLevelSelection extends JFrame {
 				index = 3;
 			}
 		});
+		button4.addActionListener(new SelectLevelController(this, "Level 4"));
 
 		JButton playButton = new JButton("PLAY");
 		playButton.addActionListener(new ActionListener() {
@@ -80,85 +97,57 @@ public class PuzzleLevelSelection extends JFrame {
 			
 			}
 		});
+		
+		
+		JLabel lblCurrentLevel = new JLabel("Current Level:");
+		lblCurrentLevel.setFont(new Font("Tahoma", Font.PLAIN, 26));
 
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
-		groupLayout
-				.setHorizontalGroup(groupLayout
-						.createParallelGroup(Alignment.LEADING)
-						.addGroup(
-								groupLayout
-										.createSequentialGroup()
-										.addGap(30)
-										.addComponent(btnNewButton)
-										.addGap(101)
-										.addComponent(button1,
-												GroupLayout.PREFERRED_SIZE, 48,
-												GroupLayout.PREFERRED_SIZE)
-										.addGap(35)
-										.addComponent(button2,
-												GroupLayout.PREFERRED_SIZE, 48,
-												GroupLayout.PREFERRED_SIZE)
-										.addGap(36)
-										.addComponent(button3,
-												GroupLayout.PREFERRED_SIZE, 48,
-												GroupLayout.PREFERRED_SIZE)
-										.addGap(34)
-										.addComponent(button4,
-												GroupLayout.PREFERRED_SIZE, 48,
-												GroupLayout.PREFERRED_SIZE)
-										.addContainerGap(
-												GroupLayout.DEFAULT_SIZE,
-												Short.MAX_VALUE))
-						.addGroup(
-								Alignment.TRAILING,
-								groupLayout
-										.createSequentialGroup()
-										.addContainerGap(379, Short.MAX_VALUE)
-										.addComponent(playButton,
-												GroupLayout.PREFERRED_SIZE, 79,
-												GroupLayout.PREFERRED_SIZE)
-										.addGap(73)));
-		groupLayout
-				.setVerticalGroup(groupLayout
-						.createParallelGroup(Alignment.LEADING)
-						.addGroup(
-								groupLayout
-										.createSequentialGroup()
-										.addGap(44)
-										.addGroup(
-												groupLayout
-														.createParallelGroup(
-																Alignment.LEADING)
-														.addComponent(
-																btnNewButton)
-														.addComponent(
-																button1,
-																GroupLayout.PREFERRED_SIZE,
-																46,
-																GroupLayout.PREFERRED_SIZE)
-														.addGroup(
-																groupLayout
-																		.createParallelGroup(
-																				Alignment.BASELINE)
-																		.addComponent(
-																				button2,
-																				GroupLayout.PREFERRED_SIZE,
-																				46,
-																				GroupLayout.PREFERRED_SIZE)
-																		.addComponent(
-																				button3,
-																				GroupLayout.PREFERRED_SIZE,
-																				46,
-																				GroupLayout.PREFERRED_SIZE))
-														.addComponent(
-																button4,
-																GroupLayout.PREFERRED_SIZE,
-																46,
-																GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(
-												ComponentPlacement.RELATED,
-												262, Short.MAX_VALUE)
-										.addComponent(playButton).addGap(83)));
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(146)
+							.addComponent(lblLevelSelected, GroupLayout.PREFERRED_SIZE, 440, GroupLayout.PREFERRED_SIZE))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(30)
+							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+								.addComponent(lblCurrentLevel, GroupLayout.PREFERRED_SIZE, 184, GroupLayout.PREFERRED_SIZE)
+								.addGroup(groupLayout.createSequentialGroup()
+									.addComponent(btnNewButton)
+									.addGap(101)
+									.addComponent(button1, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)))
+							.addGap(35)
+							.addComponent(button2, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+							.addGap(36)
+							.addComponent(button3, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+							.addGap(34)
+							.addComponent(button4, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(319)
+							.addComponent(playButton, GroupLayout.PREFERRED_SIZE, 108, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap(196, Short.MAX_VALUE))
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(44)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(btnNewButton)
+						.addComponent(button1, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE)
+						.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+							.addComponent(button2, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE)
+							.addComponent(button3, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE))
+						.addComponent(button4, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE))
+					.addGap(151)
+					.addComponent(lblCurrentLevel, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblLevelSelected, GroupLayout.PREFERRED_SIZE, 192, GroupLayout.PREFERRED_SIZE)
+					.addGap(58)
+					.addComponent(playButton, GroupLayout.PREFERRED_SIZE, 98, GroupLayout.PREFERRED_SIZE)
+					.addGap(131))
+		);
 		getContentPane().setLayout(groupLayout);
 		setSize(800, 800);
 		setLocationRelativeTo(null);
