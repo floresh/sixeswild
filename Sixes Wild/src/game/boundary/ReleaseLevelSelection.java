@@ -16,25 +16,22 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.SwingConstants;
 
+import game.controller.ReturnToPreviousMenuController;
 import game.controller.SelectPlayController;
 import game.entities.Model;
+import game.main.Main;
 
 
 public class ReleaseLevelSelection extends JFrame{
-	Model model;
-	Application application;
 	
-	public ReleaseLevelSelection(Application app, Model m) {
+	public ReleaseLevelSelection() {
 		super("Release Level Selection");
 		
-		this.model = m;
-		this.application = app;
-		
 		JButton btnNewButton = new JButton("BACK");
-		btnNewButton.addActionListener(new SelectPlayController(this));
+		btnNewButton.addActionListener(new ReturnToPreviousMenuController(this));
 		
 		JButton btnNewButton_1 = new JButton("1");
-		btnNewButton_1.setEnabled(false);
+		btnNewButton_1.setEnabled(Main.model.unlockedLevels[3][0]);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -45,16 +42,16 @@ public class ReleaseLevelSelection extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button.setEnabled(false);
+		button.setEnabled(Main.model.unlockedLevels[3][1]);
 		
 		JButton button_1 = new JButton("3");
-		button_1.setEnabled(false);
+		button_1.setEnabled(Main.model.unlockedLevels[3][2]);
 		
 		JButton button_2 = new JButton("4");
-		button_2.setEnabled(false);
+		button_2.setEnabled(Main.model.unlockedLevels[3][3]);
 		
 		JButton btnNewButton_2 = new JButton("PLAY");
-		btnNewButton_2.setEnabled(false);
+		btnNewButton_2.setEnabled(Main.model.unlockedLevels[3][0]);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}

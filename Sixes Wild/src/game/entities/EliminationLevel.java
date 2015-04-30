@@ -2,7 +2,9 @@ package game.entities;
 
 import java.util.ArrayList;
 
+import game.boundary.EliminationLevelSelection;
 import game.boundary.GameModeScreen;
+import game.boundary.ReleaseLevelSelection;
 
 public class EliminationLevel extends Level implements ILevel {
 	public EliminationLevel(){
@@ -16,14 +18,13 @@ public class EliminationLevel extends Level implements ILevel {
 
 	@Override
 	public boolean openLevelScreen() {
-		// TODO Auto-generated method stub
-		return false;
+		new EliminationLevelSelection();
+		return true;
 	}
 
 	@Override
 	public GameModeScreen getPreviousScreen() {
-		// TODO Auto-generated method stub
-		return null;
+		return new GameModeScreen();
 	}
 
 	@Override

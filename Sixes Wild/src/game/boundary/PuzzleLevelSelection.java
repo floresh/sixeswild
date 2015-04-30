@@ -25,6 +25,7 @@ public class PuzzleLevelSelection extends JFrame {
 				.addActionListener(new ReturnToPreviousMenuController(this));
 
 		JButton button1 = new JButton("1");
+		button1.setEnabled(Main.model.unlockedLevels[0][0]);
 		button1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				index = 0;
@@ -32,7 +33,7 @@ public class PuzzleLevelSelection extends JFrame {
 		});
 
 		JButton button2 = new JButton("2");
-		button2.setEnabled(false);
+		button2.setEnabled(Main.model.unlockedLevels[0][1]);
 		button2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				index = 1;
@@ -40,7 +41,7 @@ public class PuzzleLevelSelection extends JFrame {
 		});
 
 		JButton button3 = new JButton("3");
-		button3.setEnabled(false);
+		button3.setEnabled(Main.model.unlockedLevels[0][2]);
 		button3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				index = 2;
@@ -48,7 +49,7 @@ public class PuzzleLevelSelection extends JFrame {
 		});
 
 		JButton button4 = new JButton("4");
-		button4.setEnabled(false);
+		button4.setEnabled(Main.model.unlockedLevels[0][3]);
 		button4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				index = 3;

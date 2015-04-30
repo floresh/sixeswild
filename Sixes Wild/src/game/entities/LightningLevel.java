@@ -1,6 +1,8 @@
 package game.entities;
 
 import game.boundary.GameModeScreen;
+import game.boundary.LightningLevelSelection;
+import game.boundary.ReleaseLevelSelection;
 
 import java.util.ArrayList;
 
@@ -14,14 +16,13 @@ public class LightningLevel extends Level{
 
 	@Override
 	public boolean openLevelScreen() {
-		// TODO Auto-generated method stub
-		return false;
+		new LightningLevelSelection();
+		return true;
 	}
 
 	@Override
 	public GameModeScreen getPreviousScreen() {
-		// TODO Auto-generated method stub
-		return null;
+		return new GameModeScreen();
 	}
 
 	@Override

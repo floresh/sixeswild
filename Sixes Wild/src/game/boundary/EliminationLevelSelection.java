@@ -1,7 +1,9 @@
 package game.boundary;
 
+import game.controller.ReturnToPreviousMenuController;
 import game.controller.SelectPlayController;
 import game.entities.Model;
+import game.main.Main;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,18 +15,16 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class EliminationLevelSelection extends JFrame {
-	Model model;
-	Application application;
 	
 	public EliminationLevelSelection() {
 		super("Elimination Level Selection");
 		
 		setResizable(false);
 		JButton btnNewButton = new JButton("BACK");
-		btnNewButton.addActionListener(new SelectPlayController(this));
+		btnNewButton.addActionListener(new ReturnToPreviousMenuController(this));
 
 		JButton btnNewButton_1 = new JButton("1");
-		btnNewButton_1.setEnabled(false);
+		btnNewButton_1.setEnabled(Main.model.unlockedLevels[1][0]);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -35,16 +35,16 @@ public class EliminationLevelSelection extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button.setEnabled(false);
+		button.setEnabled(Main.model.unlockedLevels[1][1]);
 
 		JButton button_1 = new JButton("3");
-		button_1.setEnabled(false);
+		button_1.setEnabled(Main.model.unlockedLevels[1][2]);
 
 		JButton button_2 = new JButton("4");
-		button_2.setEnabled(false);
+		button_2.setEnabled(Main.model.unlockedLevels[1][3]);
 
 		JButton btnNewButton_2 = new JButton("PLAY");
-		btnNewButton_2.setEnabled(false);
+		btnNewButton_2.setEnabled(Main.model.unlockedLevels[1][0]);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
