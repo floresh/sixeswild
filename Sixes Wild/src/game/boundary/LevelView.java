@@ -145,17 +145,23 @@ public class LevelView extends JFrame{
 		panel.add(lbl3Star);
 		
 		JLabel lbl2Stars = new JLabel("2 STARS");
-		lbl2Stars.setBounds(123,714-(int)(357*level.getStars().get(1)/level.getStars().get(2)), 56, 16);
+		int twoVal = level.getStars().get(1);
+		int threeVal = level.getStars().get(2);
+		if(threeVal == 0){
+			threeVal = 100;
+		}
+		lbl2Stars.setBounds(123,714-(int)(357*twoVal/threeVal), 56, 16);
 		panel.add(lbl2Stars);
 		
 		JLabel lbl1Stars = new JLabel("1 STAR");
-		lbl1Stars.setBounds(123, 714-(int)(357*level.getStars().get(0)/level.getStars().get(2)), 56, 16);
+		int oneVal = level.getStars().get(0);
+		lbl1Stars.setBounds(123, 714-(int)(357*oneVal/threeVal), 56, 16);
 		panel.add(lbl1Stars);
 		
 		setSize(800,800);
 		setLocationRelativeTo(null);
 		setVisible(true);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 	
 	public Level getLevel(){
