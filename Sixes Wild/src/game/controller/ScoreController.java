@@ -5,11 +5,9 @@ import game.entities.Model;
 
 public class ScoreController {
 	Model model;
-	Application application;
 	
-	public ScoreController(Application app, Model m) {
+	public ScoreController(Model m) {
 		this.model = m;
-		this.application = app;
 	}
 	
 	public boolean process(int score) {

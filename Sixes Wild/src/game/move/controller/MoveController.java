@@ -1,43 +1,44 @@
 package game.move.controller;
 
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
 import game.boundary.Application;
+import game.boundary.BoardView;
 import game.boundary.CellView;
 import game.controller.Move;
 import game.controller.MovesLeftController;
 import game.controller.ScoreController;
+import game.controller.SelectionController;
 import game.entities.*;
 
-public class MoveController extends Move implements MouseListener, MouseMotionListener{
+public class MoveController extends SelectionController{
 	//Now called move controller from move
 	Model model;
-	Application application;
+	BoardView bv;
 	ArrayList<Cell> cells;
-	ArrayList<CellView> selectedCells;
+	ArrayList<Boolean> validCheck;
 	
-	ScoreController updateScore = new ScoreController(application, model);
-	MovesLeftController movesLeft = new MovesLeftController(application, model);
+	ScoreController updateScore = new ScoreController(model);
+	MovesLeftController movesLeft = new MovesLeftController(model);
 	
-	public MoveController(Application app, Model m, ArrayList<Cell> cells) {
+	public MoveController(Model m, ArrayList<Cell> cells) {
+		super(m);
 		this.model = m;
-		this.application = app;
 		this.cells = cells;
-		selectedCells = new ArrayList<CellView>();
 
 	}
 	
-	public boolean process() {
+	public boolean doMove() {
 		Cell next;
-		int size = cells.size();
 		int total = 0;
 		int subtotal = 0;
 		
 		
-		if(size > 6) { return false; }
+		if(!isValid()) { return false; }
 		
 		for(int i = 0; i < size; i++) {
 			next = cells.get(i);
@@ -54,69 +55,26 @@ public class MoveController extends Move implements MouseListener, MouseMotionLi
 		updateScore.process(total);
 		
 		model.getCurrentLevel().getBoard().gravity();
-		
-		//TODO refresh boundary
-		
-		
+		bv.draw();
 		return true;
 	}
-	
-	public void selectTile(CellView cellView){
-		selectedCells.add(cellView);
-		cellView.getCell().getTile().setSelected();
+//Board.cell.setIsEmpty(True)
+
+	public boolean isValid(){
+		int size = cells.size();
+
+		if((size <= 6)){
+			for(int cells.)
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
-	
-	//Checks if the move is valid.
-	public boolean legalSelection() {
-		return false;
+
+	public boolean isAdjacent(Cell otherCell) {
 		
-	}
-
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		System.out.println("Mouse pressed");
+		return 
 		
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseDragged(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseMoved(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public boolean doMove() {
-		// TODO Auto-generated method stub
-		return false;
 	}
 }

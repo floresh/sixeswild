@@ -10,8 +10,8 @@ public class EliminationMove {
 	Application application;
 	ArrayList<Cell> cells;
 
-	ScoreController updateScore = new ScoreController(application, model);
-	MovesLeftController movesLeft = new MovesLeftController(application, model);
+	ScoreController updateScore = new ScoreController(model);
+	MovesLeftController movesLeft = new MovesLeftController(model);
 
 	public EliminationMove(Application app, Model m, ArrayList<Cell> cells) {
 		this.model = m;

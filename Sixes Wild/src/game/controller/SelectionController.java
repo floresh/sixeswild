@@ -13,35 +13,20 @@ import java.util.ArrayList;
 import javax.swing.SwingUtilities;
 
 public class SelectionController extends MouseAdapter{
-	//fgfhfdhf
 	/** Needed for controller behavior **/
 	Model model;
 	BoardView bv;
 	ArrayList<Cell> cells = new ArrayList<Cell>();
-	boolean mouseDrag = false;
-	
-	/** Starting Location of the tile selected. */
-	int srcRow;
-	int srcCol;
-	
-	/** The destination tile coordinates. */
-	Point anchor;
-	int destRow;
-	int destCol;
-	
-	public SelectionController(Model model, BoardView bv){
+
+	public SelectionController(Model model/*, BoardView bv*/){
 		this.model = model;
-		this.bv = bv;
+	//	this.bv = bv;
 		}
 	
 	/** Set up press events but no motion events. */
 	public void register() {
 		bv.setActiveListener(this);
 		bv.setActiveMotionListener(this);
-	}
-	
-	public void mouseDragged(MouseEvent me){
-		mouseEntered(me);
 	}
 
 	public void mouseEntered(MouseEvent me) {
@@ -56,5 +41,6 @@ public class SelectionController extends MouseAdapter{
 		System.out.println(cells);
 	}
 	}
+
 }
 
