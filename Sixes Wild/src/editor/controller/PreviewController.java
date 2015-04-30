@@ -15,7 +15,7 @@ import game.entities.Tile;
 
 /**
  * 
- * @author Jake
+ * @author Jake, Andrew
  *
  */
 public class PreviewController implements ActionListener{

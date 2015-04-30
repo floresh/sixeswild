@@ -1,5 +1,9 @@
 package editor.model;
-
+/**
+ * 
+ * @author Jake
+ *
+ */
 public class ToggleType {
 	int value;
 	public int[][] cellArray;

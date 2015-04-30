@@ -3,7 +3,11 @@ package editor.model;
 import game.entities.Level;
 
 import java.util.ArrayList;
-
+/**
+ * 
+ * @author Kwame
+ *
+ */
 public class LevelManager {
 	ArrayList<Level> levels;
 	

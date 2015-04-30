@@ -2,7 +2,11 @@ package editor.model;
 
 import game.entities.Level;
 import game.entities.Model;
-
+/**
+ * 
+ * @author Jake
+ *
+ */
 public class LevelEditorModel extends Model{
 	Level currentLevel;
 	int numSPRemove;
