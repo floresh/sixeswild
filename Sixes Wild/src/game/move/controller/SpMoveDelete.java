@@ -9,9 +9,9 @@ import game.entities.Board;
 import game.entities.Location;
 import game.entities.Model;
 
-public class SpMoveDelete extends Move{
+public class SpMoveDelete  implements ActionListener {
 	
-	MovesLeftController movesLeft;
+
 	Board board;
 	Location location;
 	
@@ -21,16 +21,11 @@ public class SpMoveDelete extends Move{
 			
 	}
 	
-	public boolean doMove(){
+	
 
-	int row = location.getRow();
-	int column = location.getColumn();
-	board.cells[row][column].setIsEmpty(true);
-	
-	board.gravity();
-	
-	return movesLeft.process();
-	
-	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -97,12 +97,12 @@ public class LevelView extends JFrame{
 		btnNewButton_4.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		panel.add(btnNewButton_4);
 		
+		btnNewButton_1.addActionListener(new ResetBoardController(level, boardView));
+		
+		
 		JButton btnNewButton_5 = new JButton("DELETE");
-		btnNewButton_5.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				new SpMoveDelete(level.getBoard()).doMove();
-			}
-		});
+		btnNewButton_5.addActionListener(new SpMoveDelete(level.getBoard()));
+		
 
 		btnNewButton_5.setBounds(35, 305, 97, 25);
 		btnNewButton_5.setFont(new Font("Tahoma", Font.PLAIN, 10));
