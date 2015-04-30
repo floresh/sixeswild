@@ -17,8 +17,13 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
-public class SplashScreen extends JFrame{
-	Image splash;
+/**
+ * 
+ * @author hfloreshuerta, Andrew, Kwame, Jake, Li Li
+ *
+ *	Frame for splash screen to main game and level editor
+ */
+public class SplashScreen extends JFrame {
 	
 	public SplashScreen() {
 		

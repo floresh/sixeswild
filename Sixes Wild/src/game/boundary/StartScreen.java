@@ -14,13 +14,27 @@ import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * 
+ * @author hfloreshuerta, Andrew, Li Li, Jacob, Kwame
+ * 
+ * Frame to display introuction screen to game
+ */
 public class StartScreen extends JFrame {
+	
 	Model model;
 	Application application;
 	
+	/** Displays Sixes Wild title */
 	private JLabel titleLabel;
+	
+	/** panel displayed on frame, holding all frame contents */
 	private JPanel panel;
+	
+	/** button exits application on click */
 	private JButton exitButton;
+	
+	/** continues to game mode selection screen on click */
 	private JButton playButton;
 
 	public StartScreen() {

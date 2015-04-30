@@ -15,6 +15,10 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 
 import editor.controller.LoadLevelController;
 import editor.controller.SelectBuilderModeController;
+import game.entities.EliminationLevel;
+import game.entities.LightningLevel;
+import game.entities.PuzzleLevel;
+import game.entities.ReleaseLevel;
 /**
  * 
  * @author Jake
@@ -73,19 +77,19 @@ public class LevelEditorIntro extends JFrame{
 		menuBar.add(mnCreateNewLevel);
 		
 		JButton btnPuzzle = new JButton("Puzzle");
-		btnPuzzle.addActionListener(new SelectBuilderModeController(this));
+		btnPuzzle.addActionListener(new SelectBuilderModeController(this, "Puzzle"));
 		mnCreateNewLevel.add(btnPuzzle);
 		
 		JButton btnElimination = new JButton("Elimination");
-		btnElimination.addActionListener(new SelectBuilderModeController(this));
+		btnElimination.addActionListener(new SelectBuilderModeController(this, "Elimination"));
 		mnCreateNewLevel.add(btnElimination);
 		
 		JButton btnLightning = new JButton("Lightning");
-		btnLightning.addActionListener(new SelectBuilderModeController(this));
+		btnLightning.addActionListener(new SelectBuilderModeController(this, "Lightning"));
 		mnCreateNewLevel.add(btnLightning);
 		
 		JButton btnRelease = new JButton("Release");
-		btnRelease.addActionListener(new SelectBuilderModeController(this));
+		btnRelease.addActionListener(new SelectBuilderModeController(this, "Release"));
 		mnCreateNewLevel.add(btnRelease);
 		getContentPane().setLayout(groupLayout);
 		

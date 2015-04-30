@@ -19,6 +19,8 @@ import editor.controller.PreviewController;
 import editor.controller.SaveLevelController;
 import editor.controller.ToggleCellController;
 import editor.controller.ToggleTypeController;
+import game.entities.EliminationLevel;
+import game.entities.ReleaseLevel;
 
 import javax.swing.JSpinner;
 
@@ -342,18 +344,20 @@ public class WholesomeLevelEditorScreen extends JFrame {
 		getContentPane().add(swap);
 		
 		JButton btnToggleOnOff = new JButton("Toggle Cells On/Off");
-		btnToggleOnOff.addActionListener(new ToggleTypeController(Main.model, 0));
+		btnToggleOnOff.addActionListener(new ToggleTypeController(Main.application.model, 0));
 		btnToggleOnOff.setBounds(790, 572, 168, 49);
 		getContentPane().add(btnToggleOnOff);
 		
 		JButton btnToggleRelease = new JButton("Toggle Release Cells");
-		btnToggleRelease.addActionListener(new ToggleTypeController(Main.model, 1));
-		btnToggleRelease.setBounds(996, 572, 168, 49);
+		btnToggleRelease.addActionListener(new ToggleTypeController(Main.application.model, 1));
+		btnToggleRelease.setBounds(894, 634, 168, 49);
+		btnToggleRelease.setVisible(Main.application.model.getCurrentLevel() instanceof ReleaseLevel);
 		getContentPane().add(btnToggleRelease);
 		
+		
 		JButton btnToggleSix = new JButton("Toggle Six Cells");
-		btnToggleSix.addActionListener(new ToggleTypeController(Main.model, 2));
-		btnToggleSix.setBounds(896, 634, 168, 49);
+		btnToggleSix.addActionListener(new ToggleTypeController(Main.application.model, 2));
+		btnToggleSix.setBounds(998, 572, 168, 49);
 		getContentPane().add(btnToggleSix);
 		
 		// JButton b00 = new JButton("");

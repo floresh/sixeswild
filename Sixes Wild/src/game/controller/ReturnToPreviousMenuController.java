@@ -19,7 +19,7 @@ public class ReturnToPreviousMenuController implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		frame.dispose();
-		if(frame instanceof LevelView) { ((LevelView)frame).disposeTimer(); }
+	//	if(frame instanceof LevelView) { ((LevelView)frame).disposeTimer(); }
 		Main.model.getCurrentLevel().getPreviousScreen();
 	}
 
