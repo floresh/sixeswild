@@ -17,18 +17,28 @@ import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 
 import game.controller.ReturnToPreviousMenuController;
+import game.controller.SelectLevelController;
 import game.controller.SelectPlayController;
 import game.entities.Model;
 import game.main.Main;
 
+import javax.swing.JLabel;
 
+/**
+ * 
+ * @author Jake
+ *
+ */
 public class ReleaseLevelSelection extends JFrame{
-	
+	public JLabel lblLevelSelected;
 	public ReleaseLevelSelection() {
 		super("Release Level Selection");
 		
 		JButton btnNewButton = new JButton("BACK");
 		btnNewButton.addActionListener(new ReturnToPreviousMenuController(this));
+		
+		lblLevelSelected = new JLabel("None");
+		lblLevelSelected.setFont(new Font("Old English Text MT", Font.PLAIN, 72));
 		
 		JButton btnNewButton_1 = new JButton("1");
 		btnNewButton_1.setEnabled(Main.model.unlockedLevels[3][0]);
@@ -36,6 +46,7 @@ public class ReleaseLevelSelection extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
+		btnNewButton_1.addActionListener(new SelectLevelController(this, "Level 1"));
 		
 		JButton button = new JButton("2");
 		button.addActionListener(new ActionListener() {
@@ -43,12 +54,15 @@ public class ReleaseLevelSelection extends JFrame{
 			}
 		});
 		button.setEnabled(Main.model.unlockedLevels[3][1]);
+		button.addActionListener(new SelectLevelController(this, "Level 2"));
 		
 		JButton button_1 = new JButton("3");
 		button_1.setEnabled(Main.model.unlockedLevels[3][2]);
+		button_1.addActionListener(new SelectLevelController(this, "Level 3"));
 		
 		JButton button_2 = new JButton("4");
 		button_2.setEnabled(Main.model.unlockedLevels[3][3]);
+		button_2.addActionListener(new SelectLevelController(this, "Level 4"));
 		
 		JButton btnNewButton_2 = new JButton("PLAY");
 		btnNewButton_2.setEnabled(Main.model.unlockedLevels[3][0]);
@@ -57,9 +71,12 @@ public class ReleaseLevelSelection extends JFrame{
 			}
 		});
 		
+		JLabel label_1 = new JLabel("Current Level:");
+		label_1.setFont(new Font("Tahoma", Font.PLAIN, 26));
+		
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
+			groupLayout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(30)
 					.addComponent(btnNewButton)
@@ -71,11 +88,19 @@ public class ReleaseLevelSelection extends JFrame{
 					.addComponent(button_1, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
 					.addGap(34)
 					.addComponent(button_2, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-					.addContainerGap(379, Short.MAX_VALUE)
+					.addContainerGap(291, Short.MAX_VALUE))
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap(630, Short.MAX_VALUE)
 					.addComponent(btnNewButton_2, GroupLayout.PREFERRED_SIZE, 79, GroupLayout.PREFERRED_SIZE)
 					.addGap(73))
+				.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+					.addGap(65)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(label_1, GroupLayout.PREFERRED_SIZE, 184, GroupLayout.PREFERRED_SIZE)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(88)
+							.addComponent(lblLevelSelected, GroupLayout.PREFERRED_SIZE, 440, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap(189, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -88,7 +113,12 @@ public class ReleaseLevelSelection extends JFrame{
 							.addComponent(button, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE)
 							.addComponent(button_1, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE))
 						.addComponent(button_2, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.RELATED, 262, Short.MAX_VALUE)
+					.addGap(107)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(label_1, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
+					.addGap(7)
+					.addComponent(lblLevelSelected, GroupLayout.PREFERRED_SIZE, 192, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
 					.addComponent(btnNewButton_2)
 					.addGap(83))
 		);

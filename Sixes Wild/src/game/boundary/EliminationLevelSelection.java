@@ -1,6 +1,7 @@
 package game.boundary;
 
 import game.controller.ReturnToPreviousMenuController;
+import game.controller.SelectLevelController;
 import game.controller.SelectPlayController;
 import game.entities.Model;
 import game.main.Main;
@@ -13,8 +14,16 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JLabel;
 
+import java.awt.Font;
+/**
+ * 
+ * @author Jake
+ *
+ */
 public class EliminationLevelSelection extends JFrame {
+	public JLabel lblLevelSelected;
 	
 	public EliminationLevelSelection() {
 		super("Elimination Level Selection");
@@ -23,12 +32,16 @@ public class EliminationLevelSelection extends JFrame {
 		JButton btnNewButton = new JButton("BACK");
 		btnNewButton.addActionListener(new ReturnToPreviousMenuController(this));
 
+		lblLevelSelected = new JLabel("None");
+		lblLevelSelected.setFont(new Font("Old English Text MT", Font.PLAIN, 72));
+		
 		JButton btnNewButton_1 = new JButton("1");
 		btnNewButton_1.setEnabled(Main.model.unlockedLevels[1][0]);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
+		btnNewButton_1.addActionListener(new SelectLevelController(this, "Level 1"));
 
 		JButton button = new JButton("2");
 		button.addActionListener(new ActionListener() {
@@ -36,12 +49,15 @@ public class EliminationLevelSelection extends JFrame {
 			}
 		});
 		button.setEnabled(Main.model.unlockedLevels[1][1]);
+		button.addActionListener(new SelectLevelController(this, "Level 2"));
 
 		JButton button_1 = new JButton("3");
 		button_1.setEnabled(Main.model.unlockedLevels[1][2]);
+		button_1.addActionListener(new SelectLevelController(this, "Level 3"));
 
 		JButton button_2 = new JButton("4");
 		button_2.setEnabled(Main.model.unlockedLevels[1][3]);
+		button_2.addActionListener(new SelectLevelController(this, "Level 4"));
 
 		JButton btnNewButton_2 = new JButton("PLAY");
 		btnNewButton_2.setEnabled(Main.model.unlockedLevels[1][0]);
@@ -53,19 +69,22 @@ public class EliminationLevelSelection extends JFrame {
 				dispose();
 			}
 		});
+		
+		JLabel label_1 = new JLabel("Current Level:");
+		label_1.setFont(new Font("Tahoma", Font.PLAIN, 26));
 
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.TRAILING)
-				.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(30)
 					.addComponent(btnNewButton)
-					.addContainerGap(689, Short.MAX_VALUE))
+					.addContainerGap(701, Short.MAX_VALUE))
 				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap(630, Short.MAX_VALUE)
+					.addContainerGap(642, Short.MAX_VALUE)
 					.addComponent(btnNewButton_2, GroupLayout.PREFERRED_SIZE, 79, GroupLayout.PREFERRED_SIZE)
 					.addGap(73))
-				.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(263)
 					.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
 					.addGap(18)
@@ -74,7 +93,15 @@ public class EliminationLevelSelection extends JFrame {
 					.addComponent(button_1, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
 					.addGap(18)
 					.addComponent(button_2, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(273, Short.MAX_VALUE))
+					.addContainerGap(285, Short.MAX_VALUE))
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(64)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(label_1, GroupLayout.PREFERRED_SIZE, 184, GroupLayout.PREFERRED_SIZE)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(88)
+							.addComponent(lblLevelSelected, GroupLayout.PREFERRED_SIZE, 440, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap(202, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -87,7 +114,12 @@ public class EliminationLevelSelection extends JFrame {
 						.addComponent(button_1, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE)
 						.addComponent(button, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE)
 						.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.RELATED, 485, Short.MAX_VALUE)
+					.addGap(92)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(label_1, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
+					.addGap(7)
+					.addComponent(lblLevelSelected, GroupLayout.PREFERRED_SIZE, 192, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED, 204, Short.MAX_VALUE)
 					.addComponent(btnNewButton_2)
 					.addGap(83))
 		);

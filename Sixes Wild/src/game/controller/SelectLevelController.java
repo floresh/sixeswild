@@ -1,26 +1,35 @@
 package game.controller;
 
-import game.boundary.Application;
-import game.entities.Model;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class SelectLevelController {
-	Model model;
-	String gameMode;
+import javax.swing.JFrame;
+
+import game.boundary.Application;
+import game.boundary.PuzzleLevelSelection;
+import game.entities.Model;
+/**
+ * 
+ * @author Jake
+ *
+ */
+public class SelectLevelController implements ActionListener{
+	JFrame frame;
+	String string;
 	
-	
-	public SelectLevelController(Application app, Model m) {
-		this.model = m;
+	public SelectLevelController(JFrame frame, String string) {
+		this.frame = frame;
+		this.string = string;
 	
 	}
 	
 	private void process() {
+		((PuzzleLevelSelection)frame).lblLevelSelected.setText(string);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		process();
 		
-		model.getCurrentLevel().initilizeBoard();
-		
-		/*
-		 * TODO
-		 * -load level
-		 * -show level preview
-		 */
 	}
 }
