@@ -20,11 +20,13 @@ import java.awt.Font;
 /**
  * 
  * @author Jake
- *
+ * Level Selection for lightning game mode
  */
 
 public class LightningLevelSelection extends JFrame{
+	/** Displays level number selected by user */
 	public JLabel lblLevelSelected;
+	
 	public LightningLevelSelection() {
 		super("Lightning Level Selection");
 

@@ -28,9 +28,12 @@ import javax.swing.JLabel;
  * 
  * @author Jake
  *
+ * Frame for level selection in release game mode
  */
 public class ReleaseLevelSelection extends JFrame{
+	/** Displays level number selected by user */
 	public JLabel lblLevelSelected;
+	
 	public ReleaseLevelSelection() {
 		super("Release Level Selection");
 		

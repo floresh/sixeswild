@@ -1,9 +1,6 @@
 package game.boundary;
 
 
-
-
-
 import game.entities.Board;
 import game.entities.Cell;
 
@@ -15,7 +12,14 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/**
+ * 
+ * @author Andrew
+ * CellView is a jlabel that is displayed as a single tile on the board. It is part of an
+ * array of CellView that makes up the entire board.
+ */
 public class CellView extends JLabel implements MouseListener, MouseMotionListener {
+	/** Cell at single location on board */
 	Cell cell;
 	
 	public CellView(Cell cell) {
@@ -29,11 +33,9 @@ public class CellView extends JLabel implements MouseListener, MouseMotionListen
 		setText(Integer.toString(value));
 		setLayout(null);
 		refresh();
-		
-		
-	
 	}
 	
+	/** method to refresh the image a CellView displays based on the new tile in it */
 	public void refresh(){
 		int value = cell.getTile().getValue();
 		if(cell.getIsEnabled()){
@@ -60,14 +62,13 @@ public class CellView extends JLabel implements MouseListener, MouseMotionListen
 		}
 	}
 	
-	
+	/**
+	 * gets the cell that is deisplayed by this CellView
+	 * @return Cell
+	 */
 	public Cell getCell(){
 		return cell;
 	}
-	
-	
-	
-
 
 	@Override
 	public void mouseDragged(MouseEvent arg0) {

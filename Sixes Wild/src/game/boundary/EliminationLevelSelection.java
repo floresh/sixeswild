@@ -21,8 +21,10 @@ import java.awt.Font;
  * 
  * @author Jake
  *
+ * Level Selection frame for the elimination game mode.
  */
 public class EliminationLevelSelection extends JFrame {
+	/** Displays level number selected by user */
 	public JLabel lblLevelSelected;
 	
 	public EliminationLevelSelection() {

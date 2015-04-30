@@ -25,16 +25,24 @@ import java.awt.event.ActionListener;
 
 /**
  * 
- * @author Li Li, Jake, hfloreshuerta
- *
+ * @author Li Li, Jake, hfloreshuerta, Andrew
+ *	
+ *	Displays the level being played and holds the board(BoardView)
  */
 public class LevelView extends JFrame{
-	
+	/** Level which LevelView is displaying */
 	Level level;
+	
+	/**	BoardView (board) to display on frame */
 	BoardView boardView;
+	
+	/** Displays level time */
 	JLabel timeLabel;
+	
+	/** Displays level score */
 	JLabel scoreLabel;
 	
+	/** Timer handler for level time */
 	TimeController timeController;
 	
 	public LevelView(final Level level) {
@@ -164,28 +172,39 @@ public class LevelView extends JFrame{
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
-	
+	/**
+	 * 
+	 * @return Level
+	 */
 	public Level getLevel(){
 		return level;
 	}
+	/**
+	 * 
+	 * @return BoardView
+	 */
 	public BoardView getBoardView(){
 		return boardView;
 	}
 	
+	/**
+	 * 
+	 * @return TimeController
+	 */
 	public TimeController getTimeController() {
 		return timeController;
 	}
-	
+	/**
+	 * Refreshes the time displayed by getting new time from Level
+	 */
 	public void refreshTimer() {
 		timeLabel.setText(((Integer)Main.model.getCurrentLevel().getTime()).toString());
 	}
-	
+	/**
+	 * Refreshes score displayed by getting new score from Level
+	 */
 	public void refreshScore() {
 		scoreLabel.setText(((Integer)Main.model.getCurrentLevel().getScore()).toString());
-	}
-	
-	public void disposeTimer() {
-		timeController.stop();
 	}
 	
 	//Potential method for pressing the special moves/other buttons on level view screen
