@@ -48,7 +48,7 @@ public class SelectionController extends MouseAdapter{
 	}
 	
 	public int getSize(){
-		return 
+		return ;
 	}
 }
 
