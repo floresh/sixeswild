@@ -148,6 +148,7 @@ public class LevelView extends JFrame{
 		int twoVal = level.getStars().get(1);
 		int threeVal = level.getStars().get(2);
 		if(threeVal == 0){
+			//prevents divide-by-zero in preview level
 			threeVal = 100;
 		}
 		lbl2Stars.setBounds(123,714-(int)(357*twoVal/threeVal), 56, 16);
