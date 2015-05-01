@@ -3,10 +3,8 @@ package game.controller;
 import game.boundary.BoardView;
 import game.boundary.CellView;
 import game.entities.Cell;
-import game.entities.Location;
-import game.entities.Model;
+import game.move.controller.MoveController;
 
-import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -17,10 +15,12 @@ public class SelectionController extends MouseAdapter{
 	/** Needed for controller behavior **/
 	BoardView bv;
 	ArrayList<Cell> cells = new ArrayList<Cell>();
+	MoveController move;
 
 
-	public SelectionController(BoardView view) {
+	public SelectionController(BoardView view, MoveController mover) {
 		bv = view;
+		move = mover;
 	}
 
 	/** Set up press events but no motion events. */
@@ -60,11 +60,12 @@ public class SelectionController extends MouseAdapter{
 	}
 
 	public void mouseReleased(MouseEvent me){
-		doMove();
+		move.doMove(cells);
 		for (int i = 0; i < cells.size();i++){
 			cells.get(i).setSelected(false);
 		}
 		cells.clear();
+		bv.draw();
 	}
 
 	public ArrayList<Cell> selectedCellsList(){
@@ -76,73 +77,5 @@ public class SelectionController extends MouseAdapter{
 		return cells.size();
 
 	}
-
-	public boolean doMove() {
-		Cell next;
-		int subtotal = 0;
-		int size = getSize();
-
-		if(!isLegal(size)) { return false; }
-
-		for(int i = 0; i < size; i++) {
-			next = cells.get(i);
-
-			subtotal += next.getTile().getValue();
-		}
-
-		if(subtotal != 6) { return false; }
-		for(int i = 0; i < size; i++){
-			int col = cells.get(i).getLocation().getColumn();
-			int row = cells.get(i).getLocation().getRow();
-			bv.getBoard().cells[row][col].setIsEmpty(true);
-		}
-
-		//movesLeft.process();
-	//	updateScore.process(total);
-
-		bv.getBoard().gravity();
-		bv.draw();
-		return true;
 	}
-
-	public boolean isLegal(int size) {
-		if(size > 6) { return false; }
-
-		int total = 0;
-		ArrayList<Location> locations = new ArrayList<Location>();
-
-		for(int i = 0; i < size; i++) {
-			locations.add(cells.get(i).getLocation());
-			total += cells.get(i).getTile().getValue();
-		}
-		if(total != 6) { return false; }
-		else{
-
-			Location l1, l2;
-			int r1,r2,c1,c2;
-			boolean funtimes = false;
-			
-			for(int i = 1; i < size; i++) {
-				l1 = locations.get(i);
-				l2 = locations.get(i-1);
-				r1=l1.getRow(); r2=l2.getRow();
-				c1=l1.getColumn(); c2=l2.getColumn();
-
-				if(l1 == l2 || ((r1+1 == r2 || r1-1 == r2) && (c1 == c2)) ||
-						((c1+1 == c2 || c1-1 == c2) && (r1 == r2))) {
-					System.out.println(l1);
-					System.out.println(l2);
-					System.out.println(r1);
-					System.out.println(r2);
-					System.out.println(c1);
-					System.out.println(c2);
-					funtimes = true;
-				}
-			}
-			
-			return funtimes;
-
-		}
-	}
-}
 

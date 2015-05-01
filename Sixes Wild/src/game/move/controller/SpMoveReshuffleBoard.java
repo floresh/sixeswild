@@ -5,11 +5,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import game.boundary.Application;
-import game.controller.Move;
 import game.controller.MovesLeftController;
 import game.entities.*;
 
-public class SpMoveReshuffleBoard extends Move{
+public class SpMoveReshuffleBoard {
 	Model model;
 	Application application;
 	Board board;

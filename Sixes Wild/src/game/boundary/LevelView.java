@@ -9,20 +9,17 @@ import game.main.Main;
 import game.move.controller.SpMoveDelete;
 import game.move.controller.SpMoveReshuffleBoard;
 import game.move.controller.SpMoveSwapTiles;
-
+import game.move.controller.MoveController;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-
 import javax.swing.JProgressBar;
 import javax.swing.SwingConstants;
-
 import java.awt.event.ActionListener;
 
 /**
@@ -49,33 +46,23 @@ public class LevelView extends JFrame{
 	/** Timer handler for level time */
 	TimeController timeController;
 	
-	public void setActiveListener(MouseListener ml) {
-		this.removeMouseListener(activeMouseListener);
-		activeMouseListener = ml;
-		if (ml != null) { 
-			this.addMouseListener(ml);
-		}
-	}
-	/** Properly register new motion listener (and unregister old one if present). */
-	public void setActiveMotionListener(MouseMotionListener mml) {
-		this.removeMouseMotionListener(activeMouseMotionListener);
-		activeMouseMotionListener = mml;
-		if (mml != null) {
-			this.addMouseMotionListener(mml);
-		}
-	}
+	MoveController mover;
 	
 	public LevelView(Level level) {
 		setResizable(false);
-
+		
+		this.level = level;
+	
 		JPanel panel = new JPanel();
 		//MoveController mc = new MoveController(this);
 		
 		//JPanel boardView = new BoardView(board);
-
-		this.boardView = new BoardView(level.getBoard());
+		mover = new MoveController(this);
+		this.boardView = new BoardView(level.getBoard(), mover);
 		boardView.setBounds(255, 229, 450, 450);
 		panel.add(boardView);
+		
+		
 
 		panel.setBounds(224, 66, 384, 369);
 		getContentPane().add(panel);
@@ -131,7 +118,7 @@ public class LevelView extends JFrame{
 
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new SpMoveDelete(level.getBoard()).doMove(boardView.getBoard());
+				new SpMoveDelete(level.getBoard()).doMove(null);
 			}
 		});
 

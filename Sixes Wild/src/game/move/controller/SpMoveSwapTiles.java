@@ -1,13 +1,12 @@
 package game.move.controller;
 
 import game.boundary.Application;
-import game.controller.Move;
 import game.controller.MovesLeftController;
 import game.entities.Board;
 import game.entities.Model;
 import game.entities.Tile;
 
-public class SpMoveSwapTiles extends Move{
+public class SpMoveSwapTiles {
 	Board board;
 
 

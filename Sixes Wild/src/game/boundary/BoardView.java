@@ -1,6 +1,5 @@
 package game.boundary;
 import java.awt.event.MouseListener;
-
 import java.awt.event.MouseMotionListener;
 
 import javax.swing.JPanel;
@@ -8,6 +7,7 @@ import javax.swing.JPanel;
 import game.controller.SelectionController;
 import game.entities.Board;
 import game.entities.Model;
+import game.move.controller.MoveController;
 
 
 /**
@@ -22,7 +22,7 @@ public class BoardView extends JPanel{
 	MouseListener activeListener;
 	MouseMotionListener activeMotionListener;
 	Model model;
-	
+	MoveController mover;
 	
 	/** Properly register new listener (and unregister old one if present). */
 	public void setActiveListener(MouseListener ml) {
@@ -41,7 +41,8 @@ public class BoardView extends JPanel{
 		}
 	}
 	
-	public BoardView(Board board) {	
+	public BoardView(Board board , MoveController mover) {	
+		this.mover =mover;
 		this.board = board;
 		setLayout(null);
 		initialize();
@@ -49,7 +50,7 @@ public class BoardView extends JPanel{
 	}
 
 	void initialize () {
-		SelectionController ma = new SelectionController(this);
+		SelectionController ma = new SelectionController(this, mover);
 		
 		for(int row = 0; row < 9; row++){
 			for(int col = 0; col <9; col++){

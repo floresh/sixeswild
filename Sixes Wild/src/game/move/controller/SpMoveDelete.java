@@ -4,21 +4,27 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 
+import game.boundary.BoardView;
 import game.boundary.CellView;
+import game.controller.MovesLeftController;
 import game.entities.Board;
 import game.entities.Cell;
 import game.entities.Location;
 
 public class SpMoveDelete implements ActionListener {
 	
-
-	Board board;
+	BoardView bv;
 	Location location;
 	
 	
-	public SpMoveDelete(Board board){
-		this.board = board;
+	public SpMoveDelete(BoardView view){
+		this.bv = view;
 			
+	}
+	
+	public void register() {
+		bv.setActiveListener(this);
+		bv.setActiveMotionListener(this);
 	}
 	
 	public void MousePressed (MouseEvent me){
