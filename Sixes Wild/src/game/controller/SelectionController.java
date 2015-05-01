@@ -128,7 +128,8 @@ public class SelectionController extends MouseAdapter{
 
 			Location l1, l2;
 			int r1,r2,c1,c2;
-
+			boolean funtimes = false;
+			
 			for(int i = 1; i < size; i++) {
 				l1 = locations.get(i);
 				l2 = locations.get(i-1);
@@ -143,10 +144,11 @@ public class SelectionController extends MouseAdapter{
 					System.out.println(r2);
 					System.out.println(c1);
 					System.out.println(c2);
-					return true;
+					funtimes = true;
 				}
 			}
-			return false;
+			
+			return funtimes;
 
 		}
 	}
