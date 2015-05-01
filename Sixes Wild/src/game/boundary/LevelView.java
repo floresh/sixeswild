@@ -40,8 +40,6 @@ public class LevelView extends JFrame{
 	
 	/** Displays level score */
 	JLabel scoreLabel;
-	MouseListener activeMouseListener;
-	MouseMotionListener activeMouseMotionListener;
 	
 	/** Timer handler for level time */
 	TimeController timeController;
@@ -90,13 +88,6 @@ public class LevelView extends JFrame{
 		panel.add(lblSpecialMoves);
 		
 		JButton btnNewButton_3 = new JButton("RESHUFFLE");
-		btnNewButton_3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-
-				new SpMoveReshuffleBoard(level.getBoard()).doMove();
-
-			}
-		});
 		btnNewButton_3.setBounds(35, 211, 97, 25);
 		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		panel.add(btnNewButton_3);
@@ -116,13 +107,11 @@ public class LevelView extends JFrame{
 		
 		JButton btnNewButton_5 = new JButton("DELETE");
 
-		btnNewButton_5.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				new SpMoveDelete(level.getBoard()).doMove(null);
-			}
-		});
-
-
+	//	btnNewButton_5.addActionListener(new ActionListener() {
+	//		public void actionPerformed(ActionEvent arg0) {
+		//		new SpMoveDelete(level.getBoard());
+		//	}
+	//	});
 		btnNewButton_5.setBounds(35, 305, 97, 25);
 		btnNewButton_5.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		panel.add(btnNewButton_5);

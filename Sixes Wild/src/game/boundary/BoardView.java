@@ -8,6 +8,7 @@ import game.controller.SelectionController;
 import game.entities.Board;
 import game.entities.Model;
 import game.move.controller.MoveController;
+import game.move.controller.SpMoveDelete;
 
 
 /**
@@ -51,11 +52,12 @@ public class BoardView extends JPanel{
 
 	void initialize () {
 		SelectionController ma = new SelectionController(this, mover);
-		
+		SpMoveDelete smd = new SpMoveDelete(this);
 		for(int row = 0; row < 9; row++){
 			for(int col = 0; col <9; col++){
 				labelArr[row][col] = new CellView(board.cells[row][col]);
 				labelArr[row][col].addMouseListener(ma);
+			//	labelArr[row][col].addMouseListener(smd);
 				add(labelArr[row][col]);
 			}
 		}
