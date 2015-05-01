@@ -2,6 +2,7 @@ package game.move.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
 
 import game.controller.Move;
 import game.controller.MovesLeftController;
@@ -19,6 +20,10 @@ public class SpMoveDelete  implements ActionListener {
 	public SpMoveDelete(Board board){
 		this.board = board;
 			
+	}
+	
+	public void MousePressed (MouseEvent me){
+		
 	}
 	
 	

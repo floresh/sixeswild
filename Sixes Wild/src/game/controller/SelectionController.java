@@ -105,8 +105,8 @@ public class SelectionController extends MouseAdapter{
 			bv.getBoard().cells[row][col].setIsEmpty(true);
 		}
 
-		//movesLeft.process();
-		//updateScore.process(total);
+		movesLeft.process();
+		updateScore.process(total);
 
 		bv.getBoard().gravity();
 		bv.draw();
