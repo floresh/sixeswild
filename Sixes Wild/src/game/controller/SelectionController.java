@@ -40,7 +40,7 @@ public class SelectionController extends MouseAdapter{
 //		cell.setIsEmpty(true);
 //		bv.getBoard().gravity();
 //		bv.draw();
-//		
+		
 		if(!cell.isSelected()){
 			cells.add(cell);
 			cell.setSelected(true);
@@ -109,8 +109,8 @@ public class SelectionController extends MouseAdapter{
 			bv.getBoard().cells[row][col].setIsEmpty(true);
 		}
 
-		//movesLeft.process();
-		//updateScore.process(total);
+	//	movesLeft.process();
+	//	updateScore.process(total);
 
 		bv.getBoard().gravity();
 		bv.draw();

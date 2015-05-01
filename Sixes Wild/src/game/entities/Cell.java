@@ -77,12 +77,12 @@ public class Cell implements Serializable {
 	protected Tile requestTile(ArrayList<Cell> column){
 		int index = column.indexOf(this);
 		
-		if(isEmpty){	
+		if(isEmpty || !isEnabled){	
 			tile = column.get(index - 1).requestTile(column);
 			isEmpty =false;
 		}
 		
-		isEmpty = true;
+		isEmpty = isEnabled;
 		return tile;
 		
 		
