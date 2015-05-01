@@ -118,7 +118,7 @@ public class LevelView extends JFrame{
 
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new SpMoveDelete(level.getBoard()).doMove(null);
+				//new SpMoveDelete(level.getBoard()).doMove(null);
 			}
 		});
 

@@ -23,8 +23,8 @@ public class SpMoveDelete implements ActionListener {
 	}
 	
 	public void register() {
-		bv.setActiveListener(this);
-		bv.setActiveMotionListener(this);
+	//	bv.setActiveListener(this);
+	//	bv.setActiveMotionListener(this);
 	}
 	
 	public void MousePressed (MouseEvent me){
