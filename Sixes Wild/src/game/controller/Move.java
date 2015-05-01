@@ -1,6 +1,8 @@
-package game.controller;
+/*package game.controller;
 
 public abstract class Move {
-//Executes the move.
-	public abstract boolean doMove();
+
+public abstract boolean doMove();
+
 }
+*/

@@ -4,13 +4,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 
-import game.controller.Move;
-import game.controller.MovesLeftController;
+import game.boundary.CellView;
 import game.entities.Board;
+import game.entities.Cell;
 import game.entities.Location;
-import game.entities.Model;
 
-public class SpMoveDelete  implements ActionListener {
+public class SpMoveDelete implements ActionListener {
 	
 
 	Board board;
@@ -23,9 +22,17 @@ public class SpMoveDelete  implements ActionListener {
 	}
 	
 	public void MousePressed (MouseEvent me){
+		Object src = me.getSource();
+		CellView cellView = (CellView) src;		
+		Cell cell = cellView.getCell();
+		doMove(cell);
+	}
+
+	public boolean doMove(Cell cell){
+		cell.setIsEmpty(true);
+		return true;
 		
 	}
-	
 	
 
 	@Override

@@ -77,13 +77,8 @@ public class SelectionController extends MouseAdapter{
 
 	}
 
-	public void deleteCells(){
-		cells.clear();
-	}
-
 	public boolean doMove() {
 		Cell next;
-		int total = 0;
 		int subtotal = 0;
 		int size = getSize();
 
@@ -93,9 +88,6 @@ public class SelectionController extends MouseAdapter{
 			next = cells.get(i);
 
 			subtotal += next.getTile().getValue();
-
-			total += next.getTile().getValue();
-			total *= next.getTile().getMultiplier();
 		}
 
 		if(subtotal != 6) { return false; }
@@ -105,8 +97,8 @@ public class SelectionController extends MouseAdapter{
 			bv.getBoard().cells[row][col].setIsEmpty(true);
 		}
 
-		movesLeft.process();
-		updateScore.process(total);
+		//movesLeft.process();
+	//	updateScore.process(total);
 
 		bv.getBoard().gravity();
 		bv.draw();

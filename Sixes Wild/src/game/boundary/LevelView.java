@@ -1,12 +1,15 @@
 package game.boundary;
 
 import game.controller.PauseController;
-
 import game.controller.ResetBoardController;
 import game.controller.ReturnToPreviousMenuController;
 import game.controller.TimeController;
 import game.entities.Level;
 import game.main.Main;
+import game.move.controller.SpMoveDelete;
+import game.move.controller.SpMoveReshuffleBoard;
+import game.move.controller.SpMoveSwapTiles;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JButton;
@@ -103,7 +106,7 @@ public class LevelView extends JFrame{
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-			//	new SpMoveReshuffleBoard(level.getBoard()).doMove();
+				new SpMoveReshuffleBoard(level.getBoard()).doMove();
 
 			}
 		});
@@ -114,7 +117,7 @@ public class LevelView extends JFrame{
 		JButton btnNewButton_4 = new JButton("SWAP");
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-			//	new SpMoveSwapTiles(level.getBoard()).doMove();
+				new SpMoveSwapTiles(level.getBoard()).doMove();
 			}
 		});
 		btnNewButton_4.setBounds(35, 259, 97, 25);
@@ -128,7 +131,7 @@ public class LevelView extends JFrame{
 
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-			//	new SpMoveDelete(level.getBoard()).doMove();
+				new SpMoveDelete(level.getBoard()).doMove(boardView.getBoard());
 			}
 		});
 
