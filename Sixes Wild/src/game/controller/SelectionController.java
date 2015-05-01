@@ -30,15 +30,20 @@ public class SelectionController extends MouseAdapter{
 	}
 
 	public void mousePressed(MouseEvent me){
-		if(cells.size() != 1){
+	
 		Object src = me.getSource();
-		CellView cellView = (CellView) src;
+		CellView cellView = (CellView) src;		
 		Cell cell = cellView.getCell();
+//		cell.setIsEmpty(true);
+//		bv.getBoard().gravity();
+//		bv.draw();
+//		
 		if(!cell.isSelected()){
 			cells.add(cell);
-			cell.setSelected();
+			cell.setSelected(true);
 		}
-	}
+		System.out.println(cells);
+	
 	}
 	
 	public void mouseEntered(MouseEvent me) {
@@ -48,7 +53,7 @@ public class SelectionController extends MouseAdapter{
 			Cell cell = cellView.getCell();
 			if(!cell.isSelected()){
 				cells.add(cell);
-				cell.setSelected();
+				cell.setSelected(true);
 			}
 			System.out.println(cells);
 		}
@@ -56,6 +61,9 @@ public class SelectionController extends MouseAdapter{
 
 	public void mouseReleased(MouseEvent me){
 		doMove();
+		for (int i = 0; i < cells.size();i++){
+			cells.get(i).setSelected(false);
+		}
 		cells.clear();
 	}
 

@@ -95,12 +95,16 @@ public class Board implements Serializable {
 	 */
 	public void gravity() {
 		ArrayList<Cell> arrayHelp = new ArrayList<Cell>();
-		arrayHelp.add(topCell);
-		for (int i = 0; i < 9; i++) {
-			for (int j = 0; j < 9; j++) {
-				arrayHelp.add(cells[j][i]);
+	
+		
+		
+		for (int c = 0; c < 9; c++) {
+			arrayHelp.add(topCell);
+			for (int r = 0; r < 9; r++) {
+				arrayHelp.add(cells[r][c]);
 			}
-			cells[8][i].gravity(arrayHelp);
+			cells[8][c].gravity(arrayHelp);
+			arrayHelp.clear();
 		}
 
 	}
