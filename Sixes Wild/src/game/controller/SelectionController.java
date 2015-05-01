@@ -5,6 +5,7 @@ import game.boundary.CellView;
 import game.entities.Cell;
 import game.entities.Location;
 import game.entities.Model;
+import game.move.controller.MoveController;
 
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
@@ -17,10 +18,12 @@ public class SelectionController extends MouseAdapter{
 	/** Needed for controller behavior **/
 	BoardView bv;
 	ArrayList<Cell> cells = new ArrayList<Cell>();
+	MoveController move;
 
 
-	public SelectionController(BoardView view) {
+	public SelectionController(BoardView view, MoveController mover) {
 		bv = view;
+		move = mover;
 	}
 
 	/** Set up press events but no motion events. */
@@ -60,11 +63,12 @@ public class SelectionController extends MouseAdapter{
 	}
 
 	public void mouseReleased(MouseEvent me){
-		doMove();
+		move.doMove(cells);
 		for (int i = 0; i < cells.size();i++){
 			cells.get(i).setSelected(false);
 		}
 		cells.clear();
+		bv.draw();
 	}
 
 	public ArrayList<Cell> selectedCellsList(){

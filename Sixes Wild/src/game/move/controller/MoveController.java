@@ -1,74 +1,62 @@
-/*package game.move.controller;
+package game.move.controller;
 
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
-import game.boundary.Application;
 import game.boundary.BoardView;
-import game.boundary.CellView;
 import game.boundary.LevelView;
-import game.controller.Move;
-import game.controller.MovesLeftController;
-import game.controller.ScoreController;
-import game.controller.SelectionController;
-import game.entities.*;
+import game.entities.Board;
+import game.entities.Cell;
+import game.entities.Level;
+import game.entities.Location;
 
-public class MoveController extends SelectionController{
-	//Now called move controller from move
+public class MoveController {
+//Executes the move.
 	Level level;
-	BoardView bv;
+
 	ArrayList<Cell> cells;
-	SelectionController selection;
-	LevelView lv;
-
-	ScoreController updateScore = new ScoreController(level);
-	MovesLeftController movesLeft = new MovesLeftController(level);
-
-	public MoveController(LevelView levelView) {
-		this.level = levelView.getLevel();
-		this.lv = levelView;
+	Board board;
+	
+	public MoveController(LevelView levelView){
+		
+	
+		
+		level = levelView.getLevel();
+		board = level.getBoard();
 	}
-
-	public boolean doMove() {
+	
+	
+	public boolean doMove(ArrayList<Cell> cells ){
+		this.cells = cells;
 		Cell next;
-		int total = 0;
-		int subtotal = 0;
-		int size = selection.getSize();
+		int score = 0;
+
+		int size = cells.size();
 
 		if(!isLegal(size)) { return false; }
 
 		for(int i = 0; i < size; i++) {
-			next = selection.selectedCellsList().get(i);
-
-			subtotal += next.getTile().getValue();
-
-			total += next.getTile().getValue();
-			total *= next.getTile().getMultiplier();
+			next = cells.get(i);
+			score += next.getTile().getValue();
+			score *= next.getTile().getMultiplier();
 		}
 
-		if(subtotal != 6) { return false; }
+	
 		for(int i = 0; i < size; i++){
-			int col = selection.selectedCellsList().get(i).getLocation().getColumn();
-			int row = selection.selectedCellsList().get(i).getLocation().getRow();
-			bv.getBoard().cells[row][col].setIsEmpty(true);
+			int col = cells.get(i).getLocation().getColumn();
+			int row = cells.get(i).getLocation().getRow();
+			board.cells[row][col].setIsEmpty(true);
 		}
 
-		movesLeft.process();
-		updateScore.process(total);
+		//movesLeft.process();
+		level.setMovesLeft(level.getMovesLeft()-1);
+		level.setScore(level.getScore()+score);
 
-		level.getBoard().gravity();
-		bv.draw();
+		board.gravity();
+		
 		return true;
+		
+		
 	}
-
-	public void register() {
-		lv.setActiveListener(this);
-		lv.setActiveMotionListener(this);
-	}
-
 	public boolean isLegal(int size) {
 		if(size > 6) { return false; }
 
@@ -84,7 +72,8 @@ public class MoveController extends SelectionController{
 
 			Location l1, l2;
 			int r1,r2,c1,c2;
-
+			boolean funtimes = false;
+			
 			for(int i = 1; i < size; i++) {
 				l1 = locations.get(i);
 				l2 = locations.get(i-1);
@@ -99,12 +88,13 @@ public class MoveController extends SelectionController{
 					System.out.println(r2);
 					System.out.println(c1);
 					System.out.println(c2);
-					return true;
+					funtimes = true;
 				}
 			}
-			return false;
+			
+			return funtimes;
 
 		}
 	}
+	
 }
-*///

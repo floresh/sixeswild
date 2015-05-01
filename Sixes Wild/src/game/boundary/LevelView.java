@@ -1,12 +1,13 @@
 package game.boundary;
 
 import game.controller.PauseController;
-
 import game.controller.ResetBoardController;
 import game.controller.ReturnToPreviousMenuController;
 import game.controller.TimeController;
 import game.entities.Level;
 import game.main.Main;
+import game.move.controller.MoveController;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JButton;
@@ -46,6 +47,9 @@ public class LevelView extends JFrame{
 	/** Timer handler for level time */
 	TimeController timeController;
 	
+	MoveController mover;
+	
+	
 	public void setActiveListener(MouseListener ml) {
 		this.removeMouseListener(activeMouseListener);
 		activeMouseListener = ml;
@@ -64,15 +68,19 @@ public class LevelView extends JFrame{
 	
 	public LevelView(Level level) {
 		setResizable(false);
-
+		
+		this.level = level;
+	
 		JPanel panel = new JPanel();
 		//MoveController mc = new MoveController(this);
 		
 		//JPanel boardView = new BoardView(board);
-
-		this.boardView = new BoardView(level.getBoard());
+		mover = new MoveController(this);
+		this.boardView = new BoardView(level.getBoard(), mover);
 		boardView.setBounds(255, 229, 450, 450);
 		panel.add(boardView);
+		
+		
 
 		panel.setBounds(224, 66, 384, 369);
 		getContentPane().add(panel);

@@ -3,7 +3,6 @@ package game.move.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import game.controller.Move;
 import game.controller.MovesLeftController;
 import game.entities.Board;
 import game.entities.Location;
