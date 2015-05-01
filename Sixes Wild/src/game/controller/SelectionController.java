@@ -37,7 +37,7 @@ public class SelectionController extends MouseAdapter{
 //		cell.setIsEmpty(true);
 //		bv.getBoard().gravity();
 //		bv.draw();
-//		
+		
 		if(!cell.isSelected()){
 			cells.add(cell);
 			cell.setSelected(true);
