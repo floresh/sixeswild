@@ -60,6 +60,9 @@ public class CellView extends JLabel implements MouseListener, MouseMotionListen
 	         break;
 			}
 		}
+		else{
+			 setIcon(new ImageIcon(BoardView.class.getResource("/images/emptycell.png")));
+		}
 	}
 	
 	/**

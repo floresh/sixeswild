@@ -21,7 +21,12 @@ public class SpMoveDelete implements ActionListener {
 		this.boardView = boardView;
 			
 	}
-
+	
+	public void register() {
+	//	bv.setActiveListener(this);
+	//	bv.setActiveMotionListener(this);
+	}
+	
 	public void MousePressed (MouseEvent me){
 		Object src = me.getSource();
 		CellView cellView = (CellView) src;		
