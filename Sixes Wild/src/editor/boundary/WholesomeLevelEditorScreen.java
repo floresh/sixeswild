@@ -346,17 +346,32 @@ public class WholesomeLevelEditorScreen extends JFrame {
 		JButton btnToggleOnOff = new JButton("Toggle Cells On/Off");
 		btnToggleOnOff.addActionListener(new ToggleTypeController(Main.application.model, 0));
 		btnToggleOnOff.setBounds(790, 572, 168, 49);
+		btnToggleOnOff.setToolTipText("Set the cell toggler to toggle cells on or off. This is enabled by default.");
 		getContentPane().add(btnToggleOnOff);
 		
 		JButton btnToggleRelease = new JButton("Toggle Release Cells");
 		btnToggleRelease.addActionListener(new ToggleTypeController(Main.application.model, 1));
 		btnToggleRelease.setBounds(894, 634, 168, 49);
-		btnToggleRelease.setVisible(Main.application.model.getCurrentLevel() instanceof ReleaseLevel);
+		if(Main.application.model.getCurrentLevel() instanceof ReleaseLevel){
+			btnToggleRelease.setEnabled(true);
+			btnToggleRelease.setToolTipText("Set the cell toggler to toggle cells as Release Cells.");
+		}
+		else{
+			btnToggleRelease.setEnabled(false);
+			btnToggleRelease.setToolTipText("Disabled since the level is not a Release level.");
+		}
 		getContentPane().add(btnToggleRelease);
-		
 		
 		JButton btnToggleSix = new JButton("Toggle Six Cells");
 		btnToggleSix.addActionListener(new ToggleTypeController(Main.application.model, 2));
+		if(Main.application.model.getCurrentLevel() instanceof ReleaseLevel){
+			btnToggleSix.setEnabled(true);
+			btnToggleSix.setToolTipText("Set the cell toggler to toggle cells as Six Cells.");
+		}
+		else{
+			btnToggleSix.setEnabled(false);
+			btnToggleSix.setToolTipText("Disabled since the level is not a Release level.");
+		}
 		btnToggleSix.setBounds(998, 572, 168, 49);
 		getContentPane().add(btnToggleSix);
 		
