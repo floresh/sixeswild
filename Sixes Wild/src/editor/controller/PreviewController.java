@@ -57,6 +57,7 @@ public class PreviewController implements ActionListener{
 					}
 				}
 			 level.setBoard(b);
+			 level.setScore(0);
 			 Main.application.getModel().setCurrentLevel(level);
 			 new LevelView(level);
 	}

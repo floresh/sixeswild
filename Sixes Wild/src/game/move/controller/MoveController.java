@@ -9,6 +9,11 @@ import game.entities.Cell;
 import game.entities.Level;
 import game.entities.Location;
 
+/**
+ * 
+ * @author Li, Andrew, Jake
+ *
+ */
 public class MoveController {
 //Executes the move.
 	Level level;
@@ -52,7 +57,7 @@ public class MoveController {
 		level.setMovesLeft(level.getMovesLeft()-1);
 		level.setScore(level.getScore()+score);
 		levelView.getScoreLabel().setText(((Integer) level.getScore()).toString());
-
+		levelView.getProgressBar().setValue(level.getScore());
 		board.gravity();
 		
 		return true;

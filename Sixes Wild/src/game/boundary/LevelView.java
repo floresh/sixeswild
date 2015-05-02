@@ -44,6 +44,9 @@ public class LevelView extends JFrame{
 	/** Timer handler for level time */
 	TimeController timeController;
 	
+	/** Progress bar to show score */
+	JProgressBar progressBar;
+	
 	MoveController mover;
 	
 	public LevelView(Level level) {
@@ -73,7 +76,13 @@ public class LevelView extends JFrame{
 		panel.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("RESET");
-		btnNewButton_1.addActionListener(new ResetBoardController(level, boardView));
+		btnNewButton_1.addActionListener(new ResetBoardController(this));
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				scoreLabel.setText("0");
+				progressBar.setValue(0);
+			}
+		});
 		btnNewButton_1.setBounds(35, 75, 97, 25);
 		panel.add(btnNewButton_1);
 		
@@ -101,9 +110,6 @@ public class LevelView extends JFrame{
 		btnNewButton_4.setBounds(35, 259, 97, 25);
 		btnNewButton_4.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		panel.add(btnNewButton_4);
-		
-		btnNewButton_1.addActionListener(new ResetBoardController(level, boardView));
-		
 		
 		JButton btnNewButton_5 = new JButton("DELETE");
 
@@ -138,9 +144,10 @@ public class LevelView extends JFrame{
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		panel.add(lblNewLabel_2);
 		
-		JProgressBar progressBar = new JProgressBar();
+		progressBar = new JProgressBar();
 		progressBar.setBounds(57, 357, 56, 357);
 		progressBar.setValue(0);
+		progressBar.setMaximum(level.getStars().get(2));
 		progressBar.setOrientation(SwingConstants.VERTICAL);
 		panel.add(progressBar);
 		
@@ -216,6 +223,9 @@ public class LevelView extends JFrame{
 	}
 	public JLabel getScoreLabel() {
 		return this.scoreLabel;
+	}
+	public JProgressBar getProgressBar() {
+		return this.progressBar;
 	}
 		
 	}

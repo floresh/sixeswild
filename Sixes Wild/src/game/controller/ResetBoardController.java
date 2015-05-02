@@ -8,17 +8,22 @@ import game.boundary.BoardView;
 import game.boundary.LevelView;
 import game.entities.*;
 
+/**
+ * 
+ * @author Andrew, Jake
+ *
+ */
 public class ResetBoardController implements ActionListener {
-	
+	LevelView levelView;
 	Level level;	
 	BoardView boardView;
 	int time;
 	int score;
 	int movesLeft;
-	public ResetBoardController(Level level , BoardView bv) {
+	public ResetBoardController(LevelView lv) {
 		
-		this.level = level;
-		boardView = bv;
+		this.level = lv.getLevel();
+		boardView = lv.getBoardView();
 		time = level.getTime();
 		score = level.getScore();
 		movesLeft = level.getMovesLeft();
@@ -33,11 +38,8 @@ public class ResetBoardController implements ActionListener {
 		boardView.getBoard().initialize();
 		boardView.draw();
 		
-		level.setScore(score);
-		level.setTime(time);
-		level.setMovesLeft(movesLeft);
-		
-		
-		
+		level.setScore(0);
+		level.setTime(0);
+		level.setMovesLeft(movesLeft);		
 	}
 }
