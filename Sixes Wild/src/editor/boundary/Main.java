@@ -14,6 +14,7 @@ import javax.swing.UnsupportedLookAndFeelException;
  */
 public class Main {
 	public static LevelEditorApplication application;
+	public static LevelEditorModel model;
 	static ArrayList<Level> loadedLevels; 
 	
 	public static void main(String[] args){
@@ -32,6 +33,7 @@ public class Main {
         }
 		resetLevels();
 		application = new LevelEditorApplication();
+		model = application.getModel();
 		new EditorSplashScreen();
 	}
 	

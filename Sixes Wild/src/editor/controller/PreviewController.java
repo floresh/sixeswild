@@ -45,6 +45,7 @@ public class PreviewController implements ActionListener{
 			 
 			 Level level =  Main.application.getModel().getCurrentLevel();
 			 level.setMovesLeft(rules.get(0));
+			 level.setMaxMoves(rules.get(0));
 			 level.setTime(rules.get(1));
 			 level.setStars(stars);
 			 Board b = Main.application.getModel().getCurrentLevel().getBoard();

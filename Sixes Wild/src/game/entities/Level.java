@@ -10,6 +10,7 @@ public abstract class Level implements Serializable, ILevel {
 	int score;
 	int time;
 	int movesLeft;
+	int maxMoves;
 	
 	Board board;
 	TimeController timer;
@@ -52,6 +53,7 @@ public abstract class Level implements Serializable, ILevel {
 		score = 0;
 		time = 500;
 		movesLeft = 50;
+		maxMoves = movesLeft;
 		
 	}
 	
@@ -141,11 +143,17 @@ public abstract class Level implements Serializable, ILevel {
 		this.multiplierFrequencies = f;
 	}
 
-
+	public int getMaxMoves(){
+		return this.maxMoves;
+	}
 
 	public void setBoard(Board b) {
 		this.board = b;
 		// TODO Auto-generated method stub
 		
+	}
+
+	public void setMaxMoves(int maximum) {
+		this.maxMoves = maximum;
 	}
 }

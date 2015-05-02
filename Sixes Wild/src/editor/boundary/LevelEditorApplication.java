@@ -17,4 +17,5 @@ public class LevelEditorApplication {
 	public LevelEditorModel getModel(){
 		return this.model;
 	}
+	
 }

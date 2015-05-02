@@ -26,7 +26,7 @@ public class ResetBoardController implements ActionListener {
 		boardView = lv.getBoardView();
 		time = level.getTime();
 		score = level.getScore();
-		movesLeft = level.getMovesLeft();
+		movesLeft = level.getMaxMoves();
 	}
 	
 	@Override

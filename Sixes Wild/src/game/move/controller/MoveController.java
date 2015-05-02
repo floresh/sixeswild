@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import game.boundary.BoardView;
 import game.boundary.LevelView;
+import game.controller.EndGameController;
 import game.entities.Board;
 import game.entities.Cell;
 import game.entities.Level;
@@ -23,8 +24,6 @@ public class MoveController {
 	LevelView levelView;
 	
 	public MoveController(LevelView levelView){
-		
-	
 		this.levelView = levelView;
 		level = levelView.getLevel();
 		board = level.getBoard();
@@ -61,6 +60,9 @@ public class MoveController {
 		levelView.getProgressBar().setValue(level.getScore());
 		board.gravity();
 		
+		if(level.getMovesLeft() == 0){
+			new EndGameController(this.levelView);
+		}
 		return true;
 		
 		
