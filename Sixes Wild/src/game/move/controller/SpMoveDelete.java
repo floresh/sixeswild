@@ -13,18 +13,13 @@ import game.main.Main;
 
 public class SpMoveDelete implements ActionListener {
 	
-	BoardView boardView;
+	LevelView levelView;
 	Location location;
 	
 	
-	public SpMoveDelete(BoardView boardView){
-		this.boardView = boardView;
+	public SpMoveDelete(LevelView levelView){
+		this.levelView = levelView;
 			
-	}
-	
-	public void register() {
-	//	bv.setActiveListener(this);
-	//	bv.setActiveMotionListener(this);
 	}
 	
 	public void MousePressed (MouseEvent me){
@@ -32,6 +27,7 @@ public class SpMoveDelete implements ActionListener {
 		CellView cellView = (CellView) src;		
 		Cell cell = cellView.getCell();
 		doMove(cell);
+		levelView.getBoardView().getBoard().gravity();
 	}
 
 	public boolean doMove(Cell cell){

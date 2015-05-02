@@ -112,20 +112,7 @@ public class LevelView extends JFrame{
 		panel.add(btnNewButton_4);
 		
 		JButton btnNewButton_5 = new JButton("DELETE");
-
-
-	//	btnNewButton_5.addActionListener(new ActionListener() {
-	//		public void actionPerformed(ActionEvent arg0) {
-		//		new SpMoveDelete(level.getBoard());
-		//	}
-	//	});
-
-		btnNewButton_5.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				//new SpMoveDelete(level.getBoard()).doMove(null);
-			}
-		});
-
+		btnNewButton_5.addActionListener(new SpMoveDelete(this));
 		btnNewButton_5.setBounds(35, 305, 97, 25);
 		btnNewButton_5.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		panel.add(btnNewButton_5);
