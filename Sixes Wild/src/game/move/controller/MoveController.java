@@ -57,6 +57,7 @@ public class MoveController {
 		level.setMovesLeft(level.getMovesLeft()-1);
 		level.setScore(level.getScore()+score);
 		levelView.getScoreLabel().setText(((Integer) level.getScore()).toString());
+		levelView.getMovesLeftLabel().setText(((Integer) level.getMovesLeft()).toString());
 		levelView.getProgressBar().setValue(level.getScore());
 		board.gravity();
 		
