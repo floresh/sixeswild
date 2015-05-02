@@ -214,6 +214,9 @@ public class LevelView extends JFrame{
 	public void refreshScore() {
 		scoreLabel.setText(((Integer)Main.model.getCurrentLevel().getScore()).toString());
 	}
+	public JLabel getScoreLabel() {
+		return this.scoreLabel;
+	}
 		
 	}
 

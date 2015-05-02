@@ -45,7 +45,6 @@ public class PreviewController implements ActionListener{
 			 
 			 Level level =  Main.application.getModel().getCurrentLevel();
 			 level.setTime(rules.get(1));
-			 System.out.println(rules.get(1));
 			 level.setStars(stars);
 			 Board b = Main.application.getModel().getCurrentLevel().getBoard();
 			 b.setTopCell(tileFreq, multiFreq);
@@ -59,7 +58,6 @@ public class PreviewController implements ActionListener{
 				}
 			 level.setBoard(b);
 			 Main.application.getModel().setCurrentLevel(level);
-			 System.out.println(((Integer)Main.application.getModel().getCurrentLevel().getTime()).toString());
 			 new LevelView(level);
 	}
 	

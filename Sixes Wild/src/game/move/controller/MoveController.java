@@ -15,11 +15,12 @@ public class MoveController {
 
 	ArrayList<Cell> cells;
 	Board board;
+	LevelView levelView;
 	
 	public MoveController(LevelView levelView){
 		
 	
-		
+		this.levelView = levelView;
 		level = levelView.getLevel();
 		board = level.getBoard();
 	}
@@ -50,6 +51,7 @@ public class MoveController {
 		//movesLeft.process();
 		level.setMovesLeft(level.getMovesLeft()-1);
 		level.setScore(level.getScore()+score);
+		levelView.getScoreLabel().setText(((Integer) level.getScore()).toString());
 
 		board.gravity();
 		
