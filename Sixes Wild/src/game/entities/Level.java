@@ -73,6 +73,7 @@ public abstract class Level implements Serializable, ILevel {
 		this.multiplierFrequencies = multiplierFrequencies;
 		this.stars = stars;
 		this.rules = rules;
+		this.movesLeft = rules.get(0);
 
 		initilizeBoard();
 	}

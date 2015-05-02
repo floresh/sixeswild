@@ -47,6 +47,9 @@ public class LevelView extends JFrame{
 	/** Progress bar to show score */
 	JProgressBar progressBar;
 	
+	/** Moves Left Label */
+	JLabel lblMovesLeft;
+	
 	MoveController mover;
 	
 	public LevelView(Level level) {
@@ -92,12 +95,12 @@ public class LevelView extends JFrame{
 		panel.add(btnNewButton_2);
 		
 		JLabel lblSpecialMoves = new JLabel("SPECIAL MOVES");
-		lblSpecialMoves.setBounds(36, 173, 96, 25);
+		lblSpecialMoves.setBounds(165, 13, 96, 25);
 		lblSpecialMoves.setFont(new Font("Serif", Font.PLAIN, 13));
 		panel.add(lblSpecialMoves);
 		
 		JButton btnNewButton_3 = new JButton("RESHUFFLE");
-		btnNewButton_3.setBounds(35, 211, 97, 25);
+		btnNewButton_3.setBounds(164, 51, 97, 25);
 		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		panel.add(btnNewButton_3);
 		
@@ -107,10 +110,10 @@ public class LevelView extends JFrame{
 				new SpMoveSwapTiles(level.getBoard()).doMove();
 			}
 		});
-		btnNewButton_4.setBounds(35, 259, 97, 25);
+		btnNewButton_4.setBounds(164, 99, 97, 25);
 		btnNewButton_4.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		panel.add(btnNewButton_4);
-		
+
 		JButton btnNewButton_5 = new JButton("DELETE");
 		btnNewButton_5.addActionListener(new SpMoveDelete(this));
 		btnNewButton_5.setBounds(35, 305, 97, 25);
@@ -118,11 +121,11 @@ public class LevelView extends JFrame{
 		panel.add(btnNewButton_5);
 		
 		JLabel lblNewLabel = new JLabel("SCORE: ");
-		lblNewLabel.setBounds(201, 79, 56, 16);
+		lblNewLabel.setBounds(35, 311, 56, 16);
 		panel.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("TIME: ");
-		lblNewLabel_1.setBounds(201, 41, 56, 16);
+		lblNewLabel_1.setBounds(35, 273, 56, 16);
 		panel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Sixes Wild");
@@ -139,11 +142,11 @@ public class LevelView extends JFrame{
 		panel.add(progressBar);
 		
 		this.timeLabel = new JLabel(((Integer)level.getTime()).toString());
-		this.timeLabel.setBounds(255, 42, 46, 14);
+		this.timeLabel.setBounds(110, 275, 46, 14);
 		panel.add(this.timeLabel);
 
 		this.scoreLabel = new JLabel(((Integer)level.getScore()).toString());
-		this.scoreLabel.setBounds(255, 80, 46, 14);
+		this.scoreLabel.setBounds(110, 313, 46, 14);
 		panel.add(this.scoreLabel);
 
 		timeController = new TimeController(level.getGameMode(), this);
@@ -168,6 +171,15 @@ public class LevelView extends JFrame{
 		int oneVal = level.getStars().get(0);
 		lbl1Stars.setBounds(123, 714-(int)(357*oneVal/threeVal), 56, 16);
 		panel.add(lbl1Stars);
+		
+		JLabel MovesLeft = new JLabel("MOVES LEFT:");
+		MovesLeft.setBounds(12, 233, 101, 27);
+		panel.add(MovesLeft);
+		
+		lblMovesLeft = new JLabel("0");
+		lblMovesLeft.setBounds(110, 238, 46, 14);
+		lblMovesLeft.setText(((Integer) level.getMovesLeft()).toString());
+		panel.add(lblMovesLeft);
 		
 		setSize(800,800);
 		setLocationRelativeTo(null);
@@ -214,6 +226,8 @@ public class LevelView extends JFrame{
 	public JProgressBar getProgressBar() {
 		return this.progressBar;
 	}
-		
+	public JLabel getMovesLeftLabel() {
+		return this.lblMovesLeft;
+	}
 	}
 
