@@ -5,21 +5,26 @@ import game.controller.ResetBoardController;
 import game.controller.ReturnToPreviousMenuController;
 import game.controller.TimeController;
 import game.entities.Level;
+import game.entities.Model;
 import game.main.Main;
 import game.move.controller.SpMoveDelete;
 import game.move.controller.SpMoveReshuffleBoard;
 import game.move.controller.SpMoveSwapTiles;
 import game.move.controller.MoveController;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+
 import javax.swing.JProgressBar;
 import javax.swing.SwingConstants;
+
 import java.awt.event.ActionListener;
 
 /**
@@ -115,8 +120,8 @@ public class LevelView extends JFrame{
 		panel.add(btnNewButton_4);
 
 		JButton btnNewButton_5 = new JButton("DELETE");
-		btnNewButton_5.addActionListener(new SpMoveDelete(this));
-		btnNewButton_5.setBounds(35, 305, 97, 25);
+		//btnNewButton_5.addActionListener(this);
+		btnNewButton_5.setBounds(164, 149, 97, 25);
 		btnNewButton_5.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		panel.add(btnNewButton_5);
 		
@@ -164,7 +169,7 @@ public class LevelView extends JFrame{
 			//prevents divide-by-zero in preview level
 			threeVal = 100;
 		}
-		lbl2Stars.setBounds(123,714-(int)(357*twoVal/threeVal), 56, 16);
+		lbl2Stars.setBounds(123,519, 56, 16);
 		panel.add(lbl2Stars);
 		
 		JLabel lbl1Stars = new JLabel("1 STAR");

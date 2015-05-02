@@ -52,6 +52,7 @@ public class BoardView extends JPanel{
 
 	void initialize () {
 		SelectionController ma = new SelectionController(this, mover);
+		
 		for(int row = 0; row < 9; row++){
 			for(int col = 0; col <9; col++){
 				labelArr[row][col] = new CellView(board.cells[row][col]);

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import game.boundary.Application;
+import game.boundary.LevelView;
 import game.controller.MovesLeftController;
 import game.entities.*;
 
@@ -14,7 +15,7 @@ public class SpMoveReshuffleBoard {
 	Board board;
     Level level;
 	
-	MovesLeftController movesLeft = new MovesLeftController(level);
+	//MovesLeftController movesLeft = new MovesLeftController(level);
 	
 	public SpMoveReshuffleBoard(Board board) {
 		this.board = board;
@@ -25,9 +26,9 @@ public class SpMoveReshuffleBoard {
 		Collections.shuffle(tiles);
 		model.getCurrentLevel().getBoard().setTiles(tiles);
 		
-		movesLeft.process();
+	//	movesLeft.process();
 		
-		//TODO refresh boundary
+		
 		
 		return true;
 	}
