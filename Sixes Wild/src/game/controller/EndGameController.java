@@ -31,6 +31,8 @@ public class EndGameController {
 		int oneStar = frame.getLevel().getStars().get(0);
 		int twoStar = frame.getLevel().getStars().get(1);
 		int threeStar = frame.getLevel().getStars().get(2);
+		frame.getTimeController().stop();
+		frame.getBoardView().setVisible(false);
 		winLoseScreen = new EndGameScreen(frame);
 		
 		if(score < oneStar){

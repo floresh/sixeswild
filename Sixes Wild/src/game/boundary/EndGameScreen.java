@@ -34,6 +34,7 @@ public class EndGameScreen extends JFrame {
 	LevelView gameScreen;
 	
 	public EndGameScreen(LevelView lv) {
+		setResizable(false);
 		setTitle("Sixes Wild");
 		this.gameScreen = lv;
 		getContentPane().setLayout(null);
@@ -59,7 +60,10 @@ public class EndGameScreen extends JFrame {
 		btnRetryLevel.addActionListener(new ResetBoardController(this.gameScreen));
 		btnRetryLevel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				gameScreen.getBoardView().setVisible(true);
 				dispose();
+				gameScreen.getTimeController().play();
+				
 			}
 		});
 		btnRetryLevel.setBounds(108, 187, 200, 50);
