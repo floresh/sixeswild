@@ -24,6 +24,7 @@ import game.entities.Tile;
  */
 public class PreviewController implements ActionListener{
 	
+	/** The level editor jframe.*/
 	WholesomeLevelEditorScreen editorScreen;
 	
 	public PreviewController(WholesomeLevelEditorScreen es) {

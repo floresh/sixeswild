@@ -7,6 +7,7 @@ import game.entities.PuzzleLevel;
  * 
  * @author Jake
  *
+ * Holds the toggle type of the editor, as well as the current level and number of special moves.
  */
 public class LevelEditorModel extends Model{
 	Level currentLevel;

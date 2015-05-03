@@ -3,6 +3,8 @@ package editor.model;
  * 
  * @author Jake
  *
+ * This class holds an int value in an array which mimics the array of cells on the board.
+ * It holds which type of toggling users want to do in the editor.
  */
 public class ToggleType {
 	int value;

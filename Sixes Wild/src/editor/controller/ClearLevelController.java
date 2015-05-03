@@ -21,6 +21,7 @@ import game.entities.Model;
  */
 public class ClearLevelController implements ActionListener {
 	
+	/** The level editor jframe.*/
 	WholesomeLevelEditorScreen wles;
 	
 	public ClearLevelController(WholesomeLevelEditorScreen wles) {

@@ -15,8 +15,10 @@ import game.entities.Model;
  * grid of buttons in the level editor.
  */
 public class ToggleTypeController implements ActionListener{
-	
+	/** The level editor model.*/
 	Model model;
+	
+	/** The integer which stores which type of toggling is being done.*/
 	int type;
 	
 	public ToggleTypeController(Model m, int type) {

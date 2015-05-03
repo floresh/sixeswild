@@ -18,6 +18,7 @@ import game.entities.Model;
  */
 public class InvertLevelController implements ActionListener {
 	
+	/** The level editor jframe.*/
 	WholesomeLevelEditorScreen wles;
 	
 	public InvertLevelController(WholesomeLevelEditorScreen wles) {
