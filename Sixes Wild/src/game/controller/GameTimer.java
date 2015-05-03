@@ -23,9 +23,19 @@ public class GameTimer extends TimerTask {
 
 	@Override
 	public void run() {
-		int time = Main.model.getCurrentLevel().getTime() + 1;
+		int time;
+		if(frame.getLevel().getGameMode() != "Lightning"){
+			time = Main.model.getCurrentLevel().getTime() - 1;
+		}
+		else{
+			time = Main.model.getCurrentLevel().getTime() + 1;
+		}
+		
 		Main.model.getCurrentLevel().setTime(time);
 		
+		if(time == -1){
+			new EndGameController(frame);
+		}
 		frame.refreshTimer();
 	}
 
