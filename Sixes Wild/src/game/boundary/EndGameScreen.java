@@ -1,6 +1,8 @@
 package game.boundary;
 
 import game.controller.ResetBoardController;
+import game.entities.NoLevel;
+import game.main.Main;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -28,6 +30,14 @@ public class EndGameScreen extends JFrame {
 		getContentPane().add(lblWinLose);
 		
 		JButton btnReturnToLevel = new JButton("Return to Level Selection");
+		btnReturnToLevel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Main.model.setCurrentLevel(new NoLevel());
+				lv.dispose();
+				dispose();
+				new GameModeScreen();
+			}
+		});
 		btnReturnToLevel.setBounds(108, 131, 200, 50);
 		getContentPane().add(btnReturnToLevel);
 		
