@@ -14,6 +14,7 @@ import game.entities.Model;
  * 
  * @author Jake
  *
+ * A fairly fun little controller which reverses the on/off status of all cells on the board.
  */
 public class InvertLevelController implements ActionListener {
 	

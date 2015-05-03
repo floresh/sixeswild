@@ -9,8 +9,15 @@ import javax.swing.JLabel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 
-
+/**
+ * 
+ * @author Jake
+ *
+ * This is the frame that holds the splashscreen for the level editor. It lasts about 1 second, then instantiates
+ * a levelEditorIntro jframe.
+ */
 public class EditorSplashScreen extends JFrame{
+	/** The splash screen image with the group names and a cool moon.  */
 	Image splash;
 	
 	public EditorSplashScreen() {
@@ -41,7 +48,7 @@ public class EditorSplashScreen extends JFrame{
 
 		lblNewLabel.setIcon(new ImageIcon("src\\images\\splash.jpg"));
 
-		
+		//Allows the screen to stay on 1 second, then closes and opens the next screen. 
 		try{
 			Thread.sleep(1000);
 		}

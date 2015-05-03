@@ -22,7 +22,11 @@ import game.entities.Level;
 import game.entities.Model;
 import game.entities.PuzzleLevel;
 import game.main.Filing;
-
+/**
+ * 
+ * @author Kwame
+ *
+ */
 public class SaveLevelController implements ActionListener {
 	WholesomeLevelEditorScreen screen;
 	Cell[][] cells;

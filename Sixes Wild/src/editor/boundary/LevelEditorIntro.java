@@ -23,6 +23,10 @@ import game.entities.ReleaseLevel;
  * 
  * @author Jake
  *
+ * This is the screen that appears after the splash screen and before the level editor itself.
+ * 
+ * It allows the user to choose what type of level they want to make, and gives them the option 
+ * to load in a level from file. As of writing this, the load option does nothing.
  */
 public class LevelEditorIntro extends JFrame{
 	

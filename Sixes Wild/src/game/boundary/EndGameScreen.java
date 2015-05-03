@@ -13,10 +13,24 @@ import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+/**
+ * 
+ * @author Jake
+ *
+ * Frame that pops up at the end of a level. Provides the player with the option to 
+ * retry the level or return to the game mode selection screen.
+ * 
+ * Also displays whether the player successfully completed the level or not, as well as
+ * how many stars and points they earned.
+ */
 public class EndGameScreen extends JFrame {
+	/** The label that displays whether players won or lost.*/
 	JLabel lblWinLose;
+	
+	/** The label that displays how many stars and points the player earned.*/
 	JLabel lblStars;
+	
+	/** The levelView that the player was interacting with prior to the level ending. */
 	LevelView gameScreen;
 	
 	public EndGameScreen(LevelView lv) {

@@ -30,6 +30,18 @@ import java.awt.event.ActionEvent;
 /**
  * @author Jake
  *
+ * This is the Jframe which has the main level editor screen. Please pardon the name, we had to differentiate
+ * it from a different version which was poorly coded earlier in development.
+ * 
+ * This screen allows the user to set the frequencies of tiles and multipliers, as well as set the score values
+ * at which stars are earned.
+ * 
+ * The user can also toggle cells to be: on/off, sixes/normally generated, or releaseCells/normal cells.
+ * 
+ * The user may also set the maximum number of moves, the starting time, and the number of special moves available.
+ * 
+ * The level can be previewed and played, although the timer does not work in the preview version. All other features are
+ * available in the preview.
  */
 public class WholesomeLevelEditorScreen extends JFrame {
 	JTextField nameTextField;
@@ -374,11 +386,8 @@ public class WholesomeLevelEditorScreen extends JFrame {
 		}
 		btnToggleSix.setBounds(998, 572, 168, 49);
 		getContentPane().add(btnToggleSix);
-		
-		// JButton b00 = new JButton("");
-		// b00.setBounds(878, 99, 50, 50);
-		// getContentPane().add(b00);
 
+		//creates the array of buttons which is used to toggle cells.
 		for (int i = 0; i <= 8; i++) {
 			for (int j = 0; j <= 8; j++) {
 				buttArray[i][j] = new JButton("");

@@ -17,6 +17,10 @@ import game.entities.Tile;
  * 
  * @author Jake, Andrew
  *
+ * Creates a preview level based on what the user has input into the level editor. 
+ * 
+ * This preview level can be played and won like a normal level, but the timer does not function.
+ * 
  */
 public class PreviewController implements ActionListener{
 	

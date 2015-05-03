@@ -4,16 +4,28 @@ import game.boundary.EndGameScreen;
 import game.boundary.LevelView;
 import game.entities.Model;
 import game.main.Main;
-
+/**
+ * 
+ * @author Jake
+ *
+ *	This is the controller that is called when a level ends. It opens an EndGameScreen jframe and 
+ *  displays the appropriate information in that frame.
+ */
 public class EndGameController {
+	/** The levelview that the player was interacting with prior to ending the level. */
 	LevelView frame;
+	
+	/** The EndGameScreen that will pop up now that the level has ended. */
 	EndGameScreen winLoseScreen;
+	
 	
 	public EndGameController(LevelView levelView) {
 		this.frame = levelView;
 		process();
 	}
 	
+	/** Gets the score and star values, and then updates the EndGameScreen to properly
+	 *  reflect the player's status.  */
 	public boolean process(){
 		int score = frame.getLevel().getScore();
 		int oneStar = frame.getLevel().getStars().get(0);
@@ -43,6 +55,9 @@ public class EndGameController {
 		return true;
 	}
 	
+	
+	/** This method unlocks the appropriate levels upon level completion. 
+	 *  It is only called if the player has earned at least 1 star. */
 	public void setUnlocks(){
 		String levelType = frame.getLevel().getGameMode();
 		

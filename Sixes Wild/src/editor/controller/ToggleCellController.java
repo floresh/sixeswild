@@ -13,9 +13,19 @@ import game.entities.Tile;
  * 
  * @author Jake
  *
+ * This controller toggles cells via the grid of buttons in the level editor.
+ * 
+ * It allows the user to do the following:
+ * toggle cells on/off
+ * toggle cells as sixes/normal cells
+ * toggle cells as release/normal cells
+ * 
  */
 public class ToggleCellController implements ActionListener {
+	/** The level editor screen. */
 	WholesomeLevelEditorScreen screen;
+	
+	/**The JButton which calls the controller. */
 	JButton cell;
 	
 	int row;

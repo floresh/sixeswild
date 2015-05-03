@@ -17,6 +17,7 @@ import game.entities.Model;
  * 
  * @author Jake
  *
+ * Clears the level so that the cells are all on, and are all normal cells.
  */
 public class ClearLevelController implements ActionListener {
 	

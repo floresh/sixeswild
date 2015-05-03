@@ -11,6 +11,8 @@ import game.entities.Model;
  * 
  * @author Jake
  *
+ * This controller handles which type of toggling the user wants to do with the 
+ * grid of buttons in the level editor.
  */
 public class ToggleTypeController implements ActionListener{
 	

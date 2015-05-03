@@ -19,9 +19,15 @@ import game.main.Filing;
  *
  */
 public class SelectBuilderModeController implements ActionListener {
+	/** The jframe where the level type is selected. */
 	LevelEditorIntro screen;
+	
 	ObjectInputStream input;
+	
+	/** The level object to be created. */
 	Level level;
+	
+	/** The type of level to be created. */
 	String levelName;
 
 	public SelectBuilderModeController(LevelEditorIntro screen, String ln) {
