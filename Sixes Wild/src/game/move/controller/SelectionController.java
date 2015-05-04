@@ -1,9 +1,8 @@
-package game.controller;
+package game.move.controller;
 
 import game.boundary.BoardView;
 import game.boundary.CellView;
 import game.entities.Cell;
-import game.move.controller.MoveController;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -15,6 +14,7 @@ import javax.swing.SwingUtilities;
  * @author Li, Andrew, Jake
  *
  */
+//Blah
 public class SelectionController extends MouseAdapter{
 	/** Needed for controller behavior **/
 	BoardView bv;

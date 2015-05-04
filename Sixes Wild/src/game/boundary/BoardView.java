@@ -4,10 +4,12 @@ import java.awt.event.MouseMotionListener;
 
 import javax.swing.JPanel;
 
-import game.controller.SelectionController;
 import game.entities.Board;
 import game.entities.Model;
 import game.move.controller.MoveController;
+import game.move.controller.MoveDeleteController;
+import game.move.controller.MoveSwapController;
+import game.move.controller.SelectionController;
 import game.move.controller.SpMoveDelete;
 
 
@@ -52,11 +54,15 @@ public class BoardView extends JPanel{
 
 	void initialize () {
 		SelectionController ma = new SelectionController(this, mover);
+		MoveDeleteController mdc = new MoveDeleteController(this);
+		MoveSwapController msc = new MoveSwapController(this);
 		
 		for(int row = 0; row < 9; row++){
 			for(int col = 0; col <9; col++){
 				labelArr[row][col] = new CellView(board.cells[row][col]);
 				labelArr[row][col].addMouseListener(ma);
+				labelArr[row][col].addMouseListener(mdc);
+				labelArr[row][col].addMouseListener(msc);
 				add(labelArr[row][col]);
 			}
 		}

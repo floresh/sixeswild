@@ -33,9 +33,9 @@ public class GameTimer extends TimerTask {
 		
 		Main.model.getCurrentLevel().setTime(time);
 		
-		if(time == -1){
-			new EndGameController(frame);
-		}
+	//	if(time == -1){
+	//		new EndGameController(frame);
+	//	}
 		frame.refreshTimer();
 	}
 

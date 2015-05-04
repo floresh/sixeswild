@@ -1,41 +1,27 @@
 package game.move.controller;
 
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.util.ArrayList;
-
-import game.boundary.Application;
-import game.controller.MovesLeftController;
 import game.entities.Board;
-import game.entities.Model;
+import game.entities.Cell;
+import game.entities.Location;
 import game.entities.Tile;
 
-public class SpMoveSwapTiles extends MouseAdapter{
+public class SpMoveSwapTiles {
 	Board board;
-	Tile tile1, tile2;
-	ArrayList<Tile> tiles;
+	Cell cell;
+	Cell cell2;
+	Location location;
 	
 	public SpMoveSwapTiles(Board board) {
 		this.board = board;
 	}
 	
-	public boolean MousePressed(MouseEvent me){
-		
-		
-		return true;
-		
-	}
-	
 	public boolean doMove() {
-		
+		//Blah
 		// these are local variables, this method does nothing.
-		Tile temp = tile1;
-		tile1 = tile2;
-		tile2 = temp;
+		Tile temp = cell.getTile();
+		cell.setTile(cell2.getTile());
+		cell2.setTile(temp);
 		
-
-		
-		//TODO refresh boundary
 		
 		return true;
 	}
