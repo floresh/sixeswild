@@ -10,7 +10,7 @@ import junit.framework.TestCase;
 
 
 public class BoundaryTests extends TestCase{
-
+ 
 	public void testViews(){
 		LevelView lv = new LevelView(Main.model.getCurrentLevel());
 		

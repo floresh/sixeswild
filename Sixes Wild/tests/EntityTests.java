@@ -10,7 +10,7 @@ import junit.framework.TestCase;
 public class EntityTests extends TestCase{
 
 public void testLevel() {
-	
+	 
 		Model m = new Model();
 		PuzzleLevel pl = new PuzzleLevel();
 		assertNotSame(m.getCurrentLevel(), pl);
