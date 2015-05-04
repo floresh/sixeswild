@@ -80,24 +80,13 @@ public class PuzzleLevelSelection extends JFrame {
 		playButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-			//TODO hack to work around loading
-				Level level = new PuzzleLevel();
-				Main.model.setCurrentLevel(level);
-				new LevelView(level);
+			//hack to work around loading
+			//calls levels instantiated by selecting which number level you want
+				Level level = Main.model.getCurrentLevel();
+				LevelView gameView = new LevelView(level);
+				gameView.setTitle("Puzzle " + lblLevelSelected.getText());
 				dispose();
-				
-				
-				
-//				try {
-//					Main.model.setCurrentLevel(Main.getLoadedLevels().get(index));
-//				} catch (ArrayIndexOutOfBoundsException ex) {
-//					System.err.println("Index out of bounds");
-//				}
-//				Main.model.getCurrentLevel().getBoard().initialize(Main.model.getCurrentLevel().getTileFrequencies(), Main.model.getCurrentLevel().getModifierFrequencies());
-//				System.out.println(Main.model.getCurrentLevel().getBoard().cells[1][1].getTile().getValue());
-				
-				
-			
+							
 			}
 		});
 		

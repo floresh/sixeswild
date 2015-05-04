@@ -66,7 +66,8 @@ public class EndGameController {
 		switch(levelType){
 			case "Puzzle": levelType = "Puzzle";
 				for(int i=0;i<3;i++){
-					if(Main.model.unlockedLevels[0][i] == true){
+					if((Main.model.unlockedLevels[0][i] == true) &&
+							(Main.model.unlockedLevels[0][i+1] == false)){
 						Main.model.unlockedLevels[0][i+1] = true;
 						Main.model.unlockedLevels[1][0] = true;
 						Main.model.unlockedLevels[2][0] = true;
@@ -74,28 +75,37 @@ public class EndGameController {
 						break;
 					}
 				}
+				break;
 				
 			case "Elimination": levelType = "Elimination";
 				for(int i=0;i<3;i++){
-					if(Main.model.unlockedLevels[1][i] == true){
+					if((Main.model.unlockedLevels[1][i] == true) &&
+					(Main.model.unlockedLevels[1][i+1] == false)){
 						Main.model.unlockedLevels[1][i+1] = true;
 						break;
 					}
 				}
+				break;
+				
 			case "Lightning": levelType = "Lightning";
-			for(int i=0;i<3;i++){
-				if(Main.model.unlockedLevels[2][i] == true){
-					Main.model.unlockedLevels[2][i+1] = true;
-					break;
+				for(int i=0;i<3;i++){
+					if((Main.model.unlockedLevels[2][i] == true) &&
+					(Main.model.unlockedLevels[2][i+1] == false)){
+						Main.model.unlockedLevels[2][i+1] = true;
+						break;
+					}
 				}
-			}
+				break;
+				
 			case "Release": levelType = "Release";
-			for(int i=0;i<3;i++){
-				if(Main.model.unlockedLevels[3][i] == true){
-					Main.model.unlockedLevels[3][i+1] = true;
-					break;
+				for(int i=0;i<3;i++){
+					if((Main.model.unlockedLevels[3][i] == true) &&
+					(Main.model.unlockedLevels[3][i+1] == false)){
+						Main.model.unlockedLevels[3][i+1] = true;
+						break;
+					}
 				}
-			}
+				break;
 		}
 	}
 	

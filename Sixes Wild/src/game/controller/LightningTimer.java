@@ -22,8 +22,8 @@ public class LightningTimer extends TimerTask {
 		int time = Main.model.getCurrentLevel().getTime() - 1;
 		Main.model.getCurrentLevel().setTime(time);
 		
-		if(time == 0) {
-			// end game
+		if(time == -1) {
+			new EndGameController(frame);
 		}
 		frame.refreshTimer();
 	}
