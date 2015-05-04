@@ -127,7 +127,7 @@ public class LevelView extends JFrame{
 		btnNewButton_5.setBounds(164, 149, 97, 25);
 		btnNewButton_5.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		panel.add(btnNewButton_5);
-		
+	
 		JLabel lblNewLabel = new JLabel("SCORE: ");
 		lblNewLabel.setBounds(35, 311, 56, 16);
 		panel.add(lblNewLabel);

@@ -60,7 +60,7 @@ public class SaveLevel {
 			}
 		}
 
-		board = new Board(cells);
+		board = new Board(cells, tileFrequencies, multiplierFrequencies);
 		return board != null;
 	}
 	

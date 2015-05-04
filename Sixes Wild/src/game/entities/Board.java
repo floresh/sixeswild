@@ -44,6 +44,11 @@ public class Board implements Serializable {
 	public Board(Cell[][] cells) {
 		this.cells = cells;
 	}
+	
+	public Board(Cell[][] cells, ArrayList<Integer> tileFrequency, ArrayList<Integer> multiplierFrequency) {
+		this.cells = cells;
+		setTopCell(tileFrequency, multiplierFrequency);
+	}
 	/**
 	 * returns an array list of all tile in board
 	 * @return
