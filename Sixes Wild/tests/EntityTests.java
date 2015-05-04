@@ -19,5 +19,9 @@ public void testLevel() {
 		assertEquals(m.getCurrentLevel(), pl);
 }
 
+public void testSplashScreen(){
+	SplashScreen splash = new SplashScreen();
+}
+
 public void testCells() {}}
 
