@@ -16,7 +16,7 @@ public class SpMoveSwapTiles {
 	}
 	
 	public boolean doMove() {
-		
+		//Blah
 		// these are local variables, this method does nothing.
 		Tile temp = cell.getTile();
 		cell.setTile(cell2.getTile());

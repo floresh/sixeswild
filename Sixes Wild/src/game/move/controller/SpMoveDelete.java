@@ -8,7 +8,7 @@ public class SpMoveDelete {
 	
 	BoardView boardView;
 	Location location;
-	
+	//Blah
 	public SpMoveDelete(BoardView boardView){
 		this.boardView = boardView;
 			
