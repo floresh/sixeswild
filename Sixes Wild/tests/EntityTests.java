@@ -1,24 +1,21 @@
-import game.entities.Cell;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
-import java.awt.event.MouseEvent;
-
+import game.boundary.SplashScreen;
+import game.entities.Model;
+import game.entities.PuzzleLevel;
+import game.main.Main;
 import junit.framework.TestCase;
 
 public class EntityTests extends TestCase{
 
-public void testCells() {
-		
-		Cell c = new Cell(new Tile());
-		
-		
-		
-		assertEquals (new Card(Card.FOUR, Card.HEARTS), eagleWings.wastePile.peek());
-		assertTrue (eagleWings.undoMove());
-		assertTrue (eagleWings.wastePile.empty());
+public void testLevel() {
 	
-		gw.setVisible(false);
-		gw.dispose();
-	}
-	
+		Model m = new Model();
+		PuzzleLevel pl = new PuzzleLevel();
+		assertNotSame(m.getCurrentLevel(), pl);
+		
+		m.setCurrentLevel(pl);
+		assertEquals(m.getCurrentLevel(), pl);
 }
 }
