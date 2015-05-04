@@ -6,28 +6,28 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public abstract class Level implements Serializable, ILevel {
-	
-	private String name;
-	private int score;
-	private int time;
-	private int movesLeft;
-	private int maxMoves;
-	private boolean deleteMove;
-	private boolean swapTilesMove;
-	private int deletesLeft;
-	private int swapsLeft;
-	private int	reshufflesLeft;
-	
+
+	String name;
+	int score;
+	int time;
+	int movesLeft;
+	int maxMoves;
+	boolean deleteMove;
+	boolean swapTilesMove;
+	int deletesLeft;
+	int swapsLeft;
+	int reshufflesLeft;
+
 	Board board;
 	TimeController timer;
 	ArrayList<Integer> tileFrequencies, multiplierFrequencies, stars, rules;
 
 	public Level() {
-		
+
 		deletesLeft = 3;
 		swapsLeft = 3;
 		reshufflesLeft = 3;
-		
+
 		tileFrequencies = new ArrayList<Integer>();
 		multiplierFrequencies = new ArrayList<Integer>();
 
@@ -68,11 +68,11 @@ public abstract class Level implements Serializable, ILevel {
 		deleteMove = false;
 		swapTilesMove = false;
 	}
-	
-	public Level(boolean a){
-		
+
+	public Level(boolean a) {
+
 	}
-	
+
 	public Level(Board board, int score, int time, int movesLeft,
 			ArrayList<Integer> tileFrequency,
 			ArrayList<Integer> multiplierFrequency) {
@@ -89,17 +89,31 @@ public abstract class Level implements Serializable, ILevel {
 		this.rules = rules;
 		this.movesLeft = rules.get(0);
 
-		initilizeBoard();
+		// initilizeBoard();
+	}
+	
+	public Level(String name, Board board, ArrayList<Integer> tileFrequencies,
+			ArrayList<Integer> multiplierFrequencies, ArrayList<Integer> stars,
+			ArrayList<Integer> rules) {
+		this.name = name;
+		this.board = board;
+		this.tileFrequencies = tileFrequencies;
+		this.multiplierFrequencies = multiplierFrequencies;
+		this.stars = stars;
+		this.rules = rules;
+		this.movesLeft = rules.get(0);
+
 	}
 
 	public void initilizeBoard() {
 		board.initialize();
 	}
-	
-	public ArrayList<Integer> getTF(){
+
+	public ArrayList<Integer> getTF() {
 		return tileFrequencies;
 	}
-	public ArrayList<Integer> getMF(){
+
+	public ArrayList<Integer> getMF() {
 		return multiplierFrequencies;
 	}
 
@@ -118,19 +132,19 @@ public abstract class Level implements Serializable, ILevel {
 	public int getMovesLeft() {
 		return movesLeft;
 	}
-	
+
 	public ArrayList<Integer> getStars() {
 		return this.stars;
 	}
-	
+
 	public TimeController getTimer() {
 		return this.timer;
 	}
-	
+
 	public void setStars(ArrayList<Integer> newStars) {
 		this.stars = newStars;
 	}
-	
+
 	public void setTimer(TimeController timeController) {
 		this.timer = timeController;
 	}
@@ -155,52 +169,58 @@ public abstract class Level implements Serializable, ILevel {
 		this.multiplierFrequencies = f;
 	}
 
-	public int getMaxMoves(){
+	public int getMaxMoves() {
 		return this.maxMoves;
 	}
 
 	public void setBoard(Board b) {
 		this.board = b;
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void setMaxMoves(int maximum) {
 		this.maxMoves = maximum;
 	}
-	
-	public void setDeleteMove(boolean state){
+
+	public void setDeleteMove(boolean state) {
 		deleteMove = state;
 	}
-	
-	public boolean getDeleteMoveState(){
+
+	public boolean getDeleteMoveState() {
 		return deleteMove;
 	}
 
-	public void setMoveSwap(boolean state){
+	public void setMoveSwap(boolean state) {
 		swapTilesMove = state;
 	}
-	
-	public boolean getMoveSwap(){
+
+	public boolean getMoveSwap() {
 		return swapTilesMove;
 	}
-	public int getDeletsLeft(){
+
+	public int getDeletsLeft() {
 		return deletesLeft;
 	}
-	public int getReshufflesLeft(){
+
+	public int getReshufflesLeft() {
 		return reshufflesLeft;
 	}
-	public int getSwapsLeft(){
+
+	public int getSwapsLeft() {
 		return swapsLeft;
 	}
-	public void setDeletesLeft(int i){
+
+	public void setDeletesLeft(int i) {
 		deletesLeft = i;
 	}
-	public void setSwapsLeft(int i){
+
+	public void setSwapsLeft(int i) {
 		swapsLeft = i;
 	}
-	public void setReshufflesLeft(int i){
+
+	public void setReshufflesLeft(int i) {
 		reshufflesLeft = i;
 	}
-	
+
 }

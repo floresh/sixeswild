@@ -1,9 +1,7 @@
 package editor.boundary;
-import java.util.ArrayList;
 
 import editor.model.LevelEditorModel;
-import game.entities.Level;
-import game.entities.Model;
+import editor.model.LevelManager;
 
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -15,7 +13,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 public class Main {
 	public static LevelEditorApplication application;
 	public static LevelEditorModel model;
-	static ArrayList<Level> loadedLevels; 
+	static LevelManager levels; 
 	
 	public static void main(String[] args){
 		try {
@@ -37,11 +35,11 @@ public class Main {
 		new EditorSplashScreen();
 	}
 	
-	public static ArrayList<Level> getLoadedLevels(){
-		return loadedLevels;
+	public static LevelManager getLevels(){
+		return levels;
 	}
 	
 	public static void resetLevels(){
-		loadedLevels = new ArrayList<Level>();
+		levels = new LevelManager();
 	}
 }

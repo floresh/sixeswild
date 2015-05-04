@@ -5,10 +5,8 @@ import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
-
+import editor.model.LevelManager;
 import game.boundary.SplashScreen;
-import game.entities.Level;
 import game.entities.Model;
 
 import javax.swing.UIManager;
@@ -16,7 +14,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 public class Main {
 	public static Model model;
-	static ArrayList<Level> loadedLevels;
+	static LevelManager levels; 
 
 	public static void main(String[] args) {
 		try {
@@ -50,11 +48,11 @@ public class Main {
 		return path;
 	}
 
-	public static void resetLevels(){
-		loadedLevels = new ArrayList<Level>();
+	public static LevelManager getLevels(){
+		return levels;
 	}
-
-	public static ArrayList<Level> getLoadedLevels() {
-		return loadedLevels;
+	
+	public static void resetLevels(){
+		levels = new LevelManager();
 	}
 }

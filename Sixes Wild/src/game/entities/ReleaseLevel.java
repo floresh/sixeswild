@@ -38,4 +38,8 @@ public class ReleaseLevel extends Level {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	@Override
+	public String getName() {
+		return name;
+	}
 }

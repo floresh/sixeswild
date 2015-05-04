@@ -3,28 +3,36 @@ package editor.model;
 import game.entities.Level;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 /**
  * 
  * @author Kwame
  *
  */
 public class LevelManager {
-	ArrayList<Level> levels;
+	HashMap<String, Level> levels;
 	
 	public LevelManager(){
-		levels = new ArrayList<Level>();
+		levels = new HashMap<String, Level>();
 	}
 	
-	public LevelManager(ArrayList<Level> levels){
+	public LevelManager( HashMap<String, Level> levels){
 		this.levels = levels;
 	}
 	
-	public ArrayList<Level> getlevels(){
+	public  HashMap<String, Level> getlevels(){
 		return levels;
 	}
 	
-	public void addLevel(Level level){
-		levels.add(level);
+	public boolean addLevel(Level level){
+		if(levels.containsKey(level.getName()))
+			return false;
+		levels.put(level.getName(), level);
+		return true;
+	}
+	
+	public Level getLevel(String name){
+		return levels.get(name);
 	}
 
 }

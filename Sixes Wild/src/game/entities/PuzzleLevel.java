@@ -19,6 +19,14 @@ public class PuzzleLevel extends Level {
 		unlockedLevels = new ArrayList<Integer>();
 		highScores = new ArrayList<Integer>();
 	}
+	
+	public PuzzleLevel(String name, Board board, ArrayList<Integer> tileFrequencies,
+			ArrayList<Integer> multiplierFrequencies, ArrayList<Integer> stars,
+			ArrayList<Integer> rules) {
+		super(name, board, tileFrequencies, multiplierFrequencies, stars, rules);
+		unlockedLevels = new ArrayList<Integer>();
+		highScores = new ArrayList<Integer>();
+	}
 
 	@Override
 	public String getGameMode() {
@@ -45,6 +53,11 @@ public class PuzzleLevel extends Level {
 	public ArrayList<Integer> getModifierFrequencies() {
 		// TODO Auto-generated method stub
 		return multiplierFrequencies;
+	}
+
+	@Override
+	public String getName() {
+		return name;
 	}
 
 }

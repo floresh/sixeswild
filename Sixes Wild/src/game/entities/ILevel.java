@@ -6,6 +6,8 @@ import game.boundary.GameModeScreen;
 
 public interface ILevel {
 	
+	public String getName();
+	
 	public String getGameMode();
 	
 	public boolean openLevelScreen();

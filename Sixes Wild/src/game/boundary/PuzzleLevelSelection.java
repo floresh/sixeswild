@@ -82,7 +82,8 @@ public class PuzzleLevelSelection extends JFrame {
 				
 			//hack to work around loading
 			//calls levels instantiated by selecting which number level you want
-				Level level = Main.model.getCurrentLevel();
+				Level level = Main.getLevels().getLevel("level 1");
+				level.getBoard().initialize();
 				LevelView gameView = new LevelView(level);
 				gameView.setTitle("Puzzle " + lblLevelSelected.getText());
 				dispose();

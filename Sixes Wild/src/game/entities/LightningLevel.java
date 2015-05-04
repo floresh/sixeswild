@@ -36,4 +36,9 @@ public class LightningLevel extends Level{
 		return null;
 	}
 
+	@Override
+	public String getName() {
+		return name;
+	}
+
 }

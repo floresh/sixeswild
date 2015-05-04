@@ -79,7 +79,7 @@ public class Cell implements Serializable {
 		
 		if(isEmpty || !isEnabled){	
 			tile = column.get(index - 1).requestTile(column);
-			isEmpty =false;
+			isEmpty = false;
 		}
 		
 		isEmpty = isEnabled;

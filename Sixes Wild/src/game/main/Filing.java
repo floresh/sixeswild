@@ -49,15 +49,14 @@ public class Filing {
 		} catch (FileAlreadyExistsException e) {
 			System.err.println("File already exists");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.err.println("End of file reached");
 		}
 		return path;
 	}
 
 	public static boolean save() {
 		try {
-			for (Level l : Main.getLoadedLevels()) {
+			for (Level l : Main.getLevels().getlevels().values()) {
 				output.writeObject(l);
 			}
 			closeFile();
@@ -88,7 +87,7 @@ public class Filing {
 				case "Puzzle":
 					level = (PuzzleLevel) input.readObject();
 				}
-				game.main.Main.getLoadedLevels().add(level);
+				game.main.Main.getLevels().addLevel(level);
 			}
 		} catch (EOFException e) {
 			System.err.println("No more records to load");
@@ -110,7 +109,7 @@ public class Filing {
 					level = (PuzzleLevel) input.readObject();
 					System.out.println("loading puzzles");
 				}
-				Main.getLoadedLevels().add(level);
+				Main.getLevels().addLevel(level);
 			}
 		} catch (EOFException e) {
 			System.err.println("No more records to load");

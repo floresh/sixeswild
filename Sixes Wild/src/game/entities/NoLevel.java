@@ -38,4 +38,10 @@ public class NoLevel extends Level implements ILevel{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public String getName() {
+		throw new UnsupportedOperationException("No name for no level");
+	}
+	
 }

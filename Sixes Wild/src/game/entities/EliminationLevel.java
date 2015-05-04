@@ -39,4 +39,9 @@ public class EliminationLevel extends Level {
 		return null;
 	}
 
+	@Override
+	public String getName() {
+		return name;
+	}
+
 }
