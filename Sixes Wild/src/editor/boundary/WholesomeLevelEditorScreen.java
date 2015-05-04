@@ -177,33 +177,27 @@ public class WholesomeLevelEditorScreen extends JFrame {
 		menuBar.add(mnSaveLevel);
 		
 		JButton btnLevel = new JButton("Level 1");
-		btnLevel.addActionListener(new SelectNameController(this, "Level 1"));
-		btnLevel.addActionListener(new SaveLevelController(this));
+		btnLevel.addActionListener(new SaveLevelController(this, "Level 1"));
 		mnSaveLevel.add(btnLevel);
 		
 		JButton btnLevel_1 = new JButton("Level 2");
-		btnLevel_1.addActionListener(new SelectNameController(this, "Level 2"));
-		btnLevel_1.addActionListener(new SaveLevelController(this));
+		btnLevel_1.addActionListener(new SaveLevelController(this, "Level 2"));
 		mnSaveLevel.add(btnLevel_1);
 		
 		JButton btnLevel_2 = new JButton("Level 3");
-		btnLevel_2.addActionListener(new SelectNameController(this, "Level 3"));
-		btnLevel_2.addActionListener(new SaveLevelController(this));
+		btnLevel_2.addActionListener(new SaveLevelController(this, "Level 3"));
 		mnSaveLevel.add(btnLevel_2);
 		
 		JButton btnLevel_3 = new JButton("Level 4");
-		btnLevel_3.addActionListener(new SelectNameController(this, "Level 4"));
-		btnLevel_3.addActionListener(new SaveLevelController(this));
+		btnLevel_3.addActionListener(new SaveLevelController(this, "Level 4"));
 		mnSaveLevel.add(btnLevel_3);
 		
 		JButton btnLevel_4 = new JButton("Level 5");
-		btnLevel_4.addActionListener(new SelectNameController(this, "Level 5"));
-		btnLevel_4.addActionListener(new SaveLevelController(this));
+		btnLevel_4.addActionListener(new SaveLevelController(this, "Level 5"));
 		mnSaveLevel.add(btnLevel_4);
 		
 		JButton btnLevel_5 = new JButton("Level 6");
-		btnLevel_5.addActionListener(new SelectNameController(this, "Level 6"));
-		btnLevel_5.addActionListener(new SaveLevelController(this));
+		btnLevel_5.addActionListener(new SaveLevelController(this, "Level 6"));
 		mnSaveLevel.add(btnLevel_5);
 		menuBar.add(undo);
 		menuBar.add(redo);

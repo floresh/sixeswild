@@ -29,6 +29,12 @@ public class PuzzleLevelSelection extends JFrame {
 	int index = 0;
 	/** Displays level number selected by user */
 	public JLabel lblLevelSelected;
+	
+	Level level;
+	
+	public void setLevel(String levelName){
+		level = Main.getLevels().getLevel(levelName);
+	}
 
 	public PuzzleLevelSelection() {
 		super("Puzzle Level Selection");
@@ -44,45 +50,40 @@ public class PuzzleLevelSelection extends JFrame {
 		button1.setEnabled(Main.model.unlockedLevels[0][0]);
 		button1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				index = 0;
+				level = Main.getLevels().getLevel("Level 1");
 			}
 		});
-		button1.addActionListener(new SelectLevelController(this, "Level 1"));
 
 		JButton button2 = new JButton("2");
 		button2.setEnabled(Main.model.unlockedLevels[0][1]);
 		button2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				index = 1;
+				level = Main.getLevels().getLevel("Level 2");
 			}
 		});
-		button2.addActionListener(new SelectLevelController(this, "Level 2"));
 
 		JButton button3 = new JButton("3");
 		button3.setEnabled(Main.model.unlockedLevels[0][2]);
 		button3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				index = 2;
+				level = Main.getLevels().getLevel("Level 3");
 			}
 		});
-		button3.addActionListener(new SelectLevelController(this, "Level 3"));
 
 		JButton button4 = new JButton("4");
 		button4.setEnabled(Main.model.unlockedLevels[0][3]);
 		button4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				index = 3;
+				level = Main.getLevels().getLevel("Level 4");
 			}
 		});
-		button4.addActionListener(new SelectLevelController(this, "Level 4"));
 
 		JButton playButton = new JButton("PLAY");
 		playButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 			//hack to work around loading
-			//calls levels instantiated by selecting which number level you want
-				Level level = Main.getLevels().getLevel("level 1");
+			//calls levels instantiated by selecting which number level you wan
 				level.getBoard().initialize();
 				LevelView gameView = new LevelView(level);
 				gameView.setTitle("Puzzle " + lblLevelSelected.getText());

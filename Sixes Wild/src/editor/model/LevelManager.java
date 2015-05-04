@@ -25,8 +25,6 @@ public class LevelManager {
 	}
 	
 	public boolean addLevel(Level level){
-		if(levels.containsKey(level.getName()))
-			return false;
 		levels.put(level.getName(), level);
 		return true;
 	}
