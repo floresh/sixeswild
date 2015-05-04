@@ -7,8 +7,10 @@ import game.boundary.LevelView;
 import game.controller.EndGameController;
 import game.entities.Board;
 import game.entities.Cell;
+import game.entities.EliminationLevel;
 import game.entities.Level;
 import game.entities.Location;
+import game.entities.PuzzleLevel;
 
 /**
  * 
@@ -60,9 +62,19 @@ public class MoveController {
 		levelView.getProgressBar().setValue(level.getScore());
 		board.gravity();
 		
+		if( level instanceof EliminationLevel){
+		for (int i = 0; i < cells.size();i++){
+			cells.get(i).setIsMarked(true);
+		}
+		}
+		
 		if(level.getMovesLeft() == 0){
+			if(level instanceof EliminationLevel){
+				new EndGameController(this.levelView,level.getBoard().allMarked() );
+			}
 			new EndGameController(this.levelView);
 		}
+		
 		return true;
 		
 		

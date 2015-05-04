@@ -18,15 +18,20 @@ public class EndGameController {
 	/** The EndGameScreen that will pop up now that the level has ended. */
 	EndGameScreen winLoseScreen;
 	
-	
+
 	public EndGameController(LevelView levelView) {
 		this.frame = levelView;
-		process();
+		process(true);
 	}
-	
+	public EndGameController(LevelView levelView, boolean allMarked) {
+		this.frame = levelView;
+		
+		process(allMarked);
+	}
 	/** Gets the score and star values, and then updates the EndGameScreen to properly
 	 *  reflect the player's status.  */
-	public boolean process(){
+	public boolean process(boolean allMarked){
+		
 		int score = frame.getLevel().getScore();
 		int oneStar = frame.getLevel().getStars().get(0);
 		int twoStar = frame.getLevel().getStars().get(1);
@@ -35,7 +40,7 @@ public class EndGameController {
 		frame.getBoardView().setVisible(false);
 		winLoseScreen = new EndGameScreen(frame);
 		
-		if(score < oneStar){
+		if(score < oneStar || !allMarked){
 			winLoseScreen.getWinLose().setText("You Lose.");
 			winLoseScreen.getLblStars().setText("0 Stars, Score: " + frame.getLevel().getScore());
 		}
