@@ -9,7 +9,7 @@ import game.entities.Location;
  *
  */
 public class SpMoveDelete {
-	
+	//fsdfds
 	BoardView boardView;
 	Location location;
 	//Blah
