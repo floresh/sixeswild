@@ -19,7 +19,6 @@ public class SaveLevel {
 	Board board;
 	Level level;
 	ArrayList<Integer> tileFrequencies, multiplierFrequencies, rules, stars;
-	String levelName = "";
 	
 	public SaveLevel(WholesomeLevelEditorScreen screen){
 		this.screen = screen;
