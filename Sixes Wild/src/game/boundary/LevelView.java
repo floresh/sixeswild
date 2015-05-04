@@ -112,7 +112,7 @@ public class LevelView extends JFrame{
 		JButton btnNewButton_4 = new JButton("SWAP");
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new SpMoveSwapTiles(level.getBoard()).doMove();
+			//	new SpMoveSwapTiles(level.getBoard()).doMove();
 			}
 		});
 		btnNewButton_4.setBounds(164, 99, 97, 25);

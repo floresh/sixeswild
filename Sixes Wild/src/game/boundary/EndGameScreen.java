@@ -48,7 +48,7 @@ public class EndGameScreen extends JFrame {
 		btnReturnToLevel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main.model.setCurrentLevel(new NoLevel());
-				lv.dispose();
+			gameScreen.dispose();
 				dispose();
 				new GameModeScreen();
 			}
