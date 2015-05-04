@@ -17,6 +17,7 @@ public class DeleteButtonController implements ActionListener{
 	MouseListener oldMl;
 	MouseMotionListener oldMML;
 	private int left;
+	
 	public DeleteButtonController(LevelView lv){
 		this.lv = lv;
 	}
