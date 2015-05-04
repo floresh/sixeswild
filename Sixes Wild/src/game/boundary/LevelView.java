@@ -172,7 +172,7 @@ public class LevelView extends JFrame{
 			//prevents divide-by-zero in preview level
 			threeVal = 100;
 		}
-		lbl2Stars.setBounds(123,519, 56, 16);
+		lbl2Stars.setBounds(123, 714-(int)(357*twoVal/threeVal), 56, 16);
 		panel.add(lbl2Stars);
 		
 		JLabel lbl1Stars = new JLabel("1 STAR");
