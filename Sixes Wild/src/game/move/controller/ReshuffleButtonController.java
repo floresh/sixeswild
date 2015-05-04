@@ -11,13 +11,13 @@ import java.util.Collections;
 public class ReshuffleButtonController implements ActionListener{
 
 	private LevelView lv;
-	
+	ArrayList<Tile> tiles = new ArrayList<Tile>(10);
 	public ReshuffleButtonController(LevelView lv){
 		this.lv = lv;
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		ArrayList<Tile> tiles = lv.getBoardView().getBoard().getTiles();
+		tiles = lv.getBoardView().getBoard().getTiles();
 		Collections.shuffle(tiles);
 		lv.getBoardView().getBoard().setTiles(tiles);
 		lv.getBoardView().draw();

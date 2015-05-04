@@ -37,15 +37,18 @@ public class MoveDeleteController extends MouseAdapter{
 		Object src = me.getSource();
 		CellView cellView = (CellView) src;		
 		Cell cell = cellView.getCell();
-		cells.add(cell);
-		System.out.println("hi");
+		if(!cell.isSelected()){
+			cells.add(cell);
+			cell.setSelected(true);
+		}
+		System.out.println(cells);	
 	}
 	
 	public void MouseReleased (MouseEvent me){
 		//if((!(cells.get(0) == null)) && (cells.size() == 1)) {
 			SpMoveDelete m = new SpMoveDelete(bv);
 			m.doMove(cells.get(0));
-			cells.get(0).setIsEmpty(false);
+			cells.get(0).setSelected(false);
 			cells.clear();
 			lv.getBoardView().setActiveListener(sc);
 	//	}

@@ -4,13 +4,16 @@ import java.awt.event.MouseMotionListener;
 
 import javax.swing.JPanel;
 
+
+
 import game.entities.Board;
 import game.entities.Model;
+import game.main.Main;
 import game.move.controller.MoveController;
 import game.move.controller.MoveDeleteController;
 import game.move.controller.MoveSwapController;
 import game.move.controller.SelectionController;
-import game.move.controller.SpMoveDelete;
+
 
 
 /**
@@ -35,6 +38,7 @@ public class BoardView extends JPanel{
 			this.addMouseListener(ml);
 		}
 	}
+	
 	/** Properly register new motion listener (and unregister old one if present). */
 	public void setActiveMotionListener(MouseMotionListener mml) {
 		this.removeMouseMotionListener(activeMotionListener);
@@ -57,13 +61,31 @@ public class BoardView extends JPanel{
 		MoveDeleteController mdc = new MoveDeleteController(this);
 		MoveSwapController msc = new MoveSwapController(this);
 		
+		if(Main.model.getCurrentLevel().getMoveSwap() == true){
 		for(int row = 0; row < 9; row++){
 			for(int col = 0; col <9; col++){
 				labelArr[row][col] = new CellView(board.cells[row][col]);
-				labelArr[row][col].addMouseListener(ma);
-				labelArr[row][col].addMouseListener(mdc);
 				labelArr[row][col].addMouseListener(msc);
 				add(labelArr[row][col]);
+			}
+		}
+	}
+		else if(Main.model.getCurrentLevel().getDeleteMoveState() == true){
+			for(int row = 0; row < 9; row++){
+				for(int col = 0; col <9; col++){
+					labelArr[row][col] = new CellView(board.cells[row][col]);
+					labelArr[row][col].addMouseListener(mdc);
+					add(labelArr[row][col]);
+		}
+	}
+		}
+		else {
+			for(int row = 0; row < 9; row++){
+				for(int col = 0; col <9; col++){
+					labelArr[row][col] = new CellView(board.cells[row][col]);
+					labelArr[row][col].addMouseListener(ma);
+					add(labelArr[row][col]);
+		}
 			}
 		}
 	}

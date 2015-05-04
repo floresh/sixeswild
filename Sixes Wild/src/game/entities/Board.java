@@ -49,7 +49,7 @@ public class Board implements Serializable {
 	 * @return
 	 */
 	public ArrayList<Tile> getTiles() {
-		ArrayList<Tile> tiles = new ArrayList<Tile>();
+		ArrayList<Tile> tiles = new ArrayList<Tile>(10);
 
 		for (int i = 0; i < 9; i++) {
 			for (int j = 0; i < 9; j++) {

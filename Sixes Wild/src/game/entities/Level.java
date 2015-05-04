@@ -11,9 +11,8 @@ public abstract class Level implements Serializable, ILevel {
 	private int time;
 	private int movesLeft;
 	private int maxMoves;
-	private boolean deleteMove = false;
-	private boolean reShuffleBoard = false;
-	private boolean swapTilesMove = false;
+	private boolean deleteMove;
+	private boolean swapTilesMove;
 	
 	Board board;
 	TimeController timer;
@@ -57,7 +56,8 @@ public abstract class Level implements Serializable, ILevel {
 		time = 0;
 		movesLeft = 50;
 		maxMoves = movesLeft;
-		
+		deleteMove = false;
+		swapTilesMove = false;
 	}
 	
 	public Level(boolean a){
@@ -160,24 +160,16 @@ public abstract class Level implements Serializable, ILevel {
 		this.maxMoves = maximum;
 	}
 	
-	public void setDeleteMove(){
-		deleteMove = true;
+	public void setDeleteMove(boolean state){
+		deleteMove = state;
 	}
 	
 	public boolean getDeleteMoveState(){
 		return deleteMove;
 	}
-	
-	public void setMoveReshuffleBoard(){
-		reShuffleBoard = true;
-	}
-	
-	public boolean getMoveReshuffleBoard(){
-		return reShuffleBoard;
-	}
 
-	public void setMoveSwap(){
-		swapTilesMove = true;
+	public void setMoveSwap(boolean state){
+		swapTilesMove = state;
 	}
 	
 	public boolean getMoveSwap(){

@@ -15,6 +15,7 @@ public class SwapButtonController implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		MoveSwapController msc = new MoveSwapController(lv.getBoardView());
+		lv.getLevel().setMoveSwap(true);
 		lv.getBoardView().setActiveListener(msc);
 		lv.getBoardView().setActiveMotionListener(msc);
 	}

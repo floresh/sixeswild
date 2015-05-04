@@ -15,6 +15,7 @@ public class DeleteButtonController implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		MoveDeleteController mdc = new MoveDeleteController(lv.getBoardView());
+		lv.getLevel().setDeleteMove(true);
 		lv.getBoardView().setActiveListener(mdc);
 		lv.getBoardView().setActiveMotionListener(mdc);
 	}
