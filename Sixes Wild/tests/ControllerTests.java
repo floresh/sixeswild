@@ -7,7 +7,7 @@ import game.move.controller.MoveController;
 import junit.framework.TestCase;
 
 public class ControllerTests extends TestCase {
-	
+	 
 	LevelView lv;
 	
 	protected void setUp() {

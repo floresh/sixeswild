@@ -1,7 +1,3 @@
-/game
+/EditorTest.class
 /editor/
-<<<<<<< HEAD
-=======
-/ControllerTests.class
->>>>>>> branch 'master' of https://github.com/floresh/sixeswild.git
-/images/
+/game/
