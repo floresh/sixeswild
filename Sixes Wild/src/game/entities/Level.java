@@ -6,19 +6,28 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public abstract class Level implements Serializable, ILevel {
-
+	
+	private String name;
 	private int score;
 	private int time;
 	private int movesLeft;
 	private int maxMoves;
 	private boolean deleteMove;
 	private boolean swapTilesMove;
+	private int deletesLeft;
+	private int swapsLeft;
+	private int	reshufflesLeft;
 	
 	Board board;
 	TimeController timer;
 	ArrayList<Integer> tileFrequencies, multiplierFrequencies, stars, rules;
 
 	public Level() {
+		
+		deletesLeft = 3;
+		swapsLeft = 3;
+		reshufflesLeft = 3;
+		
 		tileFrequencies = new ArrayList<Integer>();
 		multiplierFrequencies = new ArrayList<Integer>();
 
@@ -175,4 +184,23 @@ public abstract class Level implements Serializable, ILevel {
 	public boolean getMoveSwap(){
 		return swapTilesMove;
 	}
+	public int getDeletsLeft(){
+		return deletesLeft;
+	}
+	public int getReshufflesLeft(){
+		return reshufflesLeft;
+	}
+	public int getSwapsLeft(){
+		return swapsLeft;
+	}
+	public void setDeletesLeft(int i){
+		deletesLeft = i;
+	}
+	public void setSwapsLeft(int i){
+		swapsLeft = i;
+	}
+	public void setReshufflesLeft(int i){
+		reshufflesLeft = i;
+	}
+	
 }

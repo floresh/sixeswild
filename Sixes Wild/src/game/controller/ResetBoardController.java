@@ -20,6 +20,10 @@ public class ResetBoardController implements ActionListener {
 	int time;
 	int score;
 	int movesLeft;
+	int dm;
+	int sm;
+	int rm;
+	
 	public ResetBoardController(LevelView lv) {
 		
 		this.level = lv.getLevel();
@@ -28,6 +32,10 @@ public class ResetBoardController implements ActionListener {
 		score = level.getScore();
 		movesLeft = level.getMaxMoves();
 		this.levelView = lv;
+		dm = level.getDeletsLeft();
+		sm = level.getSwapsLeft();
+		rm = level.getReshufflesLeft();
+		
 	}
 	
 	@Override
@@ -43,5 +51,9 @@ public class ResetBoardController implements ActionListener {
 		levelView.getScoreLabel().setText("0");
 		levelView.getProgressBar().setValue(0);
 		levelView.getMovesLeftLabel().setText(((Integer)movesLeft).toString());
+		level.setDeletesLeft(dm);
+		level.setSwapsLeft(sm);
+		level.setReshufflesLeft(rm);
+		
 	}
 }

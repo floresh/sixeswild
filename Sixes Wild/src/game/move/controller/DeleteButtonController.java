@@ -16,11 +16,15 @@ public class DeleteButtonController implements ActionListener{
 	private LevelView lv;
 	MouseListener oldMl;
 	MouseMotionListener oldMML;
+	private int left;
+	
 	public DeleteButtonController(LevelView lv){
 		this.lv = lv;
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
+		left = lv.getLevel().getDeletsLeft();
+		if(left>0){
 		 oldMl = lv.getBoardView().getActiveListener();
 		oldMML = lv.getBoardView().getActiveMouseMotionListener();
 
@@ -28,10 +32,13 @@ public class DeleteButtonController implements ActionListener{
 		//lv.getLevel().setDeleteMove(true);
 		lv.getBoardView().setActiveListener(mdc);
 		lv.getBoardView().setActiveMotionListener(mdc);
+		}
 	}
 	
 	public void done(){
 		lv.getBoardView().setActiveListener(oldMl);
 		lv.getBoardView().setActiveMotionListener(oldMML);
+		lv.getLevel().setDeletesLeft(left-1);
+		lv.updateSpMoves();
 	}
 }

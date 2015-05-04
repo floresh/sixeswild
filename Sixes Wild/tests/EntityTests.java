@@ -18,4 +18,6 @@ public void testLevel() {
 		m.setCurrentLevel(pl);
 		assertEquals(m.getCurrentLevel(), pl);
 }
-}
+
+public void testCells() {}}
+

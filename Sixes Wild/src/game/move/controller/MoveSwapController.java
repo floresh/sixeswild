@@ -20,34 +20,25 @@ import java.util.ArrayList;
  */
 public class MoveSwapController extends MouseAdapter{
 
+	SwapButtonController sbc;
 	BoardView bv;
 	ArrayList<Cell> cells = new ArrayList<Cell>();
 	Cell cell1;
 	Cell cell2;
 	
-	public MoveSwapController(BoardView bv) {
+	public MoveSwapController(BoardView bv , SwapButtonController sbc) {
 		this.bv = bv;
+		this.sbc = sbc;
 	}
 
 	@Override
-	public void mousePressed (MouseEvent me){
-		if(!(cells.size() == 2)){
+	public void mouseClicked(MouseEvent me){
+		System.out.println("thank you");
 		Object src = me.getSource();
 		CellView cellView = (CellView) src;		
 		Cell cell = cellView.getCell();
-		cells.add(cell);
-	}
-	}
-	
-	@Override
-	public void mouseReleased (MouseEvent me){
-		if(cells.size() == 2) {
-			SpMoveSwapTiles m = new SpMoveSwapTiles(bv);
-			cell1 = cells.get(0);
-			cell2 = cells.get(1);
-			m.doMove(cell1, cell2);
-			cells.clear();
-		}
+		sbc.swap(cell);
+		//bv.setActiveListener(new SelectionController(bv, mover));
 		
 	}
 }
