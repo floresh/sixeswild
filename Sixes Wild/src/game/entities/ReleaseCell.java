@@ -3,17 +3,7 @@ package game.entities;
 import java.util.ArrayList;
 
 public class ReleaseCell extends Cell{
-	Tile tile;
-	
-	boolean isMarked;
-	
-	boolean isEmpty;
-	
-	boolean isEnabled;
-	
-	Location location;
-	
-	boolean isSelected = true;
+
 	
 	
 	public ReleaseCell(){
@@ -28,24 +18,21 @@ public class ReleaseCell extends Cell{
 		 this.isEmpty = true;
 	}
 	
-	@Override
+
+	
 	protected Tile requestTile(ArrayList<Cell> column){
 		int index = column.indexOf(this);
-		
-		if((isEmpty || !isEnabled)){
-			if(column.get(index-1).getTile().getValue() == 6){
-				tile = column.get(index - 1).requestTile(column);
-				isEmpty =false;
-			}
-			else{
-				tile = column.get(index - 1).requestTile(column);
-				isEmpty = true;
-			}
-			
+		if(isEmpty){
+			tile = column.get(index - 1).requestTile(column);
+			isEmpty = false;
 		}
+		if( !isEnabled || tile.getValue() == 6){	
+			return column.get(index - 1).requestTile(column);
 		
-		isEmpty = isEnabled;
+		}else
+			isEmpty = isEnabled;
 		return tile;
+	
 		
 		
 	}
