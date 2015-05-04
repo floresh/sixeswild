@@ -57,6 +57,9 @@ public class LevelView extends JFrame{
 	
 	/** Moves Left Label */
 	JLabel lblMovesLeft;
+	JLabel deletesLeft;
+	JLabel swapsLeft;
+	JLabel reshuffleLeft;
 	
 	MoveController mover;
 	
@@ -186,6 +189,21 @@ public class LevelView extends JFrame{
 		lblMovesLeft.setText(((Integer) level.getMovesLeft()).toString());
 		panel.add(lblMovesLeft);
 		
+		deletesLeft = new JLabel(String.valueOf(level.getDeletsLeft()));
+		deletesLeft.setBounds(271, 154, 46, 14);
+	
+		panel.add(deletesLeft);
+		
+		swapsLeft = new JLabel(String.valueOf(level.getSwapsLeft()));
+		swapsLeft.setBounds(271, 104, 46, 14);
+		panel.add(swapsLeft);
+		
+		reshuffleLeft = new JLabel(String.valueOf(level.getReshufflesLeft()));
+		reshuffleLeft.setBounds(271, 56, 46, 14);
+		panel.add(reshuffleLeft);
+		
+		
+		
 		setSize(800,800);
 		setLocationRelativeTo(null);
 		setVisible(true);
@@ -233,6 +251,11 @@ public class LevelView extends JFrame{
 	}
 	public JLabel getMovesLeftLabel() {
 		return this.lblMovesLeft;
+	}
+	public void updateSpMoves(){
+		deletesLeft.setText(String.valueOf(level.getDeletsLeft()));
+		swapsLeft.setText(String.valueOf(level.getSwapsLeft()));
+		reshuffleLeft.setText(String.valueOf(level.getReshufflesLeft()));
 	}
 	}
 
