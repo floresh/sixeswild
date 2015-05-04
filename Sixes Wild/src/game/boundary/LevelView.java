@@ -114,9 +114,7 @@ public class LevelView extends JFrame{
 		panel.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("SWAP");
-
 		btnNewButton_4.addActionListener(new SwapButtonController(this));
-
 		btnNewButton_4.setBounds(164, 99, 97, 25);
 		btnNewButton_4.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		panel.add(btnNewButton_4);

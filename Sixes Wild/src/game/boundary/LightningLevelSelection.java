@@ -1,6 +1,7 @@
 package game.boundary;
 import game.controller.ReturnToPreviousMenuController;
 import game.controller.SelectLevelController;
+import game.entities.Level;
 import game.entities.Model;
 import game.main.Main;
 
@@ -73,9 +74,9 @@ public class LightningLevelSelection extends JFrame{
 		btnNewButton_2.setEnabled(Main.model.unlockedLevels[2][0]);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				//TODO
-						//new LevelView();
+						Level level = Main.model.getCurrentLevel();
+						LevelView gameView = new LevelView(level);
+						gameView.setTitle("Lightning " + lblLevelSelected.getText());
 						dispose();
 					}
 				});
