@@ -5,10 +5,15 @@ import game.boundary.LevelView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * 
+ * @author Li Li
+ *
+ */
 public class SwapButtonController implements ActionListener{
 
 	private LevelView lv;
-	//Blahddddddddd
+
 	public SwapButtonController(LevelView lv){
 		this.lv = lv;
 	}

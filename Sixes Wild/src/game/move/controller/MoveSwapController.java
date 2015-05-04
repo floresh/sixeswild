@@ -13,8 +13,13 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
+/**
+ * 
+ * @author Li Li
+ *
+ */
 public class MoveSwapController extends MouseAdapter{
-//Blahddddd
+
 	BoardView bv;
 	ArrayList<Cell> cells = new ArrayList<Cell>();
 	Cell cell1;
@@ -24,7 +29,8 @@ public class MoveSwapController extends MouseAdapter{
 		this.bv = bv;
 	}
 
-	public void MousePressed (MouseEvent me){
+	@Override
+	public void mousePressed (MouseEvent me){
 		if(!(cells.size() == 2)){
 		Object src = me.getSource();
 		CellView cellView = (CellView) src;		
@@ -33,7 +39,8 @@ public class MoveSwapController extends MouseAdapter{
 	}
 	}
 	
-	public void MouseReleased (MouseEvent me){
+	@Override
+	public void mouseReleased (MouseEvent me){
 		if(cells.size() == 2) {
 			SpMoveSwapTiles m = new SpMoveSwapTiles(bv);
 			cell1 = cells.get(0);

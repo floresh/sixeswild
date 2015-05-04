@@ -10,6 +10,11 @@ import game.boundary.LevelView;
 import game.controller.MovesLeftController;
 import game.entities.*;
 
+/**
+ * 
+ * @author Li Li
+ *
+ */
 public class SpMoveReshuffleBoard {
 	Model model;
 	Application application;

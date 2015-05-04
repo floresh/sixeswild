@@ -29,25 +29,7 @@ public class BoardView extends JPanel{
 	MouseMotionListener activeMotionListener;
 	Model model;
 	MoveController mover;
-	
-	/** Properly register new listener (and unregister old one if present). */
-	public void setActiveListener(MouseListener ml) {
-		this.removeMouseListener(activeListener);
-		activeListener = ml;
-		if (ml != null) { 
-			this.addMouseListener(ml);
-		}
-	}
-	
-	/** Properly register new motion listener (and unregister old one if present). */
-	public void setActiveMotionListener(MouseMotionListener mml) {
-		this.removeMouseMotionListener(activeMotionListener);
-		activeMotionListener = mml;
-		if (mml != null) {
-			this.addMouseMotionListener(mml);
-		}
-	}
-	
+
 	public BoardView(Board board , MoveController mover) {	
 		this.mover =mover;
 		this.board = board;
@@ -56,39 +38,45 @@ public class BoardView extends JPanel{
 		draw();
 	}
 
-	void initialize () {
-		SelectionController ma = new SelectionController(this, mover);
-		MoveDeleteController mdc = new MoveDeleteController(this);
-		MoveSwapController msc = new MoveSwapController(this);
-		
-		if(Main.model.getCurrentLevel().getMoveSwap() == true){
+	
+	/** Properly register new listener (and unregister old one if present). */
+	public void setActiveListener(MouseListener ml) {
 		for(int row = 0; row < 9; row++){
 			for(int col = 0; col <9; col++){
-				labelArr[row][col] = new CellView(board.cells[row][col]);
-				labelArr[row][col].addMouseListener(msc);
+				//labelArr[row][col] = new CellView(board.cells[row][col]);
+				labelArr[row][col].removeMouseListener(activeListener);
+				labelArr[row][col].addMouseListener(ml);
 				add(labelArr[row][col]);
 			}
 		}
+		activeListener = ml;
 	}
-		else if(Main.model.getCurrentLevel().getDeleteMoveState() == true){
-			for(int row = 0; row < 9; row++){
-				for(int col = 0; col <9; col++){
-					labelArr[row][col] = new CellView(board.cells[row][col]);
-					labelArr[row][col].addMouseListener(mdc);
-					add(labelArr[row][col]);
+	
+	/** Properly register new motion listener (and unregister old one if present). */
+	public void setActiveMotionListener(MouseMotionListener mml) {
+		for(int row = 0; row < 9; row++){
+			for(int col = 0; col <9; col++){
+				//labelArr[row][col] = new CellView(board.cells[row][col]);
+				labelArr[row][col].removeMouseMotionListener(activeMotionListener);
+				labelArr[row][col].addMouseMotionListener(mml);
+				add(labelArr[row][col]);
+			}
 		}
+		activeMotionListener = mml;
 	}
-		}
-		else {
+	
+	void initialize () {
+		SelectionController ma = new SelectionController(this, mover);
+		activeListener = ma;
+		activeMotionListener = ma;
 			for(int row = 0; row < 9; row++){
 				for(int col = 0; col <9; col++){
 					labelArr[row][col] = new CellView(board.cells[row][col]);
 					labelArr[row][col].addMouseListener(ma);
 					add(labelArr[row][col]);
-		}
+				}
 			}
 		}
-	}
 	
 	public void draw(){
 		for(int row = 0; row < 9; row++){
@@ -98,7 +86,15 @@ public class BoardView extends JPanel{
 			}
 		}
 	}
+	public MouseListener getActiveListener(){
+		
+		return activeListener;
 	
+	}
+	
+	public MouseMotionListener getActiveMouseMotionListener(){
+		return 	activeMotionListener;
+	}
 
 	
 	public Board getBoard(){

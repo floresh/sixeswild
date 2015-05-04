@@ -1,10 +1,13 @@
 package game.move.controller;
 
 import game.boundary.BoardView;
-import game.entities.Board;
 import game.entities.Cell;
-import game.entities.Location;
 import game.entities.Tile;
+/**
+ * 
+ * @author Li Li
+ *
+ */
 
 public class SpMoveSwapTiles {
 	BoardView bv;

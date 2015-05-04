@@ -1,4 +1,6 @@
+import junit.framework.TestCase;
 
-public class BoundaryTests {
+
+public class BoundaryTests extends TestCase{
 
 }

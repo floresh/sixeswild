@@ -14,7 +14,7 @@ import javax.swing.SwingUtilities;
  * @author Li, Andrew, Jake
  *
  */
-//Blah
+
 public class SelectionController extends MouseAdapter{
 	/** Needed for controller behavior **/
 	BoardView bv;

@@ -4,56 +4,67 @@ import game.boundary.BoardView;
 import game.boundary.CellView;
 import game.boundary.LevelView;
 import game.entities.Cell;
-import game.entities.Model;
 import game.entities.Tile;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
+/**
+ * 
+ * @author Li Li
+ *
+ */
 public class MoveDeleteController extends MouseAdapter{
-//Blahddddd
+
 	BoardView bv;
 	ArrayList<Cell> cells = new ArrayList<Cell>();
 	LevelView lv;
 	Tile tile;
 	MoveController mover;
 	SelectionController sc = new SelectionController(bv, mover);
+	DeleteButtonController dBC;
 	
-	public MoveDeleteController(BoardView bv) {
+	public MoveDeleteController(BoardView bv , DeleteButtonController dBC) {
+		this.dBC = dBC;
 		this.bv = bv;
 	}
-
-//	public void register() {
-//		bv.setActiveListener(this);
-//		bv.setActiveMotionListener(this);
-//	}
-	
-	public void MousePressed (MouseEvent me){
+	@Override
+	public void mouseClicked(MouseEvent me){
+		System.out.println("Please");
 		Object src = me.getSource();
 		CellView cellView = (CellView) src;		
 		Cell cell = cellView.getCell();
-		if(!cell.isSelected()){
-			cells.add(cell);
-			cell.setSelected(true);
-		}
-		System.out.println(cells);	
-	}
-	
-	public void MouseReleased (MouseEvent me){
-		//if((!(cells.get(0) == null)) && (cells.size() == 1)) {
-			SpMoveDelete m = new SpMoveDelete(bv);
-			m.doMove(cells.get(0));
-			cells.get(0).setSelected(false);
-			cells.clear();
-			lv.getBoardView().setActiveListener(sc);
-	//	}
+		SpMoveDelete m = new SpMoveDelete(bv);
+		m.doMove(cell);
+		dBC.done();
+		//bv.setActiveListener(new SelectionController(bv, mover));
 		
 	}
+//	@Override
+//	public void mousePressed (MouseEvent me){
+//		System.out.println("Please");
+//		Object src = me.getSource();
+//		CellView cellView = (CellView) src;		
+//		Cell cell = cellView.getCell();
+//		if(!cell.isSelected()){
+//			cells.add(cell);
+//			cell.setSelected(true);
+//		}
+//		System.out.println("please");	
+//	}
+//	
+//	@Override
+//	public void mouseReleased (MouseEvent me){
+//		//if((!(cells.get(0) == null)) && (cells.size() == 1)) {
+//			SpMoveDelete m = new SpMoveDelete(bv);
+//			m.doMove(cells.get(0));
+//			cells.get(0).setSelected(false);
+//			cells.clear();
+//			bv.setActiveListener(new SelectionController(bv, mover));
+//	//	}
+//		
+//	}
 }
 
 

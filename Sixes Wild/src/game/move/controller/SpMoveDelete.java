@@ -3,7 +3,11 @@ package game.move.controller;
 import game.boundary.BoardView;
 import game.entities.Cell;
 import game.entities.Location;
-
+/**
+ * 
+ * @author Li Li
+ *
+ */
 public class SpMoveDelete {
 	
 	BoardView boardView;
