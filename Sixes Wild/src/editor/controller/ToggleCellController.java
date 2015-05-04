@@ -8,7 +8,6 @@ import javax.swing.JButton;
 
 import editor.boundary.Main;
 import editor.boundary.WholesomeLevelEditorScreen;
-import game.entities.ReleaseCell;
 import game.entities.Tile;
 /**
  * 
@@ -45,10 +44,7 @@ public class ToggleCellController implements ActionListener {
 	
 	public boolean setRelease(boolean onOff){
 		//add release cells and set this cell to be a release cell
-		if(onOff){
-			Main.model.getCurrentLevel().getBoard().cells[row][column] = new ReleaseCell(row,column);
-		}
-		
+		//Main.model.getCurrentLevel().getBoard().cells[row][column];
 		return true;
 	}
 	
