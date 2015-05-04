@@ -222,5 +222,9 @@ public abstract class Level implements Serializable, ILevel {
 	public void setReshufflesLeft(int i) {
 		reshufflesLeft = i;
 	}
+	
+	public void setName(String s){
+		this.name = s;
+	}
 
 }

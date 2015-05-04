@@ -17,6 +17,7 @@ import editor.controller.ClearLevelController;
 import editor.controller.InvertLevelController;
 import editor.controller.PreviewController;
 import editor.controller.SaveLevelController;
+import editor.controller.SelectNameController;
 import editor.controller.ToggleCellController;
 import editor.controller.ToggleTypeController;
 import game.entities.EliminationLevel;
@@ -26,6 +27,10 @@ import javax.swing.JSpinner;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
+import javax.swing.JComboBox;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 
 /**
  * @author Jake
@@ -44,7 +49,6 @@ import java.awt.event.ActionEvent;
  * available in the preview.
  */
 public class WholesomeLevelEditorScreen extends JFrame {
-	JTextField nameTextField;
 
 	JSpinner numMoves;
 	JSpinner maxTime;
@@ -65,8 +69,6 @@ public class WholesomeLevelEditorScreen extends JFrame {
 	JSlider xFrequency1;
 	JSlider xFrequency2;
 	JSlider xFrequency3;
-	
-	JButton saveLevel;
 	JButton clearLevel;
 	JButton invertLevel;
 	JButton previewLevel;
@@ -75,7 +77,6 @@ public class WholesomeLevelEditorScreen extends JFrame {
 	public JButton[][] buttArray;
 
 	public void init() {
-		nameTextField = new JTextField();
 
 		frequency1 = new JSlider();
 		frequency2 = new JSlider();
@@ -116,15 +117,8 @@ public class WholesomeLevelEditorScreen extends JFrame {
 		invertLevel.addActionListener(new InvertLevelController(this));
 		previewLevel = new JButton("Preview Level");
 		previewLevel.addActionListener(new PreviewController(this));
-
-		saveLevel = new JButton("Save Level");
-		saveLevel.addActionListener(new SaveLevelController(this));
 		
 		buttArray = new JButton[9][9];
-	}
-
-	public String getLevelName() {
-		return nameTextField.getText();
 	}
 
 	public ArrayList<Integer> getTileFrequencies() {
@@ -178,8 +172,39 @@ public class WholesomeLevelEditorScreen extends JFrame {
 		init();
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
-
-		menuBar.add(saveLevel);
+		
+		JMenu mnSaveLevel = new JMenu("Save Level");
+		menuBar.add(mnSaveLevel);
+		
+		JButton btnLevel = new JButton("Level 1");
+		btnLevel.addActionListener(new SelectNameController(this, "Level 1"));
+		btnLevel.addActionListener(new SaveLevelController(this));
+		mnSaveLevel.add(btnLevel);
+		
+		JButton btnLevel_1 = new JButton("Level 2");
+		btnLevel_1.addActionListener(new SelectNameController(this, "Level 2"));
+		btnLevel_1.addActionListener(new SaveLevelController(this));
+		mnSaveLevel.add(btnLevel_1);
+		
+		JButton btnLevel_2 = new JButton("Level 3");
+		btnLevel_2.addActionListener(new SelectNameController(this, "Level 3"));
+		btnLevel_2.addActionListener(new SaveLevelController(this));
+		mnSaveLevel.add(btnLevel_2);
+		
+		JButton btnLevel_3 = new JButton("Level 4");
+		btnLevel_3.addActionListener(new SelectNameController(this, "Level 4"));
+		btnLevel_3.addActionListener(new SaveLevelController(this));
+		mnSaveLevel.add(btnLevel_3);
+		
+		JButton btnLevel_4 = new JButton("Level 5");
+		btnLevel_4.addActionListener(new SelectNameController(this, "Level 5"));
+		btnLevel_4.addActionListener(new SaveLevelController(this));
+		mnSaveLevel.add(btnLevel_4);
+		
+		JButton btnLevel_5 = new JButton("Level 6");
+		btnLevel_5.addActionListener(new SelectNameController(this, "Level 6"));
+		btnLevel_5.addActionListener(new SaveLevelController(this));
+		mnSaveLevel.add(btnLevel_5);
 		menuBar.add(undo);
 		menuBar.add(redo);
 		menuBar.add(clearLevel);
@@ -194,15 +219,6 @@ public class WholesomeLevelEditorScreen extends JFrame {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
-
-		JLabel lblLevelName = new JLabel("Level Name:");
-		lblLevelName.setFont(new Font("Dialog", Font.PLAIN, 18));
-		lblLevelName.setBounds(12, 13, 121, 49);
-		getContentPane().add(lblLevelName);
-
-		nameTextField.setBounds(130, 29, 116, 22);
-		getContentPane().add(nameTextField);
-		nameTextField.setColumns(10);
 
 		JLabel lblTileFrequency = new JLabel("Tile Frequency");
 		lblTileFrequency
@@ -406,5 +422,8 @@ public class WholesomeLevelEditorScreen extends JFrame {
 			}
 		}
 	}
-
+	
+	public String getLevelName() {
+		return Main.application.getModel().getCurrentLevel().getName();
+	}
 }
