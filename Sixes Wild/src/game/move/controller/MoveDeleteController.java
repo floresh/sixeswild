@@ -28,10 +28,10 @@ public class MoveDeleteController extends MouseAdapter{
 		this.bv = bv;
 	}
 
-	public void register() {
-		bv.setActiveListener(this);
-		bv.setActiveMotionListener(this);
-	}
+//	public void register() {
+//		bv.setActiveListener(this);
+//		bv.setActiveMotionListener(this);
+//	}
 	
 	public void MousePressed (MouseEvent me){
 		Object src = me.getSource();
