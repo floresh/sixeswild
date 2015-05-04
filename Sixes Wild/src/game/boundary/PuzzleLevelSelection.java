@@ -87,7 +87,6 @@ public class PuzzleLevelSelection extends JFrame {
 				LevelView gameView = new LevelView(level);
 				gameView.setTitle("Puzzle " + lblLevelSelected.getText());
 				dispose();
-							
 			}
 		});
 		
