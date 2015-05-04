@@ -18,6 +18,12 @@ import game.main.Main;
  * 
  * @author Jake
  *
+ *	This class is called when the player chooses a certain level to play (e.g. puzzle level 1)
+ *	It initializes the level and stores in in the model, to be used when the player presses
+ *  the play button to create the levelView.
+ *  
+ *  It is way too large, but such is the process of instantiating levels here in the source code 
+ *  rather than loading from file.
  */
 public class SelectLevelController implements ActionListener{
 	JFrame frame;
