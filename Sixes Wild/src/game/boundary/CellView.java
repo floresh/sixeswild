@@ -21,23 +21,35 @@ import javax.swing.JPanel;
 public class CellView extends JLabel implements MouseListener, MouseMotionListener {
 	/** Cell at single location on board */
 	Cell cell;
+	int multiplier;
 	
 	public CellView(Cell cell) {
 		this.cell = cell;
-		
+		multiplier = cell.getTile().getMultiplier();
 		int row = cell.getLocation().getRow();
 		int column= cell.getLocation().getColumn();	
 		
 		setBounds(column*50,row*50,50,50);
 		int value = cell.getTile().getValue();
-		setText(Integer.toString(value));
+		setText(Integer.toString(multiplier));
 		setLayout(null);
+		setOpaque(true);
+//		JLabel multi = new JLabel(String.valueOf(multiplier));
+		//setIconTextGap(-90);
+//	
+		
 		refresh();
+		//setIconTextGap(-90);
+		
+		
 	}
 	
 	/** method to refresh the image a CellView displays based on the new tile in it */
 	public void refresh(){
-		int value = cell.getTile().getValue();
+		multiplier = cell.getTile().getMultiplier();
+		setText(Integer.toString(multiplier));
+		
+		int value= cell.getTile().getValue();
 		if(cell.getIsEnabled()){
 			switch (value){
 			 case 1:  value = 1;
@@ -59,6 +71,8 @@ public class CellView extends JLabel implements MouseListener, MouseMotionListen
 			 setIcon(new ImageIcon(BoardView.class.getResource("/images/6resized.png")));
 	         break;
 			}
+			setIconTextGap(-45);
+			setOpaque(true);
 		}
 		else{
 			 setIcon(new ImageIcon(BoardView.class.getResource("/images/emptycell.png")));
