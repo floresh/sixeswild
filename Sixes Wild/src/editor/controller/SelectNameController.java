@@ -18,8 +18,6 @@ public class SelectNameController implements ActionListener{
 	public SelectNameController(WholesomeLevelEditorScreen frame, String string){
 		this.frame = frame;
 		this.name = string;
-		
-		level = Main.application.getModel().getCurrentLevel();
 	}
 	
 	@Override

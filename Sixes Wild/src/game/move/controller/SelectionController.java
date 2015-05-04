@@ -67,6 +67,7 @@ public class SelectionController extends MouseAdapter{
 		move.doMove(cells);
 		for (int i = 0; i < cells.size();i++){
 			cells.get(i).setSelected(false);
+			
 		}
 		cells.clear();
 		bv.draw();

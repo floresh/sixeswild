@@ -81,9 +81,6 @@ public class PuzzleLevelSelection extends JFrame {
 		JButton playButton = new JButton("PLAY");
 		playButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-			//hack to work around loading
-			//calls levels instantiated by selecting which number level you wan
 				level.getBoard().initialize();
 				LevelView gameView = new LevelView(level);
 				gameView.setTitle("Puzzle " + lblLevelSelected.getText());
