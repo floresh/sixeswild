@@ -127,4 +127,7 @@ public class Cell implements Serializable {
 	public void setSelected(boolean selected) {
 		isSelected = selected;	
 	}
+	public boolean isReleased(){
+		return true;
+	}
 }

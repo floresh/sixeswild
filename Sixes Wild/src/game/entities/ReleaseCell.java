@@ -63,5 +63,10 @@ public class ReleaseCell extends Cell{
 	public boolean getIsEnabled(){
 		return isEnabled;
 	}
+	@Override
+	public boolean isReleased(){
+		if(tile.getValue() == 6){return true;}
+		return false;
+	}
 
 }

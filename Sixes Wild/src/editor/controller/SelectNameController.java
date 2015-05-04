@@ -19,7 +19,7 @@ public class SelectNameController implements ActionListener{
 		this.frame = frame;
 		this.name = string;
 		
-		Level level = Main.application.getModel().getCurrentLevel();
+		this.level = Main.application.getModel().getCurrentLevel();
 	}
 	
 	@Override

@@ -135,6 +135,19 @@ public class Board implements Serializable {
 	}
 		return true;
 	}
+	public boolean allReleased(){
+		for (int c = 0; c < 9; c++) {
+			for (int r = 0; r < 9; r++) {
+				Cell cell = cells[r][c];
+				if(!cell.isReleased()){
+					return false;
+				}
+			}
+		
+	}
+		return true;
+		
+	}
 	/**
 	 * Returns a random int between the give minimum and maximum values
 	 * @param min

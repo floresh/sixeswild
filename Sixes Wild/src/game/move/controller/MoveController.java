@@ -11,6 +11,7 @@ import game.entities.EliminationLevel;
 import game.entities.Level;
 import game.entities.Location;
 import game.entities.PuzzleLevel;
+import game.entities.ReleaseLevel;
 
 /**
  * 
@@ -68,7 +69,11 @@ public class MoveController {
 		}
 		}
 		
+		
 		if(level.getMovesLeft() == 0){
+			if( level instanceof ReleaseLevel){
+				new EndGameController(this.levelView,level.getBoard().allReleased());
+			}
 			if(level instanceof EliminationLevel){
 				new EndGameController(this.levelView,level.getBoard().allMarked() );
 			}
