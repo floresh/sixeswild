@@ -1,9 +1,8 @@
-package game.controller;
+package game.move.controller;
 
 import game.boundary.BoardView;
 import game.boundary.CellView;
 import game.entities.Cell;
-import game.move.controller.MoveController;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;

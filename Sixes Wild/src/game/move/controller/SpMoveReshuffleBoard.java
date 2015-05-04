@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import game.boundary.Application;
+import game.boundary.BoardView;
 import game.boundary.LevelView;
 import game.controller.MovesLeftController;
 import game.entities.*;
@@ -12,24 +13,21 @@ import game.entities.*;
 public class SpMoveReshuffleBoard {
 	Model model;
 	Application application;
-	Board board;
+	BoardView bv;
     Level level;
 	
 	//MovesLeftController movesLeft = new MovesLeftController(level);
 	
-	public SpMoveReshuffleBoard(Board board) {
-		this.board = board;
+	public SpMoveReshuffleBoard(BoardView bv) {
+		this.bv = bv;
 	}
 
 	public boolean doMove() {
 		ArrayList<Tile> tiles = model.getCurrentLevel().getBoard().getTiles();
 		Collections.shuffle(tiles);
 		model.getCurrentLevel().getBoard().setTiles(tiles);
-		
-	//	movesLeft.process();
-		
-		
-		
+		bv.draw();
+	//	movesLeft.process();	
 		return true;
 	}
 }

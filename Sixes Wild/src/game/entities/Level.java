@@ -7,10 +7,13 @@ import java.util.ArrayList;
 
 public abstract class Level implements Serializable, ILevel {
 
-	int score;
-	int time;
-	int movesLeft;
-	int maxMoves;
+	private int score;
+	private int time;
+	private int movesLeft;
+	private int maxMoves;
+	private boolean deleteMove = false;
+	private boolean reShuffleBoard = false;
+	private boolean swapTilesMove = false;
 	
 	Board board;
 	TimeController timer;
@@ -51,7 +54,7 @@ public abstract class Level implements Serializable, ILevel {
 		board = new Board(this);
 		board.gravity();
 		score = 0;
-		time = 500;
+		time = 0;
 		movesLeft = 50;
 		maxMoves = movesLeft;
 		
@@ -155,5 +158,29 @@ public abstract class Level implements Serializable, ILevel {
 
 	public void setMaxMoves(int maximum) {
 		this.maxMoves = maximum;
+	}
+	
+	public void setDeleteMove(){
+		deleteMove = true;
+	}
+	
+	public boolean getDeleteMoveState(){
+		return deleteMove;
+	}
+	
+	public void setMoveReshuffleBoard(){
+		reShuffleBoard = true;
+	}
+	
+	public boolean getMoveReshuffleBoard(){
+		return reShuffleBoard;
+	}
+
+	public void setMoveSwap(){
+		swapTilesMove = true;
+	}
+	
+	public boolean getMoveSwap(){
+		return swapTilesMove;
 	}
 }

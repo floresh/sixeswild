@@ -7,10 +7,13 @@ import game.controller.TimeController;
 import game.entities.Level;
 import game.entities.Model;
 import game.main.Main;
+import game.move.controller.DeleteButtonController;
+import game.move.controller.ReshuffleButtonController;
 import game.move.controller.SpMoveDelete;
 import game.move.controller.SpMoveReshuffleBoard;
 import game.move.controller.SpMoveSwapTiles;
 import game.move.controller.MoveController;
+import game.move.controller.SwapButtonController;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -105,22 +108,19 @@ public class LevelView extends JFrame{
 		panel.add(lblSpecialMoves);
 		
 		JButton btnNewButton_3 = new JButton("RESHUFFLE");
+		btnNewButton_3.addActionListener(new ReshuffleButtonController(this));
 		btnNewButton_3.setBounds(164, 51, 97, 25);
 		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		panel.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("SWAP");
-		btnNewButton_4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				new SpMoveSwapTiles(level.getBoard()).doMove();
-			}
-		});
+		btnNewButton_4.addActionListener(new SwapButtonController(this));
 		btnNewButton_4.setBounds(164, 99, 97, 25);
 		btnNewButton_4.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		panel.add(btnNewButton_4);
 
 		JButton btnNewButton_5 = new JButton("DELETE");
-		//btnNewButton_5.addActionListener(this);
+		btnNewButton_5.addActionListener(new DeleteButtonController(this));
 		btnNewButton_5.setBounds(164, 149, 97, 25);
 		btnNewButton_5.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		panel.add(btnNewButton_5);
