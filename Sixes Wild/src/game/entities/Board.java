@@ -52,7 +52,7 @@ public class Board implements Serializable {
 		ArrayList<Tile> tiles = new ArrayList<Tile>();
 
 		for (int i = 0; i < 9; i++) {
-			for (int j = 0; i < 9; j++) {
+			for (int j = 0; j < 9; j++) {
 				tiles.add(cells[i][j].getTile());
 			}
 		}
@@ -67,7 +67,7 @@ public class Board implements Serializable {
 		int count = 0;
 
 		for (int i = 0; i < 9; i++) {
-			for (int j = 0; i < 9; j++) {
+			for (int j = 0; j < 9; j++) {
 				cells[i][j].setTile(tile.get(count));
 				count++;
 			}
