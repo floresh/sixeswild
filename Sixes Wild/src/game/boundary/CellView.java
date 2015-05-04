@@ -50,6 +50,7 @@ public class CellView extends JLabel implements MouseListener, MouseMotionListen
 		setText(Integer.toString(multiplier));
 		
 		int value= cell.getTile().getValue();
+		System.out.println(cell.getIsEnabled());
 		if(cell.getIsEnabled()){
 			switch (value){
 			 case 1:  value = 1;

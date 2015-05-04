@@ -1,5 +1,6 @@
 package editor.controller;
 
+import java.awt.Color;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -56,7 +57,7 @@ public class SaveLevel {
 		for (int i = 0; i < 9; i++) {
 			for (int j = 0; j < 9; j++) {
 				cells[i][j] = new Cell(i,j,buttArray[i][j].getBackground().equals(
-						"GREEN"), false,true);
+						Color.GREEN), false,true);
 			}
 		}
 
