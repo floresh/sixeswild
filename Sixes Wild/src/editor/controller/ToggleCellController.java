@@ -39,12 +39,14 @@ public class ToggleCellController implements ActionListener {
 	
 	public boolean setEnabled(boolean onOff){
 		Main.application.getModel().getCurrentLevel().getBoard().cells[row][column].setIsEnabled(onOff);
+		new GameStateController(screen);
 		return true;
 	}
 	
 	public boolean setRelease(boolean onOff){
 		//add release cells and set this cell to be a release cell
 		//Main.model.getCurrentLevel().getBoard().cells[row][column];
+		new GameStateController(screen);
 		return true;
 	}
 	
@@ -55,6 +57,7 @@ public class ToggleCellController implements ActionListener {
 		else{
 			Main.application.getModel().getToggleType().getCellArray()[this.row][this.column] = 0;
 		}
+		new GameStateController(screen);
 		return true;
 	}
 

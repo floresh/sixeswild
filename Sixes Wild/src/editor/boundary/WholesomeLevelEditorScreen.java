@@ -14,12 +14,14 @@ import javax.swing.JTextField;
 import javax.swing.JSlider;
 
 import editor.controller.ClearLevelController;
+import editor.controller.GameStateController;
 import editor.controller.InvertLevelController;
 import editor.controller.PreviewController;
 import editor.controller.SaveLevelController;
 import editor.controller.SelectNameController;
 import editor.controller.ToggleCellController;
 import editor.controller.ToggleTypeController;
+import editor.controller.UndoController;
 import game.entities.EliminationLevel;
 import game.entities.ReleaseLevel;
 
@@ -66,24 +68,31 @@ public class WholesomeLevelEditorScreen extends JFrame {
 	public JSlider frequency5;
 	public JSlider frequency6;
 
-	JSlider xFrequency1;
-	JSlider xFrequency2;
-	JSlider xFrequency3;
+	public JSlider xFrequency1;
+	public JSlider xFrequency2;
+	public JSlider xFrequency3;
 	JButton clearLevel;
 	JButton invertLevel;
 	JButton previewLevel;
 	JButton undo;
 	JButton redo;
 	public JButton[][] buttArray;
+	GameStateController gsc =new GameStateController(this);
 
 	public void init() {
 
 		frequency1 = new JSlider();
+		frequency1.addMouseListener(gsc);
 		frequency2 = new JSlider();
+		frequency2.addMouseListener(gsc);
 		frequency3 = new JSlider();
+		frequency3.addMouseListener(gsc);
 		frequency4 = new JSlider();
+		frequency4.addMouseListener(gsc);
 		frequency5 = new JSlider();
+		frequency5.addMouseListener(gsc);
 		frequency6 = new JSlider();
+		frequency6.addMouseListener(gsc);
 
 		xFrequency1 = new JSlider();
 		xFrequency2 = new JSlider();
@@ -110,6 +119,7 @@ public class WholesomeLevelEditorScreen extends JFrame {
 		starThreshold3.setModel(new SpinnerNumberModel());
 
 		undo = new JButton("Undo");
+		undo.addActionListener(new UndoController(this));
 		redo = new JButton("Redo");
 		clearLevel = new JButton("Clear Level");
 		clearLevel.addActionListener(new ClearLevelController(this));
