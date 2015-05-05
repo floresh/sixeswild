@@ -19,7 +19,7 @@ import javax.swing.JLabel;
 
 import java.awt.Font;
 /**
- * 
+ *  
  * @author Jake
  *
  * Level Selection frame for the elimination game mode.
@@ -46,7 +46,7 @@ public class EliminationLevelSelection extends JFrame {
 				level = Main.getLevels().getLevel("Level 1");
 			}
 		});
-		btnNewButton_1.addActionListener(new SelectLevelController(this, "Level 1"));
+		//btnNewButton_1.addActionListener(new SelectLevelController(this, "Level 1"));
 
 		JButton button = new JButton("2");
 		button.addActionListener(new ActionListener() {

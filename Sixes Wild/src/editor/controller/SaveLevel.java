@@ -16,7 +16,7 @@ import game.entities.LightningLevel;
 import game.entities.PuzzleLevel;
 import game.entities.ReleaseLevel;
 import game.main.Filing;
-
+ 
 public class SaveLevel {
 	WholesomeLevelEditorScreen screen;
 	Cell[][] cells;
