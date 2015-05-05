@@ -26,7 +26,7 @@ public class Cell implements Serializable {
 	Location location;
 	
 	/**
-
+	 * TODO what is the difference between this isSelected and the isSelected in tile?
 	 *  Marks cell as selected in the middle of a move */
 	boolean isSelected = false;
 	
@@ -54,7 +54,7 @@ public class Cell implements Serializable {
 	}
 	
 	/**
-	 * recursive method to have tiles fall down in columns.
+	 * recursive method to have tiles fall down in columns
 	 * @param column
 	 */
 	protected void gravity(ArrayList<Cell> column) {
@@ -70,8 +70,7 @@ public class Cell implements Serializable {
 	}
 	
 	/**
-	 * Helper method for gravity.  If the cell is marked as empty it will call this method during gravity to have a new tile passed down.
-	 * 
+	 * TODO explain method
 	 * @param column
 	 * @return Tile
 	 */

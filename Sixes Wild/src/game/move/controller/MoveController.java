@@ -16,7 +16,7 @@ import game.entities.ReleaseLevel;
 /**
  * 
  * @author Li, Andrew, Jake
- *
+ * This controller executes the move.
  */
 public class MoveController {
 //Executes the move.

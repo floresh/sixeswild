@@ -12,7 +12,7 @@ import javax.swing.SwingUtilities;
 /**
  * 
  * @author Li, Andrew, Jake
- *
+ * This class contains the logic to select cells as moves and then calls the move controller.
  */
 
 public class SelectionController extends MouseAdapter{
@@ -32,7 +32,9 @@ public class SelectionController extends MouseAdapter{
 		bv.setActiveListener(this);
 		bv.setActiveMotionListener(this);
 	}
-
+	/**
+	 * Adds the cell being clicked on into the arraylist of cells.
+	 */
 	public void mousePressed(MouseEvent me){
 	
 		Object src = me.getSource();
@@ -50,6 +52,10 @@ public class SelectionController extends MouseAdapter{
 	
 	}
 	
+	/**
+	 * This simulates the dragging of the mouse to make a selection of cells and adds them
+	 * into the arraylist.
+	 */
 	public void mouseEntered(MouseEvent me) {
 		if(SwingUtilities.isLeftMouseButton(me)){
 			Object src = me.getSource();
@@ -63,6 +69,10 @@ public class SelectionController extends MouseAdapter{
 		}
 	}
 
+	/**
+	 * Releasing the left button on the mouse triggers the move controller and resets the cells back 
+	 * to the original state.
+	 */
 	public void mouseReleased(MouseEvent me){
 		move.doMove(cells);
 		for (int i = 0; i < cells.size();i++){
@@ -73,10 +83,18 @@ public class SelectionController extends MouseAdapter{
 		bv.draw();
 	}
 
+	/**
+	 * This is a getter for the arraylist of cells.
+	 * @return cells
+	 */
 	public ArrayList<Cell> selectedCellsList(){
 		return cells;
 	}
 
+	/**
+	 * This is the getter for the size of the arraylist of cells
+	 * @return size
+	 */
 	public int getSize(){
 
 		return cells.size();
