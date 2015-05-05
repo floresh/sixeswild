@@ -23,7 +23,18 @@ public class SaveLevel {
 	
 	public SaveLevel(WholesomeLevelEditorScreen screen){
 		this.screen = screen;
-		if(save()) {
+		String name = screen.getLevelName();
+		if(save(name)) {
+			JOptionPane.showMessageDialog(null, "Saved!");
+		} else {
+			JOptionPane.showMessageDialog(null, "Not Saved!");
+		}
+	}
+	
+	public SaveLevel(WholesomeLevelEditorScreen screen, String name){
+		this.screen = screen;
+		if(save(name)) {
+			System.out.println("Name: " + name);
 			JOptionPane.showMessageDialog(null, "Saved!");
 		} else {
 			JOptionPane.showMessageDialog(null, "Not Saved!");
@@ -66,8 +77,7 @@ public class SaveLevel {
 	}
 	
 	
-	public boolean save(){
-		String name = screen.getLevelName();
+	public boolean save(String name){
 		if (name.isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Enter level name");
 		} else {

@@ -29,13 +29,19 @@ import game.main.Filing;
  */
 public class SaveLevelController implements ActionListener {
 	WholesomeLevelEditorScreen screen;
+	String name;
 
 	public SaveLevelController(WholesomeLevelEditorScreen app) {
 		screen = app;
 	}
 	
+	public SaveLevelController(WholesomeLevelEditorScreen app, String name) {
+		screen = app;
+		this.name = name;
+	}
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		new SaveLevel(screen);
+		new SaveLevel(screen, name);
 	}
 }

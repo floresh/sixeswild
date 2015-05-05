@@ -18,12 +18,11 @@ public class SelectNameController implements ActionListener{
 	public SelectNameController(WholesomeLevelEditorScreen frame, String string){
 		this.frame = frame;
 		this.name = string;
-		
-		this.level = Main.application.getModel().getCurrentLevel();
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
+		System.out.println(name);
 		level.setName(level.getGameMode() + " " + name);
 	}
 
