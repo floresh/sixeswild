@@ -26,7 +26,7 @@ public class LevelSelection extends JFrame {
 
 
 	public LevelSelection() {
-		//TODO
+		
 		super("Level Selection");
 
 		JButton btnNewButton = new JButton("BACK");

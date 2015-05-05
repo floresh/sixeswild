@@ -192,8 +192,6 @@ public abstract class Level implements Serializable, ILevel {
 
 	public void setBoard(Board b) {
 		this.board = b;
-		// TODO Auto-generated method stub
-
 	}
 
 	public void setMaxMoves(int maximum) {

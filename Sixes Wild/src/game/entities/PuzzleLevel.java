@@ -49,7 +49,6 @@ public class PuzzleLevel extends Level {
 
 	@Override
 	public ArrayList<Integer> getModifierFrequencies() {
-		// TODO Auto-generated method stub
 		return multiplierFrequencies;
 	}
 

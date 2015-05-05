@@ -12,7 +12,6 @@ public class NoLevel extends Level implements ILevel{
 
 	@Override
 	public String getGameMode() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -29,13 +28,11 @@ public class NoLevel extends Level implements ILevel{
 
 	@Override
 	public ArrayList<Integer> getTileFrequencies() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public ArrayList<Integer> getModifierFrequencies() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
