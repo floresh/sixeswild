@@ -5,6 +5,7 @@ import editor.boundary.WholesomeLevelEditorScreen;
 import game.boundary.LevelView;
 import game.entities.Board;
 import game.entities.Level;
+import game.entities.PuzzleLevel;
 import game.entities.Tile;
 
 import java.awt.event.ActionEvent;
@@ -44,7 +45,7 @@ public class GameStateController extends java.awt.event.MouseAdapter{
 			ArrayList<Integer> stars = editorScreen.getStarThresholds();
 			ArrayList<Integer> rules = editorScreen.getRules();
 				 
-				 Level level =  Main.application.getModel().getCurrentLevel();
+				 Level level =  new PuzzleLevel();
 				 level.setTileFrequency(tileFreq);
 				 level.setMultiplierFrequency(multiFreq);
 				 level.setMovesLeft(rules.get(0));

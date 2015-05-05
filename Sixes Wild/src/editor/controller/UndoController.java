@@ -37,6 +37,8 @@ public class UndoController implements ActionListener {
 		wles.xFrequency1.setValue(previousState.getModifierFrequencies().get(0));
 		wles.xFrequency2.setValue(previousState.getModifierFrequencies().get(1));
 		wles.xFrequency3.setValue(previousState.getModifierFrequencies().get(2));
+		
+		Main.application.getModel().gameState.remove(temp.size() - 1);
 		return true;
 	}
 
