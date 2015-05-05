@@ -18,10 +18,12 @@ public class LevelEditorModel extends Model{
 	int numSPReshuffle;
 	ToggleType toggleType;
 	public ArrayList<Level> gameState;
+	public ArrayList<Level> redoStates;
 	
 	public LevelEditorModel(){
 		super();
 		this.gameState = new ArrayList<Level>();
+		this.redoStates = new ArrayList<Level>();
 		toggleType = new ToggleType();
 	}
 	

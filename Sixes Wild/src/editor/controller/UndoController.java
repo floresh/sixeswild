@@ -22,8 +22,19 @@ public class UndoController implements ActionListener {
 	}
 	
 	public boolean process(){
+		
 		ArrayList<Level> temp = Main.application.getModel().gameState;
-		Level previousState = Main.application.getModel().gameState.get(temp.size()-2);
+		
+		if(temp.size() < 1) { return false; }
+		
+		Level previousState;
+		
+		if(temp.size() == 1)
+			previousState = Main.application.getModel().gameState.get(temp.size()-1);
+		else 
+			previousState = Main.application.getModel().gameState.get(temp.size()-2);
+		
+		
 		Level currentState = Main.application.getModel().gameState.get(temp.size() - 1);
 		wles.frequency1.setValue(previousState.getTileFrequencies().get(0));
 		System.out.println(previousState.getTileFrequencies().get(0));
@@ -38,6 +49,8 @@ public class UndoController implements ActionListener {
 		wles.xFrequency2.setValue(previousState.getModifierFrequencies().get(1));
 		wles.xFrequency3.setValue(previousState.getModifierFrequencies().get(2));
 		
+
+		Main.application.getModel().redoStates.add(currentState);
 		Main.application.getModel().gameState.remove(temp.size() - 1);
 		return true;
 	}

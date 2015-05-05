@@ -52,7 +52,7 @@ public class GameStateController extends java.awt.event.MouseAdapter{
 				 level.setMaxMoves(rules.get(0));
 				 level.setTime(rules.get(1));
 				 level.setStars(stars);
-				 Board b = Main.application.getModel().getCurrentLevel().getBoard();
+				 Board b = new Board(level);
 				 b.setTopCell(tileFreq, multiFreq);
 				 b.initialize();
 				 for(int i =0;i<9;i++){
@@ -65,6 +65,8 @@ public class GameStateController extends java.awt.event.MouseAdapter{
 				 level.setBoard(b);
 				 level.setScore(0);
 				 Main.application.getModel().gameState.add(level);
+				 
+				 Main.application.getModel().redoStates.clear();
 		}
 		
 	}
