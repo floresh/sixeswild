@@ -506,4 +506,36 @@ public class WholesomeLevelEditorScreen extends JFrame {
 	public String getLevelName() {
 		return Main.model.getCurrentLevel().getName();
 	}
+	
+	public JSpinner getNumMoves(){
+		return this.numMoves;
+	}
+	
+	public JSpinner getMaxTime(){
+		return this.maxTime;
+	}
+	
+	public JSpinner getRemoveTile(){
+		return this.removeTile;
+	}
+	
+	public JSpinner getReshuffle(){
+		return this.reshuffle;
+	}
+	
+	public JSpinner getSwap(){
+		return this.swap;
+	}
+	
+	public JSpinner getStar1(){
+		return this.starThreshold1;
+	}
+	
+	public JSpinner getStar2(){
+		return this.starThreshold2;
+	}
+	
+	public JSpinner getStar3(){
+		return this.starThreshold3;
+	}
 }

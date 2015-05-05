@@ -45,14 +45,12 @@ public class LightningLevel extends Level{
 
 	@Override
 	public ArrayList<Integer> getTileFrequencies() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.tileFrequencies;
 	}
 
 	@Override
 	public ArrayList<Integer> getModifierFrequencies() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.multiplierFrequencies;
 	}
 
 	@Override

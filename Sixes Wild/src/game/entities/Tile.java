@@ -16,9 +16,6 @@ public class Tile implements Serializable {
 	/** multiplier to value */
 	int multiplier;
 	
-	/** TODO */
-	boolean setSelected;
-	
 	public Tile(){
 		value = 1;
 		multiplier = 0;
@@ -37,9 +34,5 @@ public class Tile implements Serializable {
 		return multiplier;
 	}
 	
-	public boolean setSelected(){
-		return setSelected;
-	}
-
 }
  

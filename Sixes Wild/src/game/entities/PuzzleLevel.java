@@ -5,6 +5,11 @@ import game.boundary.PuzzleLevelSelection;
 
 import java.util.ArrayList;
 
+/**
+ * 
+ * @author Andrew
+ *
+ */
 public class PuzzleLevel extends Level {
 	public PuzzleLevel() {
 		super();
@@ -49,7 +54,6 @@ public class PuzzleLevel extends Level {
 
 	@Override
 	public ArrayList<Integer> getModifierFrequencies() {
-		// TODO Auto-generated method stub
 		return multiplierFrequencies;
 	}
 

@@ -4,7 +4,11 @@ import game.boundary.GameModeScreen;
 import game.boundary.ReleaseLevelSelection;
 
 import java.util.ArrayList;
-
+/**
+ * 
+ * @author Andrew
+ *
+ */
 public class ReleaseLevel extends Level {
 	
 	public ReleaseLevel(Board board, ArrayList<Integer> tileFrequencies,
@@ -44,14 +48,12 @@ public class ReleaseLevel extends Level {
 
 	@Override
 	public ArrayList<Integer> getTileFrequencies() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.tileFrequencies;
 	}
 
 	@Override
 	public ArrayList<Integer> getModifierFrequencies() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.multiplierFrequencies;
 	}
 	@Override
 	public String getName() {
