@@ -16,7 +16,8 @@ import java.util.ArrayList;
 /**
  * 
  * @author Jake, Heric
- *
+ * 
+ * Saves state of the entire level editor whenever any value is changed
  */
 public class GameStateController extends java.awt.event.MouseAdapter{
 	

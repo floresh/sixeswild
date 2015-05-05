@@ -4,16 +4,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-import editor.boundary.LevelEditorApplication;
 import editor.boundary.Main;
 import editor.boundary.WholesomeLevelEditorScreen;
 import game.entities.Level;
-import game.entities.Model;
 
 /**
  * 
  * @author Heric, Jake
- *
+ * 
+ * Contains redo functionality
  */
 public class RedoController implements ActionListener {
 	
@@ -22,12 +21,12 @@ public class RedoController implements ActionListener {
 	public RedoController(WholesomeLevelEditorScreen wles) {
 		this.wles = wles;
 	}
-	
-	public boolean process() {
-		
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
 		ArrayList<Level> temp = Main.application.getModel().redoStates;
 		
-		if(temp.size() < 1) { return false; }
+		if(temp.size() < 1) { return; }
 		
 		Level nextState = temp.get(temp.size()-1);
 		wles.frequency1.setValue(nextState.getTileFrequencies().get(0));
@@ -43,13 +42,5 @@ public class RedoController implements ActionListener {
 		
 		Main.application.getModel().gameState.add(nextState);
 		Main.application.getModel().redoStates.remove(temp.size()-1);
-		
-		return true;
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		process();
-		
 	}
 }
