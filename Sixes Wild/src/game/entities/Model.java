@@ -23,7 +23,7 @@ public class Model implements Serializable{
 		//second parameter is the level number, 0-3 for 1-4
 		for(int i = 0; i<4;i++){
 			for(int j=0;j<4;j++){
-				unlockedLevels[i][j] = false;
+				unlockedLevels[i][j] = true;
 			}
 		}
 		unlockedLevels[0][0] = true;

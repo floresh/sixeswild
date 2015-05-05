@@ -1,6 +1,6 @@
-/EditorTest.class
 /editor/
 /game/
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 /ControllerTests$1.class
@@ -11,3 +11,5 @@
 /SixesWildTest.class
 /DavisTests.class
 /EntityTests.class
+=======
+>>>>>>> branch 'master' of https://github.com/floresh/sixeswild

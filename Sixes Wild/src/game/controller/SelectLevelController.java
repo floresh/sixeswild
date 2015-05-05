@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import game.boundary.Application;
 import game.boundary.PuzzleLevelSelection;
 import game.boundary.LightningLevelSelection;
+import game.boundary.EliminationLevelSelection;
 import game.entities.Board;
 import game.entities.LightningLevel;
 import game.entities.Model;
@@ -49,6 +50,7 @@ public class SelectLevelController implements ActionListener{
 			lightningInitialize();
 			break;
 		case "Elimination":
+			((EliminationLevelSelection)frame).lblLevelSelected.setText(string);
 			break;
 		case "Release":
 			break;
