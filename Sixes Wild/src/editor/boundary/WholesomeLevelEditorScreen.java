@@ -17,6 +17,7 @@ import editor.controller.ClearLevelController;
 import editor.controller.GameStateController;
 import editor.controller.InvertLevelController;
 import editor.controller.PreviewController;
+import editor.controller.RedoController;
 import editor.controller.SaveLevelController;
 import editor.controller.SelectNameController;
 import editor.controller.ToggleCellController;
@@ -133,6 +134,7 @@ public class WholesomeLevelEditorScreen extends JFrame {
 		undo = new JButton("Undo");
 		undo.addActionListener(new UndoController(this));
 		redo = new JButton("Redo");
+		redo.addActionListener(new RedoController(this));
 		clearLevel = new JButton("Clear Level");
 		clearLevel.addMouseListener(gsc);
 		clearLevel.addActionListener(new ClearLevelController(this));
