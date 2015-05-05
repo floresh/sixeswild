@@ -115,7 +115,7 @@ public class Board implements Serializable {
 	}
 	
 	/**
-	 * TODO explain setTopCell and TopCell attribute
+	 * sets the parameters for generating new tiles during gravity.
 	 * @param tileFrequency
 	 * @param multiplierFrequency
 	 */
