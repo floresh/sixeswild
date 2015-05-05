@@ -23,23 +23,9 @@ public void testLevel() {
 		assertEquals(m.getCurrentLevel(), pl);
 }
 
-public void initializeBoards(){
-	Cell c = new Cell();
-	for(int i = 0; i < 9; i++){
-		for(int j = 0; j < 9; j++){
-			cells[i][j].add
-		}
-	}
-	
-	Board b = new Board(m.getCurrentLevel(),cells);
-	public Board(Cell[][] cells, ArrayList<Integer> tileFrequency, ArrayList<Integer> multiplierFrequency) {
-		this.cells = cells;
-		setTopCell(tileFrequency, multiplierFrequency);
-	}
-	
-}
 public void testSplashScreen(){
 	SplashScreen splash = new SplashScreen();
+	
 }
 
 public void testCells() {}}
