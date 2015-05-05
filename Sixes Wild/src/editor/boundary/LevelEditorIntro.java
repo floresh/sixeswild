@@ -79,7 +79,7 @@ public class LevelEditorIntro extends JFrame{
 		
 		JMenu mnCreateNewLevel = new JMenu("Create New Level");
 		menuBar.add(mnCreateNewLevel);
-		
+	
 		JButton btnPuzzle = new JButton("Puzzle");
 		btnPuzzle.addActionListener(new SelectBuilderModeController(this, "Puzzle"));
 		mnCreateNewLevel.add(btnPuzzle);

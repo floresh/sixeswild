@@ -3,6 +3,7 @@ package game.boundary;
 import game.controller.ReturnToPreviousMenuController;
 import game.controller.SelectLevelController;
 import game.controller.SelectPlayController;
+import game.entities.Level;
 import game.entities.Model;
 import game.main.Main;
 
@@ -26,6 +27,7 @@ import java.awt.Font;
 public class EliminationLevelSelection extends JFrame {
 	/** Displays level number selected by user */
 	public JLabel lblLevelSelected;
+	Level level;
 	
 	public EliminationLevelSelection() {
 		super("Elimination Level Selection");
@@ -41,6 +43,7 @@ public class EliminationLevelSelection extends JFrame {
 		btnNewButton_1.setEnabled(Main.model.unlockedLevels[1][0]);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				level = Main.getLevels().getLevel("Level 1");
 			}
 		});
 		btnNewButton_1.addActionListener(new SelectLevelController(this, "Level 1"));

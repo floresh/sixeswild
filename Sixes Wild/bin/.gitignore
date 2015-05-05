@@ -1,8 +1,11 @@
 /EditorTest.class
 /editor/
 /game/
+<<<<<<< HEAD
+=======
 /ControllerTests$1.class
 /ControllerTests$2.class
 /ControllerTests$3.class
+>>>>>>> branch 'master' of https://github.com/floresh/sixeswild.git
 /EditorBoundaryTests.class
 /SixesWildTest.class

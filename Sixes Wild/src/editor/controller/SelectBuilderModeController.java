@@ -56,10 +56,10 @@ public class SelectBuilderModeController implements ActionListener {
 //			level = new PuzzleLevel();
 //			break;
 		}
-
-		Main.application.getModel().setCurrentLevel(level);
+		Main.model.setCurrentLevel(level);
+		System.out.println("Game mode: " + Main.model.getCurrentLevel().getGameMode());
 		
-		Filing.loadBuilderLevels(Main.application.getModel().getCurrentLevel());
+		Filing.loadBuilderLevels(Main.model.getCurrentLevel());
 		screen.dispose();
 		new WholesomeLevelEditorScreen();
 	}

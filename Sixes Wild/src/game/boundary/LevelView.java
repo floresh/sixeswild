@@ -201,7 +201,8 @@ public class LevelView extends JFrame{
 		reshuffleLeft = new JLabel(String.valueOf(level.getReshufflesLeft()));
 		reshuffleLeft.setBounds(271, 56, 46, 14);
 		panel.add(reshuffleLeft);
-		
+
+		System.out.println(level.getDeletsLeft());
 		
 		
 		setSize(800,800);

@@ -10,8 +10,11 @@ import editor.boundary.Main;
 import editor.boundary.WholesomeLevelEditorScreen;
 import game.entities.Board;
 import game.entities.Cell;
+import game.entities.EliminationLevel;
 import game.entities.Level;
+import game.entities.LightningLevel;
 import game.entities.PuzzleLevel;
+import game.entities.ReleaseLevel;
 import game.main.Filing;
 
 public class SaveLevel {
@@ -33,8 +36,8 @@ public class SaveLevel {
 	
 	public SaveLevel(WholesomeLevelEditorScreen screen, String name){
 		this.screen = screen;
+		level = Main.model.getCurrentLevel();
 		if(save(name)) {
-			System.out.println("Name: " + name);
 			JOptionPane.showMessageDialog(null, "Saved!");
 		} else {
 			JOptionPane.showMessageDialog(null, "Not Saved!");
@@ -83,8 +86,17 @@ public class SaveLevel {
 		} else {
 			if (getTileFrequencies() && getMultiplierFrequencies()
 					&& getRules() && getStars() && getCells()) {
-				level = new PuzzleLevel(name, board, tileFrequencies,
-						multiplierFrequencies, stars, rules);
+				switch(level.getGameMode()){
+				case "Puzzle": level = new PuzzleLevel(name, board, tileFrequencies,
+						multiplierFrequencies, stars, rules);break;
+				case "Elimination": level = new EliminationLevel(name, board, tileFrequencies,
+						multiplierFrequencies, stars, rules);break;
+				case "Lightning": level = new LightningLevel(name, board, tileFrequencies,
+						multiplierFrequencies, stars, rules);break;
+				case "Release": level = new ReleaseLevel(name, board, tileFrequencies,
+						multiplierFrequencies, stars, rules);break;
+				}
+				
 				if(!Main.getLevels().addLevel(level))
 					return false;
 				Filing.openOutputFile(level);
