@@ -14,12 +14,14 @@ import javax.swing.JTextField;
 import javax.swing.JSlider;
 
 import editor.controller.ClearLevelController;
+import editor.controller.GameStateController;
 import editor.controller.InvertLevelController;
 import editor.controller.PreviewController;
 import editor.controller.SaveLevelController;
 import editor.controller.SelectNameController;
 import editor.controller.ToggleCellController;
 import editor.controller.ToggleTypeController;
+import editor.controller.UndoController;
 import game.entities.EliminationLevel;
 import game.entities.ReleaseLevel;
 
@@ -66,24 +68,31 @@ public class WholesomeLevelEditorScreen extends JFrame {
 	public JSlider frequency5;
 	public JSlider frequency6;
 
-	JSlider xFrequency1;
-	JSlider xFrequency2;
-	JSlider xFrequency3;
+	public JSlider xFrequency1;
+	public JSlider xFrequency2;
+	public JSlider xFrequency3;
 	JButton clearLevel;
 	JButton invertLevel;
 	JButton previewLevel;
 	JButton undo;
 	JButton redo;
 	public JButton[][] buttArray;
+	GameStateController gsc =new GameStateController(this);
 
 	public void init() {
 
 		frequency1 = new JSlider();
+		frequency1.addMouseListener(gsc);
 		frequency2 = new JSlider();
+		frequency2.addMouseListener(gsc);
 		frequency3 = new JSlider();
+		frequency3.addMouseListener(gsc);
 		frequency4 = new JSlider();
+		frequency4.addMouseListener(gsc);
 		frequency5 = new JSlider();
+		frequency5.addMouseListener(gsc);
 		frequency6 = new JSlider();
+		frequency6.addMouseListener(gsc);
 
 		xFrequency1 = new JSlider();
 		xFrequency2 = new JSlider();
@@ -110,6 +119,7 @@ public class WholesomeLevelEditorScreen extends JFrame {
 		starThreshold3.setModel(new SpinnerNumberModel());
 
 		undo = new JButton("Undo");
+		undo.addActionListener(new UndoController(this));
 		redo = new JButton("Redo");
 		clearLevel = new JButton("Clear Level");
 		clearLevel.addActionListener(new ClearLevelController(this));
@@ -366,15 +376,15 @@ public class WholesomeLevelEditorScreen extends JFrame {
 		getContentPane().add(swap);
 		
 		JButton btnToggleOnOff = new JButton("Toggle Cells On/Off");
-		btnToggleOnOff.addActionListener(new ToggleTypeController(Main.application.model, 0));
+		btnToggleOnOff.addActionListener(new ToggleTypeController(Main.model, 0));
 		btnToggleOnOff.setBounds(790, 572, 168, 49);
 		btnToggleOnOff.setToolTipText("Set the cell toggler to toggle cells on or off. This is enabled by default.");
 		getContentPane().add(btnToggleOnOff);
 		
 		JButton btnToggleRelease = new JButton("Toggle Release Cells");
-		btnToggleRelease.addActionListener(new ToggleTypeController(Main.application.model, 1));
+		btnToggleRelease.addActionListener(new ToggleTypeController(Main.model, 1));
 		btnToggleRelease.setBounds(894, 634, 168, 49);
-		if(Main.application.model.getCurrentLevel() instanceof ReleaseLevel){
+		if(Main.model.getCurrentLevel() instanceof ReleaseLevel){
 			btnToggleRelease.setEnabled(true);
 			btnToggleRelease.setToolTipText("Set the cell toggler to toggle cells as Release Cells.");
 		}
@@ -385,8 +395,8 @@ public class WholesomeLevelEditorScreen extends JFrame {
 		getContentPane().add(btnToggleRelease);
 		
 		JButton btnToggleSix = new JButton("Toggle Six Cells");
-		btnToggleSix.addActionListener(new ToggleTypeController(Main.application.model, 2));
-		if(Main.application.model.getCurrentLevel() instanceof ReleaseLevel){
+		btnToggleSix.addActionListener(new ToggleTypeController(Main.model, 2));
+		if(Main.model.getCurrentLevel() instanceof ReleaseLevel){
 			btnToggleSix.setEnabled(true);
 			btnToggleSix.setToolTipText("Set the cell toggler to toggle cells as Six Cells.");
 		}
@@ -418,6 +428,6 @@ public class WholesomeLevelEditorScreen extends JFrame {
 	}
 	
 	public String getLevelName() {
-		return Main.application.getModel().getCurrentLevel().getName();
+		return Main.model.getCurrentLevel().getName();
 	}
 }

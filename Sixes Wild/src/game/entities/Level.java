@@ -17,10 +17,20 @@ public abstract class Level implements Serializable, ILevel {
 	int deletesLeft;
 	int swapsLeft;
 	int reshufflesLeft;
+	ArrayList<Integer> unlockedLevels, highScores;
 
 	Board board;
 	TimeController timer;
+	/**
+	 * rules order:
+	 * 0: maxMoves
+	 * 1: maxTime
+	 * 2: deletesLeft
+	 * 3: reshufflesLeft
+	 * 4: swapsLeft
+	 */
 	ArrayList<Integer> tileFrequencies, multiplierFrequencies, stars, rules;
+	
 
 	public Level() {
 
@@ -95,15 +105,23 @@ public abstract class Level implements Serializable, ILevel {
 	public Level(String name, Board board, ArrayList<Integer> tileFrequencies,
 			ArrayList<Integer> multiplierFrequencies, ArrayList<Integer> stars,
 			ArrayList<Integer> rules) {
+		this(board, tileFrequencies, multiplierFrequencies, stars, rules);
 		this.name = name;
-		this.board = board;
-		this.tileFrequencies = tileFrequencies;
-		this.multiplierFrequencies = multiplierFrequencies;
-		this.stars = stars;
-		this.rules = rules;
-		this.movesLeft = rules.get(0);
-
+		this.movesLeft = maxMoves = rules.get(0);
+		deletesLeft = rules.get(2);
+		reshufflesLeft = rules.get(3);
+		swapsLeft = rules.get(4);
+		System.out.println("Swaps left: " + swapsLeft);
 	}
+	
+	/**
+	 * rules order:
+	 * 0: maxMoves
+	 * 1: maxTime
+	 * 2: deletesLeft
+	 * 3: reshufflesLeft
+	 * 4: swapsLeft
+	 */
 
 	public void initilizeBoard() {
 		board.initialize();

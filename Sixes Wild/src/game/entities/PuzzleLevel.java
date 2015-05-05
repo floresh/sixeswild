@@ -6,8 +6,6 @@ import game.boundary.PuzzleLevelSelection;
 import java.util.ArrayList;
 
 public class PuzzleLevel extends Level {
-	ArrayList<Integer> unlockedLevels, highScores;
-
 	public PuzzleLevel() {
 		super();
 	}

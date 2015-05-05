@@ -10,6 +10,14 @@ public class EliminationLevel extends Level {
 	public EliminationLevel(){
 		super();
 	}
+	
+	public EliminationLevel(String name, Board board, ArrayList<Integer> tileFrequencies,
+			ArrayList<Integer> multiplierFrequencies, ArrayList<Integer> stars,
+			ArrayList<Integer> rules) {
+		super(name, board, tileFrequencies, multiplierFrequencies, stars, rules);
+		unlockedLevels = new ArrayList<Integer>();
+		highScores = new ArrayList<Integer>();
+	}
 
 	@Override
 	public String getGameMode() {

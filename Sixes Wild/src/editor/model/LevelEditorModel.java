@@ -1,5 +1,7 @@
 package editor.model;
 
+import java.util.ArrayList;
+
 import game.entities.Level;
 import game.entities.Model;
 import game.entities.PuzzleLevel;
@@ -15,9 +17,11 @@ public class LevelEditorModel extends Model{
 	int numSPSwap;
 	int numSPReshuffle;
 	ToggleType toggleType;
+	public ArrayList<Level> gameState;
 	
 	public LevelEditorModel(){
 		super();
+		this.gameState = new ArrayList<Level>();
 		toggleType = new ToggleType();
 	}
 	
