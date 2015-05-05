@@ -95,14 +95,22 @@ public class WholesomeLevelEditorScreen extends JFrame {
 		frequency6.addMouseListener(gsc);
 
 		xFrequency1 = new JSlider();
+		xFrequency1.addMouseListener(gsc);
 		xFrequency2 = new JSlider();
+		xFrequency2.addMouseListener(gsc);
 		xFrequency3 = new JSlider();
+		xFrequency3.addMouseListener(gsc);
 
 		numMoves = new JSpinner();
+		numMoves.addMouseListener(gsc);
 		maxTime = new JSpinner();
+		maxTime.addMouseListener(gsc);
 		removeTile = new JSpinner();
+		removeTile.addMouseListener(gsc);
 		reshuffle = new JSpinner();
+		reshuffle.addMouseListener(gsc);
 		swap = new JSpinner();
+		swap.addMouseListener(gsc);
 
 		numMoves.setModel(new SpinnerNumberModel());
 		maxTime.setModel(new SpinnerNumberModel());
@@ -114,6 +122,10 @@ public class WholesomeLevelEditorScreen extends JFrame {
 		starThreshold2 = new JSpinner();
 		starThreshold3 = new JSpinner();
 
+
+		starThreshold1.addMouseListener(gsc);
+		starThreshold2.addMouseListener(gsc);
+		starThreshold3.addMouseListener(gsc);
 		starThreshold1.setModel(new SpinnerNumberModel());
 		starThreshold2.setModel(new SpinnerNumberModel());
 		starThreshold3.setModel(new SpinnerNumberModel());
@@ -122,8 +134,10 @@ public class WholesomeLevelEditorScreen extends JFrame {
 		undo.addActionListener(new UndoController(this));
 		redo = new JButton("Redo");
 		clearLevel = new JButton("Clear Level");
+		clearLevel.addMouseListener(gsc);
 		clearLevel.addActionListener(new ClearLevelController(this));
 		invertLevel = new JButton("Invert Level");
+		invertLevel.addMouseListener(gsc);
 		invertLevel.addActionListener(new InvertLevelController(this));
 		previewLevel = new JButton("Preview Level");
 		previewLevel.addActionListener(new PreviewController(this));
