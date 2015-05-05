@@ -30,6 +30,7 @@ public class LevelManager {
 	}
 	
 	public Level getLevel(String name){
+		System.out.println(levels.containsKey(name));
 		return levels.get(name);
 	}
 

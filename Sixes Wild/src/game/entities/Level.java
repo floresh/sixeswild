@@ -111,7 +111,6 @@ public abstract class Level implements Serializable, ILevel {
 		deletesLeft = rules.get(2);
 		reshufflesLeft = rules.get(3);
 		swapsLeft = rules.get(4);
-		System.out.println("Swaps left: " + swapsLeft);
 	}
 	
 	/**

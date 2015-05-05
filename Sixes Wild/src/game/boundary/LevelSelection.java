@@ -40,6 +40,7 @@ public class LevelSelection extends JFrame {
 		button1.setEnabled(Main.model.unlockedLevels[0][0]);
 		button1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				level = Main.getLevels().getLevel("Level 1");
 			}
 		});

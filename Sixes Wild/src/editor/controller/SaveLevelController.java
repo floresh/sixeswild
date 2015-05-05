@@ -31,9 +31,9 @@ public class SaveLevelController implements ActionListener {
 	WholesomeLevelEditorScreen screen;
 	String name;
 
-	public SaveLevelController(WholesomeLevelEditorScreen app) {
-		screen = app;
-	}
+//	public SaveLevelController(WholesomeLevelEditorScreen app) {
+//		screen = app;
+//	}
 	
 	public SaveLevelController(WholesomeLevelEditorScreen app, String name) {
 		screen = app;
