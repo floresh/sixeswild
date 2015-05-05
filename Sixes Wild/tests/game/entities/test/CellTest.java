@@ -1,4 +1,4 @@
 package game.entities.test;
 
-public class CellTest {
+public class CellTest { 
 }

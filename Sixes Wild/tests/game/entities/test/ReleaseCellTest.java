@@ -1,6 +1,6 @@
 package game.entities.test;
 
 
-public class ReleaseCellTest{
+public class ReleaseCellTest{ 
 	
 }

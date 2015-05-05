@@ -1,5 +1,5 @@
 package game.entities.test;
 
-public class ReleaseLevelTest{
+public class ReleaseLevelTest{ 
 	
 }
