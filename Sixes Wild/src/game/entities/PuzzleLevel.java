@@ -5,6 +5,11 @@ import game.boundary.PuzzleLevelSelection;
 
 import java.util.ArrayList;
 
+/**
+ * 
+ * @author Andrew
+ *
+ */
 public class PuzzleLevel extends Level {
 	public PuzzleLevel() {
 		super();

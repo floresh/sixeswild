@@ -4,7 +4,11 @@ import game.boundary.GameModeScreen;
 import game.boundary.ReleaseLevelSelection;
 
 import java.util.ArrayList;
-
+/**
+ * 
+ * @author Andrew
+ *
+ */
 public class ReleaseLevel extends Level {
 	
 	public ReleaseLevel(Board board, ArrayList<Integer> tileFrequencies,

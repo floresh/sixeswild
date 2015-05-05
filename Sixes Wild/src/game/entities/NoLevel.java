@@ -3,7 +3,11 @@ package game.entities;
 import java.util.ArrayList;
 
 import game.boundary.GameModeScreen;
-
+/**
+ * 
+ * @author Andrew
+ *
+ */
 public class NoLevel extends Level implements ILevel{
 
 	public NoLevel(){
