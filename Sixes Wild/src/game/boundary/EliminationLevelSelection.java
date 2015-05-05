@@ -51,6 +51,7 @@ public class EliminationLevelSelection extends JFrame {
 		JButton button = new JButton("2");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				level = Main.getLevels().getLevel("Level 2");
 			}
 		});
 		button.setEnabled(Main.model.unlockedLevels[1][1]);
@@ -58,6 +59,11 @@ public class EliminationLevelSelection extends JFrame {
 
 		JButton button_1 = new JButton("3");
 		button_1.setEnabled(Main.model.unlockedLevels[1][2]);
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				level = Main.getLevels().getLevel("Level 3");
+			}
+		});
 		button_1.addActionListener(new SelectLevelController(this, "Level 3"));
 
 		JButton button_2 = new JButton("4");
@@ -68,9 +74,9 @@ public class EliminationLevelSelection extends JFrame {
 		btnNewButton_2.setEnabled(Main.model.unlockedLevels[1][0]);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				//TODO
-				//new LevelView();
+				level.getBoard().initialize();
+				LevelView gameView = new LevelView(level);
+				gameView.setTitle("Elimination " + lblLevelSelected.getText());
 				dispose();
 			}
 		});
