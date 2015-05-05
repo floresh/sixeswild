@@ -113,11 +113,11 @@ public class WholesomeLevelEditorScreen extends JFrame {
 		swap = new JSpinner();
 		swap.addMouseListener(gsc);
 
-		numMoves.setModel(new SpinnerNumberModel());
-		maxTime.setModel(new SpinnerNumberModel());
-		removeTile.setModel(new SpinnerNumberModel());
-		reshuffle.setModel(new SpinnerNumberModel());
-		swap.setModel(new SpinnerNumberModel());
+		numMoves.setModel(new SpinnerNumberModel(0, 0, 5000, 1));
+		maxTime.setModel(new SpinnerNumberModel(0, 0, 600, 1));
+		removeTile.setModel(new SpinnerNumberModel(0, 0, 50, 1));
+		reshuffle.setModel(new SpinnerNumberModel(0, 0, 50, 1));
+		swap.setModel(new SpinnerNumberModel(0, 0, 50, 1));
 
 		starThreshold1 = new JSpinner();
 		starThreshold2 = new JSpinner();
@@ -127,9 +127,9 @@ public class WholesomeLevelEditorScreen extends JFrame {
 		starThreshold1.addMouseListener(gsc);
 		starThreshold2.addMouseListener(gsc);
 		starThreshold3.addMouseListener(gsc);
-		starThreshold1.setModel(new SpinnerNumberModel());
-		starThreshold2.setModel(new SpinnerNumberModel());
-		starThreshold3.setModel(new SpinnerNumberModel());
+		starThreshold1.setModel(new SpinnerNumberModel(0, 0, 50000, 20));
+		starThreshold2.setModel(new SpinnerNumberModel(0, 0, 50000, 20));
+		starThreshold3.setModel(new SpinnerNumberModel(0, 0, 50000, 20));
 
 		undo = new JButton("Undo");
 		undo.addActionListener(new UndoController(this));
