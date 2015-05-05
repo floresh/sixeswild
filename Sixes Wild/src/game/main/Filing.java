@@ -1,9 +1,12 @@
 package game.main;
 
 import editor.boundary.Main;
+import game.entities.EliminationLevel;
 import game.entities.Level;
+import game.entities.LightningLevel;
 import game.entities.Model;
 import game.entities.PuzzleLevel;
+import game.entities.ReleaseLevel;
 
 import java.io.EOFException;
 import java.io.IOException;
@@ -22,6 +25,7 @@ public class Filing {
 	public static Path openOutputFile(Level level) {
 		Path path = FileSystems.getDefault().getPath("Levels",
 				level.getGameMode() + ".dat");
+		System.out.println("Output file: " + level.getGameMode());
 		try {
 			if (!Files.exists(path)) {
 				Files.createDirectories(path.getParent());
@@ -85,7 +89,13 @@ public class Filing {
 			while (true) {
 				switch (level.getGameMode()) {
 				case "Puzzle":
-					level = (PuzzleLevel) input.readObject();
+					level = (PuzzleLevel) input.readObject();break;
+				case "Elimination":
+					level = (EliminationLevel) input.readObject();break;
+				case "Lightning":
+					level = (LightningLevel) input.readObject();break;
+				case "Release":
+					level = (ReleaseLevel) input.readObject();break;
 				}
 				game.main.Main.getLevels().addLevel(level);
 			}
@@ -107,7 +117,10 @@ public class Filing {
 				switch (level.getGameMode()) {
 				case "Puzzle":
 					level = (PuzzleLevel) input.readObject();
-					System.out.println("loading puzzles");
+					System.out.println("loading puzzles");break;
+				case "Elimination":
+					level = (EliminationLevel) input.readObject();
+					System.out.println("loading elims");break;
 				}
 				Main.getLevels().addLevel(level);
 			}

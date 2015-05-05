@@ -27,7 +27,7 @@ public class SelectGameModeController implements ActionListener {
 			break;
 		case "ELIMINATION":
 			Main.model.setCurrentLevel(new EliminationLevel());
-			
+		
 			//Filing.loadGameLevels(Main.model.getCurrentLevel());
 			break;
 		case "LIGHTNING":
