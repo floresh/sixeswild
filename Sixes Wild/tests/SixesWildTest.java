@@ -22,7 +22,11 @@ import game.entities.ReleaseLevel;
 import game.move.controller.MoveController;
 import game.move.controller.SelectionController;
 import junit.framework.TestCase;
-
+/**
+ * 
+ * @author Li Li
+ * This class tests everything in SixesWild.
+ */
 public class SixesWildTest extends TestCase{
 
 	Model m = new Model();
