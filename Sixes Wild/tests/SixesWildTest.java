@@ -5,10 +5,12 @@ import java.util.EventObject;
 
 import javax.swing.JFrame;
 
+import game.boundary.EliminationLevelSelection;
 import game.boundary.EndGameScreen;
 import game.boundary.GameModeScreen;
 import game.boundary.LevelView;
 import game.boundary.PuzzleLevelSelection;
+import game.boundary.ReleaseLevelSelection;
 import game.boundary.SplashScreen;
 import game.controller.ReturnToPreviousMenuController;
 import game.controller.SelectLevelController;
@@ -19,6 +21,7 @@ import game.entities.LightningLevel;
 import game.entities.Model;
 import game.entities.PuzzleLevel;
 import game.entities.ReleaseLevel;
+import game.main.Main;
 import game.move.controller.MoveController;
 import game.move.controller.SelectionController;
 import junit.framework.TestCase;
@@ -48,6 +51,7 @@ public class SixesWildTest extends TestCase{
 		ReleaseLevel rl = new ReleaseLevel();
 		EndGameScreen egs = new EndGameScreen(lv);
 		GameModeScreen gms = new GameModeScreen();
+		Main.model = new Model();
 		
 		b = new Board(cells);
 		for(int i = 0; i < 9; i++){
@@ -72,12 +76,25 @@ public class SixesWildTest extends TestCase{
 
 	}
 
+	public void testPuzSelLevel(){
+		PuzzleLevelSelection pls = new PuzzleLevelSelection();
+	}
+	
+	public void testRelLevelSel(){
+		ReleaseLevelSelection rls = new ReleaseLevelSelection();
+	}
+	
+	public void testEliLevelSel(){
+		EliminationLevelSelection els = new EliminationLevelSelection();
+	}
+	
 	public void testSelect(){
 		SelectLevelController slc = new SelectLevelController(puzFrame, "Puzzle");
 		Board board = new Board(pl);
 		//slc.actionPerformed(e);
 	}
 
+	
 	public void testCell(){
 	//	assertEquals(b.cells[1][1], );
 	}

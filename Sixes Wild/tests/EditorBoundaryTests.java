@@ -1,20 +1,24 @@
 import editor.boundary.EditorSplashScreen;
+
 import editor.boundary.LevelEditorIntro;
 import editor.boundary.WholesomeLevelEditorScreen;
+import editor.model.*;
+import editor.boundary.Main;
 import junit.framework.TestCase;
 
 
 public class EditorBoundaryTests extends TestCase{
-	//Main main;
+	Main main;
 	
 	//WholesomeLevelEditorScreen wles;
 	//Main main;
 	
 	@Override
 	protected void setUp(){
-	//	main = new Main();
+		main = new Main();
 		//lei = new LevelEditorIntro();
 		//wles = new WholesomeLevelEditorScreen();
+		Main.model = new LevelEditorModel();
 	}
 	
 	public void testSplash(){
