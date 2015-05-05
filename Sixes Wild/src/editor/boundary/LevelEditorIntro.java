@@ -3,6 +3,7 @@ package editor.boundary;
 import javax.swing.JFrame;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
@@ -75,24 +76,26 @@ public class LevelEditorIntro extends JFrame{
 		lblLevelEditor.setFont(new Font("Tahoma", Font.PLAIN, 21));
 		
 		JMenuBar menuBar = new JMenuBar();
-		panel.add(menuBar);
+		//panel.add(menuBar);
+		//add(menuBar);
+		setJMenuBar(menuBar);
 		
 		JMenu mnCreateNewLevel = new JMenu("Create New Level");
 		menuBar.add(mnCreateNewLevel);
 	
-		JButton btnPuzzle = new JButton("Puzzle");
+		JMenuItem btnPuzzle = new JMenuItem("Puzzle");
 		btnPuzzle.addActionListener(new SelectBuilderModeController(this, "Puzzle"));
 		mnCreateNewLevel.add(btnPuzzle);
 		
-		JButton btnElimination = new JButton("Elimination");
+		JMenuItem btnElimination = new JMenuItem("Elimination");
 		btnElimination.addActionListener(new SelectBuilderModeController(this, "Elimination"));
 		mnCreateNewLevel.add(btnElimination);
 		
-		JButton btnLightning = new JButton("Lightning");
+		JMenuItem btnLightning = new JMenuItem("Lightning");
 		btnLightning.addActionListener(new SelectBuilderModeController(this, "Lightning"));
 		mnCreateNewLevel.add(btnLightning);
 		
-		JButton btnRelease = new JButton("Release");
+		JMenuItem btnRelease = new JMenuItem("Release");
 		btnRelease.addActionListener(new SelectBuilderModeController(this, "Release"));
 		mnCreateNewLevel.add(btnRelease);
 		getContentPane().setLayout(groupLayout);

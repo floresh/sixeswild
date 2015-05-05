@@ -2,11 +2,15 @@ package editor.controller;
 
 import editor.boundary.Main;
 import editor.boundary.WholesomeLevelEditorScreen;
+import game.boundary.LevelView;
 import game.entities.Board;
 import game.entities.Level;
 import game.entities.PuzzleLevel;
 import game.entities.Tile;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 /**

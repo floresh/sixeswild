@@ -3,6 +3,7 @@ package game.boundary;
 
 import game.entities.Board;
 import game.entities.Cell;
+import game.entities.ReleaseCell;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -49,6 +50,12 @@ public class CellView extends JLabel implements MouseListener, MouseMotionListen
 		multiplier = cell.getTile().getMultiplier();
 		setText(Integer.toString(multiplier));
 		
+	
+		if(cell instanceof ReleaseCell){
+			// setIcon(new ImageIcon(BoardView.class.getResource("/images/openrelease.png")));
+			setText(Integer.toString(multiplier)+"         R");
+			 
+		}
 		int value= cell.getTile().getValue();
 		//System.out.println(cell.getIsEnabled());
 		if(cell.getIsMarked()){
@@ -82,6 +89,7 @@ public class CellView extends JLabel implements MouseListener, MouseMotionListen
 		else{
 			 setIcon(new ImageIcon(BoardView.class.getResource("/images/emptycell.png")));
 		}
+		
 	}
 	
 	/**

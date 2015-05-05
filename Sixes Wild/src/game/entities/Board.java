@@ -49,10 +49,6 @@ public class Board implements Serializable {
 		this.cells = cells;
 		setTopCell(tileFrequency, multiplierFrequency);
 	}
-	
-	public Cell[][] getCells(){
-		return cells;
-	}
 	/**
 	 * returns an array list of all tile in board
 	 * @return

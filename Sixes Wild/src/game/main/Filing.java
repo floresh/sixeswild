@@ -118,9 +118,15 @@ public class Filing {
 				case "Puzzle":
 					level = (PuzzleLevel) input.readObject();
 					System.out.println("loading puzzles");break;
+				case "Release":
+					level = (ReleaseLevel) input.readObject();
+					System.out.println("loading release");break;
 				case "Elimination":
 					level = (EliminationLevel) input.readObject();
 					System.out.println("loading elims");break;
+				case "Lightning":
+					level = (LightningLevel) input.readObject();
+					System.out.println("loading lightning");break;
 				}
 				Main.getLevels().addLevel(level);
 			}

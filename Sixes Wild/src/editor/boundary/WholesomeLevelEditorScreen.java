@@ -23,9 +23,7 @@ import editor.controller.SelectNameController;
 import editor.controller.ToggleCellController;
 import editor.controller.ToggleTypeController;
 import editor.controller.UndoController;
-import game.entities.Cell;
 import game.entities.EliminationLevel;
-import game.entities.Level;
 import game.entities.ReleaseLevel;
 
 import javax.swing.JSpinner;
@@ -80,9 +78,7 @@ public class WholesomeLevelEditorScreen extends JFrame {
 	JButton undo;
 	JButton redo;
 	public JButton[][] buttArray;
-	
 	GameStateController gsc =new GameStateController(this);
-	Level level;
 
 	public void init() {
 
@@ -150,17 +146,6 @@ public class WholesomeLevelEditorScreen extends JFrame {
 		
 		buttArray = new JButton[9][9];
 	}
-	
-	public void setTileFrequencies() {
-		ArrayList<Integer> bars = level.getTileFrequencies();
-		frequency1.setValue(bars.get(0));
-		frequency2.setValue(bars.get(1));
-		frequency3.setValue(bars.get(2));
-		frequency4.setValue(bars.get(3));
-		frequency5.setValue(bars.get(4));
-		frequency6.setValue(bars.get(5));
-
-	}
 
 	public ArrayList<Integer> getTileFrequencies() {
 		ArrayList<Integer> bars = new ArrayList<Integer>();
@@ -173,13 +158,6 @@ public class WholesomeLevelEditorScreen extends JFrame {
 
 		return bars;
 	}
-	
-	public void setMultiplierFrequencies() {
-		ArrayList<Integer> sliders = level.getModifierFrequencies();
-		xFrequency1.setValue(sliders.get(0));
-		xFrequency2.setValue(sliders.get(1));
-		xFrequency3.setValue(sliders.get(2));
-	}
 
 	public ArrayList<Integer> getMultiplierFrequencies() {
 		ArrayList<Integer> sliders = new ArrayList<Integer>();
@@ -190,15 +168,6 @@ public class WholesomeLevelEditorScreen extends JFrame {
 		return sliders;
 	}
 
-	public void setRules() {
-		numMoves.setValue(level.getMaxMoves());
-		maxTime.setValue(level.getTime());
-		removeTile.setValue(level.getDeletsLeft());
-		reshuffle.setValue(level.getReshufflesLeft());
-		swap.setValue(level.getSwapsLeft());
-
-	}
-	
 	public ArrayList<Integer> getRules() {
 		ArrayList<Integer> rules = new ArrayList<Integer>();
 		rules.add((Integer) numMoves.getValue());
@@ -208,13 +177,6 @@ public class WholesomeLevelEditorScreen extends JFrame {
 		rules.add((Integer) swap.getValue());
 
 		return rules;
-	}
-	
-	public void setStarThresholds(){
-		ArrayList<Integer> stars = level.getStars();
-		starThreshold1.setValue(stars.get(0));
-		starThreshold2.setValue(stars.get(1));
-		starThreshold3.setValue(stars.get(2));
 	}
 
 	public ArrayList<Integer> getStarThresholds() {
@@ -226,32 +188,10 @@ public class WholesomeLevelEditorScreen extends JFrame {
 		return stars;
 	}
 	
-	public void setButtons(){
-		Cell[][] cells = level.getBoard().getCells();
-		
-		for (int i = 0; i < 9; i++) {
-			for (int j = 0; j < 9; j++) {
-				JButton ahoy = buttArray[i][j];
-				ahoy.setBackground(cells[i][j].getIsEnabled()? Color.GREEN : Color.RED);
-				buttArray[i][j].addActionListener(new ToggleCellController(this, i, j));
-			}
-		}
-	}
-	
 	public JButton[][] getButtArray(){
 		return buttArray;
 	}
-	
-	public WholesomeLevelEditorScreen(Level level) {
-		this();
-		this.level = level;
-		setStarThresholds();
-		setRules();
-		setMultiplierFrequencies();
-		setTileFrequencies();
-		setButtons();
-	}
-	
+
 	public WholesomeLevelEditorScreen() {
 		super("Sixes Wild Level Editor");
 
@@ -271,7 +211,7 @@ public class WholesomeLevelEditorScreen extends JFrame {
 		mnSaveLevel.add(btnLevel_1);
 		
 		JButton btnLevel_2 = new JButton("Level 3");
-		btnLevel_2.addActionListener(new SaveLevelController(this, "Level 3")); 
+		btnLevel_2.addActionListener(new SaveLevelController(this, "Level 3"));
 		mnSaveLevel.add(btnLevel_2);
 		
 		JButton btnLevel_3 = new JButton("Level 4");
