@@ -9,6 +9,7 @@ import editor.boundary.Main;
 import editor.boundary.WholesomeLevelEditorScreen;
 import game.entities.Level;
 import game.entities.Model;
+import game.entities.PuzzleLevel;
 /**
  * 
  * @author Heric, Jake
@@ -51,6 +52,14 @@ public class UndoController implements ActionListener {
 		wles.xFrequency2.setValue(previousState.getModifierFrequencies().get(1));
 		wles.xFrequency3.setValue(previousState.getModifierFrequencies().get(2));
 
+		wles.getNumMoves().setValue(previousState.getMaxMoves());
+		wles.getMaxTime().setValue(previousState.getTime());
+		wles.getRemoveTile().setValue(previousState.getDeletsLeft());
+		wles.getReshuffle().setValue(previousState.getReshufflesLeft());
+		wles.getSwap().setValue(previousState.getSwapsLeft());
+		wles.getStar1().setValue(previousState.getStars().get(0));
+		wles.getStar2().setValue(previousState.getStars().get(1));
+		wles.getStar3().setValue(previousState.getStars().get(2));
 
 		Main.application.getModel().redoStates.add(currentState);
 		Main.application.getModel().gameState.remove(temp.size() - 1);
