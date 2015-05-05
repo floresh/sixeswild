@@ -36,7 +36,6 @@ public class SaveLevel {
 	
 	public SaveLevel(WholesomeLevelEditorScreen screen, String name){
 		this.screen = screen;
-		System.out.println("Name: " + name);
 		level = Main.model.getCurrentLevel();
 		if(save(name)) {
 			JOptionPane.showMessageDialog(null, "Saved!");

@@ -33,7 +33,6 @@ public class SelectBuilderModeController implements ActionListener {
 	public SelectBuilderModeController(LevelEditorIntro screen, String ln) {
 		this.screen = screen;
 		this.levelName = ln;
-	
 	}
 
 	@Override
@@ -52,12 +51,8 @@ public class SelectBuilderModeController implements ActionListener {
 		case "Release" :
 			level = new ReleaseLevel();
 			break;
-//		default:
-//			level = new PuzzleLevel();
-//			break;
 		}
 		Main.model.setCurrentLevel(level);
-		System.out.println("Game mode: " + Main.model.getCurrentLevel().getGameMode());
 		
 		Filing.loadBuilderLevels(Main.model.getCurrentLevel());
 		screen.dispose();
