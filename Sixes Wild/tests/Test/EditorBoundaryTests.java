@@ -1,3 +1,4 @@
+package Test;
 import java.util.ArrayList;
 
 import editor.boundary.EditorSplashScreen;
@@ -8,6 +9,7 @@ import editor.boundary.Main;
 import editor.controller.GameStateController;
 import editor.controller.PreviewController;
 import editor.controller.RedoController;
+import editor.controller.ToggleCellController;
 import editor.controller.UndoController;
 import game.entities.Level;
 import game.entities.PuzzleLevel;
@@ -71,6 +73,13 @@ public class EditorBoundaryTests extends TestCase{
 		PreviewController pvc = new PreviewController(wles);
 		
 		pvc.process();
+		
+		ToggleCellController tcc = new ToggleCellController(wles, 0, 0);
+	
+		//tcc.setEnabled(true);
+		//tcc.setRelease(true);
+		//tcc.setSix(false);
+		
 	}
 	
 	

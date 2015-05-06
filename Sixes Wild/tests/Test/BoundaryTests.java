@@ -1,7 +1,9 @@
+package Test;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 import game.boundary.LevelView;
+import game.boundary.SplashScreen;
 import game.controller.ReturnToPreviousMenuController;
 import game.entities.EliminationLevel;
 import game.entities.LightningLevel;
@@ -35,6 +37,11 @@ public class BoundaryTests extends TestCase{
 	
 	public void testGetBoard(){
 		lv.getBoardView().getBoard();
+	}
+	
+	public void testSplash(){
+		SplashScreen splash = new SplashScreen();
+
 	}
 	
 	@Override
