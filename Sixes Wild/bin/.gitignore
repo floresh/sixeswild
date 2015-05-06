@@ -1,5 +1,6 @@
-/MainGame/
-/editor/
-/game/
-/EditorBoundaryTests$1.class
-/EditorBoundaryTests$2.class
+/MainGame
+/editor
+/game
+/images
+/EditorBoundaryTests.class
+/SixesWildTest.class
