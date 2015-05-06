@@ -52,6 +52,9 @@ public class PreviewController implements ActionListener{
 			 level.setMaxMoves(rules.get(0));
 			 level.setTime(rules.get(1));
 			 level.setStars(stars);
+			 level.setDeletesLeft((int)editorScreen.getRemoveTile().getValue());
+			 level.setReshufflesLeft((int)editorScreen.getReshuffle().getValue());
+			 level.setSwapsLeft((int)editorScreen.getSwap().getValue());
 			 Board b = Main.model.getCurrentLevel().getBoard();
 			 b.setTopCell(tileFreq, multiFreq);
 			 b.initialize();
