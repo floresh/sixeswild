@@ -22,9 +22,9 @@ public class ReshuffleButtonController implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		if(lv.getLevel().getReshufflesLeft()>0){
-		tiles = lv.getBoardView().getBoard().getTiles();
+		tiles = lv.getBoardView().getBoard().getValidTiles();
 		Collections.shuffle(tiles);
-		lv.getBoardView().getBoard().setTiles(tiles);
+		lv.getBoardView().getBoard().setValidTiles(tiles);
 		lv.getBoardView().draw(); 
 		lv.getLevel().setReshufflesLeft(lv.getLevel().getReshufflesLeft()-1);
 		lv.updateSpMoves();

@@ -52,13 +52,25 @@ public class Board implements Serializable {
 	/**
 	 * returns an array list of all tile in board
 	 * @return
-	 */
+	 */ 
 	public ArrayList<Tile> getTiles() {
 		ArrayList<Tile> tiles = new ArrayList<Tile>();
 
 		for (int i = 0; i < 9; i++) {
 			for (int j = 0; j < 9; j++) {
 				tiles.add(cells[i][j].getTile());
+			}
+		}
+		return tiles;
+	}
+	public ArrayList<Tile> getValidTiles() {
+		ArrayList<Tile> tiles = new ArrayList<Tile>();
+
+		for (int i = 0; i < 9; i++) {
+			for (int j = 0; j < 9; j++) {
+				if(cells[i][j].getIsEnabled()){
+				tiles.add(cells[i][j].getTile());
+				}
 			}
 		}
 		return tiles;
@@ -75,6 +87,19 @@ public class Board implements Serializable {
 			for (int j = 0; j < 9; j++) {
 				cells[i][j].setTile(tile.get(count));
 				count++;
+			}
+		}
+
+	}
+	public void setValidTiles(ArrayList<Tile> tile) {
+		int count = 0;
+
+		for (int i = 0; i < 9; i++) {
+			for (int j = 0; j < 9; j++) {
+				if(cells[i][j].getIsEnabled()){
+				cells[i][j].setTile(tile.get(count));
+				count++;
+				}
 			}
 		}
 

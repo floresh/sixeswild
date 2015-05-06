@@ -45,7 +45,11 @@ public class SwapButtonController implements ActionListener{
 	}
 	
 	public void swap(Cell cell){
+		
+		if (cell.getIsEnabled()){
 		cells.add(cell);
+		}
+		
 		if(cells.size()>1){
 			int r1 = cells.get(0).getLocation().getRow();
 			int c1 = cells.get(0).getLocation().getColumn();
