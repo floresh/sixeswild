@@ -23,25 +23,20 @@ public class UndoController implements ActionListener {
 		this.wles = wles;
 	}
 
+	public boolean process(){
+		ArrayList<Level> temp = Main.model.gameState;
 
-	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		ArrayList<Level> temp = Main.application.getModel().gameState;
-
-		if(temp.size() < 1) { return; }
+		if(temp.size() < 1) { return false; }
 
 		Level previousState;
 
 		if(temp.size() == 1)
-			previousState = Main.application.getModel().gameState.get(temp.size()-1);
+			previousState = Main.model.gameState.get(temp.size()-1);
 		else 
-			previousState = Main.application.getModel().gameState.get(temp.size()-2);
+			previousState = Main.model.gameState.get(temp.size()-2);
 
-
-		Level currentState = Main.application.getModel().gameState.get(temp.size() - 1);
+		Level currentState = Main.model.gameState.get(temp.size() - 1);
 		wles.frequency1.setValue(previousState.getTileFrequencies().get(0));
-		System.out.println(previousState.getTileFrequencies().get(0));
-		System.out.println(currentState.getTileFrequencies().get(0));
 		wles.frequency2.setValue(previousState.getTileFrequencies().get(1));
 		wles.frequency3.setValue(previousState.getTileFrequencies().get(2));
 		wles.frequency4.setValue(previousState.getTileFrequencies().get(3));
@@ -61,9 +56,13 @@ public class UndoController implements ActionListener {
 		wles.getStar2().setValue(previousState.getStars().get(1));
 		wles.getStar3().setValue(previousState.getStars().get(2));
 
-		Main.application.getModel().redoStates.add(currentState);
-		Main.application.getModel().gameState.remove(temp.size() - 1);
-		return;
+		Main.model.redoStates.add(currentState);
+		Main.model.gameState.remove(temp.size() - 1);
+		return true;
+	}
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		process();
 	}
 
 }

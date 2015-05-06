@@ -1,7 +1,5 @@
-import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.util.EventObject;
 
 import javax.swing.JFrame;
 
@@ -12,6 +10,7 @@ import game.boundary.LevelView;
 import game.boundary.PuzzleLevelSelection;
 import game.boundary.ReleaseLevelSelection;
 import game.boundary.SplashScreen;
+import game.controller.EndGameController;
 import game.controller.ReturnToPreviousMenuController;
 import game.controller.SelectLevelController;
 import game.entities.Board;
@@ -25,6 +24,7 @@ import game.main.Main;
 import game.move.controller.MoveController;
 import game.move.controller.SelectionController;
 import junit.framework.TestCase;
+
 /**
  * 
  * @author Li Li
@@ -76,6 +76,9 @@ public class SixesWildTest extends TestCase{
 
 	}
 
+	public void testEndGame(){
+		EndGameController egc = new EndGameController(lv, true);
+	}
 	public void testPuzSelLevel(){
 		PuzzleLevelSelection pls = new PuzzleLevelSelection();
 	}
@@ -93,7 +96,6 @@ public class SixesWildTest extends TestCase{
 		Board board = new Board(pl);
 		//slc.actionPerformed(e);
 	}
-
 	
 	public void testCell(){
 	//	assertEquals(b.cells[1][1], );
@@ -106,8 +108,6 @@ public class SixesWildTest extends TestCase{
 		sc.register();
 		
 		//sc.mousePressed(me);
-		
-		//MouseEvent pr = createPressed(cell
 	}
 	
 	public void testGetListener(){
@@ -115,6 +115,13 @@ public class SixesWildTest extends TestCase{
 		lv.getBoardView().getActiveMouseMotionListener();
 	}
 	
+/*	public MouseEvent createPressed (Model m, BoardView view, int dx, int dy) {
+		MouseEvent me = new MouseEvent(, view, MouseEvent.MOUSE_PRESSED, 
+				System.currentTimeMillis(), 0, 
+				view.getX()+dx, view.getY()+dy, 0, false);
+		return me;
+	}
+	*/
 	public void testGetBoard(){
 		lv.getBoardView().getBoard();
 	}

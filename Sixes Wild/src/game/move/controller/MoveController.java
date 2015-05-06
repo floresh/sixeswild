@@ -73,14 +73,13 @@ public class MoveController {
 		if(level.getMovesLeft() == 0){
 			if( level instanceof ReleaseLevel){
 				new EndGameController(this.levelView,level.getBoard().allReleased());
-			}else{
+			}
 			if(level instanceof EliminationLevel){
 				new EndGameController(this.levelView,level.getBoard().allMarked() );
-			}else{
+			}
 			new EndGameController(this.levelView);
 		}
-		}
-	}
+		
 		return true;
 		
 		
@@ -110,12 +109,6 @@ public class MoveController {
 
 				if(l1 == l2 || ((r1+1 == r2 || r1-1 == r2) && (c1 == c2)) ||
 						((c1+1 == c2 || c1-1 == c2) && (r1 == r2))) {
-					System.out.println(l1);
-					System.out.println(l2);
-					System.out.println(r1);
-					System.out.println(r2);
-					System.out.println(c1);
-					System.out.println(c2);
 					funtimes = true;
 				}
 			}

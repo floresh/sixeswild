@@ -28,9 +28,7 @@ public class GameStateController extends java.awt.event.MouseAdapter{
 			this.editorScreen = es;
 		}
 		
-	
-		public void mouseReleased(MouseEvent me) {
-			
+		public boolean process(){
 			ArrayList<Integer> tileFreq = new ArrayList<Integer>() {
 				{
 					add(editorScreen.frequency1.getValue());
@@ -58,16 +56,21 @@ public class GameStateController extends java.awt.event.MouseAdapter{
 				 b.initialize();
 				 for(int i =0;i<9;i++){
 						for(int j =0;j<9;j++){
-							if(Main.application.getModel().getToggleType().cellArray[i][j] == 6){
+							if(Main.model.getToggleType().cellArray[i][j] == 6){
 								b.cells[i][j].setTile(new Tile(6, 0));
 							}
 						}
 					}
 				 level.setBoard(b);
 				 level.setScore(0);
-				 Main.application.getModel().gameState.add(level);
+				 Main.model.gameState.add(level);
 				 
-				 Main.application.getModel().redoStates.clear();
+				 Main.model.redoStates.clear();
+				 
+				 return true;
+		}
+		public void mouseReleased(MouseEvent me) {
+			process();
 		}
 		
 	}
