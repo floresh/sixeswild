@@ -43,11 +43,11 @@ public class SelectLevelController implements ActionListener{
 		switch(levelType){
 		case "Puzzle":
 			((PuzzleLevelSelection)frame).lblLevelSelected.setText(string);
-			puzzleInitialize();
+		//	puzzleInitialize();
 			break;
 		case "Lightning":
 			((LightningLevelSelection)frame).lblLevelSelected.setText(string);
-			lightningInitialize();
+		//	lightningInitialize();
 			break;
 		case "Elimination":
 			((EliminationLevelSelection)frame).lblLevelSelected.setText(string);
@@ -57,7 +57,7 @@ public class SelectLevelController implements ActionListener{
 		}
 		
 	}
-	
+	/*
 	private void puzzleInitialize(){
 		PuzzleLevel level = new PuzzleLevel();
 		if(string.contains("1")){
@@ -361,7 +361,7 @@ public class SelectLevelController implements ActionListener{
 			Main.model.setCurrentLevel(level);
 		}
 	}
-	
+*/	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		process();
