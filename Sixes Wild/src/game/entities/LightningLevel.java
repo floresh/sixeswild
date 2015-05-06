@@ -10,6 +10,12 @@ public class LightningLevel extends Level{
 	public LightningLevel(){
 		
 	}
+	/**
+	 * 
+	 * @author Andrew
+	 * 
+	 * 
+	 */
 	
 	public LightningLevel(Board board, ArrayList<Integer> tileFrequencies,
 			ArrayList<Integer> multiplierFrequencies, ArrayList<Integer> stars,

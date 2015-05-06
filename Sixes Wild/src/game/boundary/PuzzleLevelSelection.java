@@ -20,7 +20,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 /**
  *  
- * @author Jake, hfloreshuerta
+ * @author Jake, hfloreshuerta, Davis
  * 
  * Frame for level selection in puzzle game mode
  */

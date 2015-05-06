@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 /**
  * 
- * @author Li Li
+ * @author Li Li, Davis
  *
  */
 public class SwapButtonController implements ActionListener{

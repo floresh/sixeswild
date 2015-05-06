@@ -3,7 +3,7 @@ package game.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import game.boundary.Application;
+
 import game.boundary.BoardView;
 import game.boundary.LevelView;
 import game.entities.*;

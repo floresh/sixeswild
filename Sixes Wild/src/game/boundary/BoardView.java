@@ -18,7 +18,7 @@ import game.move.controller.SelectionController;
 
 /**
  * 
- * @author Li Li
+ * @author Li Li , Davis
  *
  */
 public class BoardView extends JPanel{

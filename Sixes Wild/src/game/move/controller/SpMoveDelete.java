@@ -5,7 +5,7 @@ import game.entities.Cell;
 import game.entities.Location;
 /**
  * 
- * @author Li Li
+ * @author Li Li ,Davis
  *
  */
 public class SpMoveDelete {
