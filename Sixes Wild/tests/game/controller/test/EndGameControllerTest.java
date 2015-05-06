@@ -12,7 +12,11 @@ import game.entities.PuzzleLevel;
 import game.entities.Tile;
 import game.main.Main;
 import game.move.controller.MoveController;
-
+/**
+ * 
+ * @author Jake
+ *
+ */
 public class EndGameControllerTest extends TestCase{
 	Main main;
 	

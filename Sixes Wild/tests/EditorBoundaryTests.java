@@ -13,7 +13,11 @@ import game.entities.Level;
 import game.entities.PuzzleLevel;
 import junit.framework.TestCase;
 
-
+/**
+ * 
+ * @author Jake
+ *
+ */
 public class EditorBoundaryTests extends TestCase{
 	Main main;
 	

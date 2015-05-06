@@ -44,6 +44,7 @@ public class RedoController implements ActionListener {
 			return true;
 	}
 	
+	//helps with test cases to have process be called here.
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		ArrayList<Level> temp = Main.application.getModel().redoStates;

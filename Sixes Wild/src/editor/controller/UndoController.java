@@ -60,6 +60,8 @@ public class UndoController implements ActionListener {
 		Main.model.gameState.remove(temp.size() - 1);
 		return true;
 	}
+	
+	//helps with test cases to have process be called here.
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		process();

@@ -72,6 +72,8 @@ public class PreviewController implements ActionListener{
 		
 		return true;
 	}
+	
+	//helps with test cases to have process be called here.
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		process();
