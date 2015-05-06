@@ -31,8 +31,7 @@ public class PreviewController implements ActionListener{
 		this.editorScreen = es;
 	}
 	
-	@Override
-	public void actionPerformed(ActionEvent e) {
+	public boolean process(){
 		ArrayList<Integer> tileFreq = new ArrayList<Integer>() {
 			{
 				add(editorScreen.frequency1.getValue());
@@ -48,25 +47,31 @@ public class PreviewController implements ActionListener{
 		ArrayList<Integer> stars = editorScreen.getStarThresholds();
 		ArrayList<Integer> rules = editorScreen.getRules();
 			 
-			 Level level =  Main.application.getModel().getCurrentLevel();
+			 Level level =  Main.model.getCurrentLevel();
 			 level.setMovesLeft(rules.get(0));
 			 level.setMaxMoves(rules.get(0));
 			 level.setTime(rules.get(1));
 			 level.setStars(stars);
-			 Board b = Main.application.getModel().getCurrentLevel().getBoard();
+			 Board b = Main.model.getCurrentLevel().getBoard();
 			 b.setTopCell(tileFreq, multiFreq);
 			 b.initialize();
 			 for(int i =0;i<9;i++){
 					for(int j =0;j<9;j++){
-						if(Main.application.getModel().getToggleType().cellArray[i][j] == 6){
+						if(Main.model.getToggleType().cellArray[i][j] == 6){
 							b.cells[i][j].setTile(new Tile(6, 0));
 						}
 					}
 				}
 			 level.setBoard(b);
 			 level.setScore(0);
-			 Main.application.getModel().setCurrentLevel(level);
+			 Main.model.setCurrentLevel(level);
 			 new LevelView(level);
+		
+		return true;
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		process();
 	}
 	
 }
