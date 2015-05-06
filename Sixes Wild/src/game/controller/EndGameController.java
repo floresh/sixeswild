@@ -6,7 +6,7 @@ import game.entities.Model;
 import game.main.Main;
 /**
  * 
- * @author Jake
+ * @author Jake Davis
  *
  *	This is the controller that is called when a level ends. It opens an EndGameScreen jframe and 
  *  displays the appropriate information in that frame.

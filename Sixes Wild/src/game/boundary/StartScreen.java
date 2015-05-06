@@ -23,7 +23,7 @@ import java.awt.event.ActionEvent;
 public class StartScreen extends JFrame {
 	
 	Model model;
-	Application application;
+
 	
 	/** Displays Sixes Wild title */
 	private JLabel titleLabel;

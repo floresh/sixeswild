@@ -26,7 +26,7 @@ import javax.swing.JLabel;
 
 /**
  * 
- * @author Jake
+ * @author Jake,  Davis
  *
  * Frame for level selection in release game mode
  */

@@ -1,6 +1,6 @@
 package game.controller;
 
-import game.boundary.Application;
+
 import game.entities.*;
 
 public class MovesLeftController {

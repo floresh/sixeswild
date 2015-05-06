@@ -3,6 +3,12 @@ package game.entities;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * 
+ * @author Andrew
+ * 
+ * 
+ */
 public class Model implements Serializable{
 	Level currentLevel;
 	int numSPRemove;

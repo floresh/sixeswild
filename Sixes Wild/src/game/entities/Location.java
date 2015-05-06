@@ -1,6 +1,12 @@
 package game.entities;
 
 import java.io.Serializable;
+/**
+ * 
+ * @author Andrew
+ * 
+ * 
+ */
 
 public class Location implements Serializable{
 

@@ -4,7 +4,7 @@ package game.move.controller;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import game.boundary.Application;
+
 import game.boundary.BoardView;
 import game.boundary.LevelView;
 import game.controller.MovesLeftController;
@@ -12,12 +12,12 @@ import game.entities.*;
 
 /**
  * 
- * @author Li Li
+ * @author Li Li ,Davis
  *
  */
 public class SpMoveReshuffleBoard {
 	Model model;
-	Application application;
+
 	BoardView bv;
     Level level;
 	

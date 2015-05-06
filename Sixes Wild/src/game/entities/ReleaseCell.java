@@ -2,6 +2,13 @@ package game.entities;
 
 import java.util.ArrayList;
 
+/**
+ * 
+ * @author Andrew
+ * 
+ * 
+ */
+
 public class ReleaseCell extends Cell{
 	
 	

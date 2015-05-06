@@ -20,7 +20,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 /**
  *  
- * @author Jake
+ * @author Jake Andrew
  *
  * Level Selection frame for the elimination game mode.
  */

@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 
-import game.boundary.Application;
+
 import game.boundary.GameModeScreen;
 import game.boundary.PuzzleLevelSelection;
 import game.entities.Model;
