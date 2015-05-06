@@ -1,4 +1,4 @@
-/**import java.awt.event.MouseListener;
+import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 import game.boundary.LevelView;
@@ -47,4 +47,3 @@ public class BoundaryTests extends TestCase{
 	}
 	
 }
-*/

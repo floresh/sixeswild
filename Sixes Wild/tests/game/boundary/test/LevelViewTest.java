@@ -7,7 +7,7 @@ public class LevelViewTest {
 
 	LevelView lv;
 	PuzzleLevel pl;
-	 
+	
 	protected void setUp() {
 		pl = new PuzzleLevel();
 		lv = new LevelView(pl);

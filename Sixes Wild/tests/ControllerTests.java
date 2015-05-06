@@ -1,6 +1,9 @@
-/**
+
+import java.awt.event.MouseEvent;
+
 import javax.swing.JFrame;
 
+import game.boundary.BoardView;
 import game.boundary.LevelView;
 import game.controller.SelectLevelController;
 import game.entities.Board;
@@ -17,7 +20,6 @@ public class ControllerTests extends TestCase {
 	Board b = new Board(cells);
 	
 	protected void setUp() {
-		lv = new LevelView(lv.getLevel());
 		for(int i = 0; i < 9; i++){
 			for(int j = 0; j < 9; j++){
 				cell = new Cell (i, j, true, false, false);
@@ -47,4 +49,3 @@ public class ControllerTests extends TestCase {
 	}
 
 }
-*/
